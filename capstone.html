@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Capstone Projects | PyTrack</title>
+<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index.html">Py<span>Track</span></a>
+  <div class="nav-right">
+    <div class="progress-badge" id="nav-progress">🏆 Capstone</div>
+    <a class="btn-outline" href="index.html">⌂ All Units</a>
+  </div>
+</nav>
+
+<div class="capstone-page">
+  <div class="capstone-hero">
+    <div class="hero-tag">Final Step</div>
+    <h1>🏆 Capstone <em>Projects</em></h1>
+    <p>You've completed all 9 units. Now apply everything in a real-world project. Choose one (or all three!) — each uses a real public dataset and covers the full data analysis pipeline.</p>
+  </div>
+
+  <div class="project-grid">
+    <div class="project-card" id="card-1" onclick="showProject(1)">
+      <div class="project-icon">🏠</div>
+      <div class="project-title">House Price Analysis</div>
+      <div class="project-desc">Predict house prices using features like size, location, and rooms. Covers EDA, cleaning, regression, and visualization.</div>
+      <div class="project-tags">
+        <span class="project-tag">pandas</span>
+        <span class="project-tag">sklearn</span>
+        <span class="project-tag">matplotlib</span>
+        <span class="project-tag">regression</span>
+      </div>
+    </div>
+    <div class="project-card" id="card-2" onclick="showProject(2)">
+      <div class="project-icon">📱</div>
+      <div class="project-title">Customer Churn Prediction</div>
+      <div class="project-desc">Predict which telecom customers will cancel their subscription. Classification, feature engineering, model comparison.</div>
+      <div class="project-tags">
+        <span class="project-tag">pandas</span>
+        <span class="project-tag">sklearn</span>
+        <span class="project-tag">seaborn</span>
+        <span class="project-tag">classification</span>
+      </div>
+    </div>
+    <div class="project-card" id="card-3" onclick="showProject(3)">
+      <div class="project-icon">📊</div>
+      <div class="project-title">Sales Dashboard</div>
+      <div class="project-desc">Build a complete sales analysis dashboard from raw transactional data. SQL queries, time-series, and interactive Plotly charts.</div>
+      <div class="project-tags">
+        <span class="project-tag">pandas</span>
+        <span class="project-tag">sqlite3</span>
+        <span class="project-tag">plotly</span>
+        <span class="project-tag">time-series</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project Detail: House Prices -->
+  <div class="project-detail" id="detail-1">
+    <h3>🏠 Project 1 — House Price Analysis</h3>
+    <p style="color:var(--muted);font-size:.88rem;margin-bottom:1.2rem">Estimated time: 4-6 hours | Difficulty: ⭐⭐⭐</p>
+    <ol class="project-steps">
+      <li><strong>Load & Explore</strong> — Load the dataset, check dtypes, missing values, and basic stats. Answer: what's the average price? Which city has the most listings?</li>
+      <li><strong>Visualize</strong> — Plot price distribution (histogram), price vs size (scatter), average price by city (bar chart). Use seaborn for a correlation heatmap.</li>
+      <li><strong>Clean</strong> — Handle missing values, remove outliers (prices > 3× IQR), encode categorical columns (city, type).</li>
+      <li><strong>Feature Engineering</strong> — Create: price_per_sqm, is_new (year > 2018), district_avg_price.</li>
+      <li><strong>Model</strong> — Train LinearRegression and RandomForestRegressor. Compare RMSE and R² on the test set.</li>
+      <li><strong>Report</strong> — Write a 1-page summary: key findings, best model, what features matter most.</li>
+    </ol>
+    <h3 style="margin-top:1.5rem;font-size:.95rem;color:var(--accent2)">📦 Suggested Datasets</h3>
+    <table class="dataset-table">
+      <thead><tr><th>Dataset</th><th>Source</th><th>Size</th></tr></thead>
+      <tbody>
+        <tr><td>House Prices — Advanced Regression</td><td><a class="dataset-link" href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques/data" target="_blank">kaggle.com →</a></td><td>1,460 rows</td></tr>
+        <tr><td>Ames Housing Dataset</td><td><a class="dataset-link" href="https://www.openml.org/d/42165" target="_blank">openml.org →</a></td><td>2,919 rows</td></tr>
+        <tr><td>Cairo Real Estate (scrape)</td><td><a class="dataset-link" href="https://aqarmap.com.eg" target="_blank">aqarmap.com.eg →</a></td><td>Live data</td></tr>
+      </tbody>
+    </table>
+    <div class="code-block" style="margin-top:1rem"><div class="code-header"><span>python — starter code</span><button class="copy-btn" onclick="copyCode(this)">copy</button></div><div class="code-body">import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import r2_score, mean_squared_error
+import numpy as np
+
+# 1. Load data (replace with your CSV path)
+df = pd.read_csv('house_prices.csv')
+print(df.shape, df.dtypes)
+print(df.describe())
+
+# 2. Quick EDA
+print("\nMissing values:\n", df.isnull().sum()[df.isnull().sum() > 0])
+print("\nSample:\n", df.head())
+
+# 3. Visualize price distribution
+plt.figure(figsize=(10, 4))
+plt.subplot(1, 2, 1)
+df['SalePrice'].hist(bins=50, color='steelblue', edgecolor='black')
+plt.title('Price Distribution')
+plt.subplot(1, 2, 2)
+sns.scatterplot(data=df, x='GrLivArea', y='SalePrice', alpha=0.5)
+plt.title('Size vs Price')
+plt.tight_layout()
+plt.savefig('eda.png', dpi=150)
+plt.show()
+
+# 4. Simple model (extend this!)
+features = ['GrLivArea', 'BedroomAbvGr', 'FullBath', 'YearBuilt']
+df_clean = df[features + ['SalePrice']].dropna()
+X = df_clean[features]
+y = df_clean['SalePrice']
+
+X_tr, X_te, y_tr, y_te = train_test_split(X, y, test_size=0.2, random_state=42)
+model = RandomForestRegressor(100, random_state=42)
+model.fit(X_tr, y_tr)
+print(f"\nR²: {r2_score(y_te, model.predict(X_te)):.3f}")
+print(f"RMSE: ${mean_squared_error(y_te, model.predict(X_te))**0.5:,.0f}")</div></div>
+  </div>
+
+  <!-- Project Detail: Churn -->
+  <div class="project-detail" id="detail-2">
+    <h3>📱 Project 2 — Customer Churn Prediction</h3>
+    <p style="color:var(--muted);font-size:.88rem;margin-bottom:1.2rem">Estimated time: 5-7 hours | Difficulty: ⭐⭐⭐⭐</p>
+    <ol class="project-steps">
+      <li><strong>Load & Explore</strong> — Load the Telco churn dataset. What % of customers churned? Which features correlate most with churn?</li>
+      <li><strong>Clean & Encode</strong> — Convert TotalCharges to numeric, encode Yes/No columns as 0/1, one-hot encode multi-class columns.</li>
+      <li><strong>Visualize</strong> — Churn rate by contract type, monthly charges for churned vs retained (boxplot), correlation heatmap.</li>
+      <li><strong>Feature Engineering</strong> — Create: charges_per_month_ratio, has_multiple_services (sum of add-ons).</li>
+      <li><strong>Model & Compare</strong> — Train LogisticRegression, RandomForest, and GradientBoostingClassifier. Compare F1 score and ROC-AUC.</li>
+      <li><strong>Business Insight</strong> — Which customers are most at risk? What would you recommend to the business to reduce churn?</li>
+    </ol>
+    <h3 style="margin-top:1.5rem;font-size:.95rem;color:var(--accent2)">📦 Dataset</h3>
+    <table class="dataset-table">
+      <thead><tr><th>Dataset</th><th>Source</th><th>Size</th></tr></thead>
+      <tbody>
+        <tr><td>Telco Customer Churn</td><td><a class="dataset-link" href="https://www.kaggle.com/datasets/blastchar/telco-customer-churn" target="_blank">kaggle.com →</a></td><td>7,043 rows</td></tr>
+        <tr><td>IBM Churn Dataset</td><td><a class="dataset-link" href="https://www.ibm.com/communities/analytics/watson-analytics-blog/guide-to-sample-datasets/" target="_blank">ibm.com →</a></td><td>3,000 rows</td></tr>
+      </tbody>
+    </table>
+    <div class="code-block" style="margin-top:1rem"><div class="code-header"><span>python — starter code</span><button class="copy-btn" onclick="copyCode(this)">copy</button></div><div class="code-body">import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split, cross_val_score
+from sklearn.preprocessing import StandardScaler, LabelEncoder
+from sklearn.metrics import classification_report, roc_auc_score
+
+# Load
+df = pd.read_csv('WA_Fn-UseC_-Telco-Customer-Churn.csv')
+df['TotalCharges'] = pd.to_numeric(df['TotalCharges'], errors='coerce')
+df.dropna(inplace=True)
+df['Churn'] = (df['Churn'] == 'Yes').astype(int)
+
+print(f"Churn rate: {df['Churn'].mean():.1%}")
+
+# Encode binary columns
+binary_cols = ['Partner','Dependents','PhoneService','PaperlessBilling']
+for col in binary_cols:
+    df[col] = (df[col] == 'Yes').astype(int)
+
+# One-hot encode
+df = pd.get_dummies(df, columns=['InternetService','Contract','PaymentMethod'])
+
+# Features
+drop_cols = ['customerID','Churn']
+X = df.drop(columns=drop_cols)
+y = df['Churn']
+
+X_tr, X_te, y_tr, y_te = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
+sc = StandardScaler()
+X_tr = sc.fit_transform(X_tr); X_te = sc.transform(X_te)
+
+# Compare models
+for name, m in [
+    ('Logistic',    LogisticRegression(max_iter=1000)),
+    ('RandomForest',RandomForestClassifier(100, random_state=42)),
+    ('GradBoost',   GradientBoostingClassifier(100, random_state=42))
+]:
+    m.fit(X_tr, y_tr)
+    pred = m.predict(X_te)
+    auc = roc_auc_score(y_te, m.predict_proba(X_te)[:,1])
+    print(f"{name:15} | F1: {classification_report(y_te,pred,output_dict=True)['1']['f1-score']:.3f} | AUC: {auc:.3f}")</div></div>
+  </div>
+
+  <!-- Project Detail: Sales Dashboard -->
+  <div class="project-detail" id="detail-3">
+    <h3>📊 Project 3 — Sales Dashboard</h3>
+    <p style="color:var(--muted);font-size:.88rem;margin-bottom:1.2rem">Estimated time: 6-8 hours | Difficulty: ⭐⭐⭐⭐⭐</p>
+    <ol class="project-steps">
+      <li><strong>Load into SQLite</strong> — Load the Superstore dataset into an SQLite database. Create tables: orders, products, customers.</li>
+      <li><strong>SQL Analysis</strong> — Write SQL queries: monthly revenue, top 10 products, revenue by region, average order value by customer segment.</li>
+      <li><strong>Time Series</strong> — Plot monthly revenue trend with 3-month rolling average. Find seasonality patterns.</li>
+      <li><strong>Plotly Dashboard</strong> — Build 4 interactive charts: revenue trend, top products bar, region pie chart, profit scatter.</li>
+      <li><strong>Export HTML</strong> — Use plotly.io.write_html() to export the dashboard as a standalone HTML file.</li>
+      <li><strong>Insights Report</strong> — Write 5 key business insights with supporting charts.</li>
+    </ol>
+    <h3 style="margin-top:1.5rem;font-size:.95rem;color:var(--accent2)">📦 Dataset</h3>
+    <table class="dataset-table">
+      <thead><tr><th>Dataset</th><th>Source</th><th>Size</th></tr></thead>
+      <tbody>
+        <tr><td>Superstore Sales</td><td><a class="dataset-link" href="https://www.kaggle.com/datasets/vivek468/superstore-dataset-final" target="_blank">kaggle.com →</a></td><td>9,994 rows</td></tr>
+        <tr><td>Brazilian E-Commerce (Olist)</td><td><a class="dataset-link" href="https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce" target="_blank">kaggle.com →</a></td><td>100k+ rows</td></tr>
+      </tbody>
+    </table>
+    <div class="code-block" style="margin-top:1rem"><div class="code-header"><span>python — starter code</span><button class="copy-btn" onclick="copyCode(this)">copy</button></div><div class="code-body">import pandas as pd
+import sqlite3
+import plotly.express as px
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+
+# 1. Load into SQLite
+df = pd.read_csv('superstore.csv', encoding='latin-1')
+df['Order Date'] = pd.to_datetime(df['Order Date'])
+df['Month'] = df['Order Date'].dt.to_period('M').astype(str)
+
+conn = sqlite3.connect('superstore.db')
+df.to_sql('orders', conn, if_exists='replace', index=False)
+print("Loaded:", len(df), "orders")
+
+# 2. SQL analysis
+monthly = pd.read_sql_query("""
+  SELECT Month, SUM(Sales) as revenue, SUM(Profit) as profit,
+         COUNT(*) as orders
+  FROM orders GROUP BY Month ORDER BY Month
+""", conn)
+monthly['rolling_3m'] = monthly['revenue'].rolling(3).mean()
+
+top_products = pd.read_sql_query("""
+  SELECT "Product Name", SUM(Sales) as total
+  FROM orders GROUP BY "Product Name"
+  ORDER BY total DESC LIMIT 10
+""", conn)
+
+# 3. Interactive dashboard
+fig = make_subplots(
+    rows=2, cols=2,
+    subplot_titles=['Monthly Revenue', 'Top 10 Products', 'Revenue by Region', 'Sales vs Profit'],
+    specs=[[{"type":"scatter"},{"type":"bar"}],[{"type":"pie"},{"type":"scatter"}]]
+)
+fig.add_trace(go.Scatter(x=monthly['Month'], y=monthly['revenue'], name='Revenue', line=dict(color='#3b82f6')), row=1, col=1)
+fig.add_trace(go.Scatter(x=monthly['Month'], y=monthly['rolling_3m'], name='3M Avg', line=dict(dash='dash', color='#f59e0b')), row=1, col=1)
+fig.add_trace(go.Bar(x=top_products['total'], y=top_products['Product Name'], orientation='h', marker_color='#06b6d4'), row=1, col=2)
+
+region = pd.read_sql_query("SELECT Region, SUM(Sales) as rev FROM orders GROUP BY Region", conn)
+fig.add_trace(go.Pie(labels=region['Region'], values=region['rev']), row=2, col=1)
+fig.add_trace(go.Scatter(x=df['Sales'], y=df['Profit'], mode='markers', marker=dict(opacity=0.4, color='#10b981')), row=2, col=2)
+
+fig.update_layout(title='📊 Superstore Sales Dashboard', height=700, template='plotly_dark', showlegend=False)
+fig.write_html('dashboard.html')
+print("Dashboard saved to dashboard.html")
+fig.show()</div></div>
+  </div>
+
+  <!-- Back to units -->
+  <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border);display:flex;gap:1rem;align-items:center">
+    <a href="units/unit-9.html" class="btn-nav">← Back to Unit 9</a>
+    <a href="index.html" class="btn-nav">⌂ All Units</a>
+    <span style="color:var(--muted);font-size:.83rem;margin-left:auto">PyTrack — Python for Data Analysis</span>
+  </div>
+</div>
+
+<script>
+function showProject(n) {
+  document.querySelectorAll('.project-detail').forEach(d => d.classList.remove('show'));
+  document.querySelectorAll('.project-card').forEach(c => c.classList.remove('active'));
+  const detail = document.getElementById('detail-' + n);
+  const card   = document.getElementById('card-' + n);
+  detail.classList.add('show');
+  card.classList.add('active');
+  detail.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+function copyCode(btn) {
+  const code = btn.closest('.code-block').querySelector('.code-body').textContent;
+  navigator.clipboard.writeText(code).then(() => {
+    btn.textContent = 'copied!';
+    setTimeout(() => btn.textContent = 'copy', 2000);
+  });
+}
+</script>
+</body>
+</html>
