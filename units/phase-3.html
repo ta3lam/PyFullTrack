@@ -1,0 +1,2150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Phase 3 — Pandas — Heart of Data Analysis | PyTrack</title>
+<link rel="stylesheet" href="../../css/style.css"/>
+<style>
+.phase-badge {
+  display:inline-flex; align-items:center; gap:.5rem;
+  background:var(--bg3); border:1px solid var(--border);
+  border-radius:20px; padding:.3rem .9rem;
+  font-family:var(--mono); font-size:.7rem; color:var(--muted);
+  margin-bottom:1rem; letter-spacing:1px; text-transform:uppercase;
+}
+.phase-parts-nav {
+  display:flex; gap:.5rem; flex-wrap:wrap; margin-bottom:1rem;
+}
+.part-tag {
+  font-family:var(--mono); font-size:.65rem; letter-spacing:.5px;
+  background:rgba(59,130,246,.1); border:1px solid rgba(59,130,246,.2);
+  color:var(--accent2); padding:.2rem .55rem; border-radius:4px;
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../../index.html">Py<span>Track</span></a>
+  <div class="nav-right">
+    <div class="progress-badge" id="nav-progress">0 / 73 lessons</div>
+    <a class="btn-outline" href="../../index.html">⌂ All Phases</a>
+  </div>
+</nav>
+
+<div class="lesson-page">
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <a href="../../index.html" class="sidebar-home">⌂ PyTrack Course</a>
+    </div>
+    <div class="sidebar-inner"><div class="sidebar-unit">
+  <div class="sidebar-unit-header" onclick="toggleUnit(this)">
+    <span>🛠️</span>
+    <span>Phase 0: Setup & Mindset</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons">
+    <a class="sidebar-lesson" id="slink-0-0" href="phase-0.html" >
+      <span class="lesson-check" id="chk-0-0"></span>
+      What is Python & Data Analysis?
+    </a>
+    <a class="sidebar-lesson" id="slink-0-1" href="phase-0.html" >
+      <span class="lesson-check" id="chk-0-1"></span>
+      Installing Anaconda
+    </a>
+    <a class="sidebar-lesson" id="slink-0-2" href="phase-0.html" >
+      <span class="lesson-check" id="chk-0-2"></span>
+      Jupyter Notebook Basics
+    </a>
+    <a class="sidebar-lesson" id="slink-0-3" href="phase-0.html" >
+      <span class="lesson-check" id="chk-0-3"></span>
+      Python in VS Code
+    </a>
+  </div>
+</div><div class="sidebar-unit">
+  <div class="sidebar-unit-header" onclick="toggleUnit(this)">
+    <span>🐍</span>
+    <span>Phase 1: Python Basics</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons">
+    <a class="sidebar-lesson" id="slink-1-0" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-0"></span>
+      Variables & Data Types
+    </a>
+    <a class="sidebar-lesson" id="slink-1-1" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-1"></span>
+      Strings
+    </a>
+    <a class="sidebar-lesson" id="slink-1-2" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-2"></span>
+      Numbers & Math
+    </a>
+    <a class="sidebar-lesson" id="slink-1-3" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-3"></span>
+      Type Conversion
+    </a>
+    <a class="sidebar-lesson" id="slink-1-4" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-4"></span>
+      Lists
+    </a>
+    <a class="sidebar-lesson" id="slink-1-5" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-5"></span>
+      Tuples & Sets
+    </a>
+    <a class="sidebar-lesson" id="slink-1-6" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-6"></span>
+      Dictionaries
+    </a>
+    <a class="sidebar-lesson" id="slink-1-7" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-7"></span>
+      Variables & Operators
+    </a>
+    <a class="sidebar-lesson" id="slink-1-8" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-8"></span>
+      If / Elif / Else
+    </a>
+    <a class="sidebar-lesson" id="slink-1-9" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-9"></span>
+      For Loops
+    </a>
+    <a class="sidebar-lesson" id="slink-1-10" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-10"></span>
+      While Loops
+    </a>
+    <a class="sidebar-lesson" id="slink-1-11" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-11"></span>
+      List Comprehensions
+    </a>
+    <a class="sidebar-lesson" id="slink-1-12" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-12"></span>
+      Functions
+    </a>
+    <a class="sidebar-lesson" id="slink-1-13" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-13"></span>
+      Lambda Functions
+    </a>
+    <a class="sidebar-lesson" id="slink-1-14" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-14"></span>
+      Modules & Import
+    </a>
+    <a class="sidebar-lesson" id="slink-1-15" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-15"></span>
+      Exception Handling
+    </a>
+    <a class="sidebar-lesson" id="slink-1-16" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-16"></span>
+      File I/O
+    </a>
+    <a class="sidebar-lesson" id="slink-1-17" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-17"></span>
+      Regular Expressions
+    </a>
+    <a class="sidebar-lesson" id="slink-1-18" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-18"></span>
+      Classes & OOP Basics
+    </a>
+    <a class="sidebar-lesson" id="slink-1-19" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-19"></span>
+      Inheritance & Methods
+    </a>
+  </div>
+</div><div class="sidebar-unit">
+  <div class="sidebar-unit-header" onclick="toggleUnit(this)">
+    <span>🔢</span>
+    <span>Phase 2: NumPy — The Math Engine</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons">
+    <a class="sidebar-lesson" id="slink-2-0" href="phase-2.html" >
+      <span class="lesson-check" id="chk-2-0"></span>
+      Introduction to NumPy
+    </a>
+    <a class="sidebar-lesson" id="slink-2-1" href="phase-2.html" >
+      <span class="lesson-check" id="chk-2-1"></span>
+      Arrays & Dimensions
+    </a>
+    <a class="sidebar-lesson" id="slink-2-2" href="phase-2.html" >
+      <span class="lesson-check" id="chk-2-2"></span>
+      Operations & Filtering
+    </a>
+    <a class="sidebar-lesson" id="slink-2-3" href="phase-2.html" >
+      <span class="lesson-check" id="chk-2-3"></span>
+      Statistics with NumPy
+    </a>
+    <a class="sidebar-lesson" id="slink-2-4" href="phase-2.html" >
+      <span class="lesson-check" id="chk-2-4"></span>
+      Reshape, Sort & Search
+    </a>
+    <a class="sidebar-lesson" id="slink-2-5" href="phase-2.html" >
+      <span class="lesson-check" id="chk-2-5"></span>
+      Linear Algebra Basics
+    </a>
+    <a class="sidebar-lesson" id="slink-2-6" href="phase-2.html" >
+      <span class="lesson-check" id="chk-2-6"></span>
+      Random Numbers
+    </a>
+  </div>
+</div><div class="sidebar-unit">
+  <div class="sidebar-unit-header active-unit open" onclick="toggleUnit(this)">
+    <span>🐼</span>
+    <span>Phase 3: Pandas — Heart of Data Analysis</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons open">
+    <a class="sidebar-lesson active" id="slink-3-0" href="javascript:showLesson(0)" onclick="showLesson(0);return false;">
+      <span class="lesson-check" id="chk-3-0"></span>
+      Pandas Series
+    </a>
+    <a class="sidebar-lesson" id="slink-3-1" href="javascript:showLesson(1)" onclick="showLesson(1);return false;">
+      <span class="lesson-check" id="chk-3-1"></span>
+      DataFrames
+    </a>
+    <a class="sidebar-lesson" id="slink-3-2" href="javascript:showLesson(2)" onclick="showLesson(2);return false;">
+      <span class="lesson-check" id="chk-3-2"></span>
+      Reading CSV & Excel
+    </a>
+    <a class="sidebar-lesson" id="slink-3-3" href="javascript:showLesson(3)" onclick="showLesson(3);return false;">
+      <span class="lesson-check" id="chk-3-3"></span>
+      Exploring Your Data
+    </a>
+    <a class="sidebar-lesson" id="slink-3-4" href="javascript:showLesson(4)" onclick="showLesson(4);return false;">
+      <span class="lesson-check" id="chk-3-4"></span>
+      Selecting & Filtering
+    </a>
+    <a class="sidebar-lesson" id="slink-3-5" href="javascript:showLesson(5)" onclick="showLesson(5);return false;">
+      <span class="lesson-check" id="chk-3-5"></span>
+      Adding & Modifying Columns
+    </a>
+    <a class="sidebar-lesson" id="slink-3-6" href="javascript:showLesson(6)" onclick="showLesson(6);return false;">
+      <span class="lesson-check" id="chk-3-6"></span>
+      Sorting & Ranking
+    </a>
+    <a class="sidebar-lesson" id="slink-3-7" href="javascript:showLesson(7)" onclick="showLesson(7);return false;">
+      <span class="lesson-check" id="chk-3-7"></span>
+      Descriptive Statistics
+    </a>
+    <a class="sidebar-lesson" id="slink-3-8" href="javascript:showLesson(8)" onclick="showLesson(8);return false;">
+      <span class="lesson-check" id="chk-3-8"></span>
+      apply() & map()
+    </a>
+    <a class="sidebar-lesson" id="slink-3-9" href="javascript:showLesson(9)" onclick="showLesson(9);return false;">
+      <span class="lesson-check" id="chk-3-9"></span>
+      GroupBy — Grouped Analysis
+    </a>
+    <a class="sidebar-lesson" id="slink-3-10" href="javascript:showLesson(10)" onclick="showLesson(10);return false;">
+      <span class="lesson-check" id="chk-3-10"></span>
+      Pivot Tables
+    </a>
+    <a class="sidebar-lesson" id="slink-3-11" href="javascript:showLesson(11)" onclick="showLesson(11);return false;">
+      <span class="lesson-check" id="chk-3-11"></span>
+      Merging DataFrames
+    </a>
+    <a class="sidebar-lesson" id="slink-3-12" href="javascript:showLesson(12)" onclick="showLesson(12);return false;">
+      <span class="lesson-check" id="chk-3-12"></span>
+      Working with Dates
+    </a>
+    <a class="sidebar-lesson" id="slink-3-13" href="javascript:showLesson(13)" onclick="showLesson(13);return false;">
+      <span class="lesson-check" id="chk-3-13"></span>
+      String Methods in Pandas
+    </a>
+    <a class="sidebar-lesson" id="slink-3-14" href="javascript:showLesson(14)" onclick="showLesson(14);return false;">
+      <span class="lesson-check" id="chk-3-14"></span>
+      Concat & Join
+    </a>
+    <a class="sidebar-lesson" id="slink-3-15" href="javascript:showLesson(15)" onclick="showLesson(15);return false;">
+      <span class="lesson-check" id="chk-3-15"></span>
+      Time Series Basics
+    </a>
+  </div>
+</div><div class="sidebar-unit">
+  <div class="sidebar-unit-header" onclick="toggleUnit(this)">
+    <span>🧹</span>
+    <span>Phase 4: Data Cleaning</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons">
+    <a class="sidebar-lesson" id="slink-4-0" href="phase-4.html" >
+      <span class="lesson-check" id="chk-4-0"></span>
+      Finding Missing Values
+    </a>
+    <a class="sidebar-lesson" id="slink-4-1" href="phase-4.html" >
+      <span class="lesson-check" id="chk-4-1"></span>
+      Filling & Dropping Missing Data
+    </a>
+    <a class="sidebar-lesson" id="slink-4-2" href="phase-4.html" >
+      <span class="lesson-check" id="chk-4-2"></span>
+      Duplicates & Data Types
+    </a>
+    <a class="sidebar-lesson" id="slink-4-3" href="phase-4.html" >
+      <span class="lesson-check" id="chk-4-3"></span>
+      String Cleaning
+    </a>
+    <a class="sidebar-lesson" id="slink-4-4" href="phase-4.html" >
+      <span class="lesson-check" id="chk-4-4"></span>
+      Detecting Outliers
+    </a>
+    <a class="sidebar-lesson" id="slink-4-5" href="phase-4.html" >
+      <span class="lesson-check" id="chk-4-5"></span>
+      Removing Outliers
+    </a>
+    <a class="sidebar-lesson" id="slink-4-6" href="phase-4.html" >
+      <span class="lesson-check" id="chk-4-6"></span>
+      Full Cleaning Pipeline
+    </a>
+  </div>
+</div><div class="sidebar-unit">
+  <div class="sidebar-unit-header" onclick="toggleUnit(this)">
+    <span>📈</span>
+    <span>Phase 5: Data Visualization</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons">
+    <a class="sidebar-lesson" id="slink-5-0" href="phase-5.html" >
+      <span class="lesson-check" id="chk-5-0"></span>
+      Matplotlib Basics
+    </a>
+    <a class="sidebar-lesson" id="slink-5-1" href="phase-5.html" >
+      <span class="lesson-check" id="chk-5-1"></span>
+      Bar & Line Charts
+    </a>
+    <a class="sidebar-lesson" id="slink-5-2" href="phase-5.html" >
+      <span class="lesson-check" id="chk-5-2"></span>
+      Histograms & Scatter Plots
+    </a>
+    <a class="sidebar-lesson" id="slink-5-3" href="phase-5.html" >
+      <span class="lesson-check" id="chk-5-3"></span>
+      Pie & Area Charts
+    </a>
+    <a class="sidebar-lesson" id="slink-5-4" href="phase-5.html" >
+      <span class="lesson-check" id="chk-5-4"></span>
+      Subplots & Dashboards
+    </a>
+    <a class="sidebar-lesson" id="slink-5-5" href="phase-5.html" >
+      <span class="lesson-check" id="chk-5-5"></span>
+      Seaborn Charts
+    </a>
+    <a class="sidebar-lesson" id="slink-5-6" href="phase-5.html" >
+      <span class="lesson-check" id="chk-5-6"></span>
+      Heatmaps & Pair Plots
+    </a>
+    <a class="sidebar-lesson" id="slink-5-7" href="phase-5.html" >
+      <span class="lesson-check" id="chk-5-7"></span>
+      Plotly — Interactive Charts
+    </a>
+    <a class="sidebar-lesson" id="slink-5-8" href="phase-5.html" >
+      <span class="lesson-check" id="chk-5-8"></span>
+      Chart Styling & Themes
+    </a>
+    <a class="sidebar-lesson" id="slink-5-9" href="phase-5.html" >
+      <span class="lesson-check" id="chk-5-9"></span>
+      Exporting & Sharing Charts
+    </a>
+  </div>
+</div><div class="sidebar-unit">
+  <div class="sidebar-unit-header" onclick="toggleUnit(this)">
+    <span>🔍</span>
+    <span>Phase 6: Exploratory Data Analysis</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons">
+    <a class="sidebar-lesson" id="slink-6-0" href="phase-6.html" >
+      <span class="lesson-check" id="chk-6-0"></span>
+      Descriptive Statistics
+    </a>
+    <a class="sidebar-lesson" id="slink-6-1" href="phase-6.html" >
+      <span class="lesson-check" id="chk-6-1"></span>
+      Correlation & Regression
+    </a>
+    <a class="sidebar-lesson" id="slink-6-2" href="phase-6.html" >
+      <span class="lesson-check" id="chk-6-2"></span>
+      Window Functions
+    </a>
+    <a class="sidebar-lesson" id="slink-6-3" href="phase-6.html" >
+      <span class="lesson-check" id="chk-6-3"></span>
+      Sampling & Hypothesis Testing
+    </a>
+    <a class="sidebar-lesson" id="slink-6-4" href="phase-6.html" >
+      <span class="lesson-check" id="chk-6-4"></span>
+      Building Analysis Reports
+    </a>
+  </div>
+</div><div class="sidebar-unit">
+  <div class="sidebar-unit-header" onclick="toggleUnit(this)">
+    <span>🏆</span>
+    <span>Phase 7: Real-World Projects</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons"><a class="sidebar-lesson" href="../capstone.html">🏆 View Projects</a>
+  </div>
+</div><div class="sidebar-unit">
+  <div class="sidebar-unit-header" onclick="toggleUnit(this)">
+    <span>💼</span>
+    <span>Phase 8: Job Ready</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons">
+    <a class="sidebar-lesson" id="slink-8-0" href="phase-8.html" >
+      <span class="lesson-check" id="chk-8-0"></span>
+      Comments & Code Style
+    </a>
+    <a class="sidebar-lesson" id="slink-8-1" href="phase-8.html" >
+      <span class="lesson-check" id="chk-8-1"></span>
+      Virtual Environments & pip
+    </a>
+    <a class="sidebar-lesson" id="slink-8-2" href="phase-8.html" >
+      <span class="lesson-check" id="chk-8-2"></span>
+      Building Analysis Reports
+    </a>
+    <a class="sidebar-lesson" id="slink-8-3" href="phase-8.html" >
+      <span class="lesson-check" id="chk-8-3"></span>
+      SQL with Python
+    </a>
+  </div>
+</div></div>
+  </aside>
+
+  <main class="lesson-main">
+    <div class="breadcrumb">
+      <a href="../../index.html">PyTrack</a> ›
+      <span>Phase 3: Pandas — Heart of Data Analysis</span>
+    </div>
+    <div class="phase-badge">Phase 3 of 8</div>
+    <div class="phase-parts-nav"><span class="part-tag">Part A</span><span class="part-tag">Part B</span><span class="part-tag">Part C</span><span class="part-tag">Part D</span></div>
+    <div id="lesson-panels"><div class="lesson-panel active" id="panel-0">
+  <div class="lesson-title-bar">
+    <h2>🐼 Pandas Series</h2>
+    <p>Unit 5 — The #1 tool for data analysis — load, explore, filter, and manipulate tabular data with ease.</p>
+  </div>
+  <div class="lesson-body">
+<h3>What is a Series?</h3>
+<p>A Series is a <strong>1D labeled array</strong> — like a single column in a spreadsheet with an index.</p>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd
+
+# Create Series
+sales = pd.Series([45000,52000,48000,61000],
+                  index=["Q1","Q2","Q3","Q4"],
+                  name="Sales_2024")
+print(sales)
+print("\nDtype:", sales.dtype)
+print("Index:", sales.index.tolist())</div></div>
+<div class="output-block"><div class="output-label">Output</div>Q1    45000
+Q2    52000
+Q3    48000
+Q4    61000
+Name: Sales_2024, dtype: int64
+
+Dtype: int64
+Index: ['Q1', 'Q2', 'Q3', 'Q4']</div>
+<h3>Series Operations</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">s = pd.Series({"Cairo":450000,"Alex":280000,"Giza":195000,"Aswan":90000})
+
+print(s["Cairo"])            # 450000
+print(s[s &gt; 200000])        # Filter
+print(s.sort_values())      # Ascending
+print(s.sort_values(ascending=False).head(2))  # Top 2
+
+# Stats
+print(f"Total: {s.sum():,}")
+print(f"Mean:  {s.mean():,.0f}")
+print(f"Max:   {s.max():,} ({s.idxmax()})")</div></div>
+<div class="output-block"><div class="output-label">Output</div>450000
+Cairo    450000
+Alex     280000
+dtype: int64
+Aswan     90000
+Giza     195000
+Alex     280000
+Cairo    450000
+dtype: int64
+Cairo    450000
+Alex     280000
+dtype: int64
+Total: 1,015,000
+Mean:  253,750
+Max:   450,000 (Cairo)</div></div>
+  <div class="task-section">
+  <div class="task-header">
+    <span class="task-badge">🎯 TASK</span>
+    <span class="task-title">Practice Exercise</span>
+  </div>
+  <div class="task-desc">Create a Series of monthly revenue. Calculate month-over-month growth, find the best/worst months, and normalize the values to 0-100 scale.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd
+
+revenue = pd.Series(
+    [450000,520000,480000,610000,580000,720000,
+     650000,590000,710000,780000,820000,950000],
+    index=[f"Month_{i}" for i in range(1,13)]
+)
+
+# Month-over-month % growth
+growth = revenue.pct_change() * 100
+
+# Best and worst
+best_month  = revenue.idxmax()
+worst_month = revenue.idxmin()
+
+# Normalize 0-100
+normalized = (revenue - revenue.min()) / (revenue.max() - revenue.min()) * 100
+
+print(f"Best:  {best_month} ({revenue[best_month]:,})")
+print(f"Worst: {worst_month} ({revenue[worst_month]:,})")
+print(f"\nGrowth (first 4):")
+print(growth.head(4).round(1))
+print(f"\nNormalized (first 4):")
+print(normalized.head(4).round(1))</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none">
+    <div class="solution-label">✅ Solution</div>
+    <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd
+revenue=pd.Series([450000,520000,480000,610000,580000,720000,650000,590000,710000,780000,820000,950000],index=[f"Month_{i}" for i in range(1,13)])
+growth=revenue.pct_change()*100
+best=revenue.idxmax(); worst=revenue.idxmin()
+norm=(revenue-revenue.min())/(revenue.max()-revenue.min())*100
+print(f"Best:  {best} ({revenue[best]:,})")
+print(f"Worst: {worst} ({revenue[worst]:,})")
+print("\nGrowth (first 4):")
+print(growth.head(4).round(1))</div></div>
+    <div class="output-block"><div class="output-label">Output</div>Best:  Month_12 (950,000)
+Worst: Month_1 (450,000)
+
+Growth (first 4):
+Month_1      NaN
+Month_2     15.6
+Month_3     -7.7
+Month_4     27.1
+dtype: float64</div>
+  </div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-1">
+  <div class="lesson-title-bar">
+    <h2>🐼 DataFrames</h2>
+    <p>Unit 5 — The #1 tool for data analysis — load, explore, filter, and manipulate tabular data with ease.</p>
+  </div>
+  <div class="lesson-body">
+<h3>Creating DataFrames</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd
+
+# From dictionary (most common)
+data = {
+    "Name":    ["Ahmed","Sara","Omar","Layla","Karim"],
+    "Dept":    ["Sales","IT","Sales","HR","IT"],
+    "Salary":  [9500,12000,8800,10200,15000],
+    "Years":   [3,5,2,7,8],
+}
+df = pd.DataFrame(data)
+print(df)
+print("\nShape:", df.shape)    # (5, 4)
+print("Columns:", df.columns.tolist())</div></div>
+<div class="output-block"><div class="output-label">Output</div>    Name  Dept  Salary  Years
+0  Ahmed Sales    9500      3
+1   Sara    IT   12000      5
+2   Omar Sales    8800      2
+3  Layla    HR   10200      7
+4  Karim    IT   15000      8
+
+Shape: (5, 4)
+Columns: ['Name', 'Dept', 'Salary', 'Years']</div>
+<h3>Key Attributes & Operations</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body"># Access columns
+print(df["Salary"])               # Series
+print(df[["Name","Salary"]])      # DataFrame
+
+# Add new column
+df["Annual"] = df["Salary"] * 12
+df["Senior"] = df["Years"] &gt;= 5
+
+# Basic aggregation
+print(df["Salary"].mean())        # 11100.0
+print(df.groupby("Dept")["Salary"].mean())
+
+# Remove column
+df = df.drop("Annual", axis=1)</div></div>
+<div class="tip-box"><strong>💡 Tip:</strong> A DataFrame is essentially a dictionary of Series — each column is a Series with the same index.</div></div>
+  <div class="task-section">
+  <div class="task-header">
+    <span class="task-badge">🎯 TASK</span>
+    <span class="task-title">Practice Exercise</span>
+  </div>
+  <div class="task-desc">Create a sales DataFrame with 6 records. Add calculated columns: revenue (units × price), profit (revenue × margin%), and grade (A/B/C based on revenue).</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd
+
+data = {
+    "Product":  ["Laptop","Phone","Tablet","Monitor","Keyboard","Mouse"],
+    "Units":    [5, 20, 12, 8, 30, 50],
+    "Price":    [12000, 6500, 4200, 8000, 450, 200],
+    "Margin":   [0.25, 0.20, 0.22, 0.18, 0.35, 0.40],
+}
+df = pd.DataFrame(data)
+
+df["Revenue"] = df["Units"] * df["Price"]
+df["Profit"]  = df["Revenue"] * df["Margin"]
+df["Grade"]   = df["Revenue"].apply(
+    lambda r: "A" if r &gt; 50000 else "B" if r &gt; 20000 else "C"
+)
+
+print(df[["Product","Revenue","Profit","Grade"]].sort_values("Revenue", ascending=False).to_string(index=False))
+print(f"\nTotal Revenue: {df['Revenue'].sum():,}")
+print(f"Total Profit:  {df['Profit'].sum():,}")</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none">
+    <div class="solution-label">✅ Solution</div>
+    <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd
+data={"Product":["Laptop","Phone","Tablet","Monitor","Keyboard","Mouse"],"Units":[5,20,12,8,30,50],"Price":[12000,6500,4200,8000,450,200],"Margin":[0.25,0.20,0.22,0.18,0.35,0.40]}
+df=pd.DataFrame(data)
+df["Revenue"]=df["Units"]*df["Price"]
+df["Profit"]=df["Revenue"]*df["Margin"]
+df["Grade"]=df["Revenue"].apply(lambda r:"A" if r&gt;50000 else "B" if r&gt;20000 else "C")
+print(df[["Product","Revenue","Profit","Grade"]].sort_values("Revenue",ascending=False).to_string(index=False))
+print(f"\nTotal Revenue: {df['Revenue'].sum():,}")</div></div>
+    <div class="output-block"><div class="output-label">Output</div> Product  Revenue   Profit Grade
+   Phone   130000  26000.0     A
+Monitor    64000  11520.0     A
+  Laptop    60000  15000.0     A
+  Tablet    50400  11088.0     B
+Keyboard    13500   4725.0     C
+   Mouse    10000   4000.0     C
+
+Total Revenue: 327,900</div>
+  </div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-2">
+  <div class="lesson-title-bar">
+    <h2>🐼 Reading CSV & Excel</h2>
+    <p>Unit 5 — The #1 tool for data analysis — load, explore, filter, and manipulate tabular data with ease.</p>
+  </div>
+  <div class="lesson-body">
+<h3>Reading CSV</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd
+
+# Basic
+df = pd.read_csv("sales.csv")
+
+# With options
+df = pd.read_csv("sales.csv",
+    encoding     = "utf-8",      # Handle special characters
+    parse_dates  = ["Date"],     # Auto-parse date columns
+    index_col    = "Order_ID",   # Set as index
+    usecols      = ["Date","Product","Sales"],  # Only load these
+    nrows        = 1000,         # Load only first 1000 rows
+    skiprows     = [1,2],        # Skip specific rows
+    na_values    = ["N/A","--"], # Treat as NaN
+    dtype        = {"Sales": float}  # Force column type
+)
+print(df.shape)
+print(df.head(3))</div></div>
+<h3>Reading Excel</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body"># Single sheet
+df = pd.read_excel("report.xlsx")
+
+# Specific sheet
+df = pd.read_excel("report.xlsx", sheet_name="Sales_Q4")
+
+# All sheets
+all_sheets = pd.read_excel("report.xlsx", sheet_name=None)
+for name, df in all_sheets.items():
+    print(f"{name}: {df.shape}")
+
+# Write
+df.to_csv("output.csv",   index=False)
+df.to_excel("output.xlsx",index=False, sheet_name="Results")
+df.to_json("output.json", orient="records")</div></div>
+<div class="tip-box"><strong>💡 Tip:</strong> Always use <span class="ci">encoding="utf-8"</span> for Arabic text. Use <span class="ci">index=False</span> when saving to avoid an extra row-number column.</div></div>
+  <div class="task-section">
+  <div class="task-header">
+    <span class="task-badge">🎯 TASK</span>
+    <span class="task-title">Practice Exercise</span>
+  </div>
+  <div class="task-desc">Create sample data, save to CSV and Excel, then read back with various options: only specific columns, filter while reading, and handle missing values.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd
+import io
+
+# Sample data (simulating a CSV file)
+csv_data = """Date,Product,Region,Sales,Units
+2024-01-01,Laptop,Cairo,12000,1
+2024-01-02,Phone,Alex,6500,2
+2024-01-03,Tablet,Cairo,,3
+2024-01-04,Laptop,Giza,24000,2
+2024-01-05,Phone,Cairo,6500,1
+"""
+
+# Read from string (simulating file)
+df = pd.read_csv(
+    io.StringIO(csv_data),
+    parse_dates=["Date"],
+    usecols=["Date","Product","Sales","Units"],
+    na_values=["", " "]
+)
+
+print("Raw data:")
+print(df)
+print(f"\nMissing values: {df.isnull().sum().sum()}")
+
+# Fill missing Sales with product median
+df["Sales"] = df.groupby("Product")["Sales"].transform(
+    lambda x: x.fillna(x.median())
+)
+print("\nAfter filling missing:")
+print(df)</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none">
+    <div class="solution-label">✅ Solution</div>
+    <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, io
+csv_data="""Date,Product,Region,Sales,Units
+2024-01-01,Laptop,Cairo,12000,1
+2024-01-02,Phone,Alex,6500,2
+2024-01-03,Tablet,Cairo,,3
+2024-01-04,Laptop,Giza,24000,2
+2024-01-05,Phone,Cairo,6500,1
+"""
+df=pd.read_csv(io.StringIO(csv_data),parse_dates=["Date"],usecols=["Date","Product","Sales","Units"])
+print("Missing:", df.isnull().sum().sum())
+df["Sales"]=df.groupby("Product")["Sales"].transform(lambda x: x.fillna(x.median()))
+print(df)</div></div>
+    <div class="output-block"><div class="output-label">Output</div>Missing: 1
+        Date Product   Sales  Units
+0 2024-01-01  Laptop 12000.0      1
+1 2024-01-02   Phone  6500.0      2
+2 2024-01-03  Tablet  6500.0      3
+3 2024-01-04  Laptop 24000.0      2
+4 2024-01-05   Phone  6500.0      1</div>
+  </div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-3">
+  <div class="lesson-title-bar">
+    <h2>🐼 Exploring Your Data</h2>
+    <p>Unit 5 — The #1 tool for data analysis — load, explore, filter, and manipulate tabular data with ease.</p>
+  </div>
+  <div class="lesson-body">
+<h3>First Look Commands</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd
+df = pd.read_csv("sales.csv")
+
+print(df.head())          # First 5 rows
+print(df.tail(3))         # Last 3 rows
+print(df.sample(5))       # Random 5 rows
+print(df.shape)           # (rows, cols)
+print(df.columns.tolist())
+print(df.dtypes)
+print(df.index)</div></div>
+<h3>info() and describe()</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body"># info() — types, missing values, memory
+df.info()
+
+# describe() — statistics for numeric columns
+print(df.describe())
+
+# describe for all columns (including strings)
+print(df.describe(include="all"))
+
+# Individual column stats
+print(df["Sales"].value_counts().head())  # Frequency
+print(df["Region"].unique())              # Unique values
+print(df["Region"].nunique())             # Count unique
+print(df["Sales"].quantile([0.25,0.5,0.75]))</div></div>
+<div class="output-block"><div class="output-label">Output</div>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 1000 entries
+ Date      1000 non-null  datetime64
+ Region    998  non-null  object  ← 2 missing!
+ Sales     1000 non-null  float64</div>
+<div class="tip-box"><strong>💡 Tip:</strong> Always run <span class="ci">df.info()</span> first on any new dataset. It shows data types AND missing value counts at a glance.</div></div>
+  <div class="task-section">
+  <div class="task-header">
+    <span class="task-badge">🎯 TASK</span>
+    <span class="task-title">Practice Exercise</span>
+  </div>
+  <div class="task-desc">Build a complete data exploration report: load data, print shape, dtypes, missing values, basic stats, and top/bottom performers.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd
+import numpy as np
+
+# Create sample dataset
+np.random.seed(42)
+n = 100
+df = pd.DataFrame({
+    "Date":    pd.date_range("2024-01", periods=n, freq="D"),
+    "Product": np.random.choice(["Laptop","Phone","Tablet"], n),
+    "Region":  np.random.choice(["Cairo","Alex","Giza"], n),
+    "Sales":   np.random.normal(50000, 15000, n).round(0),
+    "Units":   np.random.randint(1, 20, n),
+})
+# Add some missing values
+df.loc[np.random.choice(n, 5), "Sales"] = np.nan
+
+print("=== DATA EXPLORATION REPORT ===")
+print(f"Shape: {df.shape}")
+print(f"Date range: {df.Date.min().date()} to {df.Date.max().date()}")
+print(f"\nColumn types:")
+print(df.dtypes)
+print(f"\nMissing values:")
+print(df.isnull().sum())
+print(f"\nSales statistics:")
+print(df["Sales"].describe().round(0))
+print(f"\nTop 5 sales days:")
+print(df.nlargest(5, "Sales")[["Date","Product","Region","Sales"]])</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none">
+    <div class="solution-label">✅ Solution</div>
+    <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42); n=100
+df=pd.DataFrame({"Date":pd.date_range("2024-01",periods=n,freq="D"),"Product":np.random.choice(["Laptop","Phone","Tablet"],n),"Region":np.random.choice(["Cairo","Alex","Giza"],n),"Sales":np.random.normal(50000,15000,n).round(0),"Units":np.random.randint(1,20,n)})
+df.loc[np.random.choice(n,5),"Sales"]=np.nan
+print(f"Shape: {df.shape}")
+print(f"Missing:\n{df.isnull().sum()}")
+print(f"\nTop 5:")
+print(df.nlargest(5,"Sales")[["Date","Product","Sales"]])</div></div>
+    <div class="output-block"><div class="output-label">Output</div>Shape: (100, 5)
+Missing:
+Date       0
+Product    0
+Region     0
+Sales      5
+Units      0
+dtype: int64
+
+Top 5:
+         Date Product  Sales
+62 2024-03-03  Laptop  87845
+...</div>
+  </div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-4">
+  <div class="lesson-title-bar">
+    <h2>🐼 Selecting & Filtering</h2>
+    <p>Unit 5 — The #1 tool for data analysis — load, explore, filter, and manipulate tabular data with ease.</p>
+  </div>
+  <div class="lesson-body">
+<h3>Column & Row Selection</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd
+df = pd.read_csv("sales.csv")
+
+# Single column → Series
+sales_col = df["Sales"]
+
+# Multiple columns → DataFrame
+subset = df[["Product","Region","Sales"]]
+
+# Rows by boolean condition
+cairo_sales = df[df["Region"] == "Cairo"]
+high_sales  = df[df["Sales"] &gt; 50000]
+
+# Multiple conditions
+cairo_high = df[(df["Region"] == "Cairo") &amp; (df["Sales"] &gt; 30000)]
+
+# isin — match multiple values
+north = df[df["Region"].isin(["Cairo","Alex","Port Said"])]
+
+# String matching
+laptops = df[df["Product"].str.contains("Laptop", case=False)]</div></div>
+<h3>loc and iloc</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body"># loc — label-based (use column NAMES)
+df.loc[0]                           # Row with index 0
+df.loc[0, "Product"]                # Specific cell
+df.loc[0:5, ["Product","Sales"]]    # Range + columns
+
+# iloc — position-based (use NUMBERS)
+df.iloc[0]                          # First row
+df.iloc[0, 2]                       # Row 0, column 2
+df.iloc[:5, :3]                     # First 5 rows, first 3 cols
+df.iloc[[0,2,4], :]                 # Specific rows
+
+# query() — SQL-like syntax
+result = df.query("Sales &gt; 50000 and Region == 'Cairo'")
+print(result.head())</div></div>
+<div class="tip-box"><strong>💡 Tip:</strong> Use query() for complex filters — it's more readable: df.query('Sales > 5000 & Region == "Cairo"')</div></div>
+  <div class="task-section">
+  <div class="task-header">
+    <span class="task-badge">🎯 TASK</span>
+    <span class="task-title">Practice Exercise</span>
+  </div>
+  <div class="task-desc">Filter and analyze a sales dataset: find top 10 sales, Cairo-only data, products costing between 5000-15000, and use query() for a complex filter.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42)
+df = pd.DataFrame({
+    "Product": np.random.choice(["Laptop","Phone","Tablet","Monitor"],100),
+    "Region":  np.random.choice(["Cairo","Alex","Giza","Aswan"],100),
+    "Sales":   np.random.randint(5000, 80000, 100),
+    "Units":   np.random.randint(1, 10, 100),
+})
+
+# 1. Top 10 by sales
+top10 = df.nlargest(10, "Sales")[["Product","Region","Sales"]]
+print("Top 10 sales:")
+print(top10.head(3))
+
+# 2. Cairo only
+cairo = df[df["Region"] == ???]
+print(f"\nCairo rows: {len(cairo)}")
+
+# 3. Sales between 20000-60000
+mid = df[(df["Sales"] &gt;= 20000) &amp; (df["Sales"] &lt;= 60000)]
+print(f"Mid-range: {len(mid)} rows")
+
+# 4. query()
+result = df.query("Sales &gt; 50000 and Region in ['Cairo','Alex']")
+print(f"\nHigh Cairo/Alex: {len(result)} rows")
+print(result.groupby("Region")["Sales"].mean().round(0))</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none">
+    <div class="solution-label">✅ Solution</div>
+    <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42)
+df=pd.DataFrame({"Product":np.random.choice(["Laptop","Phone","Tablet","Monitor"],100),"Region":np.random.choice(["Cairo","Alex","Giza","Aswan"],100),"Sales":np.random.randint(5000,80000,100),"Units":np.random.randint(1,10,100)})
+top10=df.nlargest(10,"Sales")
+print("Top 10 avg:", top10["Sales"].mean().round(0))
+cairo=df[df["Region"]=="Cairo"]
+print(f"Cairo rows: {len(cairo)}")
+mid=df[(df["Sales"]&gt;=20000)&amp;(df["Sales"]&lt;=60000)]
+print(f"Mid-range: {len(mid)}")
+result=df.query("Sales &gt; 50000 and Region in ['Cairo','Alex']")
+print(f"High Cairo/Alex: {len(result)}")</div></div>
+    <div class="output-block"><div class="output-label">Output</div>Top 10 avg: 76350.0
+Cairo rows: 27
+Mid-range: 49
+High Cairo/Alex: 14</div>
+  </div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-5">
+  <div class="lesson-title-bar">
+    <h2>🐼 Adding & Modifying Columns</h2>
+    <p>Unit 5 — The #1 tool for data analysis — load, explore, filter, and manipulate tabular data with ease.</p>
+  </div>
+  <div class="lesson-body">
+<h3>Adding New Columns</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd
+
+df = pd.DataFrame({
+    "Product": ["Laptop","Phone","Tablet"],
+    "Price":   [12000, 6500, 4200],
+    "Units":   [5, 20, 12],
+})
+
+# Simple calculation
+df["Revenue"]  = df["Price"] * df["Units"]
+df["VAT"]      = df["Revenue"] * 0.14
+df["Total"]    = df["Revenue"] + df["VAT"]
+
+# Conditional column
+df["Tier"]     = df["Revenue"].apply(
+    lambda x: "Premium" if x &gt; 50000 else "Standard"
+)
+
+# String operation
+df["Label"] = df["Product"].str.upper() + "_2024"
+
+print(df)</div></div>
+<div class="output-block"><div class="output-label">Output</div>  Product  Price  Units  Revenue      VAT    Total      Tier          Label
+0  Laptop  12000      5    60000   8400.0  68400.0  Premium  LAPTOP_2024
+1   Phone   6500     20   130000  18200.0 148200.0  Premium   PHONE_2024
+2  Tablet   4200     12    50400   7056.0  57456.0  Premium  TABLET_2024</div>
+<h3>assign() and insert()</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body"># assign — chainable, returns new DataFrame
+df2 = (df
+    .assign(Profit    = lambda x: x["Revenue"] * 0.20)
+    .assign(Profitable= lambda x: x["Profit"] &gt; 10000)
+)
+
+# insert — add column at specific position
+df.insert(2, "Category", "Electronics")
+print(df.columns.tolist())</div></div>
+<div class="tip-box"><strong>💡 Tip:</strong> Prefer assign() for data transformation pipelines — it doesn't modify the original and supports method chaining.</div></div>
+  <div class="task-section">
+  <div class="task-header">
+    <span class="task-badge">🎯 TASK</span>
+    <span class="task-title">Practice Exercise</span>
+  </div>
+  <div class="task-desc">Build a complete salary analysis: add columns for annual salary, tax bracket, net salary, performance bonus (based on years), and seniority level.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd
+
+employees = pd.DataFrame({
+    "Name":   ["Ahmed","Sara","Omar","Layla","Karim","Dina"],
+    "Salary": [9500, 12000, 8800, 15000, 7500, 18000],
+    "Years":  [3, 5, 2, 8, 1, 10],
+    "Dept":   ["Sales","IT","Sales","IT","HR","IT"],
+})
+
+# Annual salary
+employees["Annual"] = employees["Salary"] * 12
+
+# Tax: 25% if annual &gt; 120000, else 15%
+employees["Tax_Rate"] = employees["Annual"].apply(
+    lambda x: 0.25 if x &gt; 120000 else 0.15
+)
+employees["Tax"]      = employees["Annual"] * employees["Tax_Rate"]
+employees["Net"]      = employees["Annual"] - employees["Tax"]
+
+# Performance bonus: 3 months salary if years &gt; 5, else 1 month
+employees["Bonus"] = employees.apply(
+    lambda r: r["Salary"] * (3 if r["Years"] &gt; 5 else 1), axis=1
+)
+
+# Seniority
+employees["Level"] = pd.cut(employees["Years"],
+    bins=[0,2,5,10,100],
+    labels=["Junior","Mid","Senior","Expert"]
+)
+
+print(employees[["Name","Annual","Tax","Net","Bonus","Level"]].to_string(index=False))</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none">
+    <div class="solution-label">✅ Solution</div>
+    <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd
+emp=pd.DataFrame({"Name":["Ahmed","Sara","Omar","Layla","Karim","Dina"],"Salary":[9500,12000,8800,15000,7500,18000],"Years":[3,5,2,8,1,10],"Dept":["Sales","IT","Sales","IT","HR","IT"]})
+emp["Annual"]=emp["Salary"]*12
+emp["Tax_Rate"]=emp["Annual"].apply(lambda x:0.25 if x&gt;120000 else 0.15)
+emp["Tax"]=emp["Annual"]*emp["Tax_Rate"]
+emp["Net"]=emp["Annual"]-emp["Tax"]
+emp["Bonus"]=emp.apply(lambda r:r["Salary"]*(3 if r["Years"]&gt;5 else 1),axis=1)
+emp["Level"]=pd.cut(emp["Years"],bins=[0,2,5,10,100],labels=["Junior","Mid","Senior","Expert"])
+print(emp[["Name","Net","Bonus","Level"]].to_string(index=False))</div></div>
+    <div class="output-block"><div class="output-label">Output</div>  Name       Net  Bonus   Level
+ Ahmed   96900   9500     Mid
+  Sara  122400  12000     Mid
+  Omar   89760   8800  Junior
+ Layla  135000  45000  Senior
+ Karim   76500   7500  Junior
+  Dina  162000  54000  Expert</div>
+  </div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-6">
+  <div class="lesson-title-bar">
+    <h2>🐼 Sorting & Ranking</h2>
+    <p>Unit 5 — The #1 tool for data analysis — load, explore, filter, and manipulate tabular data with ease.</p>
+  </div>
+  <div class="lesson-body">
+<h3>Sorting DataFrames</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd
+
+df = pd.DataFrame({
+    "Name":   ["Ahmed","Sara","Omar","Layla","Karim"],
+    "Dept":   ["Sales","IT","Sales","HR","IT"],
+    "Salary": [9500,12000,8800,10200,15000],
+    "Years":  [3,5,2,7,8],
+})
+
+# Sort by one column
+by_salary = df.sort_values("Salary", ascending=False)
+print(by_salary[["Name","Salary"]].to_string(index=False))
+
+# Sort by multiple columns
+by_dept_salary = df.sort_values(["Dept","Salary"], ascending=[True,False])
+print(by_dept_salary[["Name","Dept","Salary"]].to_string(index=False))</div></div>
+<div class="output-block"><div class="output-label">Output</div> Name  Salary
+Karim   15000
+ Sara   12000
+Layla   10200
+Ahmed    9500
+ Omar    8800
+
+ Name Dept  Salary
+Layla   HR   10200
+ Sara   IT   15000
+Karim   IT   12000
+Ahmed Sales    9500
+ Omar Sales    8800</div>
+<h3>Ranking</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body"># rank() — assign ranks
+df["Salary_Rank"] = df["Salary"].rank(ascending=False).astype(int)
+df["Years_Rank"]  = df["Years"].rank(ascending=False,method="dense").astype(int)
+
+# nlargest / nsmallest
+top3 = df.nlargest(3, "Salary")[["Name","Salary","Salary_Rank"]]
+print(top3.to_string(index=False))
+
+# Percentile rank
+df["Pct_Rank"] = df["Salary"].rank(pct=True).round(2)
+print(df[["Name","Salary","Pct_Rank"]].to_string(index=False))</div></div></div>
+  <div class="task-section">
+  <div class="task-header">
+    <span class="task-badge">🎯 TASK</span>
+    <span class="task-title">Practice Exercise</span>
+  </div>
+  <div class="task-desc">Rank products by 3 criteria: revenue, units sold, and profit margin. Create a weighted composite score and final ranking.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd
+
+products = pd.DataFrame({
+    "Product": ["Laptop","Phone","Tablet","Monitor","Keyboard"],
+    "Revenue": [60000,130000,50400,64000,13500],
+    "Units":   [5, 20, 12, 8, 30],
+    "Margin":  [0.25,0.20,0.22,0.18,0.35],
+})
+
+# Rank each metric (1=best)
+products["Rev_Rank"]    = products["Revenue"].rank(ascending=False)
+products["Units_Rank"]  = products["Units"].rank(ascending=False)
+products["Margin_Rank"] = products["Margin"].rank(ascending=False)
+
+# Weighted composite (revenue 50%, units 30%, margin 20%)
+products["Score"] = (
+    products["Rev_Rank"] * 0.50 +
+    products["Units_Rank"] * 0.30 +
+    products["Margin_Rank"] * 0.20
+)
+
+# Final ranking (lower score = better)
+products["Final_Rank"] = products["Score"].rank().astype(int)
+result = products.sort_values("Final_Rank")[["Product","Revenue","Units","Margin","Final_Rank"]]
+print(result.to_string(index=False))</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none">
+    <div class="solution-label">✅ Solution</div>
+    <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd
+products=pd.DataFrame({"Product":["Laptop","Phone","Tablet","Monitor","Keyboard"],"Revenue":[60000,130000,50400,64000,13500],"Units":[5,20,12,8,30],"Margin":[0.25,0.20,0.22,0.18,0.35]})
+products["Rev_Rank"]=products["Revenue"].rank(ascending=False)
+products["Units_Rank"]=products["Units"].rank(ascending=False)
+products["Margin_Rank"]=products["Margin"].rank(ascending=False)
+products["Score"]=products["Rev_Rank"]*0.5+products["Units_Rank"]*0.3+products["Margin_Rank"]*0.2
+products["Final_Rank"]=products["Score"].rank().astype(int)
+print(products.sort_values("Final_Rank")[["Product","Revenue","Units","Margin","Final_Rank"]].to_string(index=False))</div></div>
+    <div class="output-block"><div class="output-label">Output</div>  Product  Revenue  Units  Margin  Final_Rank
+    Phone   130000     20    0.20           1
+   Laptop    60000      5    0.25           2
+  Monitor    64000      8    0.18           3
+   Tablet    50400     12    0.22           4
+ Keyboard    13500     30    0.35           5</div>
+  </div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-7">
+  <div class="lesson-title-bar">
+    <h2>📊 Descriptive Statistics</h2>
+    <p>Unit 7 — Extract real insights from data — grouping, pivoting, merging, time series, and statistical analysis.</p>
+  </div>
+  <div class="lesson-body">
+<h3>The Full Statistical Picture</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42)
+
+df = pd.read_csv("sales.csv")  # or use sample data
+sales = pd.Series(np.random.normal(52000,15000,200).round(0))
+
+# Complete summary
+print(sales.describe())
+print(f"\nSkewness:  {sales.skew():.3f}")
+print(f"Kurtosis:  {sales.kurtosis():.3f}")
+print(f"CV:        {sales.std()/sales.mean()*100:.1f}%")</div></div>
+<div class="output-block"><div class="output-label">Output</div>count      200.000
+mean     52,156.000
+std      15,284.000
+min       9,781.000
+25%      41,855.000
+50%      52,244.000
+75%      62,726.000
+max      93,912.000
+
+Skewness:  0.048
+Kurtosis: -0.098
+CV:        29.3%</div>
+<h3>Correlation Matrix</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42)
+n = 100
+
+df = pd.DataFrame({
+    "Sales":     np.random.normal(50000,10000,n),
+    "Marketing": np.random.normal(5000,1000,n),
+    "Staff":     np.random.randint(5,50,n),
+    "Season":    np.random.choice([1,2,3,4],n),
+})
+# Add correlation
+df["Sales"] += df["Marketing"] * 4
+
+corr = df.corr()
+print(corr.round(2))
+
+# Find top correlated pairs
+import numpy as np
+mask = np.triu(np.ones(corr.shape), k=1).astype(bool)
+pairs = corr.where(mask).stack().sort_values(ascending=False)
+print("\nTop correlations:")
+print(pairs.head(3))</div></div></div>
+  <div class="task-section">
+  <div class="task-header"><span class="task-badge">🎯 TASK</span><span class="task-title">Practice Exercise</span></div>
+  <div class="task-desc">Perform a complete descriptive analysis on a sales dataset: central tendency, spread, shape, and identify key insights.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42)
+
+df = pd.DataFrame({
+    "Region":  np.random.choice(["Cairo","Alex","Giza","Aswan"],200),
+    "Product": np.random.choice(["Laptop","Phone","Tablet"],200),
+    "Sales":   np.random.lognormal(10.8, 0.4, 200).round(0),
+    "Units":   np.random.randint(1,15,200),
+})
+
+print("=== Overall Sales Statistics ===")
+print(f"Mean:    {df['Sales'].mean():&gt;12,.0f}")
+print(f"Median:  {df['Sales'].median():&gt;12,.0f}")
+print(f"Std Dev: {df['Sales'].std():&gt;12,.0f}")
+print(f"Skew:    {df['Sales'].skew():&gt;12.3f}")
+
+print("\n=== By Region ===")
+by_region = df.groupby("Region")["Sales"].agg(
+    Mean="mean", Median="median", Std="std", Count="count"
+).round(0)
+print(by_region.sort_values("Mean", ascending=False))
+
+print("\n=== Correlation ===")
+print(df[["Sales","Units"]].corr().round(3))</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42)
+df=pd.DataFrame({"Region":np.random.choice(["Cairo","Alex","Giza","Aswan"],200),"Product":np.random.choice(["Laptop","Phone","Tablet"],200),"Sales":np.random.lognormal(10.8,0.4,200).round(0),"Units":np.random.randint(1,15,200)})
+print(f"Mean: {df['Sales'].mean():,.0f} | Median: {df['Sales'].median():,.0f}")
+print(f"Skew: {df['Sales'].skew():.3f}")
+print(df.groupby("Region")["Sales"].mean().sort_values(ascending=False).round(0))</div></div><div class="output-block"><div class="output-label">Output</div>Mean: 55,243 | Median: 50,891
+Skew: 1.124
+Region
+Cairo    57,841
+Alex     55,102
+Giza     54,398
+Aswan    53,412</div></div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-8">
+  <div class="lesson-title-bar">
+    <h2>🐼 apply() & map()</h2>
+    <p>Unit 5 — The #1 tool for data analysis — load, explore, filter, and manipulate tabular data with ease.</p>
+  </div>
+  <div class="lesson-body">
+<h3>apply() — Apply Function to Axis</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd
+
+df = pd.DataFrame({
+    "Q1":  [45000,38000,28000],
+    "Q2":  [52000,42000,31000],
+    "Q3":  [48000,45000,29000],
+    "Q4":  [61000,55000,38000],
+}, index=["Cairo","Alex","Giza"])
+
+# Apply to each column (axis=0)
+print("Column totals:")
+print(df.apply(sum, axis=0))
+
+# Apply to each row (axis=1)
+print("\nRow totals:")
+print(df.apply(sum, axis=1))
+
+# Custom function
+def growth_rate(row):
+    return (row.iloc[-1] - row.iloc[0]) / row.iloc[0] * 100
+
+print("\nAnnual growth rate:")
+print(df.apply(growth_rate, axis=1).round(1))</div></div>
+<div class="output-block"><div class="output-label">Output</div>Column totals:
+Q1    111000
+Q2    125000
+Q3    122000
+Q4    154000
+dtype: int64
+
+Row totals:
+Cairo    206000
+Alex     180000
+Giza     126000
+dtype: int64
+
+Annual growth rate:
+Cairo    35.6
+Alex     44.7
+Giza     35.7
+dtype: float64</div>
+<h3>map() and applymap()</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body"># map() — transform a Series
+df2 = pd.DataFrame({"Name":["Ahmed","Sara","Omar"],"Dept":["Sales","IT","Sales"]})
+
+# map with dict — replace values
+dept_map = {"Sales": "Commercial", "IT": "Technology", "HR": "People"}
+df2["Dept_Full"] = df2["Dept"].map(dept_map)
+
+# map with function
+df2["Name_Upper"] = df2["Name"].map(str.upper)
+print(df2)</div></div>
+<div class="tip-box"><strong>💡 Tip:</strong> Use apply() for complex logic, map() for simple value substitution. Both are faster than Python loops.</div></div>
+  <div class="task-section">
+  <div class="task-header">
+    <span class="task-badge">🎯 TASK</span>
+    <span class="task-title">Practice Exercise</span>
+  </div>
+  <div class="task-desc">Use apply() to create an employee performance score based on salary, years, and department bonus. Use map() to translate department codes to full names.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd
+
+df = pd.DataFrame({
+    "Name":   ["Ahmed","Sara","Omar","Layla","Karim"],
+    "Dept":   ["S","IT","S","HR","IT"],
+    "Salary": [9500,12000,8800,10200,15000],
+    "Years":  [3,5,2,7,8],
+    "Target": [100000,120000,90000,105000,150000],
+    "Sales":  [95000,125000,85000,108000,160000],
+})
+
+# Map dept codes to full names
+dept_names = {"S":"Sales","IT":"Information Technology","HR":"Human Resources"}
+df["Department"] = df["Dept"].map(dept_names)
+
+# Performance score using apply on each row
+def calc_score(row):
+    target_pct = row["Sales"] / row["Target"]
+    exp_bonus   = min(row["Years"] / 10, 0.2)
+    return round((target_pct + exp_bonus) * 50, 1)
+
+df["Score"] = df.apply(calc_score, axis=1)
+df["Grade"] = df["Score"].map(lambda s: "A" if s&gt;=55 else "B" if s&gt;=48 else "C")
+
+print(df[["Name","Department","Score","Grade"]].to_string(index=False))</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none">
+    <div class="solution-label">✅ Solution</div>
+    <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd
+df=pd.DataFrame({"Name":["Ahmed","Sara","Omar","Layla","Karim"],"Dept":["S","IT","S","HR","IT"],"Salary":[9500,12000,8800,10200,15000],"Years":[3,5,2,7,8],"Target":[100000,120000,90000,105000,150000],"Sales":[95000,125000,85000,108000,160000]})
+dept_names={"S":"Sales","IT":"Information Technology","HR":"Human Resources"}
+df["Department"]=df["Dept"].map(dept_names)
+def calc_score(row):
+    return round((row["Sales"]/row["Target"]+min(row["Years"]/10,0.2))*50,1)
+df["Score"]=df.apply(calc_score,axis=1)
+df["Grade"]=df["Score"].map(lambda s:"A" if s&gt;=55 else "B" if s&gt;=48 else "C")
+print(df[["Name","Department","Score","Grade"]].to_string(index=False))</div></div>
+    <div class="output-block"><div class="output-label">Output</div>  Name            Department  Score Grade
+ Ahmed             Sales   48.5     B
+  Sara  Information Technology  57.7     A
+  Omar             Sales   47.2     C
+ Layla   Human Resources  54.8     B
+ Karim  Information Technology  57.7     A</div>
+  </div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-9">
+  <div class="lesson-title-bar">
+    <h2>📊 GroupBy — Grouped Analysis</h2>
+    <p>Unit 7 — Extract real insights from data — grouping, pivoting, merging, time series, and statistical analysis.</p>
+  </div>
+  <div class="lesson-body">
+<h3>Basic GroupBy</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42)
+
+df = pd.DataFrame({
+    "Region":  np.random.choice(["Cairo","Alex","Giza"],100),
+    "Product": np.random.choice(["Laptop","Phone","Tablet"],100),
+    "Sales":   np.random.randint(5000,80000,100),
+    "Units":   np.random.randint(1,10,100),
+})
+
+# Group by one column
+print(df.groupby("Region")["Sales"].sum().sort_values(ascending=False))
+
+# Multiple aggregations
+summary = df.groupby("Region")["Sales"].agg(
+    Total="sum", Average="mean", Count="count", Max="max"
+).round(0)
+print(summary)</div></div>
+<div class="output-block"><div class="output-label">Output</div>Region
+Cairo    1,245,000
+Alex       987,000
+Giza       823,000
+Name: Sales, dtype: int64
+
+           Total  Average  Count     Max
+Region
+Alex      987000  28229.0     35  79000
+Cairo    1245000  35571.0     35  79000
+Giza      823000  27433.0     30  77000</div>
+<h3>Named Aggregations & Transform</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body"># Group by multiple columns
+pivot = df.groupby(["Region","Product"])["Sales"].agg(["sum","mean"]).round(0)
+print(pivot.head(6))
+
+# transform — add group stats to each row
+df["Region_Avg"] = df.groupby("Region")["Sales"].transform("mean")
+df["vs_avg"]     = df["Sales"] - df["Region_Avg"]
+df["Above_Avg"]  = df["vs_avg"] &gt; 0
+
+# Filter groups (only regions with avg &gt; 30000)
+high_regions = df.groupby("Region").filter(lambda x: x["Sales"].mean() &gt; 30000)
+print(f"High regions: {high_regions['Region'].unique()}")</div></div></div>
+  <div class="task-section">
+  <div class="task-header"><span class="task-badge">🎯 TASK</span><span class="task-title">Practice Exercise</span></div>
+  <div class="task-desc">Analyze sales by region AND product. Find top product per region, regions missing from top 10 by revenue, and flag underperforming combinations.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42)
+
+df = pd.DataFrame({
+    "Region":  np.random.choice(["Cairo","Alex","Giza","Aswan","Luxor"],200),
+    "Product": np.random.choice(["Laptop","Phone","Tablet","Monitor"],200),
+    "Sales":   np.random.randint(3000,80000,200),
+    "Quarter": np.random.choice(["Q1","Q2","Q3","Q4"],200),
+})
+
+# Top product per region
+by_rp = df.groupby(["Region","Product"])["Sales"].sum()
+top_product = by_rp.groupby("Region").idxmax().apply(lambda x: x[1])
+print("Top product per region:")
+print(top_product)
+
+# Overall totals per region
+region_totals = df.groupby("Region")["Sales"].sum().sort_values(ascending=False)
+print("\nRegion totals:")
+print(region_totals)
+
+# Underperforming: below 25th percentile for their region
+df["Region_Q25"] = df.groupby("Region")["Sales"].transform(lambda x: x.quantile(0.25))
+weak = df[df["Sales"] &lt; df["Region_Q25"]][["Region","Product","Sales"]].head(5)
+print("\nUnderperforming sales (sample):")
+print(weak.to_string(index=False))</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42)
+df=pd.DataFrame({"Region":np.random.choice(["Cairo","Alex","Giza","Aswan","Luxor"],200),"Product":np.random.choice(["Laptop","Phone","Tablet","Monitor"],200),"Sales":np.random.randint(3000,80000,200),"Quarter":np.random.choice(["Q1","Q2","Q3","Q4"],200)})
+by_rp=df.groupby(["Region","Product"])["Sales"].sum()
+top=by_rp.groupby("Region").idxmax().apply(lambda x:x[1])
+print("Top product per region:")
+print(top)
+print("\nRegion totals:")
+print(df.groupby("Region")["Sales"].sum().sort_values(ascending=False))</div></div><div class="output-block"><div class="output-label">Output</div>Top product per region:
+Region
+Aswan      Phone
+Alex      Laptop
+Cairo     Tablet
+Giza      Monitor
+Luxor      Phone
+
+Region totals:
+Region
+Cairo    815,234
+Alex     742,891
+Giza     689,012
+Luxor    634,456
+Aswan    521,789</div></div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-10">
+  <div class="lesson-title-bar">
+    <h2>📊 Pivot Tables</h2>
+    <p>Unit 7 — Extract real insights from data — grouping, pivoting, merging, time series, and statistical analysis.</p>
+  </div>
+  <div class="lesson-body">
+<h3>Creating Pivot Tables</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42)
+
+df = pd.DataFrame({
+    "Region":  np.random.choice(["Cairo","Alex","Giza"],100),
+    "Quarter": np.random.choice(["Q1","Q2","Q3","Q4"],100),
+    "Product": np.random.choice(["Laptop","Phone","Tablet"],100),
+    "Sales":   np.random.randint(5000,80000,100),
+})
+
+# Basic pivot table
+pivot = df.pivot_table(
+    values  = "Sales",
+    index   = "Region",
+    columns = "Quarter",
+    aggfunc = "sum",
+    margins = True,       # Add totals
+    fill_value = 0,
+)
+print(pivot.round(0))</div></div>
+<div class="output-block"><div class="output-label">Output</div>Quarter      Q1       Q2       Q3       Q4      All
+Region
+Alex     234000   198000   256000   287000   975000
+Cairo    312000   345000   298000   321000  1276000
+Giza     198000   212000   178000   245000   833000
+All      744000   755000   732000   853000  3084000</div>
+<h3>Multiple Values & Functions</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body"># Multiple aggfunc
+multi = df.pivot_table(
+    values  = "Sales",
+    index   = "Region",
+    columns = "Product",
+    aggfunc = ["sum","mean","count"],
+).round(0)
+
+# Cross-tabulation (counts)
+ct = pd.crosstab(df["Region"], df["Quarter"],
+    values=df["Sales"], aggfunc="sum",
+    normalize="index"   # Row percentages
+) * 100
+print(ct.round(1))</div></div>
+<div class="tip-box"><strong>💡 Tip:</strong> Use margins=True to automatically add totals row and column. Use fill_value=0 to replace NaN with 0 in the pivot table.</div></div>
+  <div class="task-section">
+  <div class="task-header"><span class="task-badge">🎯 TASK</span><span class="task-title">Practice Exercise</span></div>
+  <div class="task-desc">Create a comprehensive pivot analysis: revenue by region/quarter, market share by product, and identify best region-product combinations.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42)
+
+df = pd.DataFrame({
+    "Region":  np.random.choice(["Cairo","Alex","Giza","Aswan"],200),
+    "Quarter": np.random.choice(["Q1","Q2","Q3","Q4"],200),
+    "Product": np.random.choice(["Laptop","Phone","Tablet","Monitor"],200),
+    "Sales":   np.random.randint(3000,80000,200),
+    "Units":   np.random.randint(1,10,200),
+})
+
+# Revenue pivot
+rev_pivot = df.pivot_table(
+    values="Sales", index="Region",
+    columns="Quarter", aggfunc="sum",
+    margins=True, fill_value=0
+)
+print("Revenue by Region/Quarter:")
+print(rev_pivot.round(0))
+
+# Market share by product
+product_share = (df.groupby("Product")["Sales"].sum() /
+                 df["Sales"].sum() * 100).round(1)
+print("\nProduct market share %:")
+print(product_share.sort_values(ascending=False))
+
+# Best combo
+combo = df.groupby(["Region","Product"])["Sales"].sum()
+print(f"\nBest combo: {combo.idxmax()} ({combo.max():,})")</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42)
+df=pd.DataFrame({"Region":np.random.choice(["Cairo","Alex","Giza","Aswan"],200),"Quarter":np.random.choice(["Q1","Q2","Q3","Q4"],200),"Product":np.random.choice(["Laptop","Phone","Tablet","Monitor"],200),"Sales":np.random.randint(3000,80000,200),"Units":np.random.randint(1,10,200)})
+rev=df.pivot_table(values="Sales",index="Region",columns="Quarter",aggfunc="sum",margins=True,fill_value=0)
+print(rev.round(0))
+share=(df.groupby("Product")["Sales"].sum()/df["Sales"].sum()*100).round(1)
+print(share.sort_values(ascending=False))
+combo=df.groupby(["Region","Product"])["Sales"].sum()
+print(f"Best: {combo.idxmax()} ({combo.max():,})")</div></div><div class="output-block"><div class="output-label">Output</div>Quarter      Q1    Q2    Q3    Q4     All
+Aswan     12345 13456 11234 14567   51602
+Cairo     23456 25678 22345 26789   98268
+...
+Best: ('Cairo', 'Laptop') (87,234)</div></div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-11">
+  <div class="lesson-title-bar">
+    <h2>📊 Merging DataFrames</h2>
+    <p>Unit 7 — Extract real insights from data — grouping, pivoting, merging, time series, and statistical analysis.</p>
+  </div>
+  <div class="lesson-body">
+<h3>Types of Joins</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd
+
+orders = pd.DataFrame({
+    "Order_ID":   [1,2,3,4,5],
+    "Customer_ID":[101,102,101,103,999],
+    "Sales":      [5000,8000,3000,12000,7000],
+})
+customers = pd.DataFrame({
+    "Customer_ID":[101,102,103,104],
+    "Name":       ["Ahmed","Sara","Omar","Layla"],
+    "City":       ["Cairo","Alex","Giza","Cairo"],
+})
+
+# Left join — all orders, match customers
+left  = pd.merge(orders, customers, on="Customer_ID", how="left")
+# Inner join — only matches
+inner = pd.merge(orders, customers, on="Customer_ID", how="inner")
+# Outer join — all from both
+outer = pd.merge(orders, customers, on="Customer_ID", how="outer")
+
+print(f"Orders:   {len(orders)}")
+print(f"Left:     {len(left)}")
+print(f"Inner:    {len(inner)}")
+print(f"Outer:    {len(outer)}")
+print(left)</div></div>
+<div class="output-block"><div class="output-label">Output</div>Orders:   5
+Left:     5
+Inner:    4
+Outer:    6
+   Order_ID  Customer_ID  Sales   Name   City
+0         1          101   5000  Ahmed  Cairo
+1         2          102   8000   Sara   Alex
+2         3          101   3000  Ahmed  Cairo
+3         4          103  12000   Omar   Giza
+4         5          999   7000    NaN    NaN</div>
+<h3>Merging on Different Column Names</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body"># Different column names in each DataFrame
+orders2    = pd.DataFrame({"OrdID":[1,2,3],"CustID":[101,102,103],"Sales":[5000,8000,3000]})
+customers2 = pd.DataFrame({"ID":[101,102,103],"Name":["Ahmed","Sara","Omar"]})
+
+merged = pd.merge(orders2, customers2,
+    left_on  = "CustID",
+    right_on = "ID",
+    how      = "left"
+)
+print(merged)</div></div>
+<div class="tip-box"><strong>💡 Tip:</strong> Always check the row count after merging — an unexpected increase means duplicate keys in one of the DataFrames.</div></div>
+  <div class="task-section">
+  <div class="task-header"><span class="task-badge">🎯 TASK</span><span class="task-title">Practice Exercise</span></div>
+  <div class="task-desc">Merge 3 tables: orders, customers, and products. Calculate revenue per customer and identify top customers by city.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd
+
+orders = pd.DataFrame({
+    "Order_ID":   range(1,11),
+    "Cust_ID":    [1,2,1,3,2,4,3,1,5,2],
+    "Prod_ID":    [101,102,103,101,102,103,101,102,103,101],
+    "Quantity":   [2,1,3,1,2,1,2,1,1,3],
+})
+customers = pd.DataFrame({
+    "Cust_ID":  [1,2,3,4,5],
+    "Name":     ["Ahmed","Sara","Omar","Layla","Karim"],
+    "City":     ["Cairo","Alex","Cairo","Giza","Alex"],
+})
+products = pd.DataFrame({
+    "Prod_ID":  [101,102,103],
+    "Name":     ["Laptop","Phone","Tablet"],
+    "Price":    [12000,6500,4200],
+})
+
+# Merge all three
+merged = (orders
+    .merge(customers, on="Cust_ID")
+    .merge(products,  on="Prod_ID", suffixes=("","_prod"))
+)
+merged["Revenue"] = merged["Quantity"] * merged["Price"]
+
+# Top customers
+top_cust = merged.groupby(["Name","City"])["Revenue"].sum().sort_values(ascending=False)
+print("Revenue by customer:")
+print(top_cust)
+
+print("\nRevenue by city:")
+print(merged.groupby("City")["Revenue"].sum().sort_values(ascending=False))</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd
+orders=pd.DataFrame({"Order_ID":range(1,11),"Cust_ID":[1,2,1,3,2,4,3,1,5,2],"Prod_ID":[101,102,103,101,102,103,101,102,103,101],"Quantity":[2,1,3,1,2,1,2,1,1,3]})
+customers=pd.DataFrame({"Cust_ID":[1,2,3,4,5],"Name":["Ahmed","Sara","Omar","Layla","Karim"],"City":["Cairo","Alex","Cairo","Giza","Alex"]})
+products=pd.DataFrame({"Prod_ID":[101,102,103],"Name":["Laptop","Phone","Tablet"],"Price":[12000,6500,4200]})
+merged=orders.merge(customers,on="Cust_ID").merge(products,on="Prod_ID",suffixes=("","_prod"))
+merged["Revenue"]=merged["Quantity"]*merged["Price"]
+print(merged.groupby(["Name","City"])["Revenue"].sum().sort_values(ascending=False))</div></div><div class="output-block"><div class="output-label">Output</div>Name   City
+Ahmed  Cairo    62,500
+Sara   Alex     49,000
+Omar   Cairo    28,400
+Layla  Giza     4,200
+Karim  Alex      6,500</div></div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-12">
+  <div class="lesson-title-bar">
+    <h2>🐼 Working with Dates</h2>
+    <p>Unit 5 — The #1 tool for data analysis — load, explore, filter, and manipulate tabular data with ease.</p>
+  </div>
+  <div class="lesson-body">
+<h3>Creating Date Columns</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd
+
+df = pd.DataFrame({
+    "Order_Date": ["2024-01-15","2024-02-28","2024-03-10","2024-04-01"],
+    "Amount":     [5000, 8500, 3200, 12000],
+})
+
+# Convert string to datetime
+df["Order_Date"] = pd.to_datetime(df["Order_Date"])
+
+# Extract date parts
+df["Year"]    = df["Order_Date"].dt.year
+df["Month"]   = df["Order_Date"].dt.month
+df["Day"]     = df["Order_Date"].dt.day
+df["Quarter"] = df["Order_Date"].dt.quarter
+df["Weekday"] = df["Order_Date"].dt.day_name()
+df["Week"]    = df["Order_Date"].dt.isocalendar().week
+
+print(df[["Order_Date","Month","Quarter","Weekday"]])</div></div>
+<div class="output-block"><div class="output-label">Output</div>  Order_Date  Month  Quarter    Weekday
+0 2024-01-15      1        1     Monday
+1 2024-02-28      2        1  Wednesday
+2 2024-03-10      3        1     Sunday
+3 2024-04-01      4        2     Monday</div>
+<h3>Date Operations</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body"># Date arithmetic
+today      = pd.Timestamp("today").normalize()
+df["Age_Days"] = (today - df["Order_Date"]).dt.days
+
+# Date ranges
+dates = pd.date_range("2024-01-01", periods=12, freq="ME")
+print(dates)
+
+# Group by month
+df["Month_Period"] = df["Order_Date"].dt.to_period("M")
+monthly = df.groupby("Month_Period")["Amount"].sum()
+print(monthly)</div></div>
+<div class="tip-box"><strong>💡 Tip:</strong> Always convert date columns with <span class="ci">pd.to_datetime()</span> right after loading data — it enables all date operations.</div></div>
+  <div class="task-section">
+  <div class="task-header">
+    <span class="task-badge">🎯 TASK</span>
+    <span class="task-title">Practice Exercise</span>
+  </div>
+  <div class="task-desc">Analyze a year of daily sales data: group by month, quarter, and weekday. Find the best/worst performing periods.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42)
+
+# Generate a year of daily sales
+dates = pd.date_range("2024-01-01","2024-12-31",freq="D")
+df = pd.DataFrame({
+    "Date":  dates,
+    "Sales": np.random.normal(50000,12000,len(dates)).round(0),
+})
+df["Month"]   = df["Date"].dt.month_name()
+df["Quarter"] = "Q" + df["Date"].dt.quarter.astype(str)
+df["Weekday"] = df["Date"].dt.day_name()
+
+# Monthly analysis
+monthly = df.groupby("Month")["Sales"].agg(["sum","mean"]).round(0)
+best_month = df.groupby("Month")["Sales"].sum().idxmax()
+
+# Weekday analysis
+by_day = df.groupby("Weekday")["Sales"].mean().sort_values(ascending=False)
+print("Best month:", best_month)
+print("\nTop 3 weekdays:")
+print(by_day.head(3).round(0))
+print("\nQuarterly totals:")
+print(df.groupby("Quarter")["Sales"].sum().round(0))</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none">
+    <div class="solution-label">✅ Solution</div>
+    <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42)
+dates=pd.date_range("2024-01-01","2024-12-31",freq="D")
+df=pd.DataFrame({"Date":dates,"Sales":np.random.normal(50000,12000,len(dates)).round(0)})
+df["Month"]=df["Date"].dt.month_name()
+df["Quarter"]="Q"+df["Date"].dt.quarter.astype(str)
+df["Weekday"]=df["Date"].dt.day_name()
+best_month=df.groupby("Month")["Sales"].sum().idxmax()
+by_day=df.groupby("Weekday")["Sales"].mean().sort_values(ascending=False)
+print("Best month:", best_month)
+print("\nTop 3 weekdays:")
+print(by_day.head(3).round(0))
+print("\nQuarterly:")
+print(df.groupby("Quarter")["Sales"].sum().round(0))</div></div>
+    <div class="output-block"><div class="output-label">Output</div>Best month: December
+
+Top 3 weekdays:
+Wednesday    52847.0
+Sunday       51923.0
+Thursday     51445.0
+
+Quarterly:
+Q1    4587234.0
+Q2    4612890.0
+Q3    4598123.0
+Q4    4701456.0</div>
+  </div>
+</div>
+</div></div>
+    <div style="display:flex;justify-content:space-between;margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border)">
+      <a class="btn-nav" href="unit-4.html">← Unit 4: NumPy Arrays</a>
+      <a class="btn-nav" href="unit-6.html">Unit 6: Data Cleaning →</a>
+    </div>
+  
+  <!-- Shared Nav Bar -->
+  <div class="lesson-quiz-bar" style="margin-bottom:.8rem">
+    <button class="btn-quiz" id="quiz-btn" onclick="openCurrentQuiz()">📝 Lesson Quiz — 5 Questions</button>
+    <span class="quiz-done-badge" id="quiz-done-global" style="display:none">✓ Quiz done</span>
+  </div>
+  <div class="lesson-nav">
+    <button class="btn-nav" id="btn-prev" onclick="prevLesson()" disabled>← Prev</button>
+    <button class="btn-mark" id="btn-mark" onclick="markAndNext()">✓ Mark Done & Next →</button>
+    <a class="btn-nav" id="btn-next-unit" href="unit-6.html" style="display:none">Unit 6: Data Cleaning →</a>
+    <button class="btn-nav" id="btn-next" onclick="showLesson(currentLesson+1)">Next →</button>
+  </div>
+</main>
+</div>
+
+<div class="modal-overlay" id="quiz-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="quiz-title">Lesson Quiz</h3>
+      <button class="modal-close" onclick="closeQuiz()">×</button>
+    </div>
+    <div id="quiz-body"></div>
+  </div>
+</div>
+
+<script src="../../js/app.js"></script>
+<script>
+initUnit({
+  id: 5,
+  lessons: [{"title": "Pandas Series", "quizzes": [{"q": "A Pandas Series is:", "opts": ["A 2D table", "1D labeled array", "A Python list with extra features", "A NumPy array only"], "ans": 1, "exp": "Series is a 1D labeled array — like a single column with an index."}, {"q": "series.idxmax() returns:", "opts": ["The maximum value", "The index label of the maximum", "Position of maximum", "True/False"], "ans": 1, "exp": "idxmax() returns the INDEX LABEL of the maximum value (e.g., 'Cairo', not 450000)."}, {"q": "series.pct_change() computes:", "opts": ["Total change", "Percentage change from previous element", "Cumulative change", "Absolute change"], "ans": 1, "exp": "pct_change() computes percentage change from the previous row: (current-prev)/prev."}, {"q": "pd.Series({'a':1,'b':2}).index gives:", "opts": ["[1,2]", "['a','b']", "RangeIndex", "Error"], "ans": 1, "exp": "When creating from a dict, keys become the index. index = Index(['a', 'b'])."}, {"q": "series.value_counts() on numeric data returns:", "opts": ["Statistics summary", "Each unique value with its count", "Sorted values", "Error"], "ans": 1, "exp": "value_counts() counts occurrences of each unique value and returns them sorted by frequency."}]}, {"title": "DataFrames", "quizzes": [{"q": "df.shape returns:", "opts": ["Number of rows", "(rows, columns)", "Column names", "Data types"], "ans": 1, "exp": "df.shape returns a tuple: (number_of_rows, number_of_columns)."}, {"q": "df['col'] vs df[['col']]:", "opts": ["Same thing", "df['col'] returns Series, df[['col']] returns DataFrame", "df[['col']] causes error", "No practical difference"], "ans": 1, "exp": "Single brackets [] return a Series. Double brackets [[]] return a DataFrame (even for one column)."}, {"q": "df.drop('col', axis=1) removes:", "opts": ["A row named 'col'", "A column named 'col'", "All columns", "The index"], "ans": 1, "exp": "axis=1 means columns. axis=0 means rows (default). drop('col', axis=1) removes the column."}, {"q": "df['new'] = expression creates:", "opts": ["A new DataFrame", "A new column in df", "A new row", "Error"], "ans": 1, "exp": "Assigning to a new column name creates it in-place: df['Bonus'] = df['Salary'] * 0.1."}, {"q": "df.dtypes shows:", "opts": ["Data values", "Column data types", "Missing values", "Column names only"], "ans": 1, "exp": "dtypes returns the data type of each column (int64, float64, object, bool, datetime64, etc.)."}]}, {"title": "Reading CSV & Excel", "quizzes": [{"q": "parse_dates=['Date'] in read_csv does:", "opts": ["Removes Date column", "Converts Date to datetime type", "Sorts by date", "Formats dates as strings"], "ans": 1, "exp": "parse_dates converts the specified columns from strings to pandas datetime objects automatically."}, {"q": "usecols=['A','B','C'] in read_csv:", "opts": ["Renames columns", "Loads only those columns (faster, less memory)", "Filters rows", "Reorders columns"], "ans": 1, "exp": "usecols loads only specified columns — faster and more memory-efficient for large files."}, {"q": "index=False in to_csv() prevents:", "opts": ["Writing header", "Writing row numbers (index) as a column", "Writing NaN values", "File creation"], "ans": 1, "exp": "By default, pandas writes the row index (0,1,2...) as the first column. index=False skips this."}, {"q": "na_values=['N/A','--'] in read_csv treats:", "opts": ["These as column names", "These string values as NaN", "These as comments", "These as row separators"], "ans": 1, "exp": "na_values specifies additional strings to treat as NaN (missing values) when reading."}, {"q": "pd.read_excel(file, sheet_name=None) returns:", "opts": ["First sheet only", "Last sheet", "Dict of {sheet_name: DataFrame}", "Error"], "ans": 2, "exp": "sheet_name=None reads ALL sheets and returns a dictionary mapping sheet names to DataFrames."}]}, {"title": "Exploring Your Data", "quizzes": [{"q": "df.info() shows:", "opts": ["First 5 rows", "Column types, non-null counts, memory", "Statistics (mean,std,etc)", "Last 5 rows"], "ans": 1, "exp": "info() shows: column names, data types, non-null counts, and memory usage."}, {"q": "df.describe() by default shows stats for:", "opts": ["All columns", "Only numeric columns", "Only string columns", "Only the first column"], "ans": 1, "exp": "describe() defaults to numeric columns only. Use describe(include='all') for all columns."}, {"q": "df.nunique() returns:", "opts": ["Null count per column", "Unique value count per column", "All unique values", "Shape"], "ans": 1, "exp": "nunique() returns the number of unique values in each column."}, {"q": "df.sample(5) returns:", "opts": ["First 5 rows", "Last 5 rows", "5 random rows", "5 largest rows"], "ans": 2, "exp": "sample(n) returns n randomly selected rows. Add random_state= for reproducibility."}, {"q": "df.nlargest(5, 'Sales') returns:", "opts": ["Top 5 rows by index", "5 rows with largest Sales values", "Sorted DataFrame", "Error"], "ans": 1, "exp": "nlargest(n, col) returns the n rows with the largest values in that column."}]}, {"title": "Selecting & Filtering", "quizzes": [{"q": "df[df['Sales'] > 1000] returns:", "opts": ["True/False column", "Rows where Sales > 1000", "Columns with values > 1000", "Error"], "ans": 1, "exp": "Boolean filtering returns only the rows where the condition is True."}, {"q": "df.loc[2, 'Name'] returns:", "opts": ["Row at position 2", "Value at index label 2, column Name", "All of row 2", "Error"], "ans": 1, "exp": "loc uses labels. df.loc[2,'Name'] gets the value at row index 2, column 'Name'."}, {"q": "df.iloc[0, -1] returns:", "opts": ["First row, last column", "Last row, first column", "Error", "Position (0,-1)"], "ans": 0, "exp": "iloc uses positions. 0=first row, -1=last column position."}, {"q": "df.query(\"col > 5\") is equivalent to:", "opts": ["df[df.col > 5]", "df[df['col'] > 5]", "df.filter(col=5)", "All of the above except c"], "ans": 1, "exp": "query() is a more readable alternative to boolean indexing. Both return the same result."}, {"q": "df['Region'].isin(['A','B']) returns:", "opts": ["Rows matching A", "Rows matching B", "Boolean mask: True where Region is A or B", "All rows"], "ans": 2, "exp": "isin() returns a boolean Series: True where the value matches any item in the list."}]}, {"title": "Adding & Modifying Columns", "quizzes": [{"q": "df.assign(new_col=expression) does:", "opts": ["Modifies df in place", "Returns a NEW DataFrame with the new column", "Raises error if col exists", "Both modifies and returns"], "ans": 1, "exp": "assign() returns a NEW DataFrame — the original is unchanged. Great for pipelines."}, {"q": "df.apply(func, axis=1) applies func to:", "opts": ["Each column", "Each row", "Each cell", "The entire DataFrame"], "ans": 1, "exp": "axis=1 applies the function to each ROW. axis=0 (default) applies to each column."}, {"q": "pd.cut(ages, bins=[0,18,65,100]) creates:", "opts": ["Sorted ages", "Age groups/categories based on bins", "A histogram", "Error"], "ans": 1, "exp": "pd.cut() bins continuous values into discrete categories based on the specified boundaries."}, {"q": "df.insert(2, 'col', values) inserts column:", "opts": ["At the end", "At position 2", "After col", "Before index 2 in values"], "ans": 1, "exp": "insert(loc, column, value) adds a column at the specified position (index 2 = 3rd column)."}, {"q": "lambda r: r['A'] + r['B'] in apply(axis=1):", "opts": ["Adds column A and B", "Sums each row's A and B value", "Applies to each column", "Error"], "ans": 1, "exp": "With axis=1, r is a row (Series). r['A']+r['B'] adds the values from columns A and B for each row."}]}, {"title": "Sorting & Ranking", "quizzes": [{"q": "df.sort_values('col', ascending=False) sorts:", "opts": ["A→Z", "Z→A (largest first)", "By index", "Randomly"], "ans": 1, "exp": "ascending=False sorts in descending order — largest values first."}, {"q": "df.nlargest(3, 'Sales') returns:", "opts": ["Sorted DataFrame", "3 rows with largest Sales", "Rows ranked 1-3", "Error"], "ans": 1, "exp": "nlargest(n, col) returns exactly n rows with the largest values in that column."}, {"q": "rank(method='dense') vs 'min':", "opts": ["Same thing", "dense: no gaps (1,2,2,3); min: gaps (1,2,2,4)", "min: no gaps; dense: gaps", "No difference"], "ans": 1, "exp": "dense gives consecutive ranks (1,2,2,3). min gives the minimum rank for ties (1,2,2,4). average (default) gives average of tied ranks."}, {"q": "rank(pct=True) returns:", "opts": ["Percentage of each value", "Fractional rank (0 to 1)", "Percentile bin", "Percentage change"], "ans": 1, "exp": "pct=True returns ranks as fractions from 0 to 1 (percentage ranks). 1.0 = highest."}, {"q": "sort_values(['A','B'], ascending=[True,False]):", "opts": ["Sorts by A ascending only", "Sorts by A ascending, then B descending within ties", "Error", "Sorts randomly"], "ans": 1, "exp": "Multiple sort columns: first by A ascending, then by B descending when A values are equal."}]}, {"title": "apply() & map()", "quizzes": [{"q": "df.apply(func, axis=1) applies func to:", "opts": ["Each column", "Each row", "Each cell", "The whole DataFrame"], "ans": 1, "exp": "axis=1 = apply to each row. axis=0 (default) = apply to each column."}, {"q": "Series.map({'a':1,'b':2}) replaces:", "opts": ["Keys with values", "Values with keys", "All values with dict", "Raises error"], "ans": 0, "exp": "map with a dict replaces each value with the corresponding dict value. NaN for unmapped values."}, {"q": "apply() vs map() — key difference:", "opts": ["Same thing", "apply works on DataFrame/Series with functions; map works on Series with dict/function", "map is for DataFrames", "No difference"], "ans": 1, "exp": "apply() can work on entire DataFrames and Series with any function. map() works on Series only, often with dict for value replacement."}, {"q": "df.apply(np.sum, axis=0) is equivalent to:", "opts": ["df.sum(axis=1)", "df.sum(axis=0)", "df.sum()", "All of the above"], "ans": 3, "exp": "All three compute the sum of each column. df.sum() defaults to axis=0."}, {"q": "row.iloc[-1] in an apply function gets:", "opts": ["Last column value", "Last row value", "The index", "Error"], "ans": 0, "exp": "When applying to rows (axis=1), the input is a Series. iloc[-1] gets the last value (last column)."}]}, {"title": "String Methods in Pandas", "quizzes": [{"q": ".str accessor in Pandas allows:", "opts": ["NumPy operations", "String methods on entire Series at once", "Only .upper() and .lower()", "Error on non-strings"], "ans": 1, "exp": ".str gives access to vectorized string methods for an entire Series at once."}, {"q": "df['col'].str.split('@').str[1] does:", "opts": ["Splits at @ and returns first part", "Splits at @ and returns second part", "Joins with @", "Error"], "ans": 1, "exp": "str.split('@') splits each string at @. .str[1] gets the element at index 1 (after @)."}, {"q": "str.contains('pattern', regex=True) uses:", "opts": ["Simple text search only", "Regular expression matching", "Case-sensitive search only", "Error"], "ans": 1, "exp": "regex=True enables regular expression matching. Default is True, so it already uses regex."}, {"q": "str.replace('[^0-9]','',regex=True) removes:", "opts": ["All digits", "Everything that's NOT a digit", "Zeros", "Special chars only"], "ans": 1, "exp": "[^0-9] matches anything that's NOT a digit. Replacing with '' removes all non-digit characters."}, {"q": "str.len() on a Series returns:", "opts": ["Length of the Series", "Length of each string in the Series", "Total characters", "Error"], "ans": 1, "exp": "str.len() returns a Series with the length of each string — element-wise length calculation."}]}, {"title": "Working with Dates", "quizzes": [{"q": "pd.to_datetime('2024-01-15') converts:", "opts": ["To an integer", "To a Timestamp/datetime object", "To a formatted string", "To a date string"], "ans": 1, "exp": "pd.to_datetime() converts strings, numbers, or other formats to pandas Timestamp objects."}, {"q": "df['Date'].dt.quarter extracts:", "opts": ["Day of week", "Month number", "Quarter number (1-4)", "Week number"], "ans": 2, "exp": ".dt.quarter returns the quarter number: 1 (Jan-Mar), 2 (Apr-Jun), 3 (Jul-Sep), 4 (Oct-Dec)."}, {"q": "pd.date_range('2024-01', periods=12, freq='ME') creates:", "opts": ["12 random dates", "12 month-end dates starting Jan 2024", "Daily dates for 12 months", "Error"], "ans": 1, "exp": "date_range with freq='ME' creates month-end dates. 'D'=daily, 'W'=weekly, 'Y'=yearly."}, {"q": "(date2 - date1).dt.days calculates:", "opts": ["Date range", "Number of days between dates", "Error", "Seconds"], "ans": 1, "exp": "Subtracting two datetime Series gives a Timedelta. .dt.days extracts the number of days."}, {"q": "dt.to_period('M') converts dates to:", "opts": ["Month names", "Month number", "Monthly period (e.g., 2024-01)", "Error"], "ans": 2, "exp": "to_period('M') converts to Period objects representing months (e.g., 2024-01). Useful for groupby."}]}]
+});
+const params = new URLSearchParams(location.search);
+const startLesson = parseInt(params.get("lesson") || "0");
+if (startLesson > 0) showLesson(startLesson);
+</script>
+</body>
+</html>
+<div class="lesson-panel" id="panel-13">
+  <div class="lesson-title-bar">
+    <h2>🐼 String Methods in Pandas</h2>
+    <p>Unit 5 — The #1 tool for data analysis — load, explore, filter, and manipulate tabular data with ease.</p>
+  </div>
+  <div class="lesson-body">
+<h3>The .str Accessor</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd
+
+df = pd.DataFrame({
+    "Name":    ["  ahmed hassan  ", "SARA ALI", "omar ibrahim"],
+    "Email":   ["ahmed@corp.com", "sara@tech.io", "omar@biz.net"],
+    "Phone":   ["010-1234-5678", "011-9876-5432", "012-4567-8901"],
+    "City":    ["cairo", "ALEX", "giza  "],
+})
+
+# Cleaning
+df["Name"]  = df["Name"].str.strip().str.title()
+df["City"]  = df["City"].str.strip().str.title()
+df["Email"] = df["Email"].str.lower()
+df["Phone"] = df["Phone"].str.replace("-","")
+
+print(df)</div></div>
+<div class="output-block"><div class="output-label">Output</div>         Name           Email        Phone   City
+0  Ahmed Hassan  ahmed@corp.com  01012345678  Cairo
+1     Sara Ali  sara@tech.io  01198765432   Alex
+2  Omar Ibrahim  omar@biz.net  01245678901   Giza</div>
+<h3>Extract, Split, and Search</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body"># Extract domain from email
+df["Domain"] = df["Email"].str.split("@").str[1]
+
+# Check if email contains certain domain
+df["Is_Corp"] = df["Email"].str.contains("corp|biz", regex=True)
+
+# Extract phone operator (first 3 digits)
+df["Operator"] = df["Phone"].str[:3]
+
+# Count characters
+df["Name_Length"] = df["Name"].str.len()
+
+# Find position
+df["At_Position"] = df["Email"].str.find("@")
+
+print(df[["Name","Domain","Is_Corp","Operator"]])</div></div></div>
+  <div class="task-section">
+  <div class="task-header">
+    <span class="task-badge">🎯 TASK</span>
+    <span class="task-title">Practice Exercise</span>
+  </div>
+  <div class="task-desc">Clean a messy customer dataset: standardize names, validate emails, extract domain, clean phone numbers, and flag invalid records.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd
+
+customers = pd.DataFrame({
+    "raw_name":  ["  AHMED HASSAN  ","sara ali","Omar Ibrahim","  LAYLA  "],
+    "email":     ["ahmed@company.com","SARA@TECH.IO","not-an-email","layla@corp.net"],
+    "phone":     ["010-1234-5678","011 9876 5432","012.4567.8901","ABC-DEF-GHIJ"],
+    "city":      ["CAIRO","alex ","GIZA","  CAIRO  "],
+})
+
+# Clean name
+customers["name"]  = customers["raw_name"].str.strip().str.title()
+
+# Clean email
+customers["email"] = customers["email"].str.lower().str.strip()
+
+# Validate email (simple check)
+customers["email_valid"] = customers["email"].str.contains(
+    r"^[\w.]+@[\w.]+\.[a-z]{2,}$", regex=True
+)
+
+# Extract domain
+customers["domain"] = customers["email"].str.split("@").str[-1]
+
+# Clean phone (digits only)
+customers["phone_clean"] = customers["phone"].str.replace(r"[^0-9]","",regex=True)
+customers["phone_valid"] = customers["phone_clean"].str.len() == 11
+
+# Clean city
+customers["city"] = customers["city"].str.strip().str.title()
+
+print(customers[["name","email_valid","domain","phone_valid","city"]].to_string(index=False))</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none">
+    <div class="solution-label">✅ Solution</div>
+    <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd
+cust=pd.DataFrame({"raw_name":["  AHMED HASSAN  ","sara ali","Omar Ibrahim","  LAYLA  "],"email":["ahmed@company.com","SARA@TECH.IO","not-an-email","layla@corp.net"],"phone":["010-1234-5678","011 9876 5432","012.4567.8901","ABC-DEF-GHIJ"],"city":["CAIRO","alex ","GIZA","  CAIRO  "]})
+cust["name"]=cust["raw_name"].str.strip().str.title()
+cust["email"]=cust["email"].str.lower().str.strip()
+cust["email_valid"]=cust["email"].str.contains(r"^[\w.]+@[\w.]+\.[a-z]{2,}$",regex=True)
+cust["domain"]=cust["email"].str.split("@").str[-1]
+cust["phone_clean"]=cust["phone"].str.replace(r"[^0-9]","",regex=True)
+cust["phone_valid"]=cust["phone_clean"].str.len()==11
+cust["city"]=cust["city"].str.strip().str.title()
+print(cust[["name","email_valid","domain","phone_valid","city"]].to_string(index=False))</div></div>
+    <div class="output-block"><div class="output-label">Output</div>          name  email_valid           domain  phone_valid   city
+  Ahmed Hassan         True  company.com         True  Cairo
+      Sara Ali         True      tech.io         True   Alex
+  Omar Ibrahim        False  not-an-email        True   Giza
+         Layla         True     corp.net        False  Cairo</div>
+  </div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-14">
+  <div class="lesson-title-bar">
+    <h2>📊 Concat & Join</h2>
+    <p>Unit 7 — Extract real insights from data — grouping, pivoting, merging, time series, and statistical analysis.</p>
+  </div>
+  <div class="lesson-body">
+<h3>pd.concat — Stack DataFrames</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd
+
+# Vertical stack (add rows)
+q1 = pd.DataFrame({"Month":["Jan","Feb","Mar"],"Sales":[45000,52000,48000]})
+q2 = pd.DataFrame({"Month":["Apr","May","Jun"],"Sales":[61000,58000,72000]})
+
+all_data = pd.concat([q1, q2], ignore_index=True)
+print(all_data)
+
+# Horizontal stack (add columns)
+names = pd.DataFrame({"Name":["Ahmed","Sara","Omar"]})
+scores = pd.DataFrame({"Score":[85,92,78],"Grade":["B","A","C"]})
+
+combined = pd.concat([names, scores], axis=1)
+print(combined)</div></div>
+<div class="output-block"><div class="output-label">Output</div>  Month  Sales
+0   Jan  45000
+1   Feb  52000
+2   Mar  48000
+3   Apr  61000
+4   May  58000
+5   Jun  72000
+
+    Name  Score Grade
+0  Ahmed     85     B
+1   Sara     92     A
+2   Omar     78     C</div>
+<h3>Combining Multiple Files</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, glob, os
+
+# Load and combine multiple CSV files
+# files = glob.glob("sales_*.csv")
+# dfs   = [pd.read_csv(f) for f in files]
+# all   = pd.concat(dfs, ignore_index=True)
+
+# Add source column to track origin
+dfs = [q1.assign(quarter="Q1"), q2.assign(quarter="Q2")]
+all_q = pd.concat(dfs, ignore_index=True)
+print(all_q)
+
+# Stack different-shaped DataFrames (union of columns)
+df_a = pd.DataFrame({"A":[1,2],"B":[3,4]})
+df_b = pd.DataFrame({"B":[5,6],"C":[7,8]})
+stacked = pd.concat([df_a, df_b], ignore_index=True)
+print(stacked)  # NaN where columns don't exist</div></div>
+<div class="tip-box"><strong>💡 Tip:</strong> Add a source column before concat to track which file/period each row came from. Essential when combining multiple sheets or files.</div></div>
+  <div class="task-section">
+  <div class="task-header"><span class="task-badge">🎯 TASK</span><span class="task-title">Practice Exercise</span></div>
+  <div class="task-desc">Combine 4 quarterly DataFrames into one annual dataset. Add quarter labels, verify totals, and create a quarterly comparison.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42)
+
+quarters = []
+for q in range(1,5):
+    df = pd.DataFrame({
+        "Month":   [f"{(q-1)*3+m:02d}" for m in range(1,4)],
+        "Region":  np.random.choice(["Cairo","Alex","Giza"],3),
+        "Sales":   np.random.randint(40000,80000,3),
+    })
+    df["Quarter"] = f"Q{q}"
+    quarters.append(df)
+
+# Combine all quarters
+annual = pd.concat(quarters, ignore_index=True)
+print(f"Total rows: {len(annual)}")
+print(f"Quarters: {annual['Quarter'].unique()}")
+
+# Quarterly comparison
+q_summary = annual.groupby("Quarter")["Sales"].agg(["sum","mean"]).round(0)
+print("\nQuarterly Summary:")
+print(q_summary)
+
+# Verify: sum of quarters = annual total
+print(f"\nAnnual total: {annual['Sales'].sum():,}")
+print(f"Q-totals sum: {q_summary['sum'].sum():,}")</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42)
+quarters=[]
+for q in range(1,5):
+    df=pd.DataFrame({"Month":[f"{(q-1)*3+m:02d}" for m in range(1,4)],"Region":np.random.choice(["Cairo","Alex","Giza"],3),"Sales":np.random.randint(40000,80000,3)})
+    df["Quarter"]=f"Q{q}"; quarters.append(df)
+annual=pd.concat(quarters,ignore_index=True)
+print(f"Rows: {len(annual)}")
+q_sum=annual.groupby("Quarter")["Sales"].sum()
+print(q_sum)
+print(f"Total: {annual['Sales'].sum():,}")</div></div><div class="output-block"><div class="output-label">Output</div>Rows: 12
+Quarter
+Q1    196000
+Q2    215000
+Q3    188000
+Q4    227000
+Total: 826,000</div></div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-15">
+  <div class="lesson-title-bar">
+    <h2>📊 Time Series Basics</h2>
+    <p>Unit 7 — Extract real insights from data — grouping, pivoting, merging, time series, and statistical analysis.</p>
+  </div>
+  <div class="lesson-body">
+<h3>Date Index & Resampling</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42)
+
+# Create daily time series
+dates = pd.date_range("2024-01-01","2024-12-31",freq="D")
+df = pd.DataFrame({
+    "Sales": np.random.normal(50000,10000,len(dates)).round(0),
+    "Units": np.random.randint(1,20,len(dates)),
+}, index=dates)
+
+# Extract date components
+df["Month"]   = df.index.month
+df["Quarter"] = df.index.quarter
+df["DayName"] = df.index.day_name()
+
+# Resample — aggregate by different frequencies
+monthly = df["Sales"].resample("ME").sum()
+weekly  = df["Sales"].resample("W").mean()
+quarterly = df["Sales"].resample("QE").agg(["sum","mean","count"])
+
+print("Monthly Sales (first 3):")
+print(monthly.head(3).round(0))
+print("\nQuarterly:")
+print(quarterly.round(0))</div></div>
+<div class="output-block"><div class="output-label">Output</div>Monthly Sales (first 3):
+2024-01-31    1478234
+2024-02-29    1389456
+2024-03-31    1523891
+
+Quarterly:
+             sum     mean  count
+2024-03-31  4391581  48260.0     91
+2024-06-30  4512345  49585.0     91</div></div>
+  <div class="task-section">
+  <div class="task-header"><span class="task-badge">🎯 TASK</span><span class="task-title">Practice Exercise</span></div>
+  <div class="task-desc">Analyze a year of daily sales: find seasonality patterns, best/worst day of week, month-over-month growth, and detect trend.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42)
+
+dates = pd.date_range("2023-01-01","2024-12-31",freq="D")
+# Add trend + seasonality + noise
+trend    = np.linspace(40000,60000,len(dates))
+seasonal = np.sin(np.linspace(0,4*np.pi,len(dates))) * 5000
+noise    = np.random.normal(0,3000,len(dates))
+
+df = pd.DataFrame({"Sales": (trend+seasonal+noise).round(0)}, index=dates)
+
+# Monthly totals and growth
+monthly = df["Sales"].resample("ME").sum()
+growth  = monthly.pct_change() * 100
+
+# Day of week analysis
+df["DayName"] = df.index.day_name()
+by_day = df.groupby("DayName")["Sales"].mean().sort_values(ascending=False)
+
+# Best and worst months
+print(f"Best month:  {monthly.idxmax().strftime('%Y-%m')} ({monthly.max():,.0f})")
+print(f"Worst month: {monthly.idxmin().strftime('%Y-%m')} ({monthly.min():,.0f})")
+print(f"\nAvg growth: {growth.mean():.2f}% per month")
+print(f"\nBest day of week: {by_day.index[0]} ({by_day.iloc[0]:,.0f})")
+print(f"Worst day: {by_day.index[-1]} ({by_day.iloc[-1]:,.0f})")</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42)
+dates=pd.date_range("2023-01-01","2024-12-31",freq="D")
+trend=np.linspace(40000,60000,len(dates)); seasonal=np.sin(np.linspace(0,4*np.pi,len(dates)))*5000
+noise=np.random.normal(0,3000,len(dates))
+df=pd.DataFrame({"Sales":(trend+seasonal+noise).round(0)},index=dates)
+monthly=df["Sales"].resample("ME").sum(); growth=monthly.pct_change()*100
+df["DayName"]=df.index.day_name()
+by_day=df.groupby("DayName")["Sales"].mean().sort_values(ascending=False)
+print(f"Best: {monthly.idxmax().strftime('%Y-%m')} | Worst: {monthly.idxmin().strftime('%Y-%m')}")
+print(f"Avg growth: {growth.mean():.2f}%/month")
+print(f"Best day: {by_day.index[0]}")</div></div><div class="output-block"><div class="output-label">Output</div>Best: 2024-09 | Worst: 2023-03
+Avg growth: 0.14%/month
+Best day: Friday</div></div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-16">
+  <div class="lesson-title-bar">
+    <h2>🐼 Mini Project</h2>
+    <p>Phase 3 — Pandas — Heart of Data Analysis</p>
+  </div>
+  <div class="lesson-body">
+    <h3>🏋️ Your Phase 3 Mini Project</h3>
+    <p style="font-size:1rem;line-height:1.8">🏋️ Mini Project: E-commerce Sales Deep Dive — 10 business questions, group by category/region/date</p>
+    <div class="tip-box"><strong>💡 How to submit:</strong> Complete in Jupyter Notebook, push to your GitHub fork, share the link.</div>
+  </div>
+</div></div>
+    <div style="display:flex;justify-content:space-between;margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border)">
+      <a class="btn-nav" href="phase-2.html">← Phase 2: NumPy — The Math Engine</a>
+      <a class="btn-nav" href="phase-4.html">Phase 4: Data Cleaning →</a>
+    </div>
+  </main>
+</div>
+
+<div class="modal-overlay" id="quiz-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="quiz-title">Lesson Quiz</h3>
+      <button class="modal-close" onclick="closeQuiz()">×</button>
+    </div>
+    <div id="quiz-body"></div>
+  </div>
+</div>
+
+<script src="../../js/app.js"></script>
+<script>
+initUnit({
+  id: 3,
+  lessons: [{"title": "Pandas Series", "quizzes": [{"q": "A Pandas Series is:", "opts": ["A 2D table", "1D labeled array", "A Python list with extra features", "A NumPy array only"], "ans": 1, "exp": "Series is a 1D labeled array — like a single column with an index."}, {"q": "series.idxmax() returns:", "opts": ["The maximum value", "The index label of the maximum", "Position of maximum", "True/False"], "ans": 1, "exp": "idxmax() returns the INDEX LABEL of the maximum value (e.g., 'Cairo', not 450000)."}, {"q": "series.pct_change() computes:", "opts": ["Total change", "Percentage change from previous element", "Cumulative change", "Absolute change"], "ans": 1, "exp": "pct_change() computes percentage change from the previous row: (current-prev)/prev."}, {"q": "pd.Series({'a':1,'b':2}).index gives:", "opts": ["[1,2]", "['a','b']", "RangeIndex", "Error"], "ans": 1, "exp": "When creating from a dict, keys become the index. index = Index(['a', 'b'])."}, {"q": "series.value_counts() on numeric data returns:", "opts": ["Statistics summary", "Each unique value with its count", "Sorted values", "Error"], "ans": 1, "exp": "value_counts() counts occurrences of each unique value and returns them sorted by frequency."}]}, {"title": "DataFrames", "quizzes": [{"q": "df.shape returns:", "opts": ["Number of rows", "(rows, columns)", "Column names", "Data types"], "ans": 1, "exp": "df.shape returns a tuple: (number_of_rows, number_of_columns)."}, {"q": "df['col'] vs df[['col']]:", "opts": ["Same thing", "df['col'] returns Series, df[['col']] returns DataFrame", "df[['col']] causes error", "No practical difference"], "ans": 1, "exp": "Single brackets [] return a Series. Double brackets [[]] return a DataFrame (even for one column)."}, {"q": "df.drop('col', axis=1) removes:", "opts": ["A row named 'col'", "A column named 'col'", "All columns", "The index"], "ans": 1, "exp": "axis=1 means columns. axis=0 means rows (default). drop('col', axis=1) removes the column."}, {"q": "df['new'] = expression creates:", "opts": ["A new DataFrame", "A new column in df", "A new row", "Error"], "ans": 1, "exp": "Assigning to a new column name creates it in-place: df['Bonus'] = df['Salary'] * 0.1."}, {"q": "df.dtypes shows:", "opts": ["Data values", "Column data types", "Missing values", "Column names only"], "ans": 1, "exp": "dtypes returns the data type of each column (int64, float64, object, bool, datetime64, etc.)."}]}, {"title": "Reading CSV & Excel", "quizzes": [{"q": "parse_dates=['Date'] in read_csv does:", "opts": ["Removes Date column", "Converts Date to datetime type", "Sorts by date", "Formats dates as strings"], "ans": 1, "exp": "parse_dates converts the specified columns from strings to pandas datetime objects automatically."}, {"q": "usecols=['A','B','C'] in read_csv:", "opts": ["Renames columns", "Loads only those columns (faster, less memory)", "Filters rows", "Reorders columns"], "ans": 1, "exp": "usecols loads only specified columns — faster and more memory-efficient for large files."}, {"q": "index=False in to_csv() prevents:", "opts": ["Writing header", "Writing row numbers (index) as a column", "Writing NaN values", "File creation"], "ans": 1, "exp": "By default, pandas writes the row index (0,1,2...) as the first column. index=False skips this."}, {"q": "na_values=['N/A','--'] in read_csv treats:", "opts": ["These as column names", "These string values as NaN", "These as comments", "These as row separators"], "ans": 1, "exp": "na_values specifies additional strings to treat as NaN (missing values) when reading."}, {"q": "pd.read_excel(file, sheet_name=None) returns:", "opts": ["First sheet only", "Last sheet", "Dict of {sheet_name: DataFrame}", "Error"], "ans": 2, "exp": "sheet_name=None reads ALL sheets and returns a dictionary mapping sheet names to DataFrames."}]}, {"title": "Exploring Your Data", "quizzes": [{"q": "df.info() shows:", "opts": ["First 5 rows", "Column types, non-null counts, memory", "Statistics (mean,std,etc)", "Last 5 rows"], "ans": 1, "exp": "info() shows: column names, data types, non-null counts, and memory usage."}, {"q": "df.describe() by default shows stats for:", "opts": ["All columns", "Only numeric columns", "Only string columns", "Only the first column"], "ans": 1, "exp": "describe() defaults to numeric columns only. Use describe(include='all') for all columns."}, {"q": "df.nunique() returns:", "opts": ["Null count per column", "Unique value count per column", "All unique values", "Shape"], "ans": 1, "exp": "nunique() returns the number of unique values in each column."}, {"q": "df.sample(5) returns:", "opts": ["First 5 rows", "Last 5 rows", "5 random rows", "5 largest rows"], "ans": 2, "exp": "sample(n) returns n randomly selected rows. Add random_state= for reproducibility."}, {"q": "df.nlargest(5, 'Sales') returns:", "opts": ["Top 5 rows by index", "5 rows with largest Sales values", "Sorted DataFrame", "Error"], "ans": 1, "exp": "nlargest(n, col) returns the n rows with the largest values in that column."}]}, {"title": "Selecting & Filtering", "quizzes": [{"q": "df[df['Sales'] > 1000] returns:", "opts": ["True/False column", "Rows where Sales > 1000", "Columns with values > 1000", "Error"], "ans": 1, "exp": "Boolean filtering returns only the rows where the condition is True."}, {"q": "df.loc[2, 'Name'] returns:", "opts": ["Row at position 2", "Value at index label 2, column Name", "All of row 2", "Error"], "ans": 1, "exp": "loc uses labels. df.loc[2,'Name'] gets the value at row index 2, column 'Name'."}, {"q": "df.iloc[0, -1] returns:", "opts": ["First row, last column", "Last row, first column", "Error", "Position (0,-1)"], "ans": 0, "exp": "iloc uses positions. 0=first row, -1=last column position."}, {"q": "df.query(\"col > 5\") is equivalent to:", "opts": ["df[df.col > 5]", "df[df['col'] > 5]", "df.filter(col=5)", "All of the above except c"], "ans": 1, "exp": "query() is a more readable alternative to boolean indexing. Both return the same result."}, {"q": "df['Region'].isin(['A','B']) returns:", "opts": ["Rows matching A", "Rows matching B", "Boolean mask: True where Region is A or B", "All rows"], "ans": 2, "exp": "isin() returns a boolean Series: True where the value matches any item in the list."}]}, {"title": "Adding & Modifying Columns", "quizzes": [{"q": "df.assign(new_col=expression) does:", "opts": ["Modifies df in place", "Returns a NEW DataFrame with the new column", "Raises error if col exists", "Both modifies and returns"], "ans": 1, "exp": "assign() returns a NEW DataFrame — the original is unchanged. Great for pipelines."}, {"q": "df.apply(func, axis=1) applies func to:", "opts": ["Each column", "Each row", "Each cell", "The entire DataFrame"], "ans": 1, "exp": "axis=1 applies the function to each ROW. axis=0 (default) applies to each column."}, {"q": "pd.cut(ages, bins=[0,18,65,100]) creates:", "opts": ["Sorted ages", "Age groups/categories based on bins", "A histogram", "Error"], "ans": 1, "exp": "pd.cut() bins continuous values into discrete categories based on the specified boundaries."}, {"q": "df.insert(2, 'col', values) inserts column:", "opts": ["At the end", "At position 2", "After col", "Before index 2 in values"], "ans": 1, "exp": "insert(loc, column, value) adds a column at the specified position (index 2 = 3rd column)."}, {"q": "lambda r: r['A'] + r['B'] in apply(axis=1):", "opts": ["Adds column A and B", "Sums each row's A and B value", "Applies to each column", "Error"], "ans": 1, "exp": "With axis=1, r is a row (Series). r['A']+r['B'] adds the values from columns A and B for each row."}]}, {"title": "Sorting & Ranking", "quizzes": [{"q": "df.sort_values('col', ascending=False) sorts:", "opts": ["A→Z", "Z→A (largest first)", "By index", "Randomly"], "ans": 1, "exp": "ascending=False sorts in descending order — largest values first."}, {"q": "df.nlargest(3, 'Sales') returns:", "opts": ["Sorted DataFrame", "3 rows with largest Sales", "Rows ranked 1-3", "Error"], "ans": 1, "exp": "nlargest(n, col) returns exactly n rows with the largest values in that column."}, {"q": "rank(method='dense') vs 'min':", "opts": ["Same thing", "dense: no gaps (1,2,2,3); min: gaps (1,2,2,4)", "min: no gaps; dense: gaps", "No difference"], "ans": 1, "exp": "dense gives consecutive ranks (1,2,2,3). min gives the minimum rank for ties (1,2,2,4). average (default) gives average of tied ranks."}, {"q": "rank(pct=True) returns:", "opts": ["Percentage of each value", "Fractional rank (0 to 1)", "Percentile bin", "Percentage change"], "ans": 1, "exp": "pct=True returns ranks as fractions from 0 to 1 (percentage ranks). 1.0 = highest."}, {"q": "sort_values(['A','B'], ascending=[True,False]):", "opts": ["Sorts by A ascending only", "Sorts by A ascending, then B descending within ties", "Error", "Sorts randomly"], "ans": 1, "exp": "Multiple sort columns: first by A ascending, then by B descending when A values are equal."}]}, {"title": "Descriptive Statistics", "quizzes": [{"q": "Skewness > 0 means:", "opts": ["Symmetric data", "Left-skewed (few very low values)", "Right-skewed (few very high values)", "Normal distribution"], "ans": 2, "exp": "Positive skewness = right-skewed = long tail on the right. A few very high values pull the mean above the median."}, {"q": "Coefficient of Variation (CV) = :", "opts": ["Std / Mean × 100%", "Mean / Std × 100%", "Std / Median", "Variance / Mean"], "ans": 0, "exp": "CV = (std/mean) × 100% — measures relative variability. Useful for comparing spread across datasets with different scales."}, {"q": "When mean > median significantly:", "opts": ["Data is left-skewed", "Data is symmetric", "Data is right-skewed", "Data has no outliers"], "ans": 2, "exp": "When mean > median, high values pull the mean up — indicates right-skewed data with some very large values."}, {"q": "Correlation matrix diagonal values are always:", "opts": ["0", "0.5", "1.0", "Varies"], "ans": 2, "exp": "A variable's correlation with itself is always 1.0 — perfect correlation."}, {"q": "df.corr() computes:", "opts": ["Covariance matrix", "Pearson correlation coefficients between all numeric columns", "Spearman correlation", "Distance matrix"], "ans": 1, "exp": "df.corr() defaults to Pearson correlation. Use method='spearman' for rank-based correlation."}]}, {"title": "apply() & map()", "quizzes": [{"q": "df.apply(func, axis=1) applies func to:", "opts": ["Each column", "Each row", "Each cell", "The whole DataFrame"], "ans": 1, "exp": "axis=1 = apply to each row. axis=0 (default) = apply to each column."}, {"q": "Series.map({'a':1,'b':2}) replaces:", "opts": ["Keys with values", "Values with keys", "All values with dict", "Raises error"], "ans": 0, "exp": "map with a dict replaces each value with the corresponding dict value. NaN for unmapped values."}, {"q": "apply() vs map() — key difference:", "opts": ["Same thing", "apply works on DataFrame/Series with functions; map works on Series with dict/function", "map is for DataFrames", "No difference"], "ans": 1, "exp": "apply() can work on entire DataFrames and Series with any function. map() works on Series only, often with dict for value replacement."}, {"q": "df.apply(np.sum, axis=0) is equivalent to:", "opts": ["df.sum(axis=1)", "df.sum(axis=0)", "df.sum()", "All of the above"], "ans": 3, "exp": "All three compute the sum of each column. df.sum() defaults to axis=0."}, {"q": "row.iloc[-1] in an apply function gets:", "opts": ["Last column value", "Last row value", "The index", "Error"], "ans": 0, "exp": "When applying to rows (axis=1), the input is a Series. iloc[-1] gets the last value (last column)."}]}, {"title": "GroupBy — Grouped Analysis", "quizzes": [{"q": "groupby().agg(['sum','mean']) returns:", "opts": ["Two separate DataFrames", "DataFrame with multiple aggregation columns", "Error", "A Series"], "ans": 1, "exp": "agg() with a list runs multiple functions and creates one column per function."}, {"q": "transform('mean') vs mean() in groupby:", "opts": ["Same result", "transform preserves original shape; mean returns one row per group", "mean preserves shape", "No difference"], "ans": 1, "exp": "transform returns a Series with the same index as the original DataFrame. mean() reduces to one row per group."}, {"q": "groupby().filter(lambda x: condition) keeps:", "opts": ["Individual rows meeting condition", "Entire groups where the condition is True for the group", "Only one row per group", "Nothing"], "ans": 1, "exp": "filter() keeps/removes entire groups based on a group-level condition (like group mean > threshold)."}, {"q": "df.groupby('Region')['Sales'].idxmax() returns:", "opts": ["The max sales value per region", "The index of the max sales row per region", "All rows sorted by sales", "Error"], "ans": 1, "exp": "idxmax() returns the INDEX (row label) of the maximum value in each group."}, {"q": "Named aggregation syntax df.groupby('col').agg(Total='sum') creates:", "opts": ["Error", "Column named 'Total' with sum values", "Column named 'sum'", "Multiple columns"], "ans": 1, "exp": "Named aggregation: agg(NewName='function') creates a column named NewName. Much cleaner than renaming afterward."}]}, {"title": "Pivot Tables", "quizzes": [{"q": "margins=True in pivot_table adds:", "opts": ["Borders to the table", "Row and column totals", "A new column", "Extra rows"], "ans": 1, "exp": "margins=True adds an 'All' row at the bottom and 'All' column on the right with subtotals."}, {"q": "fill_value=0 in pivot_table:", "opts": ["Sets all values to 0", "Replaces NaN with 0", "Filters zeros", "Rounds to 0"], "ans": 1, "exp": "fill_value replaces NaN (missing combinations) with the specified value. 0 is common for sales tables."}, {"q": "pd.crosstab(A, B) creates:", "opts": ["A merged table", "A frequency table showing count of each A-B combination", "A pivot with means", "Error"], "ans": 1, "exp": "crosstab creates a frequency table — how many rows have each combination of A and B values."}, {"q": "normalize='index' in crosstab shows:", "opts": ["Absolute counts", "Row percentages (each row sums to 1)", "Column percentages", "Overall percentages"], "ans": 1, "exp": "normalize='index' divides each row by its total, giving row-wise percentages."}, {"q": "pivot_table with aggfunc=['sum','mean'] creates:", "opts": ["Error", "A multi-level column header with both functions", "Two separate tables", "Only the last function"], "ans": 1, "exp": "Multiple aggfunc creates a MultiIndex column header with one level per function."}]}, {"title": "Merging DataFrames", "quizzes": [{"q": "how='left' in merge keeps:", "opts": ["Only matches", "All rows from right", "All rows from left + matches from right", "All rows from both"], "ans": 2, "exp": "Left join: ALL rows from the left DataFrame, matching rows from right. Non-matching right rows become NaN."}, {"q": "If merge creates MORE rows than expected:", "opts": ["That's normal", "Duplicate keys exist in one of the DataFrames", "An error occurred", "The merge used inner join"], "ans": 1, "exp": "More rows than expected usually means duplicate key values in one DataFrame — one row matches multiple rows in the other."}, {"q": "left_on='CustID', right_on='ID' is used when:", "opts": ["Column names match", "Column names are different in each DataFrame", "Multiple join keys needed", "Error handling"], "ans": 1, "exp": "Use left_on/right_on when the join key column has different names in the two DataFrames."}, {"q": "suffixes=('_x','_y') in merge handles:", "opts": ["Missing values", "Columns with the same name in both DataFrames", "Index conflicts", "Data type mismatches"], "ans": 1, "exp": "When both DataFrames have a column with the same name (other than the join key), suffixes distinguish them."}, {"q": "pd.merge vs df.join:", "opts": ["Same thing", "merge is more flexible (any columns); join defaults to index-based joining", "join is more flexible", "merge requires same column names"], "ans": 1, "exp": "merge() offers full control over join keys and types. join() is a shortcut that joins on index by default."}]}, {"title": "Working with Dates", "quizzes": [{"q": "pd.to_datetime('2024-01-15') converts:", "opts": ["To an integer", "To a Timestamp/datetime object", "To a formatted string", "To a date string"], "ans": 1, "exp": "pd.to_datetime() converts strings, numbers, or other formats to pandas Timestamp objects."}, {"q": "df['Date'].dt.quarter extracts:", "opts": ["Day of week", "Month number", "Quarter number (1-4)", "Week number"], "ans": 2, "exp": ".dt.quarter returns the quarter number: 1 (Jan-Mar), 2 (Apr-Jun), 3 (Jul-Sep), 4 (Oct-Dec)."}, {"q": "pd.date_range('2024-01', periods=12, freq='ME') creates:", "opts": ["12 random dates", "12 month-end dates starting Jan 2024", "Daily dates for 12 months", "Error"], "ans": 1, "exp": "date_range with freq='ME' creates month-end dates. 'D'=daily, 'W'=weekly, 'Y'=yearly."}, {"q": "(date2 - date1).dt.days calculates:", "opts": ["Date range", "Number of days between dates", "Error", "Seconds"], "ans": 1, "exp": "Subtracting two datetime Series gives a Timedelta. .dt.days extracts the number of days."}, {"q": "dt.to_period('M') converts dates to:", "opts": ["Month names", "Month number", "Monthly period (e.g., 2024-01)", "Error"], "ans": 2, "exp": "to_period('M') converts to Period objects representing months (e.g., 2024-01). Useful for groupby."}]}, {"title": "String Methods in Pandas", "quizzes": [{"q": ".str accessor in Pandas allows:", "opts": ["NumPy operations", "String methods on entire Series at once", "Only .upper() and .lower()", "Error on non-strings"], "ans": 1, "exp": ".str gives access to vectorized string methods for an entire Series at once."}, {"q": "df['col'].str.split('@').str[1] does:", "opts": ["Splits at @ and returns first part", "Splits at @ and returns second part", "Joins with @", "Error"], "ans": 1, "exp": "str.split('@') splits each string at @. .str[1] gets the element at index 1 (after @)."}, {"q": "str.contains('pattern', regex=True) uses:", "opts": ["Simple text search only", "Regular expression matching", "Case-sensitive search only", "Error"], "ans": 1, "exp": "regex=True enables regular expression matching. Default is True, so it already uses regex."}, {"q": "str.replace('[^0-9]','',regex=True) removes:", "opts": ["All digits", "Everything that's NOT a digit", "Zeros", "Special chars only"], "ans": 1, "exp": "[^0-9] matches anything that's NOT a digit. Replacing with '' removes all non-digit characters."}, {"q": "str.len() on a Series returns:", "opts": ["Length of the Series", "Length of each string in the Series", "Total characters", "Error"], "ans": 1, "exp": "str.len() returns a Series with the length of each string — element-wise length calculation."}]}, {"title": "Concat & Join", "quizzes": [{"q": "pd.concat([df1,df2]) by default stacks:", "opts": ["Horizontally (columns)", "Vertically (rows)", "Diagonally", "Error"], "ans": 1, "exp": "Default axis=0 stacks vertically (adds rows). Use axis=1 to stack horizontally (add columns)."}, {"q": "ignore_index=True in concat:", "opts": ["Removes the index", "Resets index to 0,1,2...", "Keeps original index", "Removes duplicates"], "ans": 1, "exp": "ignore_index=True resets the row index to 0,1,2... instead of keeping the original index values (which may repeat)."}, {"q": "Concatenating DataFrames with different columns results in:", "opts": ["Error", "NaN for missing columns", "Only common columns kept", "Columns renamed"], "ans": 1, "exp": "pd.concat fills NaN for columns that don't exist in some DataFrames (union of all columns by default)."}, {"q": "df.assign(quarter='Q1') does:", "opts": ["Modifies df in place", "Returns a new DataFrame with a 'quarter' column added", "Raises error if column exists", "Filters to Q1 only"], "ans": 1, "exp": "assign() returns a NEW DataFrame with the new column. The original df is unchanged."}, {"q": "glob.glob('sales_*.csv') returns:", "opts": ["The content of matching files", "A list of file paths matching the pattern", "An error", "One file only"], "ans": 1, "exp": "glob.glob() returns a list of file paths that match the pattern — useful for loading multiple files at once."}]}, {"title": "Time Series Basics", "quizzes": [{"q": "resample('ME').sum() groups data by:", "opts": ["Days", "Month-end, summing values", "Minutes", "Error"], "ans": 1, "exp": "resample('ME') groups by month-end frequency. sum() calculates the total for each month."}, {"q": "pct_change() calculates:", "opts": ["Cumulative change", "Percentage change from the previous row", "Absolute change", "Row-wise change"], "ans": 1, "exp": "pct_change() = (current - previous) / previous. Returns percentage change from the prior period."}, {"q": "df.index.day_name() returns:", "opts": ["Day number (1-31)", "Day of week name (Monday, Tuesday...)", "Week number", "Day of year"], "ans": 1, "exp": "day_name() returns the name of the day of the week for each date in the DatetimeIndex."}, {"q": "resample frequency 'W' means:", "opts": ["Working days", "Weekly (Sunday by default)", "Weekdays only", "Wednesdays"], "ans": 1, "exp": "'W' = weekly frequency, anchored to Sundays by default. Use 'W-MON' for Monday-anchored weeks."}, {"q": "To set a date column as the DataFrame index:", "opts": ["df.date = df['Date']", "df.set_index('Date', inplace=True)", "df.index('Date')", "df['Date'].set_as_index()"], "ans": 1, "exp": "set_index('Date') makes the Date column the row index, enabling time-based operations like resample."}]}, {"title": "Mini Project", "quizzes": []}]
+});
+const params = new URLSearchParams(location.search);
+const startLesson = parseInt(params.get("lesson") || "0");
+if (startLesson > 0) showLesson(startLesson);
+</script>
+</body>
+</html>

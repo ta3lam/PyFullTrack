@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Phase 5 — Data Visualization | PyTrack</title>
+<link rel="stylesheet" href="../../css/style.css"/>
+<style>
+.phase-badge {
+  display:inline-flex; align-items:center; gap:.5rem;
+  background:var(--bg3); border:1px solid var(--border);
+  border-radius:20px; padding:.3rem .9rem;
+  font-family:var(--mono); font-size:.7rem; color:var(--muted);
+  margin-bottom:1rem; letter-spacing:1px; text-transform:uppercase;
+}
+.phase-parts-nav {
+  display:flex; gap:.5rem; flex-wrap:wrap; margin-bottom:1rem;
+}
+.part-tag {
+  font-family:var(--mono); font-size:.65rem; letter-spacing:.5px;
+  background:rgba(59,130,246,.1); border:1px solid rgba(59,130,246,.2);
+  color:var(--accent2); padding:.2rem .55rem; border-radius:4px;
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../../index.html">Py<span>Track</span></a>
+  <div class="nav-right">
+    <div class="progress-badge" id="nav-progress">0 / 73 lessons</div>
+    <a class="btn-outline" href="../../index.html">⌂ All Phases</a>
+  </div>
+</nav>
+
+<div class="lesson-page">
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <a href="../../index.html" class="sidebar-home">⌂ PyTrack Course</a>
+    </div>
+    <div class="sidebar-inner"><div class="sidebar-unit">
+  <div class="sidebar-unit-header" onclick="toggleUnit(this)">
+    <span>🛠️</span>
+    <span>Phase 0: Setup & Mindset</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons">
+    <a class="sidebar-lesson" id="slink-0-0" href="phase-0.html" >
+      <span class="lesson-check" id="chk-0-0"></span>
+      What is Python & Data Analysis?
+    </a>
+    <a class="sidebar-lesson" id="slink-0-1" href="phase-0.html" >
+      <span class="lesson-check" id="chk-0-1"></span>
+      Installing Anaconda
+    </a>
+    <a class="sidebar-lesson" id="slink-0-2" href="phase-0.html" >
+      <span class="lesson-check" id="chk-0-2"></span>
+      Jupyter Notebook Basics
+    </a>
+    <a class="sidebar-lesson" id="slink-0-3" href="phase-0.html" >
+      <span class="lesson-check" id="chk-0-3"></span>
+      Python in VS Code
+    </a>
+  </div>
+</div><div class="sidebar-unit">
+  <div class="sidebar-unit-header" onclick="toggleUnit(this)">
+    <span>🐍</span>
+    <span>Phase 1: Python Basics</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons">
+    <a class="sidebar-lesson" id="slink-1-0" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-0"></span>
+      Variables & Data Types
+    </a>
+    <a class="sidebar-lesson" id="slink-1-1" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-1"></span>
+      Strings
+    </a>
+    <a class="sidebar-lesson" id="slink-1-2" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-2"></span>
+      Numbers & Math
+    </a>
+    <a class="sidebar-lesson" id="slink-1-3" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-3"></span>
+      Type Conversion
+    </a>
+    <a class="sidebar-lesson" id="slink-1-4" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-4"></span>
+      Lists
+    </a>
+    <a class="sidebar-lesson" id="slink-1-5" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-5"></span>
+      Tuples & Sets
+    </a>
+    <a class="sidebar-lesson" id="slink-1-6" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-6"></span>
+      Dictionaries
+    </a>
+    <a class="sidebar-lesson" id="slink-1-7" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-7"></span>
+      Variables & Operators
+    </a>
+    <a class="sidebar-lesson" id="slink-1-8" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-8"></span>
+      If / Elif / Else
+    </a>
+    <a class="sidebar-lesson" id="slink-1-9" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-9"></span>
+      For Loops
+    </a>
+    <a class="sidebar-lesson" id="slink-1-10" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-10"></span>
+      While Loops
+    </a>
+    <a class="sidebar-lesson" id="slink-1-11" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-11"></span>
+      List Comprehensions
+    </a>
+    <a class="sidebar-lesson" id="slink-1-12" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-12"></span>
+      Functions
+    </a>
+    <a class="sidebar-lesson" id="slink-1-13" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-13"></span>
+      Lambda Functions
+    </a>
+    <a class="sidebar-lesson" id="slink-1-14" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-14"></span>
+      Modules & Import
+    </a>
+    <a class="sidebar-lesson" id="slink-1-15" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-15"></span>
+      Exception Handling
+    </a>
+    <a class="sidebar-lesson" id="slink-1-16" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-16"></span>
+      File I/O
+    </a>
+    <a class="sidebar-lesson" id="slink-1-17" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-17"></span>
+      Regular Expressions
+    </a>
+    <a class="sidebar-lesson" id="slink-1-18" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-18"></span>
+      Classes & OOP Basics
+    </a>
+    <a class="sidebar-lesson" id="slink-1-19" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-19"></span>
+      Inheritance & Methods
+    </a>
+  </div>
+</div><div class="sidebar-unit">
+  <div class="sidebar-unit-header" onclick="toggleUnit(this)">
+    <span>🔢</span>
+    <span>Phase 2: NumPy — The Math Engine</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons">
+    <a class="sidebar-lesson" id="slink-2-0" href="phase-2.html" >
+      <span class="lesson-check" id="chk-2-0"></span>
+      Introduction to NumPy
+    </a>
+    <a class="sidebar-lesson" id="slink-2-1" href="phase-2.html" >
+      <span class="lesson-check" id="chk-2-1"></span>
+      Arrays & Dimensions
+    </a>
+    <a class="sidebar-lesson" id="slink-2-2" href="phase-2.html" >
+      <span class="lesson-check" id="chk-2-2"></span>
+      Operations & Filtering
+    </a>
+    <a class="sidebar-lesson" id="slink-2-3" href="phase-2.html" >
+      <span class="lesson-check" id="chk-2-3"></span>
+      Statistics with NumPy
+    </a>
+    <a class="sidebar-lesson" id="slink-2-4" href="phase-2.html" >
+      <span class="lesson-check" id="chk-2-4"></span>
+      Reshape, Sort & Search
+    </a>
+    <a class="sidebar-lesson" id="slink-2-5" href="phase-2.html" >
+      <span class="lesson-check" id="chk-2-5"></span>
+      Linear Algebra Basics
+    </a>
+    <a class="sidebar-lesson" id="slink-2-6" href="phase-2.html" >
+      <span class="lesson-check" id="chk-2-6"></span>
+      Random Numbers
+    </a>
+  </div>
+</div><div class="sidebar-unit">
+  <div class="sidebar-unit-header" onclick="toggleUnit(this)">
+    <span>🐼</span>
+    <span>Phase 3: Pandas — Heart of Data Analysis</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons">
+    <a class="sidebar-lesson" id="slink-3-0" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-0"></span>
+      Pandas Series
+    </a>
+    <a class="sidebar-lesson" id="slink-3-1" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-1"></span>
+      DataFrames
+    </a>
+    <a class="sidebar-lesson" id="slink-3-2" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-2"></span>
+      Reading CSV & Excel
+    </a>
+    <a class="sidebar-lesson" id="slink-3-3" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-3"></span>
+      Exploring Your Data
+    </a>
+    <a class="sidebar-lesson" id="slink-3-4" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-4"></span>
+      Selecting & Filtering
+    </a>
+    <a class="sidebar-lesson" id="slink-3-5" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-5"></span>
+      Adding & Modifying Columns
+    </a>
+    <a class="sidebar-lesson" id="slink-3-6" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-6"></span>
+      Sorting & Ranking
+    </a>
+    <a class="sidebar-lesson" id="slink-3-7" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-7"></span>
+      Descriptive Statistics
+    </a>
+    <a class="sidebar-lesson" id="slink-3-8" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-8"></span>
+      apply() & map()
+    </a>
+    <a class="sidebar-lesson" id="slink-3-9" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-9"></span>
+      GroupBy — Grouped Analysis
+    </a>
+    <a class="sidebar-lesson" id="slink-3-10" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-10"></span>
+      Pivot Tables
+    </a>
+    <a class="sidebar-lesson" id="slink-3-11" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-11"></span>
+      Merging DataFrames
+    </a>
+    <a class="sidebar-lesson" id="slink-3-12" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-12"></span>
+      Working with Dates
+    </a>
+    <a class="sidebar-lesson" id="slink-3-13" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-13"></span>
+      String Methods in Pandas
+    </a>
+    <a class="sidebar-lesson" id="slink-3-14" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-14"></span>
+      Concat & Join
+    </a>
+    <a class="sidebar-lesson" id="slink-3-15" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-15"></span>
+      Time Series Basics
+    </a>
+  </div>
+</div><div class="sidebar-unit">
+  <div class="sidebar-unit-header" onclick="toggleUnit(this)">
+    <span>🧹</span>
+    <span>Phase 4: Data Cleaning</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons">
+    <a class="sidebar-lesson" id="slink-4-0" href="phase-4.html" >
+      <span class="lesson-check" id="chk-4-0"></span>
+      Finding Missing Values
+    </a>
+    <a class="sidebar-lesson" id="slink-4-1" href="phase-4.html" >
+      <span class="lesson-check" id="chk-4-1"></span>
+      Filling & Dropping Missing Data
+    </a>
+    <a class="sidebar-lesson" id="slink-4-2" href="phase-4.html" >
+      <span class="lesson-check" id="chk-4-2"></span>
+      Duplicates & Data Types
+    </a>
+    <a class="sidebar-lesson" id="slink-4-3" href="phase-4.html" >
+      <span class="lesson-check" id="chk-4-3"></span>
+      String Cleaning
+    </a>
+    <a class="sidebar-lesson" id="slink-4-4" href="phase-4.html" >
+      <span class="lesson-check" id="chk-4-4"></span>
+      Detecting Outliers
+    </a>
+    <a class="sidebar-lesson" id="slink-4-5" href="phase-4.html" >
+      <span class="lesson-check" id="chk-4-5"></span>
+      Removing Outliers
+    </a>
+    <a class="sidebar-lesson" id="slink-4-6" href="phase-4.html" >
+      <span class="lesson-check" id="chk-4-6"></span>
+      Full Cleaning Pipeline
+    </a>
+  </div>
+</div><div class="sidebar-unit">
+  <div class="sidebar-unit-header active-unit open" onclick="toggleUnit(this)">
+    <span>📈</span>
+    <span>Phase 5: Data Visualization</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons open">
+    <a class="sidebar-lesson active" id="slink-5-0" href="javascript:showLesson(0)" onclick="showLesson(0);return false;">
+      <span class="lesson-check" id="chk-5-0"></span>
+      Matplotlib Basics
+    </a>
+    <a class="sidebar-lesson" id="slink-5-1" href="javascript:showLesson(1)" onclick="showLesson(1);return false;">
+      <span class="lesson-check" id="chk-5-1"></span>
+      Bar & Line Charts
+    </a>
+    <a class="sidebar-lesson" id="slink-5-2" href="javascript:showLesson(2)" onclick="showLesson(2);return false;">
+      <span class="lesson-check" id="chk-5-2"></span>
+      Histograms & Scatter Plots
+    </a>
+    <a class="sidebar-lesson" id="slink-5-3" href="javascript:showLesson(3)" onclick="showLesson(3);return false;">
+      <span class="lesson-check" id="chk-5-3"></span>
+      Pie & Area Charts
+    </a>
+    <a class="sidebar-lesson" id="slink-5-4" href="javascript:showLesson(4)" onclick="showLesson(4);return false;">
+      <span class="lesson-check" id="chk-5-4"></span>
+      Subplots & Dashboards
+    </a>
+    <a class="sidebar-lesson" id="slink-5-5" href="javascript:showLesson(5)" onclick="showLesson(5);return false;">
+      <span class="lesson-check" id="chk-5-5"></span>
+      Seaborn Charts
+    </a>
+    <a class="sidebar-lesson" id="slink-5-6" href="javascript:showLesson(6)" onclick="showLesson(6);return false;">
+      <span class="lesson-check" id="chk-5-6"></span>
+      Heatmaps & Pair Plots
+    </a>
+    <a class="sidebar-lesson" id="slink-5-7" href="javascript:showLesson(7)" onclick="showLesson(7);return false;">
+      <span class="lesson-check" id="chk-5-7"></span>
+      Plotly — Interactive Charts
+    </a>
+    <a class="sidebar-lesson" id="slink-5-8" href="javascript:showLesson(8)" onclick="showLesson(8);return false;">
+      <span class="lesson-check" id="chk-5-8"></span>
+      Chart Styling & Themes
+    </a>
+    <a class="sidebar-lesson" id="slink-5-9" href="javascript:showLesson(9)" onclick="showLesson(9);return false;">
+      <span class="lesson-check" id="chk-5-9"></span>
+      Exporting & Sharing Charts
+    </a>
+  </div>
+</div><div class="sidebar-unit">
+  <div class="sidebar-unit-header" onclick="toggleUnit(this)">
+    <span>🔍</span>
+    <span>Phase 6: Exploratory Data Analysis</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons">
+    <a class="sidebar-lesson" id="slink-6-0" href="phase-6.html" >
+      <span class="lesson-check" id="chk-6-0"></span>
+      Descriptive Statistics
+    </a>
+    <a class="sidebar-lesson" id="slink-6-1" href="phase-6.html" >
+      <span class="lesson-check" id="chk-6-1"></span>
+      Correlation & Regression
+    </a>
+    <a class="sidebar-lesson" id="slink-6-2" href="phase-6.html" >
+      <span class="lesson-check" id="chk-6-2"></span>
+      Window Functions
+    </a>
+    <a class="sidebar-lesson" id="slink-6-3" href="phase-6.html" >
+      <span class="lesson-check" id="chk-6-3"></span>
+      Sampling & Hypothesis Testing
+    </a>
+    <a class="sidebar-lesson" id="slink-6-4" href="phase-6.html" >
+      <span class="lesson-check" id="chk-6-4"></span>
+      Building Analysis Reports
+    </a>
+  </div>
+</div><div class="sidebar-unit">
+  <div class="sidebar-unit-header" onclick="toggleUnit(this)">
+    <span>🏆</span>
+    <span>Phase 7: Real-World Projects</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons"><a class="sidebar-lesson" href="../capstone.html">🏆 View Projects</a>
+  </div>
+</div><div class="sidebar-unit">
+  <div class="sidebar-unit-header" onclick="toggleUnit(this)">
+    <span>💼</span>
+    <span>Phase 8: Job Ready</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons">
+    <a class="sidebar-lesson" id="slink-8-0" href="phase-8.html" >
+      <span class="lesson-check" id="chk-8-0"></span>
+      Comments & Code Style
+    </a>
+    <a class="sidebar-lesson" id="slink-8-1" href="phase-8.html" >
+      <span class="lesson-check" id="chk-8-1"></span>
+      Virtual Environments & pip
+    </a>
+    <a class="sidebar-lesson" id="slink-8-2" href="phase-8.html" >
+      <span class="lesson-check" id="chk-8-2"></span>
+      Building Analysis Reports
+    </a>
+    <a class="sidebar-lesson" id="slink-8-3" href="phase-8.html" >
+      <span class="lesson-check" id="chk-8-3"></span>
+      SQL with Python
+    </a>
+  </div>
+</div></div>
+  </aside>
+
+  <main class="lesson-main">
+    <div class="breadcrumb">
+      <a href="../../index.html">PyTrack</a> ›
+      <span>Phase 5: Data Visualization</span>
+    </div>
+    <div class="phase-badge">Phase 5 of 8</div>
+    <div class="phase-parts-nav"><span class="part-tag">Part A</span><span class="part-tag">Part B</span><span class="part-tag">Part C</span></div>
+    <div id="lesson-panels"><div class="lesson-panel active" id="panel-0">
+  <div class="lesson-title-bar">
+    <h2>📈 Matplotlib Basics</h2>
+    <p>Unit 8 — Turn numbers into insights — create professional charts with Matplotlib, Seaborn, and Plotly.</p>
+  </div>
+  <div class="lesson-body">
+<h3>Your First Chart</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import matplotlib.pyplot as plt
+
+months = ["Jan","Feb","Mar","Apr","May","Jun"]
+sales  = [45000,52000,48000,61000,58000,72000]
+
+fig, ax = plt.subplots(figsize=(10, 5))
+ax.plot(months, sales, marker="o", linewidth=2.5, color="#3b82f6", markersize=8)
+
+ax.set_title("Monthly Sales 2024", fontsize=15, fontweight="bold", pad=15)
+ax.set_xlabel("Month", fontsize=12)
+ax.set_ylabel("Sales (EGP)", fontsize=12)
+ax.grid(True, alpha=0.3, linestyle="--")
+ax.spines["top"].set_visible(False)
+ax.spines["right"].set_visible(False)
+
+plt.tight_layout()
+plt.savefig("sales_chart.png", dpi=150, bbox_inches="tight")
+plt.show()</div></div>
+<h3>Figure Anatomy</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body"># Figure = the whole canvas
+# Axes   = the plot area (can have multiple per figure)
+# Axis   = x-axis or y-axis
+
+fig, ax = plt.subplots(figsize=(10,5))
+
+# Annotations
+ax.plot(months, sales, "bo-")
+ax.annotate("Peak!", xy=(5,72000), xytext=(4,68000),
+    arrowprops=dict(arrowstyle="-&gt;",color="red"), color="red", fontsize=11)
+
+# Add horizontal reference line
+ax.axhline(y=sum(sales)/len(sales), color="orange",
+    linestyle="--", label=f"Avg: {sum(sales)/len(sales):,.0f}")
+ax.legend()
+plt.show()</div></div>
+<div class="tip-box"><strong>💡 Tip:</strong> Always use <span class="ci">fig, ax = plt.subplots()</span> — gives full control and handles multiple subplots easily.</div></div>
+  <div class="task-section">
+  <div class="task-header"><span class="task-badge">🎯 TASK</span><span class="task-title">Practice Exercise</span></div>
+  <div class="task-desc">Create a professional line chart of weekly website traffic for 8 weeks. Add: trend line, average reference line, peak annotation, and proper styling.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import matplotlib.pyplot as plt
+import numpy as np
+
+weeks    = [f"W{i}" for i in range(1,9)]
+visitors = [1200,1850,1600,2100,1900,2400,2200,2800]
+
+fig, ax = plt.subplots(figsize=(11, 6))
+ax.plot(weeks, visitors, "o-", color="#3b82f6", linewidth=2.5, markersize=8, label="Visitors")
+
+# Add average line
+avg = sum(visitors)/len(visitors)
+ax.axhline(y=avg, color="orange", linestyle="--", alpha=0.8, label=f"Avg: {avg:,.0f}")
+
+# Annotate peak
+peak_idx = visitors.index(max(visitors))
+ax.annotate(f"Peak: {max(visitors):,}", xy=(peak_idx, max(visitors)),
+    xytext=(peak_idx-1, max(visitors)-200),
+    arrowprops=dict(arrowstyle="-&gt;",color="red"),
+    color="red", fontweight="bold")
+
+# Add trend line
+x_num = np.arange(len(weeks))
+z = np.polyfit(x_num, visitors, 1)
+p = np.poly1d(z)
+ax.plot(weeks, p(x_num), "--", color="green", alpha=0.7, label="Trend")
+
+ax.set_title("Weekly Website Traffic", fontsize=14, fontweight="bold")
+ax.set_xlabel("Week"); ax.set_ylabel("Visitors")
+ax.legend(); ax.grid(True, alpha=0.3)
+ax.spines["top"].set_visible(False); ax.spines["right"].set_visible(False)
+plt.tight_layout(); plt.show()</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import matplotlib.pyplot as plt, numpy as np
+weeks=[f"W{i}" for i in range(1,9)]; visitors=[1200,1850,1600,2100,1900,2400,2200,2800]
+fig,ax=plt.subplots(figsize=(11,6))
+ax.plot(weeks,visitors,"o-",color="#3b82f6",linewidth=2.5)
+avg=sum(visitors)/len(visitors); ax.axhline(y=avg,color="orange",linestyle="--",label=f"Avg:{avg:.0f}")
+peak=visitors.index(max(visitors)); ax.annotate(f"Peak:{max(visitors)}",xy=(peak,max(visitors)),xytext=(peak-1,max(visitors)-150),arrowprops=dict(arrowstyle="-&gt;"))
+x=np.arange(len(weeks)); p=np.poly1d(np.polyfit(x,visitors,1)); ax.plot(weeks,p(x),"g--",alpha=0.7,label="Trend")
+ax.set_title("Weekly Traffic"); ax.legend(); ax.grid(True,alpha=0.3); plt.tight_layout(); plt.show()</div></div><div class="output-block"><div class="output-label">Output</div>[Chart: Line plot showing weekly visitors 1200-2800, with orange average line at ~2006, red annotation at W8 peak, and green upward trend line]</div></div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-1">
+  <div class="lesson-title-bar">
+    <h2>📈 Bar & Line Charts</h2>
+    <p>Unit 8 — Turn numbers into insights — create professional charts with Matplotlib, Seaborn, and Plotly.</p>
+  </div>
+  <div class="lesson-body">
+<h3>Bar Charts</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import matplotlib.pyplot as plt
+import numpy as np
+
+regions = ["Cairo","Alex","Giza","Port Said","Aswan"]
+sales   = [450000,280000,195000,120000,87000]
+colors  = ["#3b82f6","#06b6d4","#8b5cf6","#f59e0b","#10b981"]
+
+fig, ax = plt.subplots(figsize=(10,6))
+bars = ax.bar(regions, sales, color=colors, width=0.6,
+              edgecolor="white", linewidth=0.5)
+
+# Value labels on bars
+for bar, val in zip(bars, sales):
+    ax.text(bar.get_x() + bar.get_width()/2, val + 8000,
+            f"{val/1000:.0f}K", ha="center", va="bottom",
+            fontsize=10, fontweight="bold")
+
+ax.set_title("Sales by Region — Q4 2024", fontsize=14, fontweight="bold")
+ax.set_ylabel("Sales (EGP)")
+ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda x,_: f"{x/1000:.0f}K"))
+ax.grid(axis="y", alpha=0.3, linestyle="--")
+ax.spines["top"].set_visible(False); ax.spines["right"].set_visible(False)
+plt.tight_layout(); plt.show()</div></div>
+<h3>Grouped & Stacked Bar Charts</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body"># Grouped bar chart
+q1 = [450,280,195]; q2 = [510,310,220]; regions = ["Cairo","Alex","Giza"]
+x  = np.arange(len(regions)); w = 0.35
+
+fig, axes = plt.subplots(1,2,figsize=(14,5))
+
+# Grouped
+axes[0].bar(x-w/2, q1, w, label="Q1",color="#3b82f6")
+axes[0].bar(x+w/2, q2, w, label="Q2",color="#06b6d4")
+axes[0].set_xticks(x); axes[0].set_xticklabels(regions)
+axes[0].legend(); axes[0].set_title("Grouped")
+
+# Stacked
+axes[1].bar(regions, q1, label="Q1", color="#3b82f6")
+axes[1].bar(regions, q2, bottom=q1, label="Q2", color="#06b6d4")
+axes[1].legend(); axes[1].set_title("Stacked")
+
+plt.tight_layout(); plt.show()</div></div></div>
+  <div class="task-section">
+  <div class="task-header"><span class="task-badge">🎯 TASK</span><span class="task-title">Practice Exercise</span></div>
+  <div class="task-desc">Create a horizontal bar chart showing top 10 products by revenue. Add value labels, color by performance tier, and include a reference line for the average.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import matplotlib.pyplot as plt
+import numpy as np
+
+products = ["Laptop Pro","iPhone 15","Samsung TV","MacBook","iPad","Dell Monitor",
+            "AirPods","Sony Camera","Kindle","HP Printer"]
+revenue  = [120000,95000,87000,115000,72000,68000,45000,58000,32000,41000]
+
+# Sort by revenue
+paired  = sorted(zip(revenue,products), reverse=True)
+revenue = [p[0] for p in paired]
+products = [p[1] for p in paired]
+
+avg = sum(revenue)/len(revenue)
+colors = ["#10b981" if r&gt;avg else "#3b82f6" for r in revenue]
+
+fig, ax = plt.subplots(figsize=(10,7))
+bars = ax.barh(products, revenue, color=colors, edgecolor="white", height=0.7)
+
+# Value labels
+for bar, val in zip(bars, revenue):
+    ax.text(val+500, bar.get_y()+bar.get_height()/2,
+            f"{val/1000:.0f}K", va="center", fontsize=9)
+
+ax.axvline(x=avg, color="orange", linestyle="--",
+           label=f"Avg: {avg/1000:.1f}K")
+ax.set_title("Top 10 Products by Revenue", fontsize=14, fontweight="bold")
+ax.set_xlabel("Revenue (EGP)")
+ax.legend(); ax.invert_yaxis()
+ax.grid(axis="x", alpha=0.3); plt.tight_layout(); plt.show()</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import matplotlib.pyplot as plt
+products=["Laptop Pro","iPhone 15","Samsung TV","MacBook","iPad","Dell Monitor","AirPods","Sony Camera","Kindle","HP Printer"]
+revenue=[120000,95000,87000,115000,72000,68000,45000,58000,32000,41000]
+paired=sorted(zip(revenue,products),reverse=True)
+rev=[p[0] for p in paired]; prod=[p[1] for p in paired]
+avg=sum(rev)/len(rev); colors=["#10b981" if r&gt;avg else "#3b82f6" for r in rev]
+fig,ax=plt.subplots(figsize=(10,7))
+ax.barh(prod,rev,color=colors,height=0.7); ax.axvline(x=avg,color="orange",linestyle="--",label=f"Avg:{avg/1000:.1f}K")
+ax.set_title("Top 10 Products"); ax.invert_yaxis(); ax.legend(); plt.tight_layout(); plt.show()</div></div><div class="output-block"><div class="output-label">Output</div>[Horizontal bar chart: Laptop Pro 120K (green), MacBook 115K (green), iPhone 95K (green), Samsung TV 87K (green), iPad 72K (green), others below average in blue, orange dashed average line at ~73.3K]</div></div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-2">
+  <div class="lesson-title-bar">
+    <h2>📈 Histograms & Scatter Plots</h2>
+    <p>Unit 8 — Turn numbers into insights — create professional charts with Matplotlib, Seaborn, and Plotly.</p>
+  </div>
+  <div class="lesson-body">
+<h3>Histograms — Distribution</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import matplotlib.pyplot as plt
+import numpy as np
+
+np.random.seed(42)
+salaries = np.random.normal(9000, 2000, 500)
+
+fig, axes = plt.subplots(1, 2, figsize=(14, 5))
+
+# Basic histogram
+axes[0].hist(salaries, bins=30, color="#3b82f6", alpha=0.7, edgecolor="white")
+axes[0].axvline(salaries.mean(), color="red", linestyle="--",
+    linewidth=2, label=f"Mean: {salaries.mean():,.0f}")
+axes[0].axvline(np.median(salaries), color="green", linestyle="--",
+    linewidth=2, label=f"Median: {np.median(salaries):,.0f}")
+axes[0].set_title("Salary Distribution"); axes[0].legend()
+
+# KDE (smooth density)
+from scipy.stats import gaussian_kde
+kde  = gaussian_kde(salaries)
+x    = np.linspace(salaries.min(), salaries.max(), 300)
+axes[1].plot(x, kde(x), color="#3b82f6", linewidth=2)
+axes[1].fill_between(x, kde(x), alpha=0.3, color="#3b82f6")
+axes[1].set_title("KDE (Smooth Distribution)")
+
+plt.tight_layout(); plt.show()</div></div>
+<h3>Scatter Plots</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import matplotlib.pyplot as plt
+import numpy as np
+
+np.random.seed(42)
+n = 100
+marketing = np.random.normal(5000, 1000, n)
+sales     = marketing * 8 + np.random.normal(0, 5000, n)
+sizes     = np.random.randint(50, 300, n)  # Bubble size
+
+fig, ax = plt.subplots(figsize=(9,6))
+sc = ax.scatter(marketing, sales, c=sales, cmap="viridis",
+    s=sizes, alpha=0.7, edgecolors="white", linewidth=0.5)
+
+plt.colorbar(sc, ax=ax, label="Sales")
+
+# Regression line
+z = np.polyfit(marketing, sales, 1)
+p = np.poly1d(z)
+ax.plot(np.sort(marketing), p(np.sort(marketing)), "r--", linewidth=2, label="Trend")
+
+ax.set_title("Marketing Spend vs Sales"); ax.legend()
+ax.set_xlabel("Marketing (EGP)"); ax.set_ylabel("Sales (EGP)")
+plt.tight_layout(); plt.show()</div></div></div>
+  <div class="task-section">
+  <div class="task-header"><span class="task-badge">🎯 TASK</span><span class="task-title">Practice Exercise</span></div>
+  <div class="task-desc">Create a side-by-side comparison: distribution of sales before and after a marketing campaign. Show histogram, KDE, and summary statistics.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import matplotlib.pyplot as plt, numpy as np
+from scipy.stats import gaussian_kde, ttest_ind
+
+np.random.seed(42)
+before = np.random.normal(45000, 10000, 100)
+after  = np.random.normal(52000, 11000, 100)
+
+fig, axes = plt.subplots(1, 2, figsize=(14,5))
+fig.suptitle("Sales Distribution: Before vs After Campaign", fontsize=14, fontweight="bold")
+
+for ax, data, label, color in zip(
+    axes, [before, after], ["Before","After"], ["#ef4444","#10b981"]
+):
+    ax.hist(data, bins=20, color=color, alpha=0.5, edgecolor="white", density=True)
+    x = np.linspace(data.min(), data.max(), 200)
+    ax.plot(x, gaussian_kde(data)(x), color=color, linewidth=2)
+    ax.axvline(data.mean(), color="black", linestyle="--",
+        label=f"Mean: {data.mean():,.0f}")
+    ax.set_title(f"{label} Campaign")
+    ax.set_xlabel("Sales (EGP)"); ax.legend()
+
+t, p = ttest_ind(before, after)
+print(f"T-test p-value: {p:.4f}")
+print(f"Mean increase: {after.mean()-before.mean():,.0f} ({(after.mean()/before.mean()-1)*100:.1f}%)")
+plt.tight_layout(); plt.show()</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import matplotlib.pyplot as plt, numpy as np
+from scipy.stats import ttest_ind
+np.random.seed(42)
+before=np.random.normal(45000,10000,100); after=np.random.normal(52000,11000,100)
+t,p=ttest_ind(before,after)
+print(f"p-value: {p:.4f}")
+print(f"Mean increase: {after.mean()-before.mean():,.0f} ({(after.mean()/before.mean()-1)*100:.1f}%)")
+fig,axes=plt.subplots(1,2,figsize=(14,5))
+for ax,d,l,c in zip(axes,[before,after],["Before","After"],["#ef4444","#10b981"]):
+    ax.hist(d,bins=20,color=c,alpha=0.5,density=True); ax.axvline(d.mean(),color="black",linestyle="--",label=f"Mean:{d.mean():,.0f}"); ax.set_title(l); ax.legend()
+plt.tight_layout(); plt.show()</div></div><div class="output-block"><div class="output-label">Output</div>p-value: 0.0001
+Mean increase: 7,456 (16.6%)
+[Two distribution plots showing before (red, mean ~45K) and after (green, mean ~52K)]</div></div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-3">
+  <div class="lesson-title-bar">
+    <h2>📈 Pie & Area Charts</h2>
+    <p>Unit 8 — Turn numbers into insights — create professional charts with Matplotlib, Seaborn, and Plotly.</p>
+  </div>
+  <div class="lesson-body">
+<h3>Pie Charts</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import matplotlib.pyplot as plt
+
+products = ["Laptop","Phone","Tablet","Monitor","Other"]
+sales    = [45, 30, 15, 8, 2]
+colors   = ["#3b82f6","#06b6d4","#8b5cf6","#f59e0b","#94a3b8"]
+explode  = [0.05, 0.05, 0, 0, 0]  # Slightly pull out top slices
+
+fig, axes = plt.subplots(1, 2, figsize=(14, 6))
+
+# Pie chart
+axes[0].pie(sales, labels=products, colors=colors, explode=explode,
+    autopct="%1.1f%%", pctdistance=0.85, startangle=90,
+    wedgeprops=dict(edgecolor="white", linewidth=2))
+axes[0].set_title("Market Share by Product")
+
+# Donut chart (pie with hole)
+axes[1].pie(sales, colors=colors, autopct="%1.1f%%",
+    startangle=90, wedgeprops=dict(edgecolor="white",width=0.6))
+axes[1].set_title("Donut Chart")
+centre = plt.Circle((0,0), 0.40, fc="white")
+axes[1].add_patch(centre)
+
+plt.tight_layout(); plt.show()</div></div>
+<h3>Area Charts</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import matplotlib.pyplot as plt, numpy as np
+
+months = range(1, 13)
+product_sales = {
+    "Laptop": [45,52,48,61,58,72,65,59,71,78,82,95],
+    "Phone":  [30,35,32,41,38,49,44,40,48,52,56,62],
+    "Tablet": [15,18,16,20,19,25,22,20,24,27,29,34],
+}
+
+fig, ax = plt.subplots(figsize=(12,6))
+colors = ["#3b82f6","#06b6d4","#8b5cf6"]
+bottom = np.zeros(12)
+
+for (product, values), color in zip(product_sales.items(), colors):
+    ax.fill_between(months, bottom, bottom + np.array(values),
+        alpha=0.8, color=color, label=product)
+    bottom += np.array(values)
+
+ax.set_title("Sales by Product (Stacked Area)", fontsize=14)
+ax.set_xlabel("Month"); ax.set_ylabel("Sales (thousands)")
+ax.legend(loc="upper left"); plt.tight_layout(); plt.show()</div></div></div>
+  <div class="task-section">
+  <div class="task-header"><span class="task-badge">🎯 TASK</span><span class="task-title">Practice Exercise</span></div>
+  <div class="task-desc">Create a dashboard with 3 charts: pie for product mix, area chart for monthly trend, and a donut for regional split.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import matplotlib.pyplot as plt, numpy as np
+
+fig, axes = plt.subplots(1, 3, figsize=(16, 5))
+fig.suptitle("Sales Dashboard — 2024", fontsize=15, fontweight="bold")
+
+# 1. Pie — product mix
+products = ["Laptop","Phone","Tablet","Monitor"]
+shares   = [35, 28, 22, 15]
+colors1  = ["#3b82f6","#06b6d4","#8b5cf6","#f59e0b"]
+axes[0].pie(shares, labels=products, colors=colors1, autopct="%1.0f%%",
+    startangle=90, wedgeprops=dict(edgecolor="white"))
+axes[0].set_title("Product Mix")
+
+# 2. Area — monthly trend
+months = range(1,13)
+sales  = [45,52,48,61,58,72,65,59,71,78,82,95]
+axes[1].fill_between(months, sales, alpha=0.4, color="#3b82f6")
+axes[1].plot(months, sales, "o-", color="#3b82f6", linewidth=2)
+axes[1].set_title("Monthly Sales Trend")
+axes[1].set_xlabel("Month"); axes[1].grid(True, alpha=0.3)
+
+# 3. Donut — regional split
+regions  = ["Cairo","Alex","Giza","Other"]
+reg_sales = [45, 28, 18, 9]
+colors3   = ["#10b981","#3b82f6","#f59e0b","#94a3b8"]
+axes[2].pie(reg_sales, colors=colors3, autopct="%1.0f%%",
+    startangle=90, wedgeprops=dict(edgecolor="white", width=0.5))
+axes[2].set_title("Regional Split")
+
+plt.tight_layout(); plt.show()</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import matplotlib.pyplot as plt
+fig,axes=plt.subplots(1,3,figsize=(16,5))
+fig.suptitle("Sales Dashboard 2024",fontsize=14)
+axes[0].pie([35,28,22,15],labels=["Laptop","Phone","Tablet","Monitor"],autopct="%1.0f%%",colors=["#3b82f6","#06b6d4","#8b5cf6","#f59e0b"]); axes[0].set_title("Products")
+months=range(1,13); sales=[45,52,48,61,58,72,65,59,71,78,82,95]
+axes[1].fill_between(months,sales,alpha=0.4,color="#3b82f6"); axes[1].plot(months,sales,"o-",color="#3b82f6"); axes[1].set_title("Monthly Trend")
+axes[2].pie([45,28,18,9],labels=["Cairo","Alex","Giza","Other"],autopct="%1.0f%%",colors=["#10b981","#3b82f6","#f59e0b","#94a3b8"],wedgeprops=dict(width=0.5)); axes[2].set_title("Regions")
+plt.tight_layout(); plt.show()</div></div><div class="output-block"><div class="output-label">Output</div>[3-panel dashboard: left pie chart showing product mix (Laptop 35%, Phone 28%, Tablet 22%, Monitor 15%), center area chart showing upward trend Jan-Dec, right donut chart showing regional split (Cairo 45%)]</div></div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-4">
+  <div class="lesson-title-bar">
+    <h2>📈 Subplots & Dashboards</h2>
+    <p>Unit 8 — Turn numbers into insights — create professional charts with Matplotlib, Seaborn, and Plotly.</p>
+  </div>
+  <div class="lesson-body">
+<h3>Creating Subplots</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import matplotlib.pyplot as plt, numpy as np
+
+fig = plt.figure(figsize=(14, 10))
+
+# Grid layout: 2 rows × 3 columns
+ax1 = fig.add_subplot(2,3,1)   # Row 1, Col 1
+ax2 = fig.add_subplot(2,3,2)   # Row 1, Col 2
+ax3 = fig.add_subplot(2,3,3)   # Row 1, Col 3
+ax4 = fig.add_subplot(2,1,2)   # Row 2, full width
+
+# GridSpec for complex layouts
+from matplotlib.gridspec import GridSpec
+gs  = GridSpec(2, 3, figure=fig, hspace=0.4, wspace=0.3)
+ax1 = fig.add_subplot(gs[0,0])   # Row 0, Col 0
+ax2 = fig.add_subplot(gs[0,1:])  # Row 0, Cols 1-2
+ax3 = fig.add_subplot(gs[1,:2])  # Row 1, Cols 0-1
+ax4 = fig.add_subplot(gs[1,2])   # Row 1, Col 2
+
+plt.show()</div></div>
+<h3>Complete Dashboard Example</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import matplotlib.pyplot as plt, numpy as np
+np.random.seed(42)
+
+months = ["Jan","Feb","Mar","Apr","May","Jun"]
+sales  = [45000,52000,48000,61000,58000,72000]
+regions = ["Cairo","Alex","Giza","Aswan"]
+reg_s  = [450,280,195,87]
+
+fig, axes = plt.subplots(2,2,figsize=(14,10))
+fig.suptitle("Q1-Q2 Business Dashboard", fontsize=16, fontweight="bold")
+
+axes[0,0].plot(months,sales,"o-",color="#3b82f6",linewidth=2.5)
+axes[0,0].fill_between(months,sales,min(sales),alpha=0.15,color="#3b82f6")
+axes[0,0].set_title("Monthly Sales Trend")
+
+axes[0,1].barh(regions,reg_s,color=["#3b82f6","#06b6d4","#8b5cf6","#f59e0b"])
+axes[0,1].set_title("Sales by Region")
+
+axes[1,0].hist(np.random.normal(50000,10000,200),bins=20,color="#3b82f6",alpha=0.7)
+axes[1,0].set_title("Sales Distribution")
+
+axes[1,1].pie([35,28,22,15],labels=["Laptop","Phone","Tablet","Other"],
+    autopct="%1.0f%%",colors=["#3b82f6","#06b6d4","#8b5cf6","#94a3b8"])
+axes[1,1].set_title("Product Mix")
+
+plt.tight_layout(); plt.savefig("dashboard.png",dpi=150); plt.show()</div></div></div>
+  <div class="task-section">
+  <div class="task-header"><span class="task-badge">🎯 TASK</span><span class="task-title">Practice Exercise</span></div>
+  <div class="task-desc">Build a complete executive dashboard: 6-panel layout with KPI indicators, trend, regional comparison, product mix, distribution, and correlation.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import matplotlib.pyplot as plt, numpy as np, pandas as pd
+np.random.seed(42)
+
+# Data
+months   = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+sales_m  = [45,52,48,61,58,72,65,59,71,78,82,95]
+regions  = ["Cairo","Alex","Giza","Aswan"]
+reg_s    = [450,280,195,120]
+products = ["Laptop","Phone","Tablet","Monitor"]
+prod_s   = [35,28,22,15]
+
+fig = plt.figure(figsize=(18,12))
+fig.suptitle("Annual Business Dashboard — 2024", fontsize=18, fontweight="bold", y=0.98)
+
+from matplotlib.gridspec import GridSpec
+gs = GridSpec(3, 4, figure=fig, hspace=0.5, wspace=0.4)
+
+# 1. KPI Cards (text plots)
+kpis = [("Total Revenue","₤14.2M","+18%"),("Avg Monthly","₤1.18M","+12%"),
+        ("Best Month","₤950K","Dec"),("Regions","4","Active")]
+for i,(label,val,sub) in enumerate(kpis):
+    ax = fig.add_subplot(gs[0,i])
+    ax.text(0.5,0.6,val,ha="center",va="center",fontsize=20,fontweight="bold",
+        color="#3b82f6",transform=ax.transAxes)
+    ax.text(0.5,0.85,label,ha="center",va="center",fontsize=10,
+        color="gray",transform=ax.transAxes)
+    ax.text(0.5,0.25,sub,ha="center",va="center",fontsize=12,
+        color="#10b981",transform=ax.transAxes)
+    ax.axis("off"); ax.set_facecolor("#f8fafc")
+
+# 2. Sales trend (wide)
+ax2 = fig.add_subplot(gs[1,:3])
+ax2.plot(months,sales_m,"o-",color="#3b82f6",linewidth=2.5)
+ax2.fill_between(range(12),sales_m,min(sales_m),alpha=0.15,color="#3b82f6")
+ax2.set_title("Monthly Sales Trend (Thousands EGP)",fontsize=12)
+ax2.grid(True,alpha=0.3); ax2.set_xlim(-0.5,11.5)
+ax2.set_xticks(range(12)); ax2.set_xticklabels(months,rotation=45)
+
+# 3. Pie (right)
+ax3 = fig.add_subplot(gs[1,3])
+ax3.pie(prod_s,labels=products,autopct="%1.0f%%",startangle=90,
+    colors=["#3b82f6","#06b6d4","#8b5cf6","#f59e0b"],
+    wedgeprops=dict(edgecolor="white"))
+ax3.set_title("Product Mix",fontsize=12)
+
+# 4. Bar chart
+ax4 = fig.add_subplot(gs[2,:2])
+bars = ax4.bar(regions,reg_s,color=["#3b82f6","#06b6d4","#8b5cf6","#f59e0b"],width=0.6)
+for bar,val in zip(bars,reg_s): ax4.text(bar.get_x()+bar.get_width()/2,val+5,f"{val}K",ha="center",fontsize=10)
+ax4.set_title("Sales by Region (Thousands EGP)",fontsize=12)
+ax4.grid(axis="y",alpha=0.3)
+
+# 5. Distribution
+ax5 = fig.add_subplot(gs[2,2:])
+data = np.random.normal(58000,12000,200)
+ax5.hist(data,bins=25,color="#3b82f6",alpha=0.7,edgecolor="white",density=True)
+ax5.axvline(data.mean(),color="red",linestyle="--",label=f"Mean: {data.mean():,.0f}")
+ax5.set_title("Daily Sales Distribution",fontsize=12)
+ax5.legend()
+
+plt.savefig("executive_dashboard.png",dpi=150,bbox_inches="tight")
+plt.show()
+print("Dashboard saved!")</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import matplotlib.pyplot as plt, numpy as np
+np.random.seed(42)
+fig,axes=plt.subplots(2,3,figsize=(18,10))
+fig.suptitle("Annual Dashboard 2024",fontsize=16)
+months=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+sales=[45,52,48,61,58,72,65,59,71,78,82,95]
+axes[0,0].plot(months,sales,"o-",color="#3b82f6"); axes[0,0].set_title("Monthly Trend")
+axes[0,1].bar(["Cairo","Alex","Giza","Aswan"],[450,280,195,120],color=["#3b82f6","#06b6d4","#8b5cf6","#f59e0b"]); axes[0,1].set_title("Regional Sales")
+axes[0,2].pie([35,28,22,15],labels=["Laptop","Phone","Tablet","Monitor"],autopct="%1.0f%%"); axes[0,2].set_title("Product Mix")
+axes[1,0].hist(np.random.normal(58000,12000,200),bins=25,color="#3b82f6",alpha=0.7); axes[1,0].set_title("Distribution")
+for ax in [axes[1,1],axes[1,2]]: ax.axis("off")
+plt.tight_layout(); plt.show()
+print("Dashboard created!")</div></div><div class="output-block"><div class="output-label">Output</div>Dashboard saved!
+[6-panel executive dashboard with KPI cards, monthly trend line, product pie chart, regional bar chart, and sales distribution histogram]</div></div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-5">
+  <div class="lesson-title-bar">
+    <h2>📈 Seaborn Charts</h2>
+    <p>Unit 8 — Turn numbers into insights — create professional charts with Matplotlib, Seaborn, and Plotly.</p>
+  </div>
+  <div class="lesson-body">
+<h3>Why Seaborn?</h3>
+<p>Seaborn creates <strong>beautiful statistical charts with minimal code</strong>. Built on Matplotlib with smart defaults.</p>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import seaborn as sns, matplotlib.pyplot as plt, pandas as pd, numpy as np
+np.random.seed(42)
+sns.set_theme(style="whitegrid", palette="muted")
+
+df = pd.DataFrame({
+    "Sales":  np.random.normal(50000,15000,200),
+    "Region": np.random.choice(["Cairo","Alex","Giza"],200),
+    "Product":np.random.choice(["Laptop","Phone","Tablet"],200),
+    "Quarter":np.random.choice(["Q1","Q2","Q3","Q4"],200),
+})
+
+fig, axes = plt.subplots(2, 2, figsize=(14,10))
+
+# Boxplot — distribution + outliers
+sns.boxplot(data=df, x="Region", y="Sales", ax=axes[0,0], palette="Blues")
+axes[0,0].set_title("Sales Distribution by Region")
+
+# Violin plot — distribution shape
+sns.violinplot(data=df, x="Product", y="Sales", ax=axes[0,1], palette="Set2")
+axes[0,1].set_title("Sales Distribution by Product")
+
+# Strip/swarm plot — individual points
+sns.stripplot(data=df, x="Region", y="Sales", ax=axes[1,0],
+    palette="Set1", alpha=0.5, jitter=True)
+axes[1,0].set_title("Individual Sales Points")
+
+# Bar plot (with confidence intervals)
+sns.barplot(data=df, x="Quarter", y="Sales", ax=axes[1,1],
+    palette="rocket", errorbar="sd")
+axes[1,1].set_title("Average Sales by Quarter")
+
+plt.tight_layout(); plt.show()</div></div>
+<div class="tip-box"><strong>💡 Tip:</strong> Seaborn themes: 'darkgrid', 'whitegrid', 'dark', 'white', 'ticks'. Palettes: 'Blues', 'Set2', 'rocket', 'muted', 'deep'.</div></div>
+  <div class="task-section">
+  <div class="task-header"><span class="task-badge">🎯 TASK</span><span class="task-title">Practice Exercise</span></div>
+  <div class="task-desc">Create a seaborn analysis dashboard: boxplot, violin, and a point plot showing quarterly trends per region.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import seaborn as sns, matplotlib.pyplot as plt, pandas as pd, numpy as np
+np.random.seed(42)
+sns.set_theme(style="whitegrid")
+
+df = pd.DataFrame({
+    "Region":  np.random.choice(["Cairo","Alex","Giza"],120),
+    "Quarter": np.random.choice(["Q1","Q2","Q3","Q4"],120),
+    "Sales":   np.random.normal(50000,12000,120).round(0),
+})
+
+fig, axes = plt.subplots(1, 3, figsize=(16, 5))
+fig.suptitle("Regional Sales Analysis", fontsize=14, fontweight="bold")
+
+# Boxplot
+sns.boxplot(data=df, x="Region", y="Sales",
+    palette=["#3b82f6","#06b6d4","#8b5cf6"], ax=axes[0])
+axes[0].set_title("Distribution by Region")
+
+# Violin
+sns.violinplot(data=df, x="Region", y="Sales",
+    palette="Set2", inner="quart", ax=axes[1])
+axes[1].set_title("Violin: Shape of Distribution")
+
+# Point plot — quarterly trend per region
+sns.pointplot(data=df, x="Quarter", y="Sales",
+    hue="Region", palette="Set1", ax=axes[2],
+    markers=["o","s","^"], linestyles=["-","--","-."])
+axes[2].set_title("Quarterly Trend by Region")
+axes[2].legend(title="Region")
+
+plt.tight_layout(); plt.show()</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import seaborn as sns, matplotlib.pyplot as plt, pandas as pd, numpy as np
+np.random.seed(42); sns.set_theme(style="whitegrid")
+df=pd.DataFrame({"Region":np.random.choice(["Cairo","Alex","Giza"],120),"Quarter":np.random.choice(["Q1","Q2","Q3","Q4"],120),"Sales":np.random.normal(50000,12000,120).round(0)})
+fig,axes=plt.subplots(1,3,figsize=(16,5))
+sns.boxplot(data=df,x="Region",y="Sales",palette="Set2",ax=axes[0]); axes[0].set_title("Boxplot")
+sns.violinplot(data=df,x="Region",y="Sales",palette="Set2",ax=axes[1]); axes[1].set_title("Violin")
+sns.pointplot(data=df,x="Quarter",y="Sales",hue="Region",ax=axes[2]); axes[2].set_title("Quarterly")
+plt.tight_layout(); plt.show()</div></div><div class="output-block"><div class="output-label">Output</div>[3-panel Seaborn dashboard: left boxplot showing similar distributions for Cairo/Alex/Giza with some outliers, center violin plots showing distribution shape, right point plot showing quarterly trends with 3 colored lines per region]</div></div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-6">
+  <div class="lesson-title-bar">
+    <h2>📈 Heatmaps & Pair Plots</h2>
+    <p>Unit 8 — Turn numbers into insights — create professional charts with Matplotlib, Seaborn, and Plotly.</p>
+  </div>
+  <div class="lesson-body">
+<h3>Heatmaps</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import seaborn as sns, matplotlib.pyplot as plt, pandas as pd, numpy as np
+np.random.seed(42)
+
+df = pd.DataFrame(np.random.normal(50000,15000,(4,4)),
+    index=["Cairo","Alex","Giza","Aswan"],
+    columns=["Q1","Q2","Q3","Q4"])
+
+fig, axes = plt.subplots(1,2,figsize=(14,5))
+
+# Sales heatmap
+sns.heatmap(df, annot=True, fmt=".0f", cmap="YlOrRd",
+    linewidths=0.5, ax=axes[0])
+axes[0].set_title("Sales Heatmap (Region × Quarter)")
+
+# Correlation heatmap
+data = pd.DataFrame({
+    "Sales":     np.random.normal(50000,10000,100),
+    "Marketing": np.random.normal(5000,1000,100),
+    "Staff":     np.random.randint(5,30,100),
+    "Price":     np.random.normal(8000,2000,100),
+})
+data["Sales"] += data["Marketing"] * 4  # Add correlation
+
+corr = data.corr()
+mask = np.triu(np.ones_like(corr, dtype=bool))  # Upper triangle
+sns.heatmap(corr, mask=mask, annot=True, fmt=".2f",
+    cmap="coolwarm", center=0, square=True,
+    linewidths=0.5, ax=axes[1])
+axes[1].set_title("Correlation Matrix")
+
+plt.tight_layout(); plt.show()</div></div>
+<h3>Pair Plots</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body"># Pair plot — scatterplot matrix
+pair_df = pd.DataFrame({
+    "Sales":     np.random.normal(50000,10000,100),
+    "Marketing": np.random.normal(5000,1000,100),
+    "Staff":     np.random.randint(5,30,100),
+    "Region":    np.random.choice(["Cairo","Alex","Giza"],100),
+})
+pair_df["Sales"] += pair_df["Marketing"] * 4
+
+g = sns.pairplot(pair_df, hue="Region", diag_kind="kde",
+    plot_kws={"alpha":0.6})
+g.fig.suptitle("Pair Plot — Sales Analysis", y=1.02)
+plt.show()</div></div></div>
+  <div class="task-section">
+  <div class="task-header"><span class="task-badge">🎯 TASK</span><span class="task-title">Practice Exercise</span></div>
+  <div class="task-desc">Create a heatmap showing monthly sales performance by product, a correlation heatmap with mask, and annotate the strongest correlations.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import seaborn as sns, matplotlib.pyplot as plt, pandas as pd, numpy as np
+np.random.seed(42)
+
+# Monthly sales by product
+months   = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+products = ["Laptop","Phone","Tablet","Monitor"]
+
+data = pd.DataFrame(
+    np.random.normal(50000,15000,(len(months),len(products))).round(0),
+    index=months, columns=products
+)
+
+fig, axes = plt.subplots(1,2,figsize=(16,5))
+
+# Sales heatmap
+sns.heatmap(data, annot=True, fmt=".0f", cmap="RdYlGn",
+    linewidths=0.5, ax=axes[0], cbar_kws={"label":"Sales"})
+axes[0].set_title("Monthly Sales by Product")
+
+# Correlation heatmap
+multi_df = pd.DataFrame({
+    "Sales":     np.random.normal(50000,10000,200),
+    "Marketing": np.random.normal(5000,1000,200),
+    "Traffic":   np.random.normal(10000,2000,200),
+    "Staff":     np.random.randint(5,30,200),
+    "Price":     np.random.normal(8000,2000,200),
+})
+multi_df["Sales"] += multi_df["Marketing"]*4 + multi_df["Traffic"]*2
+
+corr = multi_df.corr()
+mask = np.triu(np.ones_like(corr,dtype=bool))
+sns.heatmap(corr,mask=mask,annot=True,fmt=".2f",
+    cmap="coolwarm",center=0,square=True,ax=axes[1])
+axes[1].set_title("Correlation Matrix")
+
+plt.tight_layout(); plt.show()
+print("Strongest corr with Sales:")
+print(corr["Sales"].drop("Sales").abs().sort_values(ascending=False).round(3))</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import seaborn as sns, matplotlib.pyplot as plt, pandas as pd, numpy as np
+np.random.seed(42)
+months=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+data=pd.DataFrame(np.random.normal(50000,15000,(12,4)).round(0),index=months,columns=["Laptop","Phone","Tablet","Monitor"])
+multi=pd.DataFrame({"Sales":np.random.normal(50000,10000,200),"Marketing":np.random.normal(5000,1000,200),"Traffic":np.random.normal(10000,2000,200),"Staff":np.random.randint(5,30,200)})
+multi["Sales"]+=multi["Marketing"]*4+multi["Traffic"]*2
+corr=multi.corr()
+fig,axes=plt.subplots(1,2,figsize=(16,5))
+sns.heatmap(data,annot=True,fmt=".0f",cmap="RdYlGn",ax=axes[0]); axes[0].set_title("Monthly Sales")
+sns.heatmap(corr,mask=np.triu(np.ones_like(corr,dtype=bool)),annot=True,fmt=".2f",cmap="coolwarm",center=0,ax=axes[1]); axes[1].set_title("Correlations")
+plt.tight_layout(); plt.show()
+print(corr["Sales"].drop("Sales").abs().sort_values(ascending=False).round(3))</div></div><div class="output-block"><div class="output-label">Output</div>Marketing    0.846
+Traffic      0.432
+Staff        0.034
+dtype: float64</div></div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-7">
+  <div class="lesson-title-bar">
+    <h2>📈 Plotly — Interactive Charts</h2>
+    <p>Unit 8 — Turn numbers into insights — create professional charts with Matplotlib, Seaborn, and Plotly.</p>
+  </div>
+  <div class="lesson-body">
+<h3>Why Plotly?</h3>
+<p>Plotly creates <strong>interactive charts</strong> — zoom, pan, hover for details, click to filter. Perfect for web dashboards and reports.</p>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import plotly.express as px
+import pandas as pd, numpy as np
+np.random.seed(42)
+
+df = pd.DataFrame({
+    "Month":   pd.date_range("2024-01",periods=12,freq="ME"),
+    "Sales":   np.random.normal(50000,10000,12).round(0),
+    "Region":  np.random.choice(["Cairo","Alex","Giza"],12),
+    "Product": np.random.choice(["Laptop","Phone","Tablet"],12),
+})
+
+# Interactive line chart
+fig = px.line(df, x="Month", y="Sales",
+    title="Monthly Sales — Interactive",
+    labels={"Sales":"Revenue (EGP)"},
+    template="plotly_dark")
+fig.update_traces(line_width=2.5, marker_size=8, mode="lines+markers")
+fig.show()  # Opens in browser (or Jupyter)
+
+# Interactive scatter
+fig2 = px.scatter(df, x="Month", y="Sales",
+    color="Region", size="Sales", hover_data=["Product"],
+    title="Sales by Region")
+fig2.show()</div></div>
+<h3>Interactive Dashboard</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+
+fig = make_subplots(rows=2, cols=2,
+    subplot_titles=["Monthly Trend","By Region","Distribution","Product Mix"])
+
+months = ["Jan","Feb","Mar","Apr","May","Jun"]
+sales  = [45000,52000,48000,61000,58000,72000]
+
+# Line chart
+fig.add_trace(go.Scatter(x=months,y=sales,mode="lines+markers",
+    line=dict(color="#3b82f6",width=2.5)), row=1,col=1)
+
+# Bar chart
+fig.add_trace(go.Bar(x=["Cairo","Alex","Giza"],
+    y=[450000,280000,195000],
+    marker_color=["#3b82f6","#06b6d4","#8b5cf6"]), row=1,col=2)
+
+fig.update_layout(height=600, showlegend=False,
+    title_text="Interactive Dashboard")
+fig.show()</div></div>
+<div class="tip-box"><strong>💡 Tip:</strong> Save Plotly charts as HTML for easy sharing: fig.write_html('chart.html'). No dependencies needed to view!</div></div>
+  <div class="task-section">
+  <div class="task-header"><span class="task-badge">🎯 TASK</span><span class="task-title">Practice Exercise</span></div>
+  <div class="task-desc">Create an interactive Plotly dashboard: line chart of monthly sales, bar chart by region, scatter of marketing vs sales, and a pie chart.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+import numpy as np
+np.random.seed(42)
+
+months   = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+sales_m  = [45,52,48,61,58,72,65,59,71,78,82,95]
+regions  = ["Cairo","Alex","Giza","Aswan"]
+reg_s    = [450,280,195,120]
+marketing = np.random.normal(5,1,50).round(1)
+sales_s   = (marketing * 8 + np.random.normal(0,5,50)).round(1)
+
+fig = make_subplots(
+    rows=2, cols=2,
+    subplot_titles=["Monthly Sales (K EGP)","Sales by Region",
+                    "Marketing vs Sales","Product Mix"],
+    specs=[[{"type":"scatter"},{"type":"bar"}],
+           [{"type":"scatter"},{"type":"pie"}]]
+)
+
+# Line chart
+fig.add_trace(go.Scatter(x=months,y=sales_m,mode="lines+markers",
+    line=dict(color="#3b82f6",width=2.5),name="Sales"), row=1,col=1)
+
+# Bar chart
+fig.add_trace(go.Bar(x=regions,y=reg_s,
+    marker_color=["#3b82f6","#06b6d4","#8b5cf6","#f59e0b"],
+    name="Region"), row=1,col=2)
+
+# Scatter
+fig.add_trace(go.Scatter(x=marketing,y=sales_s,mode="markers",
+    marker=dict(color=sales_s,colorscale="Viridis",size=8),
+    name="Marketing"), row=2,col=1)
+
+# Pie
+fig.add_trace(go.Pie(labels=["Laptop","Phone","Tablet","Monitor"],
+    values=[35,28,22,15],hole=0.3), row=2,col=2)
+
+fig.update_layout(height=700,title_text="Interactive Business Dashboard",
+    showlegend=False, template="plotly_white")
+fig.show()
+print("Interactive dashboard created!")</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+import numpy as np
+np.random.seed(42)
+months=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+sales=[45,52,48,61,58,72,65,59,71,78,82,95]
+fig=make_subplots(rows=2,cols=2,subplot_titles=["Monthly","Regional","Marketing vs Sales","Products"],specs=[[{"type":"scatter"},{"type":"bar"}],[{"type":"scatter"},{"type":"pie"}]])
+fig.add_trace(go.Scatter(x=months,y=sales,mode="lines+markers",line=dict(color="#3b82f6")),row=1,col=1)
+fig.add_trace(go.Bar(x=["Cairo","Alex","Giza","Aswan"],y=[450,280,195,120],marker_color=["#3b82f6","#06b6d4","#8b5cf6","#f59e0b"]),row=1,col=2)
+mkt=np.random.normal(5,1,50); sal=(mkt*8+np.random.normal(0,5,50))
+fig.add_trace(go.Scatter(x=mkt,y=sal,mode="markers"),row=2,col=1)
+fig.add_trace(go.Pie(labels=["Laptop","Phone","Tablet","Monitor"],values=[35,28,22,15],hole=0.3),row=2,col=2)
+fig.update_layout(height=700,title="Interactive Dashboard",showlegend=False); fig.show()
+print("Created!")</div></div><div class="output-block"><div class="output-label">Output</div>Interactive dashboard created!
+[Browser opens with 4-panel interactive Plotly dashboard: hover tooltips, zoom controls, clickable legend]</div></div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-8">
+  <div class="lesson-title-bar">
+    <h2>📈 Chart Styling & Themes</h2>
+    <p>Unit 8 — Turn numbers into insights — create professional charts with Matplotlib, Seaborn, and Plotly.</p>
+  </div>
+  <div class="lesson-body">
+<h3>Matplotlib Styles</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import matplotlib.pyplot as plt, numpy as np
+
+# Built-in styles
+print(plt.style.available[:5])  # Show available styles
+
+# Apply a style
+plt.style.use("seaborn-v0_8-whitegrid")
+
+# Create custom color palette
+COLORS = {
+    "primary":   "#3b82f6",
+    "secondary": "#06b6d4",
+    "accent":    "#f59e0b",
+    "success":   "#10b981",
+    "danger":    "#ef4444",
+    "muted":     "#94a3b8",
+}
+
+# Custom matplotlib parameters (rcParams)
+plt.rcParams.update({
+    "font.family":       "sans-serif",
+    "font.size":         11,
+    "axes.titlesize":    14,
+    "axes.titleweight":  "bold",
+    "axes.spines.top":   False,
+    "axes.spines.right": False,
+    "axes.grid":         True,
+    "grid.alpha":        0.3,
+    "grid.linestyle":    "--",
+    "figure.dpi":        120,
+})
+
+months = ["Jan","Feb","Mar","Apr","May","Jun"]
+sales  = [45000,52000,48000,61000,58000,72000]
+
+fig, ax = plt.subplots(figsize=(10,5))
+ax.plot(months, sales, "o-", color=COLORS["primary"], linewidth=2.5)
+ax.fill_between(months, sales, min(sales), alpha=0.1, color=COLORS["primary"])
+ax.set_title("Professional Sales Chart")
+plt.tight_layout(); plt.show()</div></div>
+<h3>Seaborn Themes</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import seaborn as sns, matplotlib.pyplot as plt
+
+# Available contexts: "paper","notebook","talk","poster"
+sns.set_context("talk")   # Larger text for presentations
+sns.set_palette("husl")   # Color palette
+
+# Color palettes
+print(sns.color_palette("Set2").as_hex())
+print(sns.color_palette("rocket",5).as_hex())</div></div>
+<div class="tip-box"><strong>💡 Tip:</strong> For professional reports: use 'whitegrid' or 'white' with muted colors. For presentations: use 'talk' context with bold colors.</div></div>
+  <div class="task-section">
+  <div class="task-header"><span class="task-badge">🎯 TASK</span><span class="task-title">Practice Exercise</span></div>
+  <div class="task-desc">Create the same chart with 4 different styles. Compare: default, seaborn-whitegrid, dark, and a custom professional style.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import matplotlib.pyplot as plt, numpy as np
+
+months = ["Jan","Feb","Mar","Apr","May","Jun"]
+sales  = [45000,52000,48000,61000,58000,72000]
+
+styles_configs = [
+    ("Default",        "default",               "#1f77b4"),
+    ("Whitegrid",      "seaborn-v0_8-whitegrid", "#3b82f6"),
+    ("Dark",           "dark_background",        "#06b6d4"),
+    ("FiveThirtyEight","fivethirtyeight",         "#e74c3c"),
+]
+
+fig, axes = plt.subplots(2, 2, figsize=(14,8))
+fig.suptitle("Same Data, 4 Different Styles", fontsize=14, fontweight="bold")
+
+for ax, (name, style, color) in zip(axes.flat, styles_configs):
+    with plt.style.context(style):
+        ax.plot(months, sales, "o-", color=color, linewidth=2.5)
+        ax.fill_between(months, sales, min(sales), alpha=0.15, color=color)
+        ax.set_title(name, fontsize=12)
+        ax.set_ylabel("Sales")
+
+plt.tight_layout(); plt.show()</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import matplotlib.pyplot as plt
+months=["Jan","Feb","Mar","Apr","May","Jun"]; sales=[45000,52000,48000,61000,58000,72000]
+styles=[("Default","default","#1f77b4"),("Whitegrid","seaborn-v0_8-whitegrid","#3b82f6"),("Dark","dark_background","#06b6d4"),("538","fivethirtyeight","#e74c3c")]
+fig,axes=plt.subplots(2,2,figsize=(14,8))
+for ax,(name,style,color) in zip(axes.flat,styles):
+    with plt.style.context(style):
+        ax.plot(months,sales,"o-",color=color,linewidth=2.5); ax.set_title(name)
+plt.tight_layout(); plt.show()</div></div><div class="output-block"><div class="output-label">Output</div>[4-panel chart showing same monthly sales data rendered in: default (blue), seaborn whitegrid (blue on white grid), dark background (cyan on black), FiveThirtyEight (red with grey grid)]</div></div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-9">
+  <div class="lesson-title-bar">
+    <h2>📈 Exporting & Sharing Charts</h2>
+    <p>Unit 8 — Turn numbers into insights — create professional charts with Matplotlib, Seaborn, and Plotly.</p>
+  </div>
+  <div class="lesson-body">
+<h3>Saving High-Quality Images</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import matplotlib.pyplot as plt, numpy as np
+
+months = ["Jan","Feb","Mar","Apr","May","Jun"]
+sales  = [45000,52000,48000,61000,58000,72000]
+
+fig, ax = plt.subplots(figsize=(10,5))
+ax.plot(months,sales,"o-",color="#3b82f6",linewidth=2.5)
+ax.set_title("Monthly Sales Chart")
+plt.tight_layout()
+
+# PNG — for web and presentations
+plt.savefig("chart.png", dpi=150, bbox_inches="tight",
+    facecolor="white", edgecolor="none")
+
+# High-res PNG — for printing
+plt.savefig("chart_hires.png", dpi=300, bbox_inches="tight")
+
+# PDF — vector format, best for print
+plt.savefig("chart.pdf", bbox_inches="tight", format="pdf")
+
+# SVG — vector, editable in Illustrator/Inkscape
+plt.savefig("chart.svg", bbox_inches="tight", format="svg")
+
+print("All formats saved!")
+plt.close()  # Close figure to free memory</div></div>
+<h3>Exporting to Excel with Charts</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, xlsxwriter
+
+# Create Excel with embedded chart
+df = pd.DataFrame({"Month":months,"Sales":sales})
+with pd.ExcelWriter("report.xlsx", engine="xlsxwriter") as writer:
+    df.to_excel(writer, sheet_name="Data", index=False)
+    wb = writer.book
+    ws = writer.sheets["Data"]
+
+    # Add chart
+    chart = wb.add_chart({"type":"line"})
+    chart.add_series({"values":"=Data!$B$2:$B$7","name":"Sales"})
+    chart.set_title({"name":"Monthly Sales"})
+    ws.insert_chart("D2", chart)
+
+print("Excel with chart saved!")</div></div>
+<div class="tip-box"><strong>💡 Tip:</strong> For web sharing: save as PNG/HTML. For print: use PDF or SVG. For Excel reports: use xlsxwriter. Always use bbox_inches='tight' to prevent label cropping.</div></div>
+  <div class="task-section">
+  <div class="task-header"><span class="task-badge">🎯 TASK</span><span class="task-title">Practice Exercise</span></div>
+  <div class="task-desc">Create a complete multi-format export pipeline: save a dashboard as PNG, PDF, SVG, and HTML (Plotly), then package all files.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import matplotlib.pyplot as plt, numpy as np
+import plotly.graph_objects as go
+import os
+
+np.random.seed(42)
+months  = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+sales   = [45,52,48,61,58,72,65,59,71,78,82,95]
+regions = ["Cairo","Alex","Giza","Aswan"]
+reg_s   = [450,280,195,120]
+
+# Create output folder
+os.makedirs("exports", exist_ok=True)
+
+# Matplotlib chart
+fig, axes = plt.subplots(1,2,figsize=(14,5))
+fig.suptitle("Annual Dashboard", fontsize=14, fontweight="bold")
+axes[0].plot(months,sales,"o-",color="#3b82f6",linewidth=2.5)
+axes[0].set_title("Monthly Trend"); axes[0].grid(True,alpha=0.3)
+axes[1].barh(regions,reg_s,color=["#3b82f6","#06b6d4","#8b5cf6","#f59e0b"])
+axes[1].set_title("Regional Sales"); axes[1].invert_yaxis()
+plt.tight_layout()
+
+# Export multiple formats
+for fmt, dpi in [("png",150),("pdf",None),("svg",None)]:
+    fname = f"exports/dashboard.{fmt}"
+    if dpi: plt.savefig(fname, dpi=dpi, bbox_inches="tight")
+    else:   plt.savefig(fname, bbox_inches="tight", format=fmt)
+    print(f"Saved: {fname} ({os.path.getsize(fname)/1024:.1f} KB)")
+
+plt.close()
+
+# Plotly interactive
+fig2 = go.Figure()
+fig2.add_trace(go.Scatter(x=months,y=sales,mode="lines+markers",name="Sales"))
+fig2.update_layout(title="Interactive Sales Chart",template="plotly_white")
+fig2.write_html("exports/dashboard.html")
+print(f"Saved: exports/dashboard.html ({os.path.getsize('exports/dashboard.html')/1024:.0f} KB)")</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import matplotlib.pyplot as plt, os, numpy as np
+np.random.seed(42); os.makedirs("exports",exist_ok=True)
+months=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+sales=[45,52,48,61,58,72,65,59,71,78,82,95]
+fig,ax=plt.subplots(figsize=(10,5))
+ax.plot(months,sales,"o-",color="#3b82f6",linewidth=2.5); ax.set_title("Monthly Sales")
+plt.tight_layout()
+for fmt,dpi in [("png",150),("pdf",None),("svg",None)]:
+    fname=f"exports/chart.{fmt}"
+    plt.savefig(fname,dpi=dpi,bbox_inches="tight") if dpi else plt.savefig(fname,bbox_inches="tight",format=fmt)
+    print(f"Saved {fname}: {os.path.getsize(fname)/1024:.1f}KB")
+plt.close()</div></div><div class="output-block"><div class="output-label">Output</div>Saved exports/chart.png: 124.3KB
+Saved exports/chart.pdf: 47.2KB
+Saved exports/chart.svg: 38.9KB</div></div>
+</div>
+</div></div>
+    <div style="display:flex;justify-content:space-between;margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border)">
+      <a class="btn-nav" href="unit-7.html">← Unit 7: Data Analysis</a>
+      <span></span>
+    </div>
+  
+  <!-- Shared Nav Bar -->
+  <div class="lesson-quiz-bar" style="margin-bottom:.8rem">
+    <button class="btn-quiz" id="quiz-btn" onclick="openCurrentQuiz()">📝 Lesson Quiz — 5 Questions</button>
+    <span class="quiz-done-badge" id="quiz-done-global" style="display:none">✓ Quiz done</span>
+  </div>
+  <div class="lesson-nav">
+    <button class="btn-nav" id="btn-prev" onclick="prevLesson()" disabled>← Prev</button>
+    <button class="btn-mark" id="btn-mark" onclick="markAndNext()">✓ Mark Done & Next →</button>
+    <a class="btn-nav" id="btn-next-unit" href="unit-9.html" style="display:none">Unit 9: ML, SQL & APIs →</a>
+    <button class="btn-nav" id="btn-next" onclick="showLesson(currentLesson+1)">Next →</button>
+  </div>
+</main>
+</div>
+
+<div class="modal-overlay" id="quiz-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="quiz-title">Lesson Quiz</h3>
+      <button class="modal-close" onclick="closeQuiz()">×</button>
+    </div>
+    <div id="quiz-body"></div>
+  </div>
+</div>
+
+<script src="../../js/app.js"></script>
+<script>
+initUnit({
+  id: 8,
+  lessons: [{"title": "Matplotlib Basics", "quizzes": [{"q": "fig, ax = plt.subplots() vs plt.figure():", "opts": ["Same thing", "subplots() returns both figure and axes; figure() returns only figure", "figure() is deprecated", "subplots() only for multiple plots"], "ans": 1, "exp": "subplots() creates a Figure AND returns the Axes object. Using ax gives you full OO-style control."}, {"q": "ax.spines['top'].set_visible(False) does:", "opts": ["Hides the top axis label", "Removes the top border line of the plot", "Removes top data points", "Error"], "ans": 1, "exp": "spines are the 4 border lines of the plot. Hiding top and right is a common clean chart style."}, {"q": "plt.tight_layout() fixes:", "opts": ["Data overlap", "Overlapping labels and titles between subplots", "The figure size", "Font sizes"], "ans": 1, "exp": "tight_layout() automatically adjusts spacing to prevent labels, titles, and subplots from overlapping."}, {"q": "bbox_inches='tight' in savefig() does:", "opts": ["Crops the image", "Includes everything inside the figure without cutting off labels", "Adds a border", "Compresses the file"], "ans": 1, "exp": "bbox_inches='tight' ensures labels and titles at the edges are not cut off when saving."}, {"q": "ax.annotate() is used to:", "opts": ["Add axis labels", "Add text with optional arrow pointing to a data point", "Add a legend", "Change axis scale"], "ans": 1, "exp": "annotate() adds text and an optional arrow to highlight or explain a specific data point."}]}, {"title": "Bar & Line Charts", "quizzes": [{"q": "ax.barh() creates:", "opts": ["Vertical bar chart", "Horizontal bar chart", "A histogram", "Error"], "ans": 1, "exp": "barh = horizontal bars. Great for long category labels or many categories."}, {"q": "ax.invert_yaxis() in a horizontal bar chart:", "opts": ["Flips to vertical", "Reverses y-axis so largest is at top", "Removes axis", "Sorts bars"], "ans": 1, "exp": "By default, barh plots bottom to top. invert_yaxis() makes the first item appear at the top."}, {"q": "width=0.35 in ax.bar() controls:", "opts": ["Chart width", "Bar width", "Space between bars", "Label width"], "ans": 1, "exp": "width parameter controls how wide each bar is. Default is 0.8. Smaller = thinner bars with more space."}, {"q": "bottom=q1 in a second bar() call creates:", "opts": ["Error", "Stacked bars starting at q1 values", "Grouped bars", "Overlapping bars"], "ans": 1, "exp": "bottom= parameter sets where each bar starts — using the first series as bottom creates stacked bars."}, {"q": "plt.FuncFormatter(lambda x,_: f'{x/1000:.0f}K') on axis does:", "opts": ["Converts to text", "Formats axis tick labels as '45K' instead of '45000'", "Removes ticks", "Changes scale"], "ans": 1, "exp": "FuncFormatter applies a custom formatting function to axis tick labels. Useful for showing thousands as 'K'."}]}, {"title": "Histograms & Scatter Plots", "quizzes": [{"q": "bins=30 in hist() controls:", "opts": ["Number of data points", "Number of equal-width intervals", "Bar width", "Color intensity"], "ans": 1, "exp": "bins= sets how many intervals the data is divided into. More bins = finer detail, fewer = smoother."}, {"q": "density=True in hist() shows:", "opts": ["Frequency count", "Probability density (area = 1)", "Cumulative distribution", "Percentage"], "ans": 1, "exp": "density=True normalizes the histogram so the total area equals 1, making it comparable to a probability density."}, {"q": "Scatter plot with c=values and cmap='viridis' creates:", "opts": ["Error", "Color-coded points based on values using viridis colormap", "All same color", "Random colors"], "ans": 1, "exp": "c= sets the color value for each point. cmap= chooses the colormap. Together they create a color-encoded scatter."}, {"q": "plt.colorbar(sc, ax=ax) adds:", "opts": ["A bar chart", "A color scale legend showing value-to-color mapping", "A second plot", "Error"], "ans": 1, "exp": "colorbar adds a color scale bar showing which values correspond to which colors in the scatter/heatmap."}, {"q": "KDE (Kernel Density Estimate) is:", "opts": ["A type of bar chart", "A smooth continuous estimate of the distribution", "A method for outlier detection", "A regression technique"], "ans": 1, "exp": "KDE creates a smooth curve representing the estimated probability density — like a smoothed histogram."}]}, {"title": "Pie & Area Charts", "quizzes": [{"q": "autopct='%1.1f%%' in pie() shows:", "opts": ["Labels only", "Percentage with 1 decimal place in each slice", "Actual values", "Nothing"], "ans": 1, "exp": "autopct formats the percentage label: %1.1f%% = 1 decimal float followed by % sign."}, {"q": "explode=[0.1,0,0,0] in pie() does:", "opts": ["Removes first slice", "Pulls first slice slightly away from center", "Colors first slice differently", "Error"], "ans": 1, "exp": "explode specifies how far to pull each slice from the center. 0.1 pulls the first slice out slightly."}, {"q": "A donut chart is a pie chart with:", "opts": ["Larger slices", "A hole in the center (smaller width wedges)", "Gradient colors", "3D effect"], "ans": 1, "exp": "A donut is created with wedgeprops=dict(width=0.6) — leaving a hole in the middle."}, {"q": "fill_between(x, y1, y2) in matplotlib fills:", "opts": ["A bar chart", "Area between two curves (or curve and x-axis)", "A scatter plot", "A histogram"], "ans": 1, "exp": "fill_between() fills the area between two y-value arrays. Using y2=0 (default) fills between the line and x-axis."}, {"q": "When NOT to use a pie chart:", "opts": ["When showing proportions", "When there are more than 5-6 categories", "For market share", "For budget breakdown"], "ans": 1, "exp": "Pie charts are hard to read with many slices. Use bar charts when comparing many categories — humans compare lengths much better than angles."}]}, {"title": "Seaborn Charts", "quizzes": [{"q": "sns.set_theme(style='whitegrid') does:", "opts": ["Sets data", "Applies a visual style to all subsequent plots", "Changes font", "Creates a grid DataFrame"], "ans": 1, "exp": "set_theme() applies a theme globally. 'whitegrid' = white background with grey grid lines."}, {"q": "A violin plot shows:", "opts": ["Only min/max/median", "Distribution shape (KDE) + quartile box", "Only individual points", "Only the mean"], "ans": 1, "exp": "Violin plot = KDE distribution shape on both sides + optional inner box/quartile lines. Shows full distribution shape."}, {"q": "inner='quart' in violinplot shows:", "opts": ["Individual points", "Quartile lines inside the violin", "Nothing", "Box plot inside"], "ans": 1, "exp": "inner='quart' draws quartile lines (Q1, median, Q3) inside the violin shape."}, {"q": "sns.barplot vs plt.bar:", "opts": ["Same result", "seaborn barplot adds confidence intervals automatically; plt.bar does not", "plt.bar is faster", "seaborn can't do bar charts"], "ans": 1, "exp": "sns.barplot automatically calculates and displays confidence intervals (error bars), while plt.bar just draws bars."}, {"q": "errorbar='sd' in sns.barplot shows:", "opts": ["Standard error", "Standard deviation as error bars", "Confidence intervals", "No error bars"], "ans": 0, "exp": "errorbar='sd' shows ±1 standard deviation. errorbar='se' shows standard error. errorbar='ci' shows confidence interval."}]}, {"title": "Heatmaps & Pair Plots", "quizzes": [{"q": "annot=True in heatmap shows:", "opts": ["Axis labels", "Values in each cell", "Color scale", "Title"], "ans": 1, "exp": "annot=True displays the data value inside each cell of the heatmap."}, {"q": "mask=np.triu(ones) in heatmap hides:", "opts": ["Lower triangle", "Upper triangle", "Diagonal", "Everything"], "ans": 1, "exp": "np.triu creates an upper triangle mask. Applying it to heatmap hides the upper triangle, showing only lower."}, {"q": "cmap='coolwarm' with center=0 maps:", "opts": ["All values to blue", "Negative→blue, zero→white, positive→red", "Values by frequency", "Random colors"], "ans": 1, "exp": "coolwarm with center=0: values below 0 go blue, above 0 go red, 0 is white — perfect for correlation matrices."}, {"q": "A pair plot shows:", "opts": ["One scatter plot", "All pairwise scatter plots + diagonal distributions", "A correlation matrix", "Error for many columns"], "ans": 1, "exp": "pairplot creates a grid: each non-diagonal cell shows a scatter of two variables; diagonal shows the variable's distribution."}, {"q": "fmt='.2f' in heatmap annot formats numbers as:", "opts": ["2 decimal places", "2 significant figures", "Integer × 2", "Percentage"], "ans": 0, "exp": "fmt is a format string for annotations. '.2f' = 2 decimal places float (e.g., 0.85, -0.23)."}]}, {"title": "Subplots & Dashboards", "quizzes": [{"q": "GridSpec(2,3) creates a layout with:", "opts": ["6 equal panels", "A flexible 2-row × 3-column grid", "2 panels only", "Error"], "ans": 1, "exp": "GridSpec creates a grid layout. GridSpec(2,3) = 2 rows, 3 columns = 6 possible subplot areas."}, {"q": "gs[0, 1:] in GridSpec means:", "opts": ["Row 0, col 1 only", "Row 0, columns 1 to end (span multiple columns)", "Row 1, col 0", "Error"], "ans": 1, "exp": "gs[row_slice, col_slice]. gs[0, 1:] = row 0, columns from index 1 to end (column spanning)."}, {"q": "hspace and wspace in GridSpec control:", "opts": ["Plot sizes", "Horizontal and vertical spacing between subplots", "Font sizes", "Grid line visibility"], "ans": 1, "exp": "hspace = height spacing between rows. wspace = width spacing between columns."}, {"q": "ax.axis('off') in a text-only panel does:", "opts": ["Deletes the panel", "Hides all axis lines, ticks, and labels", "Makes text invisible", "Error"], "ans": 1, "exp": "axis('off') hides everything: x/y axis lines, tick marks, and tick labels — useful for text/KPI display panels."}, {"q": "dpi=150 in savefig() produces:", "opts": ["150 pixel image", "Higher resolution than dpi=72", "Compressed file", "Error"], "ans": 1, "exp": "Higher DPI = more dots per inch = sharper image but larger file size. 72=screen, 150=web/presentation, 300=print."}]}, {"title": "Plotly — Interactive Charts", "quizzes": [{"q": "Plotly's main advantage over Matplotlib is:", "opts": ["Faster rendering", "Interactive charts (zoom, hover, click)", "Better color schemes", "Simpler code always"], "ans": 1, "exp": "Plotly creates interactive charts with zoom, pan, hover tooltips, and click events — perfect for web dashboards."}, {"q": "fig.write_html('chart.html') does:", "opts": ["Saves a PNG image", "Saves a self-contained interactive HTML file", "Exports to PDF", "Sends to browser"], "ans": 1, "exp": "write_html() saves the entire interactive chart as a standalone HTML file — shareable without Python dependencies."}, {"q": "make_subplots(specs=[[{'type':'pie'}]]) tells Plotly:", "opts": ["To use pie colors", "That subplot at position [0,0] expects a pie chart type", "To make all pies", "Error"], "ans": 1, "exp": "specs specifies the chart type for each subplot position — needed for non-cartesian charts like pie, sankey, etc."}, {"q": "go.Scatter vs px.scatter:", "opts": ["Same thing", "go is lower-level (more control); px is higher-level (simpler)", "px is deprecated", "go is faster"], "ans": 1, "exp": "px (Plotly Express) is high-level — simple, fast. go (Graph Objects) is low-level — more control, needed for complex customization."}, {"q": "hole=0.3 in go.Pie creates:", "opts": ["A gap between slices", "A hole in the center (donut effect, 30% of radius)", "3 separate pies", "Error"], "ans": 1, "exp": "hole= creates a donut chart. 0.3 = hole radius is 30% of the total pie radius."}]}, {"title": "Chart Styling & Themes", "quizzes": [{"q": "plt.style.use('seaborn-v0_8-whitegrid') applies:", "opts": ["Custom colors only", "A pre-built visual style to all subsequent plots", "Error", "Changes existing plots"], "ans": 1, "exp": "style.use() sets a global style for all subsequent plots in the session."}, {"q": "plt.rcParams.update({}) does:", "opts": ["Resets settings", "Updates matplotlib's global settings", "Creates a new figure", "Error"], "ans": 1, "exp": "rcParams (runtime configuration parameters) controls global default settings for all Matplotlib plots."}, {"q": "with plt.style.context('dark_background'): applies style:", "opts": ["Permanently", "Only within the with block", "To next plot only", "Error"], "ans": 1, "exp": "style.context() as a context manager applies the style temporarily — only within the with block."}, {"q": "sns.set_context('talk') changes:", "opts": ["Colors", "Font sizes and element scales for presentations", "Background", "Error"], "ans": 1, "exp": "context sets the scale of plot elements: 'paper'=small, 'notebook'=default, 'talk'=presentation, 'poster'=large prints."}, {"q": "A good chart color palette should:", "opts": ["Use as many colors as possible", "Be colorblind-friendly, visually distinct, and consistent", "Always use rainbow", "Match the company logo exactly"], "ans": 1, "exp": "Good palettes: colorblind-safe (use seaborn's 'colorblind' palette), visually distinct enough to tell apart, consistent across related charts."}]}, {"title": "Exporting & Sharing Charts", "quizzes": [{"q": "dpi=300 vs dpi=72 in savefig():", "opts": ["Same quality", "300 dpi = higher resolution, larger file — better for print", "72 dpi is always better", "dpi affects only file size"], "ans": 1, "exp": "DPI = dots per inch. Higher DPI = sharper image at large sizes. 72=screen, 150=presentations, 300=print quality."}, {"q": "bbox_inches='tight' in savefig() ensures:", "opts": ["Crops the chart", "Includes all labels without cutting them off", "Maximizes figure size", "Adds white border"], "ans": 1, "exp": "Without tight, labels near edges may be cut off. bbox_inches='tight' includes everything in the saved file."}, {"q": "SVG format advantages for charts:", "opts": ["Smallest file size", "Vector format — scales to any size without pixelation", "Best for photos", "Requires special software to view"], "ans": 1, "exp": "SVG is vector — you can zoom to any size and it stays sharp. Editable in Illustrator/Inkscape. Great for logos and simple charts."}, {"q": "plt.close() after saving is important because:", "opts": ["Required by matplotlib", "Frees memory — important when creating many charts in a loop", "Saves the file", "Renders the chart"], "ans": 1, "exp": "plt.close() releases the figure's memory. In loops creating many charts, not closing causes memory leaks."}, {"q": "fig.write_html('chart.html') in Plotly creates:", "opts": ["A static image", "Self-contained interactive HTML — shareable without Python", "A dashboard server", "Error"], "ans": 1, "exp": "write_html() exports a completely self-contained HTML file with the interactive chart embedded as JavaScript."}]}]
+});
+const params = new URLSearchParams(location.search);
+const startLesson = parseInt(params.get("lesson") || "0");
+if (startLesson > 0) showLesson(startLesson);
+</script>
+</body>
+</html>
+<div class="lesson-panel" id="panel-10">
+  <div class="lesson-title-bar">
+    <h2>📈 Mini Project</h2>
+    <p>Phase 5 — Data Visualization</p>
+  </div>
+  <div class="lesson-body">
+    <h3>🏋️ Your Phase 5 Mini Project</h3>
+    <p style="font-size:1rem;line-height:1.8">🏋️ Mini Project: Visualization Story — 6+ chart types, each with insight, combine all 3 libraries</p>
+    <div class="tip-box"><strong>💡 How to submit:</strong> Complete in Jupyter Notebook, push to your GitHub fork, share the link.</div>
+  </div>
+</div></div>
+    <div style="display:flex;justify-content:space-between;margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border)">
+      <a class="btn-nav" href="phase-4.html">← Phase 4: Data Cleaning</a>
+      <a class="btn-nav" href="phase-6.html">Phase 6: Exploratory Data Analysis →</a>
+    </div>
+  </main>
+</div>
+
+<div class="modal-overlay" id="quiz-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="quiz-title">Lesson Quiz</h3>
+      <button class="modal-close" onclick="closeQuiz()">×</button>
+    </div>
+    <div id="quiz-body"></div>
+  </div>
+</div>
+
+<script src="../../js/app.js"></script>
+<script>
+initUnit({
+  id: 5,
+  lessons: [{"title": "Matplotlib Basics", "quizzes": [{"q": "fig, ax = plt.subplots() vs plt.figure():", "opts": ["Same thing", "subplots() returns both figure and axes; figure() returns only figure", "figure() is deprecated", "subplots() only for multiple plots"], "ans": 1, "exp": "subplots() creates a Figure AND returns the Axes object. Using ax gives you full OO-style control."}, {"q": "ax.spines['top'].set_visible(False) does:", "opts": ["Hides the top axis label", "Removes the top border line of the plot", "Removes top data points", "Error"], "ans": 1, "exp": "spines are the 4 border lines of the plot. Hiding top and right is a common clean chart style."}, {"q": "plt.tight_layout() fixes:", "opts": ["Data overlap", "Overlapping labels and titles between subplots", "The figure size", "Font sizes"], "ans": 1, "exp": "tight_layout() automatically adjusts spacing to prevent labels, titles, and subplots from overlapping."}, {"q": "bbox_inches='tight' in savefig() does:", "opts": ["Crops the image", "Includes everything inside the figure without cutting off labels", "Adds a border", "Compresses the file"], "ans": 1, "exp": "bbox_inches='tight' ensures labels and titles at the edges are not cut off when saving."}, {"q": "ax.annotate() is used to:", "opts": ["Add axis labels", "Add text with optional arrow pointing to a data point", "Add a legend", "Change axis scale"], "ans": 1, "exp": "annotate() adds text and an optional arrow to highlight or explain a specific data point."}]}, {"title": "Bar & Line Charts", "quizzes": [{"q": "ax.barh() creates:", "opts": ["Vertical bar chart", "Horizontal bar chart", "A histogram", "Error"], "ans": 1, "exp": "barh = horizontal bars. Great for long category labels or many categories."}, {"q": "ax.invert_yaxis() in a horizontal bar chart:", "opts": ["Flips to vertical", "Reverses y-axis so largest is at top", "Removes axis", "Sorts bars"], "ans": 1, "exp": "By default, barh plots bottom to top. invert_yaxis() makes the first item appear at the top."}, {"q": "width=0.35 in ax.bar() controls:", "opts": ["Chart width", "Bar width", "Space between bars", "Label width"], "ans": 1, "exp": "width parameter controls how wide each bar is. Default is 0.8. Smaller = thinner bars with more space."}, {"q": "bottom=q1 in a second bar() call creates:", "opts": ["Error", "Stacked bars starting at q1 values", "Grouped bars", "Overlapping bars"], "ans": 1, "exp": "bottom= parameter sets where each bar starts — using the first series as bottom creates stacked bars."}, {"q": "plt.FuncFormatter(lambda x,_: f'{x/1000:.0f}K') on axis does:", "opts": ["Converts to text", "Formats axis tick labels as '45K' instead of '45000'", "Removes ticks", "Changes scale"], "ans": 1, "exp": "FuncFormatter applies a custom formatting function to axis tick labels. Useful for showing thousands as 'K'."}]}, {"title": "Histograms & Scatter Plots", "quizzes": [{"q": "bins=30 in hist() controls:", "opts": ["Number of data points", "Number of equal-width intervals", "Bar width", "Color intensity"], "ans": 1, "exp": "bins= sets how many intervals the data is divided into. More bins = finer detail, fewer = smoother."}, {"q": "density=True in hist() shows:", "opts": ["Frequency count", "Probability density (area = 1)", "Cumulative distribution", "Percentage"], "ans": 1, "exp": "density=True normalizes the histogram so the total area equals 1, making it comparable to a probability density."}, {"q": "Scatter plot with c=values and cmap='viridis' creates:", "opts": ["Error", "Color-coded points based on values using viridis colormap", "All same color", "Random colors"], "ans": 1, "exp": "c= sets the color value for each point. cmap= chooses the colormap. Together they create a color-encoded scatter."}, {"q": "plt.colorbar(sc, ax=ax) adds:", "opts": ["A bar chart", "A color scale legend showing value-to-color mapping", "A second plot", "Error"], "ans": 1, "exp": "colorbar adds a color scale bar showing which values correspond to which colors in the scatter/heatmap."}, {"q": "KDE (Kernel Density Estimate) is:", "opts": ["A type of bar chart", "A smooth continuous estimate of the distribution", "A method for outlier detection", "A regression technique"], "ans": 1, "exp": "KDE creates a smooth curve representing the estimated probability density — like a smoothed histogram."}]}, {"title": "Pie & Area Charts", "quizzes": [{"q": "autopct='%1.1f%%' in pie() shows:", "opts": ["Labels only", "Percentage with 1 decimal place in each slice", "Actual values", "Nothing"], "ans": 1, "exp": "autopct formats the percentage label: %1.1f%% = 1 decimal float followed by % sign."}, {"q": "explode=[0.1,0,0,0] in pie() does:", "opts": ["Removes first slice", "Pulls first slice slightly away from center", "Colors first slice differently", "Error"], "ans": 1, "exp": "explode specifies how far to pull each slice from the center. 0.1 pulls the first slice out slightly."}, {"q": "A donut chart is a pie chart with:", "opts": ["Larger slices", "A hole in the center (smaller width wedges)", "Gradient colors", "3D effect"], "ans": 1, "exp": "A donut is created with wedgeprops=dict(width=0.6) — leaving a hole in the middle."}, {"q": "fill_between(x, y1, y2) in matplotlib fills:", "opts": ["A bar chart", "Area between two curves (or curve and x-axis)", "A scatter plot", "A histogram"], "ans": 1, "exp": "fill_between() fills the area between two y-value arrays. Using y2=0 (default) fills between the line and x-axis."}, {"q": "When NOT to use a pie chart:", "opts": ["When showing proportions", "When there are more than 5-6 categories", "For market share", "For budget breakdown"], "ans": 1, "exp": "Pie charts are hard to read with many slices. Use bar charts when comparing many categories — humans compare lengths much better than angles."}]}, {"title": "Subplots & Dashboards", "quizzes": [{"q": "GridSpec(2,3) creates a layout with:", "opts": ["6 equal panels", "A flexible 2-row × 3-column grid", "2 panels only", "Error"], "ans": 1, "exp": "GridSpec creates a grid layout. GridSpec(2,3) = 2 rows, 3 columns = 6 possible subplot areas."}, {"q": "gs[0, 1:] in GridSpec means:", "opts": ["Row 0, col 1 only", "Row 0, columns 1 to end (span multiple columns)", "Row 1, col 0", "Error"], "ans": 1, "exp": "gs[row_slice, col_slice]. gs[0, 1:] = row 0, columns from index 1 to end (column spanning)."}, {"q": "hspace and wspace in GridSpec control:", "opts": ["Plot sizes", "Horizontal and vertical spacing between subplots", "Font sizes", "Grid line visibility"], "ans": 1, "exp": "hspace = height spacing between rows. wspace = width spacing between columns."}, {"q": "ax.axis('off') in a text-only panel does:", "opts": ["Deletes the panel", "Hides all axis lines, ticks, and labels", "Makes text invisible", "Error"], "ans": 1, "exp": "axis('off') hides everything: x/y axis lines, tick marks, and tick labels — useful for text/KPI display panels."}, {"q": "dpi=150 in savefig() produces:", "opts": ["150 pixel image", "Higher resolution than dpi=72", "Compressed file", "Error"], "ans": 1, "exp": "Higher DPI = more dots per inch = sharper image but larger file size. 72=screen, 150=web/presentation, 300=print."}]}, {"title": "Seaborn Charts", "quizzes": [{"q": "sns.set_theme(style='whitegrid') does:", "opts": ["Sets data", "Applies a visual style to all subsequent plots", "Changes font", "Creates a grid DataFrame"], "ans": 1, "exp": "set_theme() applies a theme globally. 'whitegrid' = white background with grey grid lines."}, {"q": "A violin plot shows:", "opts": ["Only min/max/median", "Distribution shape (KDE) + quartile box", "Only individual points", "Only the mean"], "ans": 1, "exp": "Violin plot = KDE distribution shape on both sides + optional inner box/quartile lines. Shows full distribution shape."}, {"q": "inner='quart' in violinplot shows:", "opts": ["Individual points", "Quartile lines inside the violin", "Nothing", "Box plot inside"], "ans": 1, "exp": "inner='quart' draws quartile lines (Q1, median, Q3) inside the violin shape."}, {"q": "sns.barplot vs plt.bar:", "opts": ["Same result", "seaborn barplot adds confidence intervals automatically; plt.bar does not", "plt.bar is faster", "seaborn can't do bar charts"], "ans": 1, "exp": "sns.barplot automatically calculates and displays confidence intervals (error bars), while plt.bar just draws bars."}, {"q": "errorbar='sd' in sns.barplot shows:", "opts": ["Standard error", "Standard deviation as error bars", "Confidence intervals", "No error bars"], "ans": 0, "exp": "errorbar='sd' shows ±1 standard deviation. errorbar='se' shows standard error. errorbar='ci' shows confidence interval."}]}, {"title": "Heatmaps & Pair Plots", "quizzes": [{"q": "annot=True in heatmap shows:", "opts": ["Axis labels", "Values in each cell", "Color scale", "Title"], "ans": 1, "exp": "annot=True displays the data value inside each cell of the heatmap."}, {"q": "mask=np.triu(ones) in heatmap hides:", "opts": ["Lower triangle", "Upper triangle", "Diagonal", "Everything"], "ans": 1, "exp": "np.triu creates an upper triangle mask. Applying it to heatmap hides the upper triangle, showing only lower."}, {"q": "cmap='coolwarm' with center=0 maps:", "opts": ["All values to blue", "Negative→blue, zero→white, positive→red", "Values by frequency", "Random colors"], "ans": 1, "exp": "coolwarm with center=0: values below 0 go blue, above 0 go red, 0 is white — perfect for correlation matrices."}, {"q": "A pair plot shows:", "opts": ["One scatter plot", "All pairwise scatter plots + diagonal distributions", "A correlation matrix", "Error for many columns"], "ans": 1, "exp": "pairplot creates a grid: each non-diagonal cell shows a scatter of two variables; diagonal shows the variable's distribution."}, {"q": "fmt='.2f' in heatmap annot formats numbers as:", "opts": ["2 decimal places", "2 significant figures", "Integer × 2", "Percentage"], "ans": 0, "exp": "fmt is a format string for annotations. '.2f' = 2 decimal places float (e.g., 0.85, -0.23)."}]}, {"title": "Plotly — Interactive Charts", "quizzes": [{"q": "Plotly's main advantage over Matplotlib is:", "opts": ["Faster rendering", "Interactive charts (zoom, hover, click)", "Better color schemes", "Simpler code always"], "ans": 1, "exp": "Plotly creates interactive charts with zoom, pan, hover tooltips, and click events — perfect for web dashboards."}, {"q": "fig.write_html('chart.html') does:", "opts": ["Saves a PNG image", "Saves a self-contained interactive HTML file", "Exports to PDF", "Sends to browser"], "ans": 1, "exp": "write_html() saves the entire interactive chart as a standalone HTML file — shareable without Python dependencies."}, {"q": "make_subplots(specs=[[{'type':'pie'}]]) tells Plotly:", "opts": ["To use pie colors", "That subplot at position [0,0] expects a pie chart type", "To make all pies", "Error"], "ans": 1, "exp": "specs specifies the chart type for each subplot position — needed for non-cartesian charts like pie, sankey, etc."}, {"q": "go.Scatter vs px.scatter:", "opts": ["Same thing", "go is lower-level (more control); px is higher-level (simpler)", "px is deprecated", "go is faster"], "ans": 1, "exp": "px (Plotly Express) is high-level — simple, fast. go (Graph Objects) is low-level — more control, needed for complex customization."}, {"q": "hole=0.3 in go.Pie creates:", "opts": ["A gap between slices", "A hole in the center (donut effect, 30% of radius)", "3 separate pies", "Error"], "ans": 1, "exp": "hole= creates a donut chart. 0.3 = hole radius is 30% of the total pie radius."}]}, {"title": "Chart Styling & Themes", "quizzes": [{"q": "plt.style.use('seaborn-v0_8-whitegrid') applies:", "opts": ["Custom colors only", "A pre-built visual style to all subsequent plots", "Error", "Changes existing plots"], "ans": 1, "exp": "style.use() sets a global style for all subsequent plots in the session."}, {"q": "plt.rcParams.update({}) does:", "opts": ["Resets settings", "Updates matplotlib's global settings", "Creates a new figure", "Error"], "ans": 1, "exp": "rcParams (runtime configuration parameters) controls global default settings for all Matplotlib plots."}, {"q": "with plt.style.context('dark_background'): applies style:", "opts": ["Permanently", "Only within the with block", "To next plot only", "Error"], "ans": 1, "exp": "style.context() as a context manager applies the style temporarily — only within the with block."}, {"q": "sns.set_context('talk') changes:", "opts": ["Colors", "Font sizes and element scales for presentations", "Background", "Error"], "ans": 1, "exp": "context sets the scale of plot elements: 'paper'=small, 'notebook'=default, 'talk'=presentation, 'poster'=large prints."}, {"q": "A good chart color palette should:", "opts": ["Use as many colors as possible", "Be colorblind-friendly, visually distinct, and consistent", "Always use rainbow", "Match the company logo exactly"], "ans": 1, "exp": "Good palettes: colorblind-safe (use seaborn's 'colorblind' palette), visually distinct enough to tell apart, consistent across related charts."}]}, {"title": "Exporting & Sharing Charts", "quizzes": [{"q": "dpi=300 vs dpi=72 in savefig():", "opts": ["Same quality", "300 dpi = higher resolution, larger file — better for print", "72 dpi is always better", "dpi affects only file size"], "ans": 1, "exp": "DPI = dots per inch. Higher DPI = sharper image at large sizes. 72=screen, 150=presentations, 300=print quality."}, {"q": "bbox_inches='tight' in savefig() ensures:", "opts": ["Crops the chart", "Includes all labels without cutting them off", "Maximizes figure size", "Adds white border"], "ans": 1, "exp": "Without tight, labels near edges may be cut off. bbox_inches='tight' includes everything in the saved file."}, {"q": "SVG format advantages for charts:", "opts": ["Smallest file size", "Vector format — scales to any size without pixelation", "Best for photos", "Requires special software to view"], "ans": 1, "exp": "SVG is vector — you can zoom to any size and it stays sharp. Editable in Illustrator/Inkscape. Great for logos and simple charts."}, {"q": "plt.close() after saving is important because:", "opts": ["Required by matplotlib", "Frees memory — important when creating many charts in a loop", "Saves the file", "Renders the chart"], "ans": 1, "exp": "plt.close() releases the figure's memory. In loops creating many charts, not closing causes memory leaks."}, {"q": "fig.write_html('chart.html') in Plotly creates:", "opts": ["A static image", "Self-contained interactive HTML — shareable without Python", "A dashboard server", "Error"], "ans": 1, "exp": "write_html() exports a completely self-contained HTML file with the interactive chart embedded as JavaScript."}]}, {"title": "Mini Project", "quizzes": []}]
+});
+const params = new URLSearchParams(location.search);
+const startLesson = parseInt(params.get("lesson") || "0");
+if (startLesson > 0) showLesson(startLesson);
+</script>
+</body>
+</html>

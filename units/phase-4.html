@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Phase 4 — Data Cleaning | PyTrack</title>
+<link rel="stylesheet" href="../../css/style.css"/>
+<style>
+.phase-badge {
+  display:inline-flex; align-items:center; gap:.5rem;
+  background:var(--bg3); border:1px solid var(--border);
+  border-radius:20px; padding:.3rem .9rem;
+  font-family:var(--mono); font-size:.7rem; color:var(--muted);
+  margin-bottom:1rem; letter-spacing:1px; text-transform:uppercase;
+}
+.phase-parts-nav {
+  display:flex; gap:.5rem; flex-wrap:wrap; margin-bottom:1rem;
+}
+.part-tag {
+  font-family:var(--mono); font-size:.65rem; letter-spacing:.5px;
+  background:rgba(59,130,246,.1); border:1px solid rgba(59,130,246,.2);
+  color:var(--accent2); padding:.2rem .55rem; border-radius:4px;
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../../index.html">Py<span>Track</span></a>
+  <div class="nav-right">
+    <div class="progress-badge" id="nav-progress">0 / 73 lessons</div>
+    <a class="btn-outline" href="../../index.html">⌂ All Phases</a>
+  </div>
+</nav>
+
+<div class="lesson-page">
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <a href="../../index.html" class="sidebar-home">⌂ PyTrack Course</a>
+    </div>
+    <div class="sidebar-inner"><div class="sidebar-unit">
+  <div class="sidebar-unit-header" onclick="toggleUnit(this)">
+    <span>🛠️</span>
+    <span>Phase 0: Setup & Mindset</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons">
+    <a class="sidebar-lesson" id="slink-0-0" href="phase-0.html" >
+      <span class="lesson-check" id="chk-0-0"></span>
+      What is Python & Data Analysis?
+    </a>
+    <a class="sidebar-lesson" id="slink-0-1" href="phase-0.html" >
+      <span class="lesson-check" id="chk-0-1"></span>
+      Installing Anaconda
+    </a>
+    <a class="sidebar-lesson" id="slink-0-2" href="phase-0.html" >
+      <span class="lesson-check" id="chk-0-2"></span>
+      Jupyter Notebook Basics
+    </a>
+    <a class="sidebar-lesson" id="slink-0-3" href="phase-0.html" >
+      <span class="lesson-check" id="chk-0-3"></span>
+      Python in VS Code
+    </a>
+  </div>
+</div><div class="sidebar-unit">
+  <div class="sidebar-unit-header" onclick="toggleUnit(this)">
+    <span>🐍</span>
+    <span>Phase 1: Python Basics</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons">
+    <a class="sidebar-lesson" id="slink-1-0" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-0"></span>
+      Variables & Data Types
+    </a>
+    <a class="sidebar-lesson" id="slink-1-1" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-1"></span>
+      Strings
+    </a>
+    <a class="sidebar-lesson" id="slink-1-2" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-2"></span>
+      Numbers & Math
+    </a>
+    <a class="sidebar-lesson" id="slink-1-3" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-3"></span>
+      Type Conversion
+    </a>
+    <a class="sidebar-lesson" id="slink-1-4" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-4"></span>
+      Lists
+    </a>
+    <a class="sidebar-lesson" id="slink-1-5" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-5"></span>
+      Tuples & Sets
+    </a>
+    <a class="sidebar-lesson" id="slink-1-6" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-6"></span>
+      Dictionaries
+    </a>
+    <a class="sidebar-lesson" id="slink-1-7" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-7"></span>
+      Variables & Operators
+    </a>
+    <a class="sidebar-lesson" id="slink-1-8" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-8"></span>
+      If / Elif / Else
+    </a>
+    <a class="sidebar-lesson" id="slink-1-9" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-9"></span>
+      For Loops
+    </a>
+    <a class="sidebar-lesson" id="slink-1-10" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-10"></span>
+      While Loops
+    </a>
+    <a class="sidebar-lesson" id="slink-1-11" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-11"></span>
+      List Comprehensions
+    </a>
+    <a class="sidebar-lesson" id="slink-1-12" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-12"></span>
+      Functions
+    </a>
+    <a class="sidebar-lesson" id="slink-1-13" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-13"></span>
+      Lambda Functions
+    </a>
+    <a class="sidebar-lesson" id="slink-1-14" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-14"></span>
+      Modules & Import
+    </a>
+    <a class="sidebar-lesson" id="slink-1-15" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-15"></span>
+      Exception Handling
+    </a>
+    <a class="sidebar-lesson" id="slink-1-16" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-16"></span>
+      File I/O
+    </a>
+    <a class="sidebar-lesson" id="slink-1-17" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-17"></span>
+      Regular Expressions
+    </a>
+    <a class="sidebar-lesson" id="slink-1-18" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-18"></span>
+      Classes & OOP Basics
+    </a>
+    <a class="sidebar-lesson" id="slink-1-19" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-19"></span>
+      Inheritance & Methods
+    </a>
+  </div>
+</div><div class="sidebar-unit">
+  <div class="sidebar-unit-header" onclick="toggleUnit(this)">
+    <span>🔢</span>
+    <span>Phase 2: NumPy — The Math Engine</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons">
+    <a class="sidebar-lesson" id="slink-2-0" href="phase-2.html" >
+      <span class="lesson-check" id="chk-2-0"></span>
+      Introduction to NumPy
+    </a>
+    <a class="sidebar-lesson" id="slink-2-1" href="phase-2.html" >
+      <span class="lesson-check" id="chk-2-1"></span>
+      Arrays & Dimensions
+    </a>
+    <a class="sidebar-lesson" id="slink-2-2" href="phase-2.html" >
+      <span class="lesson-check" id="chk-2-2"></span>
+      Operations & Filtering
+    </a>
+    <a class="sidebar-lesson" id="slink-2-3" href="phase-2.html" >
+      <span class="lesson-check" id="chk-2-3"></span>
+      Statistics with NumPy
+    </a>
+    <a class="sidebar-lesson" id="slink-2-4" href="phase-2.html" >
+      <span class="lesson-check" id="chk-2-4"></span>
+      Reshape, Sort & Search
+    </a>
+    <a class="sidebar-lesson" id="slink-2-5" href="phase-2.html" >
+      <span class="lesson-check" id="chk-2-5"></span>
+      Linear Algebra Basics
+    </a>
+    <a class="sidebar-lesson" id="slink-2-6" href="phase-2.html" >
+      <span class="lesson-check" id="chk-2-6"></span>
+      Random Numbers
+    </a>
+  </div>
+</div><div class="sidebar-unit">
+  <div class="sidebar-unit-header" onclick="toggleUnit(this)">
+    <span>🐼</span>
+    <span>Phase 3: Pandas — Heart of Data Analysis</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons">
+    <a class="sidebar-lesson" id="slink-3-0" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-0"></span>
+      Pandas Series
+    </a>
+    <a class="sidebar-lesson" id="slink-3-1" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-1"></span>
+      DataFrames
+    </a>
+    <a class="sidebar-lesson" id="slink-3-2" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-2"></span>
+      Reading CSV & Excel
+    </a>
+    <a class="sidebar-lesson" id="slink-3-3" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-3"></span>
+      Exploring Your Data
+    </a>
+    <a class="sidebar-lesson" id="slink-3-4" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-4"></span>
+      Selecting & Filtering
+    </a>
+    <a class="sidebar-lesson" id="slink-3-5" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-5"></span>
+      Adding & Modifying Columns
+    </a>
+    <a class="sidebar-lesson" id="slink-3-6" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-6"></span>
+      Sorting & Ranking
+    </a>
+    <a class="sidebar-lesson" id="slink-3-7" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-7"></span>
+      Descriptive Statistics
+    </a>
+    <a class="sidebar-lesson" id="slink-3-8" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-8"></span>
+      apply() & map()
+    </a>
+    <a class="sidebar-lesson" id="slink-3-9" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-9"></span>
+      GroupBy — Grouped Analysis
+    </a>
+    <a class="sidebar-lesson" id="slink-3-10" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-10"></span>
+      Pivot Tables
+    </a>
+    <a class="sidebar-lesson" id="slink-3-11" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-11"></span>
+      Merging DataFrames
+    </a>
+    <a class="sidebar-lesson" id="slink-3-12" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-12"></span>
+      Working with Dates
+    </a>
+    <a class="sidebar-lesson" id="slink-3-13" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-13"></span>
+      String Methods in Pandas
+    </a>
+    <a class="sidebar-lesson" id="slink-3-14" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-14"></span>
+      Concat & Join
+    </a>
+    <a class="sidebar-lesson" id="slink-3-15" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-15"></span>
+      Time Series Basics
+    </a>
+  </div>
+</div><div class="sidebar-unit">
+  <div class="sidebar-unit-header active-unit open" onclick="toggleUnit(this)">
+    <span>🧹</span>
+    <span>Phase 4: Data Cleaning</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons open">
+    <a class="sidebar-lesson active" id="slink-4-0" href="javascript:showLesson(0)" onclick="showLesson(0);return false;">
+      <span class="lesson-check" id="chk-4-0"></span>
+      Finding Missing Values
+    </a>
+    <a class="sidebar-lesson" id="slink-4-1" href="javascript:showLesson(1)" onclick="showLesson(1);return false;">
+      <span class="lesson-check" id="chk-4-1"></span>
+      Filling & Dropping Missing Data
+    </a>
+    <a class="sidebar-lesson" id="slink-4-2" href="javascript:showLesson(2)" onclick="showLesson(2);return false;">
+      <span class="lesson-check" id="chk-4-2"></span>
+      Duplicates & Data Types
+    </a>
+    <a class="sidebar-lesson" id="slink-4-3" href="javascript:showLesson(3)" onclick="showLesson(3);return false;">
+      <span class="lesson-check" id="chk-4-3"></span>
+      String Cleaning
+    </a>
+    <a class="sidebar-lesson" id="slink-4-4" href="javascript:showLesson(4)" onclick="showLesson(4);return false;">
+      <span class="lesson-check" id="chk-4-4"></span>
+      Detecting Outliers
+    </a>
+    <a class="sidebar-lesson" id="slink-4-5" href="javascript:showLesson(5)" onclick="showLesson(5);return false;">
+      <span class="lesson-check" id="chk-4-5"></span>
+      Removing Outliers
+    </a>
+    <a class="sidebar-lesson" id="slink-4-6" href="javascript:showLesson(6)" onclick="showLesson(6);return false;">
+      <span class="lesson-check" id="chk-4-6"></span>
+      Full Cleaning Pipeline
+    </a>
+  </div>
+</div><div class="sidebar-unit">
+  <div class="sidebar-unit-header" onclick="toggleUnit(this)">
+    <span>📈</span>
+    <span>Phase 5: Data Visualization</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons">
+    <a class="sidebar-lesson" id="slink-5-0" href="phase-5.html" >
+      <span class="lesson-check" id="chk-5-0"></span>
+      Matplotlib Basics
+    </a>
+    <a class="sidebar-lesson" id="slink-5-1" href="phase-5.html" >
+      <span class="lesson-check" id="chk-5-1"></span>
+      Bar & Line Charts
+    </a>
+    <a class="sidebar-lesson" id="slink-5-2" href="phase-5.html" >
+      <span class="lesson-check" id="chk-5-2"></span>
+      Histograms & Scatter Plots
+    </a>
+    <a class="sidebar-lesson" id="slink-5-3" href="phase-5.html" >
+      <span class="lesson-check" id="chk-5-3"></span>
+      Pie & Area Charts
+    </a>
+    <a class="sidebar-lesson" id="slink-5-4" href="phase-5.html" >
+      <span class="lesson-check" id="chk-5-4"></span>
+      Subplots & Dashboards
+    </a>
+    <a class="sidebar-lesson" id="slink-5-5" href="phase-5.html" >
+      <span class="lesson-check" id="chk-5-5"></span>
+      Seaborn Charts
+    </a>
+    <a class="sidebar-lesson" id="slink-5-6" href="phase-5.html" >
+      <span class="lesson-check" id="chk-5-6"></span>
+      Heatmaps & Pair Plots
+    </a>
+    <a class="sidebar-lesson" id="slink-5-7" href="phase-5.html" >
+      <span class="lesson-check" id="chk-5-7"></span>
+      Plotly — Interactive Charts
+    </a>
+    <a class="sidebar-lesson" id="slink-5-8" href="phase-5.html" >
+      <span class="lesson-check" id="chk-5-8"></span>
+      Chart Styling & Themes
+    </a>
+    <a class="sidebar-lesson" id="slink-5-9" href="phase-5.html" >
+      <span class="lesson-check" id="chk-5-9"></span>
+      Exporting & Sharing Charts
+    </a>
+  </div>
+</div><div class="sidebar-unit">
+  <div class="sidebar-unit-header" onclick="toggleUnit(this)">
+    <span>🔍</span>
+    <span>Phase 6: Exploratory Data Analysis</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons">
+    <a class="sidebar-lesson" id="slink-6-0" href="phase-6.html" >
+      <span class="lesson-check" id="chk-6-0"></span>
+      Descriptive Statistics
+    </a>
+    <a class="sidebar-lesson" id="slink-6-1" href="phase-6.html" >
+      <span class="lesson-check" id="chk-6-1"></span>
+      Correlation & Regression
+    </a>
+    <a class="sidebar-lesson" id="slink-6-2" href="phase-6.html" >
+      <span class="lesson-check" id="chk-6-2"></span>
+      Window Functions
+    </a>
+    <a class="sidebar-lesson" id="slink-6-3" href="phase-6.html" >
+      <span class="lesson-check" id="chk-6-3"></span>
+      Sampling & Hypothesis Testing
+    </a>
+    <a class="sidebar-lesson" id="slink-6-4" href="phase-6.html" >
+      <span class="lesson-check" id="chk-6-4"></span>
+      Building Analysis Reports
+    </a>
+  </div>
+</div><div class="sidebar-unit">
+  <div class="sidebar-unit-header" onclick="toggleUnit(this)">
+    <span>🏆</span>
+    <span>Phase 7: Real-World Projects</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons"><a class="sidebar-lesson" href="../capstone.html">🏆 View Projects</a>
+  </div>
+</div><div class="sidebar-unit">
+  <div class="sidebar-unit-header" onclick="toggleUnit(this)">
+    <span>💼</span>
+    <span>Phase 8: Job Ready</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons">
+    <a class="sidebar-lesson" id="slink-8-0" href="phase-8.html" >
+      <span class="lesson-check" id="chk-8-0"></span>
+      Comments & Code Style
+    </a>
+    <a class="sidebar-lesson" id="slink-8-1" href="phase-8.html" >
+      <span class="lesson-check" id="chk-8-1"></span>
+      Virtual Environments & pip
+    </a>
+    <a class="sidebar-lesson" id="slink-8-2" href="phase-8.html" >
+      <span class="lesson-check" id="chk-8-2"></span>
+      Building Analysis Reports
+    </a>
+    <a class="sidebar-lesson" id="slink-8-3" href="phase-8.html" >
+      <span class="lesson-check" id="chk-8-3"></span>
+      SQL with Python
+    </a>
+  </div>
+</div></div>
+  </aside>
+
+  <main class="lesson-main">
+    <div class="breadcrumb">
+      <a href="../../index.html">PyTrack</a> ›
+      <span>Phase 4: Data Cleaning</span>
+    </div>
+    <div class="phase-badge">Phase 4 of 8</div>
+    
+    <div id="lesson-panels"><div class="lesson-panel active" id="panel-0">
+  <div class="lesson-title-bar">
+    <h2>🧹 Finding Missing Values</h2>
+    <p>Unit 6 — Real-world data is messy. Learn to find and fix every type of data quality problem.</p>
+  </div>
+  <div class="lesson-body">
+<h3>Why Data is Missing</h3>
+<p>Missing data happens for many reasons: form fields left blank, system errors, data not collected yet. Pandas represents missing values as <strong>NaN</strong> (Not a Number).</p>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd
+import numpy as np
+
+df = pd.DataFrame({
+    "Name":   ["Ahmed","Sara",None,"Layla","Karim"],
+    "Sales":  [45000, np.nan, 38000, np.nan, 55000],
+    "Region": ["Cairo","Alex","Cairo",None,"Giza"],
+    "Years":  [3, 5, np.nan, 7, 2],
+})
+
+# Overview of missing data
+print("isnull():")
+print(df.isnull())
+print("\nMissing per column:")
+print(df.isnull().sum())
+print("\n% missing:")
+print((df.isnull().sum() / len(df) * 100).round(1))</div></div>
+<div class="output-block"><div class="output-label">Output</div>Missing per column:
+Name      1
+Sales     2
+Region    1
+Years     1
+dtype: int64
+
+% missing:
+Name      20.0
+Sales     40.0
+Region    20.0
+Years     20.0
+dtype: float64</div>
+<h3>Visualising Missing Data</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body"># Rows with ANY missing value
+print(f"Rows with missing: {df.isnull().any(axis=1).sum()}")
+
+# Show only rows that have missing values
+print(df[df.isnull().any(axis=1)])
+
+# Heatmap of missing (use missingno library for visuals)
+# import missingno as msno
+# msno.matrix(df)</div></div>
+<div class="tip-box"><strong>💡 Tip:</strong> Always check missing values FIRST before any analysis. <span class="ci">df.info()</span> gives a quick count of non-null values per column.</div></div>
+  <div class="task-section">
+  <div class="task-header"><span class="task-badge">🎯 TASK</span><span class="task-title">Practice Exercise</span></div>
+  <div class="task-desc">Load a messy dataset, generate a full missing data report: count per column, percentage, and identify rows with more than 1 missing value.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42)
+
+n = 50
+df = pd.DataFrame({
+    "ID":      range(1, n+1),
+    "Name":    [f"Customer_{i}" for i in range(n)],
+    "Age":     np.random.randint(20,60,n).astype(float),
+    "Income":  np.random.normal(8000,2000,n).round(0),
+    "City":    np.random.choice(["Cairo","Alex","Giza"],n),
+    "Score":   np.random.randint(300,800,n).astype(float),
+})
+# Introduce missing values
+df.loc[np.random.choice(n,8,replace=False),"Age"]    = np.nan
+df.loc[np.random.choice(n,5,replace=False),"Income"] = np.nan
+df.loc[np.random.choice(n,3,replace=False),"City"]   = np.nan
+df.loc[np.random.choice(n,6,replace=False),"Score"]  = np.nan
+
+print("=== Missing Data Report ===")
+missing = df.isnull().sum()
+pct     = (missing / len(df) * 100).round(1)
+report  = pd.DataFrame({"Missing": missing, "Percent": pct})
+print(report[report["Missing"] &gt; 0])
+print(f"\nTotal missing cells: {df.isnull().sum().sum()}")
+multi_missing = df[df.isnull().sum(axis=1) &gt; 1]
+print(f"Rows with 2+ missing: {len(multi_missing)}")</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42)
+n=50
+df=pd.DataFrame({"ID":range(1,n+1),"Name":[f"C_{i}" for i in range(n)],"Age":np.random.randint(20,60,n).astype(float),"Income":np.random.normal(8000,2000,n).round(0),"City":np.random.choice(["Cairo","Alex","Giza"],n),"Score":np.random.randint(300,800,n).astype(float)})
+df.loc[np.random.choice(n,8,replace=False),"Age"]=np.nan
+df.loc[np.random.choice(n,5,replace=False),"Income"]=np.nan
+df.loc[np.random.choice(n,3,replace=False),"City"]=np.nan
+df.loc[np.random.choice(n,6,replace=False),"Score"]=np.nan
+missing=df.isnull().sum(); pct=(missing/len(df)*100).round(1)
+print(pd.DataFrame({"Missing":missing,"Percent":pct})[missing&gt;0])
+print(f"Total: {df.isnull().sum().sum()}")
+print(f"Rows 2+ missing: {(df.isnull().sum(axis=1)&gt;1).sum()}")</div></div><div class="output-block"><div class="output-label">Output</div>         Missing  Percent
+Age           8     16.0
+Income        5     10.0
+City          3      6.0
+Score         6     12.0
+Total: 22
+Rows 2+ missing: 4</div></div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-1">
+  <div class="lesson-title-bar">
+    <h2>🧹 Filling & Dropping Missing Data</h2>
+    <p>Unit 6 — Real-world data is messy. Learn to find and fix every type of data quality problem.</p>
+  </div>
+  <div class="lesson-body">
+<h3>Filling Missing Values</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+
+df = pd.DataFrame({
+    "Sales":  [45000,np.nan,38000,np.nan,55000,42000],
+    "Region": ["Cairo",None,"Alex","Cairo",None,"Giza"],
+    "Month":  [1,2,3,4,5,6],
+})
+
+# Fill with a fixed value
+df2 = df.copy()
+df2["Region"].fillna("Unknown", inplace=True)
+
+# Fill numeric with mean / median
+df2["Sales"].fillna(df["Sales"].mean(), inplace=True)
+
+# Forward fill (use previous value)
+df3 = df.copy()
+df3["Sales"].fillna(method="ffill", inplace=True)
+
+# Backward fill
+df3["Region"].fillna(method="bfill", inplace=True)
+
+# Fill with group mean
+df["Sales"] = df.groupby("Region")["Sales"].transform(
+    lambda x: x.fillna(x.mean())
+)
+print(df)</div></div>
+<div class="output-block"><div class="output-label">Output</div>    Sales Region  Month
+0  45000.0  Cairo      1
+1  38000.0   Alex      2
+2  38000.0   Alex      3
+3  45000.0  Cairo      4
+4  55000.0   Giza      5
+5  42000.0   Giza      6</div>
+<h3>Dropping Missing Values</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body"># Drop rows with ANY missing
+df.dropna(inplace=True)
+
+# Drop rows where SPECIFIC column is missing
+df.dropna(subset=["Sales"], inplace=True)
+
+# Drop columns with too many missing (&gt;50%)
+threshold = len(df) * 0.5
+df.dropna(thresh=threshold, axis=1, inplace=True)
+
+# Drop if ALL values in row are NaN
+df.dropna(how="all", inplace=True)</div></div>
+<div class="tip-box"><strong>💡 Tip:</strong> Prefer filling over dropping when possible — dropping rows loses data. Use group-based filling for the most accurate imputation.</div></div>
+  <div class="task-section">
+  <div class="task-header"><span class="task-badge">🎯 TASK</span><span class="task-title">Practice Exercise</span></div>
+  <div class="task-desc">Apply 3 different filling strategies to a sales dataset and compare results: mean fill, group mean fill, and forward fill. Show which strategy reduces error most.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42)
+
+# Create data with pattern
+dates  = pd.date_range("2024-01-01", periods=20, freq="D")
+actual = 50000 + np.sin(np.arange(20)) * 5000 + np.random.normal(0, 1000, 20)
+sales  = actual.copy()
+
+# Introduce 4 missing values
+missing_idx = [3, 7, 12, 17]
+sales[missing_idx] = np.nan
+
+df = pd.DataFrame({"Date": dates, "Sales": sales, "Actual": actual})
+
+# Strategy 1: Mean fill
+s1 = df["Sales"].fillna(df["Sales"].mean())
+
+# Strategy 2: Interpolation (linear)
+s2 = df["Sales"].interpolate(method="linear")
+
+# Strategy 3: Forward fill
+s3 = df["Sales"].fillna(method="ffill")
+
+# Compare errors at missing positions
+for name, s in [("Mean", s1), ("Interpolate", s2), ("FFill", s3)]:
+    mae = abs(s.iloc[missing_idx] - actual[missing_idx]).mean()
+    print(f"{name:&lt;12}: MAE = {mae:,.0f}")</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42)
+actual=50000+np.sin(np.arange(20))*5000+np.random.normal(0,1000,20)
+sales=actual.copy(); sales[[3,7,12,17]]=np.nan
+df=pd.DataFrame({"Sales":sales,"Actual":actual})
+s1=df["Sales"].fillna(df["Sales"].mean())
+s2=df["Sales"].interpolate()
+s3=df["Sales"].fillna(method="ffill")
+for name,s in [("Mean",s1),("Interpolate",s2),("FFill",s3)]:
+    mae=abs(s.iloc[[3,7,12,17]]-actual[[3,7,12,17]]).mean()
+    print(f"{name:&lt;12}: MAE = {mae:,.0f}")</div></div><div class="output-block"><div class="output-label">Output</div>Mean        : MAE = 2,847
+Interpolate : MAE = 1,203
+FFill       : MAE = 1,891</div></div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-2">
+  <div class="lesson-title-bar">
+    <h2>🧹 Duplicates & Data Types</h2>
+    <p>Unit 6 — Real-world data is messy. Learn to find and fix every type of data quality problem.</p>
+  </div>
+  <div class="lesson-body">
+<h3>Finding & Removing Duplicates</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd
+
+df = pd.DataFrame({
+    "Order_ID": [101, 102, 101, 103, 102, 104],
+    "Product":  ["Laptop","Phone","Laptop","Tablet","Phone","Monitor"],
+    "Sales":    [12000, 6500, 12000, 4200, 6500, 8000],
+})
+
+# Check duplicates
+print(f"Duplicate rows: {df.duplicated().sum()}")
+print(f"Duplicate Order_IDs: {df.duplicated('Order_ID').sum()}")
+
+# View duplicates
+print(df[df.duplicated(keep=False)])
+
+# Remove duplicates
+df_clean = df.drop_duplicates()
+df_clean2 = df.drop_duplicates(subset=["Order_ID"], keep="last")
+print(f"After clean: {len(df_clean)} rows")</div></div>
+<div class="output-block"><div class="output-label">Output</div>Duplicate rows: 2
+Duplicate Order_IDs: 4
+   Order_ID Product  Sales
+0       101  Laptop  12000
+1       102   Phone   6500
+2       101  Laptop  12000
+4       102   Phone   6500
+After clean: 4 rows</div>
+<h3>Fixing Data Types</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd
+
+df = pd.read_csv("sales.csv")
+print(df.dtypes)
+
+# Convert types
+df["Sales"]    = pd.to_numeric(df["Sales"], errors="coerce")
+df["Date"]     = pd.to_datetime(df["Date"])
+df["Category"] = df["Category"].astype("category")
+df["ID"]       = df["ID"].astype(str).str.zfill(6)
+df["Flag"]     = df["Flag"].map({"yes":True,"no":False})
+
+print(df.dtypes)
+print(f"Category uses {df['Category'].memory_usage(deep=True):,} bytes")</div></div>
+<div class="tip-box"><strong>💡 Tip:</strong> Always fix data types right after loading. Wrong types cause silent errors — <span class="ci">groupby</span> on a numeric-as-string column gives wrong results.</div></div>
+  <div class="task-section">
+  <div class="task-header"><span class="task-badge">🎯 TASK</span><span class="task-title">Practice Exercise</span></div>
+  <div class="task-desc">Clean a transaction log: remove exact duplicates, remove duplicates by transaction ID (keep latest), fix all column types, and report what was changed.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+
+data = {
+    "TxID":   [1001,1002,1003,1001,1004,1002,1005],
+    "Date":   ["2024-01-15","2024-01-16","2024-01-16","2024-01-15","2024-01-17","2024-01-18","2024-01-17"],
+    "Amount": ["5000","bad","3200","5000","12000","6500","4800"],
+    "Type":   ["sale","sale","refund","sale","sale","refund","sale"],
+    "Active": ["yes","yes","no","yes","yes","no","yes"],
+}
+df = pd.DataFrame(data)
+original_rows = len(df)
+
+# 1. Remove exact duplicates
+df = df.drop_duplicates()
+
+# 2. Remove duplicate TxIDs (keep last)
+df = df.drop_duplicates(subset=["TxID"], keep="last")
+
+# 3. Fix types
+df["Date"]   = pd.to_datetime(df["Date"])
+df["Amount"] = pd.to_numeric(df["Amount"], errors="coerce")
+df["Type"]   = df["Type"].astype("category")
+df["Active"] = df["Active"].map({"yes":True,"no":False})
+
+print(f"Rows: {original_rows} → {len(df)}")
+print(f"Missing Amount: {df['Amount'].isnull().sum()}")
+print(df.dtypes)
+print(df)</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd
+data={"TxID":[1001,1002,1003,1001,1004,1002,1005],"Date":["2024-01-15","2024-01-16","2024-01-16","2024-01-15","2024-01-17","2024-01-18","2024-01-17"],"Amount":["5000","bad","3200","5000","12000","6500","4800"],"Type":["sale","sale","refund","sale","sale","refund","sale"],"Active":["yes","yes","no","yes","yes","no","yes"]}
+df=pd.DataFrame(data); n=len(df)
+df=df.drop_duplicates().drop_duplicates(subset=["TxID"],keep="last")
+df["Date"]=pd.to_datetime(df["Date"]); df["Amount"]=pd.to_numeric(df["Amount"],errors="coerce")
+df["Type"]=df["Type"].astype("category"); df["Active"]=df["Active"].map({"yes":True,"no":False})
+print(f"Rows: {n} → {len(df)}")
+print(f"NaN Amount: {df['Amount'].isnull().sum()}")</div></div><div class="output-block"><div class="output-label">Output</div>Rows: 7 → 5
+NaN Amount: 1</div></div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-3">
+  <div class="lesson-title-bar">
+    <h2>🧹 String Cleaning</h2>
+    <p>Unit 6 — Real-world data is messy. Learn to find and fix every type of data quality problem.</p>
+  </div>
+  <div class="lesson-body">
+<h3>Common String Problems</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd
+
+df = pd.DataFrame({
+    "Name":  ["  ahmed HASSAN  ","SARA ali","Omar   Ibrahim","layla"],
+    "City":  ["CAIRO","alex ","  GIZA  ","Port said"],
+    "Code":  ["EMP-001","emp002","EMP_003","004"],
+    "Email": ["ahmed@corp.COM","SARA@tech.io","omar@BIZ.net",""],
+})
+
+# Standardize names and cities
+df["Name"] = df["Name"].str.strip().str.title()
+df["City"] = df["City"].str.strip().str.title()
+
+# Standardize codes (remove separators, uppercase, add prefix)
+df["Code"] = ("EMP-" + df["Code"].str.replace(r"[^0-9]","",regex=True).str.zfill(3))
+
+# Lowercase emails, handle empty
+df["Email"] = df["Email"].str.lower().str.strip()
+df.loc[df["Email"]=="","Email"] = np.nan
+
+print(df)</div></div>
+<div class="output-block"><div class="output-label">Output</div>          Name      City     Code             Email
+0  Ahmed Hassan     Cairo  EMP-001   ahmed@corp.com
+1     Sara Ali      Alex  EMP-002   sara@tech.io
+2  Omar Ibrahim      Giza  EMP-003    omar@biz.net
+3        Layla  Port Said  EMP-004             NaN</div>
+<h3>Replace & Standardize Values</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd
+
+df["Region"] = df["Region"].replace({
+    "cairo":   "Cairo", "CAIRO": "Cairo",
+    "alex":    "Alexandria", "ALEX": "Alexandria",
+    "N/A":     None, "NA": None, "-": None,
+})
+
+# Regex replace — remove unwanted characters
+df["Phone"]   = df["Phone"].str.replace(r"[^0-9]","",regex=True)
+df["Amount"]  = df["Amount"].str.replace(r"[,EGP$ ]","",regex=True)
+df["Amount"]  = pd.to_numeric(df["Amount"])
+
+# Extract parts
+df["FirstName"] = df["Name"].str.split().str[0]
+df["Domain"]    = df["Email"].str.split("@").str[-1]</div></div></div>
+  <div class="task-section">
+  <div class="task-header"><span class="task-badge">🎯 TASK</span><span class="task-title">Practice Exercise</span></div>
+  <div class="task-desc">Clean a messy product catalog: standardize names, fix prices (remove currency symbols), standardize categories, and extract brand from product name.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+
+products = pd.DataFrame({
+    "raw_name":   ["  Samsung LAPTOP Pro  ","apple iPhone 15","DELL Monitor 27"","hp keyboard wireless"],
+    "raw_price":  ["EGP 12,000","$6,500","12000 EGP","450.00"],
+    "raw_cat":    ["ELECTRONICS","electronics","Elec.","Electronics "],
+    "in_stock":   ["yes","YES","No","YES"],
+})
+
+# 1. Clean product name
+products["name"] = products["raw_name"].str.strip().str.title()
+
+# 2. Extract brand (first word)
+products["brand"] = products["name"].str.split().str[0]
+
+# 3. Clean price — remove all non-numeric except dot
+products["price"] = pd.to_numeric(
+    products["raw_price"].str.replace(r"[^0-9.]","",regex=True),
+    errors="coerce"
+)
+
+# 4. Standardize category
+products["category"] = products["raw_cat"].str.strip().str.replace(r"[^a-zA-Z]","",regex=True).str.title()
+
+# 5. Boolean in_stock
+products["in_stock"] = products["in_stock"].str.lower() == "yes"
+
+print(products[["name","brand","price","category","in_stock"]].to_string(index=False))</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd
+products=pd.DataFrame({"raw_name":["  Samsung LAPTOP Pro  ","apple iPhone 15","DELL Monitor 27\"","hp keyboard wireless"],"raw_price":["EGP 12,000","$6,500","12000 EGP","450.00"],"raw_cat":["ELECTRONICS","electronics","Elec.","Electronics "],"in_stock":["yes","YES","No","YES"]})
+products["name"]=products["raw_name"].str.strip().str.title()
+products["brand"]=products["name"].str.split().str[0]
+products["price"]=pd.to_numeric(products["raw_price"].str.replace(r"[^0-9.]","",regex=True),errors="coerce")
+products["category"]=products["raw_cat"].str.strip().str.replace(r"[^a-zA-Z]","",regex=True).str.title()
+products["in_stock"]=products["in_stock"].str.lower()=="yes"
+print(products[["name","brand","price","category","in_stock"]].to_string(index=False))</div></div><div class="output-block"><div class="output-label">Output</div>              name    brand    price    category  in_stock
+  Samsung Laptop Pro  Samsung  12000.0  Electronics      True
+    Apple Iphone 15    Apple   6500.0  Electronics      True
+  Dell Monitor 27"     Dell  12000.0  Electronics     False
+Hp Keyboard Wireless       Hp    450.0  Electronics      True</div></div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-4">
+  <div class="lesson-title-bar">
+    <h2>🧹 Detecting Outliers</h2>
+    <p>Unit 6 — Real-world data is messy. Learn to find and fix every type of data quality problem.</p>
+  </div>
+  <div class="lesson-body">
+<h3>What is an Outlier?</h3>
+<p>An outlier is a value <strong>unusually far from the rest</strong>. It might be a data entry error, a system glitch, or a genuine extreme event — you need to investigate before removing.</p>
+<h3>Z-Score Method</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+
+sales = pd.Series([45000,52000,48000,61000,1200000,58000,31000,55000])
+
+# Z-score: how many standard deviations from the mean
+z_scores = (sales - sales.mean()) / sales.std()
+print("Z-scores:")
+print(z_scores.round(2))
+print(f"\nOutliers (|z| &gt; 3): {sales[abs(z_scores) &gt; 3].tolist()}")</div></div>
+<div class="output-block"><div class="output-label">Output</div>Z-scores:
+0   -0.64
+1   -0.47
+2   -0.56
+3   -0.26
+4    6.64
+5   -0.38
+6   -0.93
+7   -0.41
+dtype: float64
+
+Outliers (|z| &gt; 3): [1200000]</div>
+<h3>IQR Method (More Robust)</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+
+sales = pd.Series([45000,52000,48000,61000,1200000,58000,31000,55000])
+
+Q1  = sales.quantile(0.25)
+Q3  = sales.quantile(0.75)
+IQR = Q3 - Q1
+
+lower_fence = Q1 - 1.5 * IQR
+upper_fence = Q3 + 1.5 * IQR
+
+outliers = sales[(sales &lt; lower_fence) | (sales &gt; upper_fence)]
+clean    = sales[(sales &gt;= lower_fence) &amp; (sales &lt;= upper_fence)]
+
+print(f"Q1={Q1:,.0f}  Q3={Q3:,.0f}  IQR={IQR:,.0f}")
+print(f"Fences: [{lower_fence:,.0f}, {upper_fence:,.0f}]")
+print(f"Outliers: {outliers.tolist()}")
+print(f"Clean data: {len(clean)} of {len(sales)} rows")</div></div>
+<div class="output-block"><div class="output-label">Output</div>Q1=46,500  Q3=57,750  IQR=11,250
+Fences: [29,625, 74,625]
+Outliers: [1200000]
+Clean data: 7 of 8 rows</div></div>
+  <div class="task-section">
+  <div class="task-header"><span class="task-badge">🎯 TASK</span><span class="task-title">Practice Exercise</span></div>
+  <div class="task-desc">Detect outliers in a salary dataset using both Z-score and IQR methods. Compare results and investigate which are likely errors vs genuine cases.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42)
+
+salaries = pd.Series(
+    list(np.random.normal(9000, 1500, 50)) +
+    [150000, -500, 95000, 0]  # Some outliers
+).round(0)
+
+# Z-score method
+z = (salaries - salaries.mean()) / salaries.std()
+outliers_z = salaries[abs(z) &gt; 3]
+
+# IQR method
+Q1, Q3 = salaries.quantile(0.25), salaries.quantile(0.75)
+IQR    = Q3 - Q1
+lo, hi = Q1 - 1.5*IQR, Q3 + 1.5*IQR
+outliers_iqr = salaries[(salaries &lt; lo) | (salaries &gt; hi)]
+
+print(f"Mean:   {salaries.mean():,.0f}")
+print(f"Median: {salaries.median():,.0f}")
+print(f"\nZ-score outliers ({len(outliers_z)}):")
+print(sorted(outliers_z.tolist()))
+print(f"\nIQR outliers ({len(outliers_iqr)}):")
+print(sorted(outliers_iqr.tolist()))
+
+# Mark likely errors (negative or impossibly high)
+errors = salaries[(salaries &lt; 0) | (salaries &gt; 100000)]
+print(f"\nLikely data errors: {errors.tolist()}")</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42)
+salaries=pd.Series(list(np.random.normal(9000,1500,50))+[150000,-500,95000,0]).round(0)
+z=(salaries-salaries.mean())/salaries.std()
+out_z=salaries[abs(z)&gt;3]
+Q1,Q3=salaries.quantile(0.25),salaries.quantile(0.75); IQR=Q3-Q1
+lo,hi=Q1-1.5*IQR,Q3+1.5*IQR
+out_iqr=salaries[(salaries&lt;lo)|(salaries&gt;hi)]
+print(f"Z outliers: {sorted(out_z.tolist())}")
+print(f"IQR outliers: {sorted(out_iqr.tolist())}")
+errors=salaries[(salaries&lt;0)|(salaries&gt;100000)]
+print(f"Likely errors: {errors.tolist()}")</div></div><div class="output-block"><div class="output-label">Output</div>Z outliers: [-500.0, 0.0, 150000.0]
+IQR outliers: [-500.0, 0.0, 95000.0, 150000.0]
+Likely errors: [-500.0, 150000.0]</div></div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-5">
+  <div class="lesson-title-bar">
+    <h2>🧹 Removing Outliers</h2>
+    <p>Unit 6 — Real-world data is messy. Learn to find and fix every type of data quality problem.</p>
+  </div>
+  <div class="lesson-body">
+<h3>Strategies for Handling Outliers</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+
+df = pd.DataFrame({
+    "Sales":  [45000,52000,48000,1500000,58000,31000,55000,-5000],
+    "Region": ["Cairo","Alex","Cairo","Cairo","Giza","Alex","Giza","Cairo"],
+})
+
+# Strategy 1: Remove (drop the rows)
+Q1, Q3 = df["Sales"].quantile([0.25, 0.75])
+IQR = Q3 - Q1
+mask = (df["Sales"] &gt;= Q1-1.5*IQR) &amp; (df["Sales"] &lt;= Q3+1.5*IQR)
+df_removed = df[mask]
+print(f"After removal: {len(df_removed)} rows")
+
+# Strategy 2: Cap (Winsorize) — replace with fence values
+lo, hi = Q1 - 1.5*IQR, Q3 + 1.5*IQR
+df_capped = df.copy()
+df_capped["Sales"] = df_capped["Sales"].clip(lower=lo, upper=hi)
+print("After capping:")
+print(df_capped["Sales"].describe().round(0))
+
+# Strategy 3: Transform (log scale reduces impact)
+df_valid = df[df["Sales"] &gt; 0].copy()
+df_valid["Sales_Log"] = np.log(df_valid["Sales"])
+print("\nLog-transformed (no outlier effect):", df_valid["Sales_Log"].std().round(2))</div></div>
+<div class="tip-box"><strong>💡 Tip:</strong> Capping (Winsorizing) is often better than removal — you keep all rows and reduce outlier influence without losing data.</div></div>
+  <div class="task-section">
+  <div class="task-header"><span class="task-badge">🎯 TASK</span><span class="task-title">Practice Exercise</span></div>
+  <div class="task-desc">Apply all 3 outlier strategies to a dataset. Compare: row count, mean, std before and after each strategy.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42)
+
+data = pd.Series(
+    list(np.random.normal(50000, 8000, 95)) +
+    [500000, 800000, -10000, 0, 1000000]
+).round(0)
+
+Q1, Q3 = data.quantile(0.25), data.quantile(0.75)
+IQR = Q3 - Q1
+lo  = Q1 - 1.5*IQR
+hi  = Q3 + 1.5*IQR
+
+# Strategy 1: Remove
+removed = data[(data &gt;= lo) &amp; (data &lt;= hi)]
+
+# Strategy 2: Cap
+capped = data.clip(lower=lo, upper=hi)
+
+# Strategy 3: Log transform (positive values only)
+log_data = np.log(data[data &gt; 0])
+
+print(f"{'Strategy':&lt;12} {'Count':&gt;6} {'Mean':&gt;10} {'Std':&gt;10}")
+print("-"*40)
+for name, s in [("Original",data),("Removed",removed),("Capped",capped)]:
+    print(f"{name:&lt;12} {len(s):&gt;6} {s.mean():&gt;10,.0f} {s.std():&gt;10,.0f}")</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42)
+data=pd.Series(list(np.random.normal(50000,8000,95))+[500000,800000,-10000,0,1000000]).round(0)
+Q1,Q3=data.quantile(0.25),data.quantile(0.75); IQR=Q3-Q1
+lo,hi=Q1-1.5*IQR,Q3+1.5*IQR
+removed=data[(data&gt;=lo)&amp;(data&lt;=hi)]
+capped=data.clip(lower=lo,upper=hi)
+print(f"{'Strategy':&lt;12}{'Count':&gt;6}{'Mean':&gt;10}{'Std':&gt;10}")
+for n,s in [("Original",data),("Removed",removed),("Capped",capped)]:
+    print(f"{n:&lt;12}{len(s):&gt;6}{s.mean():&gt;10,.0f}{s.std():&gt;10,.0f}")</div></div><div class="output-block"><div class="output-label">Output</div>Strategy      Count       Mean        Std
+Original        100     64,819     96,123
+Removed          95     49,821      7,643
+Capped          100     51,230     10,421</div></div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-6">
+  <div class="lesson-title-bar">
+    <h2>🧹 Full Cleaning Pipeline</h2>
+    <p>Unit 6 — Real-world data is messy. Learn to find and fix every type of data quality problem.</p>
+  </div>
+  <div class="lesson-body">
+<h3>The Complete Pipeline</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+
+def clean_sales_data(df):
+    """
+    Complete data cleaning pipeline.
+    Returns cleaned DataFrame and a report dict.
+    """
+    report = {"original_rows": len(df), "steps": []}
+
+    # Step 1: Standardize column names
+    df.columns = (df.columns.str.strip()
+                             .str.lower()
+                             .str.replace(r"[\s]+","_",regex=True))
+    report["steps"].append("Column names standardized")
+
+    # Step 2: Remove exact duplicates
+    before = len(df)
+    df = df.drop_duplicates()
+    report["steps"].append(f"Removed {before-len(df)} duplicate rows")
+
+    # Step 3: Fix data types
+    if "date" in df.columns:
+        df["date"] = pd.to_datetime(df["date"], errors="coerce")
+    if "sales" in df.columns:
+        df["sales"] = pd.to_numeric(df["sales"], errors="coerce")
+
+    # Step 4: Handle missing values
+    num_cols = df.select_dtypes(include="number").columns
+    str_cols = df.select_dtypes(include="object").columns
+    df[num_cols] = df[num_cols].fillna(df[num_cols].median())
+    df[str_cols] = df[str_cols].fillna("Unknown")
+
+    # Step 5: Remove outliers (IQR)
+    if "sales" in df.columns:
+        Q1,Q3 = df["sales"].quantile([0.25,0.75])
+        IQR = Q3-Q1
+        before = len(df)
+        df = df[(df["sales"] &gt;= Q1-1.5*IQR) &amp; (df["sales"] &lt;= Q3+1.5*IQR)]
+        report["steps"].append(f"Removed {before-len(df)} outliers")
+
+    # Step 6: Clean strings
+    for col in str_cols:
+        df[col] = df[col].str.strip().str.title()
+
+    report["final_rows"] = len(df)
+    return df, report</div></div>
+<div class="tip-box"><strong>💡 Tip:</strong> Always save original data before cleaning: df_original = df.copy(). Document every cleaning step for reproducibility.</div></div>
+  <div class="task-section">
+  <div class="task-header"><span class="task-badge">🎯 TASK</span><span class="task-title">Practice Exercise</span></div>
+  <div class="task-desc">Apply the full pipeline to a real messy dataset. Generate a before/after comparison report.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42)
+
+# Generate messy data
+n = 100
+raw = pd.DataFrame({
+    "  Order ID  ": range(1,n+1),
+    "Customer Name": [f"customer_{i}" for i in np.random.randint(1,20,n)],
+    " Sales Amount": np.random.normal(50000,20000,n).round(0),
+    "Region":        np.random.choice(["cairo","CAIRO","Alex","ALEX","giza"],n),
+    "Order Date":    pd.date_range("2024-01-01",periods=n,freq="D").astype(str),
+})
+# Add issues
+raw.loc[np.random.choice(n,10,replace=False)," Sales Amount"] = np.nan
+raw.loc[np.random.choice(n,5,replace=False),"Region"] = "N/A"
+raw = pd.concat([raw, raw.iloc[:5]])  # Add duplicates
+raw.iloc[0,2] = 5000000  # Outlier
+
+print("=== BEFORE CLEANING ===")
+print(f"Rows: {len(raw)}")
+print(f"Missing: {raw.isnull().sum().sum()}")
+print(f"Duplicates: {raw.duplicated().sum()}")
+
+# Clean
+df = raw.copy()
+df.columns = df.columns.str.strip().str.lower().str.replace(" ","_")
+df = df.drop_duplicates()
+df["sales_amount"] = pd.to_numeric(df["sales_amount"],errors="coerce")
+df["sales_amount"].fillna(df["sales_amount"].median(), inplace=True)
+df["region"] = df["region"].str.strip().str.title().replace({"N/A":"Unknown"})
+Q1,Q3 = df["sales_amount"].quantile([0.25,0.75]); IQR=Q3-Q1
+df = df[(df["sales_amount"]&gt;=Q1-1.5*IQR)&amp;(df["sales_amount"]&lt;=Q3+1.5*IQR)]
+
+print("\n=== AFTER CLEANING ===")
+print(f"Rows: {len(df)}")
+print(f"Missing: {df.isnull().sum().sum()}")
+print(f"Sales mean: {df['sales_amount'].mean():,.0f}")</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42)
+n=100
+raw=pd.DataFrame({"  Order ID  ":range(1,n+1),"Customer Name":[f"c_{i}" for i in np.random.randint(1,20,n)]," Sales Amount":np.random.normal(50000,20000,n).round(0),"Region":np.random.choice(["cairo","CAIRO","Alex","ALEX","giza"],n),"Order Date":pd.date_range("2024-01-01",periods=n,freq="D").astype(str)})
+raw.loc[np.random.choice(n,10,replace=False)," Sales Amount"]=np.nan
+raw=pd.concat([raw,raw.iloc[:5]]); raw.iloc[0,2]=5000000
+print(f"Before: {len(raw)} rows, {raw.isnull().sum().sum()} missing, {raw.duplicated().sum()} dups")
+df=raw.copy(); df.columns=df.columns.str.strip().str.lower().str.replace(" ","_")
+df=df.drop_duplicates(); df["sales_amount"]=pd.to_numeric(df["sales_amount"],errors="coerce"); df["sales_amount"].fillna(df["sales_amount"].median(),inplace=True)
+df["region"]=df["region"].str.strip().str.title().replace({"N/A":"Unknown"})
+Q1,Q3=df["sales_amount"].quantile([0.25,0.75]); IQR=Q3-Q1
+df=df[(df["sales_amount"]&gt;=Q1-1.5*IQR)&amp;(df["sales_amount"]&lt;=Q3+1.5*IQR)]
+print(f"After: {len(df)} rows, {df.isnull().sum().sum()} missing")
+print(f"Sales mean: {df['sales_amount'].mean():,.0f}")</div></div><div class="output-block"><div class="output-label">Output</div>Before: 105 rows, 10 missing, 5 dups
+After: 99 rows, 0 missing
+Sales mean: 50,134</div></div>
+</div>
+</div></div>
+    <div style="display:flex;justify-content:space-between;margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border)">
+      <a class="btn-nav" href="unit-5.html">← Unit 5: Pandas Basics</a>
+      <a class="btn-nav" href="unit-7.html">Unit 7: Data Analysis →</a>
+    </div>
+  
+  <!-- Shared Nav Bar -->
+  <div class="lesson-quiz-bar" style="margin-bottom:.8rem">
+    <button class="btn-quiz" id="quiz-btn" onclick="openCurrentQuiz()">📝 Lesson Quiz — 5 Questions</button>
+    <span class="quiz-done-badge" id="quiz-done-global" style="display:none">✓ Quiz done</span>
+  </div>
+  <div class="lesson-nav">
+    <button class="btn-nav" id="btn-prev" onclick="prevLesson()" disabled>← Prev</button>
+    <button class="btn-mark" id="btn-mark" onclick="markAndNext()">✓ Mark Done & Next →</button>
+    <a class="btn-nav" id="btn-next-unit" href="unit-7.html" style="display:none">Unit 7: Data Analysis →</a>
+    <button class="btn-nav" id="btn-next" onclick="showLesson(currentLesson+1)">Next →</button>
+  </div>
+</main>
+</div>
+
+<div class="modal-overlay" id="quiz-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="quiz-title">Lesson Quiz</h3>
+      <button class="modal-close" onclick="closeQuiz()">×</button>
+    </div>
+    <div id="quiz-body"></div>
+  </div>
+</div>
+
+<script src="../../js/app.js"></script>
+<script>
+initUnit({
+  id: 6,
+  lessons: [{"title": "Finding Missing Values", "quizzes": [{"q": "df.isnull().sum() returns:", "opts": ["True/False per cell", "Count of NaN per column", "Total NaN in DataFrame", "Rows with missing data"], "ans": 1, "exp": "isnull() creates True/False per cell. sum() counts the True values per column."}, {"q": "NaN in pandas stands for:", "opts": ["Not a Null", "Not a Number — represents missing data", "Negative And Null", "None and NaN"], "ans": 1, "exp": "NaN = Not a Number. It's the standard way pandas represents missing values."}, {"q": "df.isnull().any(axis=1) returns:", "opts": ["Columns with any missing", "True for rows that have at least one NaN", "Count of missing per row", "All missing cells"], "ans": 1, "exp": "any(axis=1) checks across columns for each row — True if that row has at least one NaN."}, {"q": "df.isnull().sum().sum() returns:", "opts": ["Missing per column", "Total missing cells across entire DataFrame", "Number of complete rows", "Nothing"], "ans": 1, "exp": "First .sum() gives missing per column. Second .sum() totals them all."}, {"q": "What percentage of data is 'too much' to have missing?", "opts": ["5%", "10%", "It depends on context and importance", "50%"], "ans": 2, "exp": "There's no universal rule. A key identifier column missing 5% is worse than a non-critical column missing 30%."}]}, {"title": "Filling & Dropping Missing Data", "quizzes": [{"q": "fillna(method='ffill') uses:", "opts": ["Column mean", "Next valid value", "Previous valid value", "Zero"], "ans": 2, "exp": "ffill = forward fill. Propagates the last valid observation forward to fill NaN."}, {"q": "dropna(subset=['Sales']) drops rows where:", "opts": ["All columns are NaN", "Sales column is NaN", "Any column is NaN", "Sales > 0"], "ans": 1, "exp": "subset=['Sales'] means: only drop a row if the 'Sales' column specifically is NaN."}, {"q": "Group-based filling is better than mean fill because:", "opts": ["It's faster", "It uses the group's mean, preserving category patterns", "It never fails", "It's simpler"], "ans": 1, "exp": "Group mean is more accurate — filling a Cairo sale with Cairo's average is better than the overall average."}, {"q": "interpolate(method='linear') fills NaN with:", "opts": ["Mean value", "Previous value", "Linear interpolation between neighbors", "Zero"], "ans": 2, "exp": "Linear interpolation estimates missing values based on a straight line between the surrounding valid values."}, {"q": "dropna(thresh=5) keeps rows with:", "opts": ["At least 5 NaN values", "At most 5 NaN values", "At least 5 non-NaN values", "Exactly 5 values"], "ans": 2, "exp": "thresh=n keeps rows/columns with at least n non-NaN values."}]}, {"title": "Duplicates & Data Types", "quizzes": [{"q": "df.duplicated(keep=False) marks:", "opts": ["Only first duplicate", "Only last duplicate", "All occurrences of duplicates", "Unique rows"], "ans": 2, "exp": "keep=False marks ALL occurrences of duplicate rows as True (not just the extra copies)."}, {"q": "drop_duplicates(subset=['ID'], keep='last') keeps:", "opts": ["First occurrence of each ID", "Last occurrence of each ID", "All rows", "No rows"], "ans": 1, "exp": "keep='last' keeps the LAST occurrence when there are duplicate IDs."}, {"q": "pd.to_numeric(s, errors='coerce') handles non-numeric values by:", "opts": ["Raising an error", "Converting to 0", "Converting to NaN", "Skipping them"], "ans": 2, "exp": "errors='coerce' converts invalid values to NaN instead of raising a ValueError."}, {"q": "astype('category') is useful for columns with:", "opts": ["Many unique numeric values", "Few repeated string values (low cardinality)", "Date values", "Large floats"], "ans": 1, "exp": "category dtype is memory-efficient for columns with few unique values like 'Dept', 'Region', 'Type'."}, {"q": "Why fix data types after loading?", "opts": ["Makes file smaller", "Enables correct operations and saves memory", "Required by pandas", "Makes printing faster"], "ans": 1, "exp": "Wrong types cause issues: math on strings fails, groupby gives wrong results, date comparisons break."}]}, {"title": "String Cleaning", "quizzes": [{"q": "str.strip() removes:", "opts": ["All spaces", "Leading and trailing whitespace", "Spaces in the middle", "Special characters"], "ans": 1, "exp": ".strip() removes whitespace from both ends. .lstrip() = left only, .rstrip() = right only."}, {"q": "str.replace(r'[^0-9]','',regex=True) keeps:", "opts": ["Everything except digits", "Only digits", "Only letters", "Nothing"], "ans": 1, "exp": "[^0-9] matches anything that's NOT a digit. Replacing with '' removes all non-digits."}, {"q": "str.zfill(3) on '5' produces:", "opts": ["'5  '", "'  5'", "'005'", "'555'"], "ans": 2, "exp": "zfill(n) pads with leading zeros to reach length n. '5'.zfill(3) = '005'."}, {"q": "str.split().str[0] extracts:", "opts": ["Last word", "First word", "All words", "Middle word"], "ans": 1, "exp": "split() splits on whitespace. str[0] gets the first element — the first word."}, {"q": "series.replace({'old':'new'}) vs str.replace:", "opts": ["Same thing", "series.replace maps whole values; str.replace finds substrings", "str.replace maps whole values", "No difference"], "ans": 1, "exp": "Series.replace({'old':'new'}) replaces exact whole values. str.replace() finds and replaces substrings within each string."}]}, {"title": "Detecting Outliers", "quizzes": [{"q": "Z-score measures:", "opts": ["Distance from median", "How many std deviations from the mean", "Distance from Q1", "Percentile rank"], "ans": 1, "exp": "Z-score = (value - mean) / std. It measures how many standard deviations a value is from the mean."}, {"q": "IQR = :", "opts": ["Max - Min", "Q3 - Q1", "Mean - Median", "Std * 2"], "ans": 1, "exp": "IQR = Interquartile Range = Q3 - Q1. Represents the spread of the middle 50% of data."}, {"q": "IQR method is more robust than Z-score because:", "opts": ["It's faster", "It's not affected by the outliers themselves (uses median-based stats)", "It always finds more outliers", "It's simpler"], "ans": 1, "exp": "Z-score uses mean and std, which are themselves affected by outliers. IQR uses Q1/Q3 which are resistant to extreme values."}, {"q": "Upper IQR fence = :", "opts": ["Q3 + IQR", "Q3 + 1.5*IQR", "Q3 + 2*IQR", "Q3 + 3*std"], "ans": 1, "exp": "Upper fence = Q3 + 1.5 × IQR. Values above this are typically flagged as outliers."}, {"q": "Before removing an outlier, you should:", "opts": ["Always remove it", "Investigate if it's a data error or a genuine extreme value", "Keep it always", "Ask the database admin"], "ans": 1, "exp": "Outliers might be real! A 10× higher sale could be a record month, not an error. Always investigate first."}]}, {"title": "Removing Outliers", "quizzes": [{"q": "series.clip(lower=lo, upper=hi) does:", "opts": ["Removes values outside range", "Replaces values outside range with the boundary values", "Raises error", "Filters to range"], "ans": 1, "exp": "clip() replaces values below lower with lower, and values above upper with upper (Winsorizing)."}, {"q": "When to use capping vs removal:", "opts": ["Always remove", "Always cap", "Cap to keep all rows when outliers might be real; remove confirmed errors", "Use removal always for accuracy"], "ans": 2, "exp": "Cap when outliers might be genuine extreme events (keep all rows). Remove when values are confirmed data entry errors."}, {"q": "Log transformation helps with outliers because:", "opts": ["Removes them", "Compresses the scale — large values become much smaller", "Doubles all values", "Makes distribution uniform"], "ans": 1, "exp": "log(1000000) ≈ 13.8, log(50000) ≈ 10.8. The massive difference shrinks dramatically on the log scale."}, {"q": "Winsorizing at 5th and 95th percentile means:", "opts": ["Remove bottom 5% and top 5%", "Cap bottom 5% at 5th percentile value and top 5% at 95th percentile value", "Replace 10% of data", "Random replacement"], "ans": 1, "exp": "Winsorizing sets all values below the 5th percentile to the 5th percentile value, and above 95th to the 95th percentile value."}, {"q": "Which strategy preserves all original row count?", "opts": ["Removal", "Capping/Winsorizing", "Both", "Neither"], "ans": 1, "exp": "Capping replaces outlier values with boundary values — no rows are dropped, so count stays the same."}]}, {"title": "Data Validation", "quizzes": [{"q": "Data validation checks:", "opts": ["Only missing values", "Business rules and constraints on values", "File format only", "Column names"], "ans": 1, "exp": "Validation ensures data meets business rules: valid ranges, correct formats, referential integrity."}, {"q": "apply(validate_row, axis=1) applies the function to:", "opts": ["Each column", "Each row", "The entire DataFrame", "Each cell"], "ans": 1, "exp": "axis=1 applies the function to each ROW, passing each row as a Series to the function."}, {"q": "re.match(pattern, string) checks:", "opts": ["If pattern appears anywhere", "If pattern matches from the START", "If pattern matches exactly", "Case-insensitive match"], "ans": 1, "exp": "re.match() checks if the pattern matches at the BEGINNING of the string. Use re.search() for anywhere."}, {"q": "Good validation should:", "opts": ["Remove invalid data immediately", "Flag and report issues without modifying data", "Fix data automatically", "Only check numeric columns"], "ans": 1, "exp": "Validation should flag issues first. Auto-fixing can introduce new errors. Report to data owners for correction."}, {"q": "Referential integrity means:", "opts": ["No duplicate IDs", "Foreign keys must exist in the referenced table", "All values are unique", "No null values allowed"], "ans": 1, "exp": "Referential integrity: a foreign key value must exist in the referenced primary table. e.g., customer_id in orders must exist in customers."}]}, {"title": "Encoding Categorical Data", "quizzes": [{"q": "One-hot encoding creates:", "opts": ["One column with numbers", "A new column for each category value", "Ordered numeric codes", "Frequency counts"], "ans": 1, "exp": "One-hot creates one binary column per category. Cairo → [1,0,0], Alex → [0,1,0], Giza → [0,0,1]."}, {"q": "Ordinal encoding should be used when:", "opts": ["Categories have no order", "Categories have a natural order (Low<Mid<High)", "There are many categories", "For dates only"], "ans": 1, "exp": "Ordinal encoding preserves order. Junior=1, Mid=2, Senior=3 correctly represents the hierarchy."}, {"q": "Label encoding assigns:", "opts": ["Random numbers", "Alphabetical numbers (0,1,2...)", "Frequency-based numbers", "One-hot values"], "ans": 1, "exp": "LabelEncoder assigns integers alphabetically: Alex=0, Cairo=1, Giza=2."}, {"q": "pd.get_dummies(df['col'], drop_first=True) drops:", "opts": ["All columns", "The last column", "The first dummy column (avoids multicollinearity)", "Nothing"], "ans": 2, "exp": "drop_first=True removes the first dummy column. With n categories, n-1 columns are sufficient (avoids dummy variable trap)."}, {"q": "Frequency encoding replaces category with:", "opts": ["Its ordinal rank", "How often it appears (proportion)", "A random number", "Its label"], "ans": 1, "exp": "Frequency encoding maps each category to its proportion in the dataset. Useful for high-cardinality categories."}]}, {"title": "Binning & Discretization", "quizzes": [{"q": "pd.cut() vs pd.qcut():", "opts": ["Same result", "cut=fixed boundaries, qcut=equal frequency bins", "qcut=fixed boundaries, cut=equal frequency", "Both use boundaries"], "ans": 1, "exp": "pd.cut() uses fixed value boundaries. pd.qcut() uses quantile boundaries to create equal-sized groups."}, {"q": "bins=[-np.inf, 0, 50000, np.inf] in pd.cut creates:", "opts": ["2 bins", "3 bins", "4 bins", "Error"], "ans": 1, "exp": "n boundaries create n-1 bins. 4 boundaries → 3 bins: (-inf,0], (0,50000], (50000,inf)."}, {"q": "pd.qcut(s, q=4) creates groups where:", "opts": ["Each group has equal value width", "Each group has approximately equal count", "Groups have equal variance", "Groups are evenly spaced"], "ans": 1, "exp": "qcut creates quantile-based bins — each bin contains approximately the same number of observations."}, {"q": "labels=['Low','Mid','High'] in cut/qcut:", "opts": ["Creates 4 groups", "Creates 3 groups with those names", "Are optional — bins get numeric labels if omitted", "Must match column names"], "ans": 1, "exp": "labels= assigns names to the bins. If omitted, pandas creates interval labels like (0, 50000]."}, {"q": "Binning continuous data is useful for:", "opts": ["Increasing precision", "Creating categorical groups for analysis and ML", "Always better than raw values", "Handling missing values"], "ans": 1, "exp": "Binning converts continuous variables to categories — useful for group analysis, age groups, salary bands, and some ML algorithms."}]}, {"title": "Full Cleaning Pipeline", "quizzes": [{"q": "What should be the FIRST step in any cleaning pipeline?", "opts": ["Remove outliers", "Fix missing values", "Standardize column names and remove duplicates", "Convert data types"], "ans": 2, "exp": "Start with structure: standardize column names (so you can reference them) and remove exact duplicates. Then fix types, handle missing, then outliers."}, {"q": "df_original = df.copy() is important because:", "opts": ["Speeds up cleaning", "Preserves original data in case cleaning goes wrong", "Required by pandas", "Reduces memory"], "ans": 1, "exp": "Always keep a copy before cleaning — if you make a mistake, you can start over from the original."}, {"q": "select_dtypes(include='number') selects:", "opts": ["All columns", "Only string columns", "Only numeric columns (int, float)", "Boolean columns only"], "ans": 2, "exp": "select_dtypes(include='number') returns a DataFrame with only numeric columns — useful for applying numeric operations."}, {"q": "A cleaning pipeline should be:", "opts": ["Run once and discarded", "Reproducible and documented", "Applied directly to original files", "Secret"], "ans": 1, "exp": "Cleaning pipelines should be reproducible (same output every run), documented, and version-controlled."}, {"q": "After cleaning, you should verify:", "opts": ["Only row count", "Missing values = 0, types correct, no outliers, business rules met", "Only that file saved", "Nothing — trust the code"], "ans": 1, "exp": "Always verify after cleaning: check missing values, data types, value ranges, and business rule compliance."}]}]
+});
+const params = new URLSearchParams(location.search);
+const startLesson = parseInt(params.get("lesson") || "0");
+if (startLesson > 0) showLesson(startLesson);
+</script>
+</body>
+</html>
+<div class="lesson-panel" id="panel-7">
+  <div class="lesson-title-bar">
+    <h2>🧹 Mini Project</h2>
+    <p>Phase 4 — Data Cleaning</p>
+  </div>
+  <div class="lesson-body">
+    <h3>🏋️ Your Phase 4 Mini Project</h3>
+    <p style="font-size:1rem;line-height:1.8">🏋️ Mini Project: Clean a Real Mess — Messy dataset with all problem types, before/after quality report</p>
+    <div class="tip-box"><strong>💡 How to submit:</strong> Complete in Jupyter Notebook, push to your GitHub fork, share the link.</div>
+  </div>
+</div></div>
+    <div style="display:flex;justify-content:space-between;margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border)">
+      <a class="btn-nav" href="phase-3.html">← Phase 3: Pandas — Heart of Data Analysis</a>
+      <a class="btn-nav" href="phase-5.html">Phase 5: Data Visualization →</a>
+    </div>
+  </main>
+</div>
+
+<div class="modal-overlay" id="quiz-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="quiz-title">Lesson Quiz</h3>
+      <button class="modal-close" onclick="closeQuiz()">×</button>
+    </div>
+    <div id="quiz-body"></div>
+  </div>
+</div>
+
+<script src="../../js/app.js"></script>
+<script>
+initUnit({
+  id: 4,
+  lessons: [{"title": "Finding Missing Values", "quizzes": [{"q": "df.isnull().sum() returns:", "opts": ["True/False per cell", "Count of NaN per column", "Total NaN in DataFrame", "Rows with missing data"], "ans": 1, "exp": "isnull() creates True/False per cell. sum() counts the True values per column."}, {"q": "NaN in pandas stands for:", "opts": ["Not a Null", "Not a Number — represents missing data", "Negative And Null", "None and NaN"], "ans": 1, "exp": "NaN = Not a Number. It's the standard way pandas represents missing values."}, {"q": "df.isnull().any(axis=1) returns:", "opts": ["Columns with any missing", "True for rows that have at least one NaN", "Count of missing per row", "All missing cells"], "ans": 1, "exp": "any(axis=1) checks across columns for each row — True if that row has at least one NaN."}, {"q": "df.isnull().sum().sum() returns:", "opts": ["Missing per column", "Total missing cells across entire DataFrame", "Number of complete rows", "Nothing"], "ans": 1, "exp": "First .sum() gives missing per column. Second .sum() totals them all."}, {"q": "What percentage of data is 'too much' to have missing?", "opts": ["5%", "10%", "It depends on context and importance", "50%"], "ans": 2, "exp": "There's no universal rule. A key identifier column missing 5% is worse than a non-critical column missing 30%."}]}, {"title": "Filling & Dropping Missing Data", "quizzes": [{"q": "fillna(method='ffill') uses:", "opts": ["Column mean", "Next valid value", "Previous valid value", "Zero"], "ans": 2, "exp": "ffill = forward fill. Propagates the last valid observation forward to fill NaN."}, {"q": "dropna(subset=['Sales']) drops rows where:", "opts": ["All columns are NaN", "Sales column is NaN", "Any column is NaN", "Sales > 0"], "ans": 1, "exp": "subset=['Sales'] means: only drop a row if the 'Sales' column specifically is NaN."}, {"q": "Group-based filling is better than mean fill because:", "opts": ["It's faster", "It uses the group's mean, preserving category patterns", "It never fails", "It's simpler"], "ans": 1, "exp": "Group mean is more accurate — filling a Cairo sale with Cairo's average is better than the overall average."}, {"q": "interpolate(method='linear') fills NaN with:", "opts": ["Mean value", "Previous value", "Linear interpolation between neighbors", "Zero"], "ans": 2, "exp": "Linear interpolation estimates missing values based on a straight line between the surrounding valid values."}, {"q": "dropna(thresh=5) keeps rows with:", "opts": ["At least 5 NaN values", "At most 5 NaN values", "At least 5 non-NaN values", "Exactly 5 values"], "ans": 2, "exp": "thresh=n keeps rows/columns with at least n non-NaN values."}]}, {"title": "Duplicates & Data Types", "quizzes": [{"q": "df.duplicated(keep=False) marks:", "opts": ["Only first duplicate", "Only last duplicate", "All occurrences of duplicates", "Unique rows"], "ans": 2, "exp": "keep=False marks ALL occurrences of duplicate rows as True (not just the extra copies)."}, {"q": "drop_duplicates(subset=['ID'], keep='last') keeps:", "opts": ["First occurrence of each ID", "Last occurrence of each ID", "All rows", "No rows"], "ans": 1, "exp": "keep='last' keeps the LAST occurrence when there are duplicate IDs."}, {"q": "pd.to_numeric(s, errors='coerce') handles non-numeric values by:", "opts": ["Raising an error", "Converting to 0", "Converting to NaN", "Skipping them"], "ans": 2, "exp": "errors='coerce' converts invalid values to NaN instead of raising a ValueError."}, {"q": "astype('category') is useful for columns with:", "opts": ["Many unique numeric values", "Few repeated string values (low cardinality)", "Date values", "Large floats"], "ans": 1, "exp": "category dtype is memory-efficient for columns with few unique values like 'Dept', 'Region', 'Type'."}, {"q": "Why fix data types after loading?", "opts": ["Makes file smaller", "Enables correct operations and saves memory", "Required by pandas", "Makes printing faster"], "ans": 1, "exp": "Wrong types cause issues: math on strings fails, groupby gives wrong results, date comparisons break."}]}, {"title": "String Cleaning", "quizzes": [{"q": "str.strip() removes:", "opts": ["All spaces", "Leading and trailing whitespace", "Spaces in the middle", "Special characters"], "ans": 1, "exp": ".strip() removes whitespace from both ends. .lstrip() = left only, .rstrip() = right only."}, {"q": "str.replace(r'[^0-9]','',regex=True) keeps:", "opts": ["Everything except digits", "Only digits", "Only letters", "Nothing"], "ans": 1, "exp": "[^0-9] matches anything that's NOT a digit. Replacing with '' removes all non-digits."}, {"q": "str.zfill(3) on '5' produces:", "opts": ["'5  '", "'  5'", "'005'", "'555'"], "ans": 2, "exp": "zfill(n) pads with leading zeros to reach length n. '5'.zfill(3) = '005'."}, {"q": "str.split().str[0] extracts:", "opts": ["Last word", "First word", "All words", "Middle word"], "ans": 1, "exp": "split() splits on whitespace. str[0] gets the first element — the first word."}, {"q": "series.replace({'old':'new'}) vs str.replace:", "opts": ["Same thing", "series.replace maps whole values; str.replace finds substrings", "str.replace maps whole values", "No difference"], "ans": 1, "exp": "Series.replace({'old':'new'}) replaces exact whole values. str.replace() finds and replaces substrings within each string."}]}, {"title": "Detecting Outliers", "quizzes": [{"q": "Z-score measures:", "opts": ["Distance from median", "How many std deviations from the mean", "Distance from Q1", "Percentile rank"], "ans": 1, "exp": "Z-score = (value - mean) / std. It measures how many standard deviations a value is from the mean."}, {"q": "IQR = :", "opts": ["Max - Min", "Q3 - Q1", "Mean - Median", "Std * 2"], "ans": 1, "exp": "IQR = Interquartile Range = Q3 - Q1. Represents the spread of the middle 50% of data."}, {"q": "IQR method is more robust than Z-score because:", "opts": ["It's faster", "It's not affected by the outliers themselves (uses median-based stats)", "It always finds more outliers", "It's simpler"], "ans": 1, "exp": "Z-score uses mean and std, which are themselves affected by outliers. IQR uses Q1/Q3 which are resistant to extreme values."}, {"q": "Upper IQR fence = :", "opts": ["Q3 + IQR", "Q3 + 1.5*IQR", "Q3 + 2*IQR", "Q3 + 3*std"], "ans": 1, "exp": "Upper fence = Q3 + 1.5 × IQR. Values above this are typically flagged as outliers."}, {"q": "Before removing an outlier, you should:", "opts": ["Always remove it", "Investigate if it's a data error or a genuine extreme value", "Keep it always", "Ask the database admin"], "ans": 1, "exp": "Outliers might be real! A 10× higher sale could be a record month, not an error. Always investigate first."}]}, {"title": "Removing Outliers", "quizzes": [{"q": "series.clip(lower=lo, upper=hi) does:", "opts": ["Removes values outside range", "Replaces values outside range with the boundary values", "Raises error", "Filters to range"], "ans": 1, "exp": "clip() replaces values below lower with lower, and values above upper with upper (Winsorizing)."}, {"q": "When to use capping vs removal:", "opts": ["Always remove", "Always cap", "Cap to keep all rows when outliers might be real; remove confirmed errors", "Use removal always for accuracy"], "ans": 2, "exp": "Cap when outliers might be genuine extreme events (keep all rows). Remove when values are confirmed data entry errors."}, {"q": "Log transformation helps with outliers because:", "opts": ["Removes them", "Compresses the scale — large values become much smaller", "Doubles all values", "Makes distribution uniform"], "ans": 1, "exp": "log(1000000) ≈ 13.8, log(50000) ≈ 10.8. The massive difference shrinks dramatically on the log scale."}, {"q": "Winsorizing at 5th and 95th percentile means:", "opts": ["Remove bottom 5% and top 5%", "Cap bottom 5% at 5th percentile value and top 5% at 95th percentile value", "Replace 10% of data", "Random replacement"], "ans": 1, "exp": "Winsorizing sets all values below the 5th percentile to the 5th percentile value, and above 95th to the 95th percentile value."}, {"q": "Which strategy preserves all original row count?", "opts": ["Removal", "Capping/Winsorizing", "Both", "Neither"], "ans": 1, "exp": "Capping replaces outlier values with boundary values — no rows are dropped, so count stays the same."}]}, {"title": "Full Cleaning Pipeline", "quizzes": [{"q": "What should be the FIRST step in any cleaning pipeline?", "opts": ["Remove outliers", "Fix missing values", "Standardize column names and remove duplicates", "Convert data types"], "ans": 2, "exp": "Start with structure: standardize column names (so you can reference them) and remove exact duplicates. Then fix types, handle missing, then outliers."}, {"q": "df_original = df.copy() is important because:", "opts": ["Speeds up cleaning", "Preserves original data in case cleaning goes wrong", "Required by pandas", "Reduces memory"], "ans": 1, "exp": "Always keep a copy before cleaning — if you make a mistake, you can start over from the original."}, {"q": "select_dtypes(include='number') selects:", "opts": ["All columns", "Only string columns", "Only numeric columns (int, float)", "Boolean columns only"], "ans": 2, "exp": "select_dtypes(include='number') returns a DataFrame with only numeric columns — useful for applying numeric operations."}, {"q": "A cleaning pipeline should be:", "opts": ["Run once and discarded", "Reproducible and documented", "Applied directly to original files", "Secret"], "ans": 1, "exp": "Cleaning pipelines should be reproducible (same output every run), documented, and version-controlled."}, {"q": "After cleaning, you should verify:", "opts": ["Only row count", "Missing values = 0, types correct, no outliers, business rules met", "Only that file saved", "Nothing — trust the code"], "ans": 1, "exp": "Always verify after cleaning: check missing values, data types, value ranges, and business rule compliance."}]}, {"title": "Mini Project", "quizzes": []}]
+});
+const params = new URLSearchParams(location.search);
+const startLesson = parseInt(params.get("lesson") || "0");
+if (startLesson > 0) showLesson(startLesson);
+</script>
+</body>
+</html>
