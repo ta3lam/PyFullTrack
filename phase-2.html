@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Phase 6 — Exploratory Data Analysis | PyTrack</title>
+<link rel="stylesheet" href="../css/style.css"/>
+<style>
+.phase-badge {
+  display:inline-flex; align-items:center; gap:.5rem;
+  background:var(--bg3); border:1px solid var(--border);
+  border-radius:20px; padding:.3rem .9rem;
+  font-family:var(--mono); font-size:.7rem; color:var(--muted);
+  margin-bottom:1rem; letter-spacing:1px; text-transform:uppercase;
+}
+.phase-parts-nav {
+  display:flex; gap:.5rem; flex-wrap:wrap; margin-bottom:1rem;
+}
+.part-tag {
+  font-family:var(--mono); font-size:.65rem; letter-spacing:.5px;
+  background:rgba(59,130,246,.1); border:1px solid rgba(59,130,246,.2);
+  color:var(--accent2); padding:.2rem .55rem; border-radius:4px;
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">Py<span>Track</span></a>
+  <div class="nav-right">
+    <div class="progress-badge" id="nav-progress">0 / 73 lessons</div>
+    <a class="btn-outline" href="../index.html">⌂ All Phases</a>
+  </div>
+</nav>
+
+<div class="lesson-page">
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <a href="../index.html" class="sidebar-home">⌂ PyTrack Course</a>
+    </div>
+    <div class="sidebar-inner"><div class="sidebar-unit">
+  <div class="sidebar-unit-header" onclick="toggleUnit(this)">
+    <span>🛠️</span>
+    <span>Phase 0: Setup & Mindset</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons">
+    <a class="sidebar-lesson" id="slink-0-0" href="phase-0.html" >
+      <span class="lesson-check" id="chk-0-0"></span>
+      What is Python & Data Analysis?
+    </a>
+    <a class="sidebar-lesson" id="slink-0-1" href="phase-0.html" >
+      <span class="lesson-check" id="chk-0-1"></span>
+      Installing Anaconda
+    </a>
+    <a class="sidebar-lesson" id="slink-0-2" href="phase-0.html" >
+      <span class="lesson-check" id="chk-0-2"></span>
+      Jupyter Notebook Basics
+    </a>
+    <a class="sidebar-lesson" id="slink-0-3" href="phase-0.html" >
+      <span class="lesson-check" id="chk-0-3"></span>
+      Python in VS Code
+    </a>
+  </div>
+</div><div class="sidebar-unit">
+  <div class="sidebar-unit-header" onclick="toggleUnit(this)">
+    <span>🐍</span>
+    <span>Phase 1: Python Basics</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons">
+    <a class="sidebar-lesson" id="slink-1-0" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-0"></span>
+      Variables & Data Types
+    </a>
+    <a class="sidebar-lesson" id="slink-1-1" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-1"></span>
+      Strings
+    </a>
+    <a class="sidebar-lesson" id="slink-1-2" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-2"></span>
+      Numbers & Math
+    </a>
+    <a class="sidebar-lesson" id="slink-1-3" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-3"></span>
+      Type Conversion
+    </a>
+    <a class="sidebar-lesson" id="slink-1-4" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-4"></span>
+      Lists
+    </a>
+    <a class="sidebar-lesson" id="slink-1-5" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-5"></span>
+      Tuples & Sets
+    </a>
+    <a class="sidebar-lesson" id="slink-1-6" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-6"></span>
+      Dictionaries
+    </a>
+    <a class="sidebar-lesson" id="slink-1-7" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-7"></span>
+      Variables & Operators
+    </a>
+    <a class="sidebar-lesson" id="slink-1-8" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-8"></span>
+      If / Elif / Else
+    </a>
+    <a class="sidebar-lesson" id="slink-1-9" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-9"></span>
+      For Loops
+    </a>
+    <a class="sidebar-lesson" id="slink-1-10" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-10"></span>
+      While Loops
+    </a>
+    <a class="sidebar-lesson" id="slink-1-11" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-11"></span>
+      List Comprehensions
+    </a>
+    <a class="sidebar-lesson" id="slink-1-12" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-12"></span>
+      Functions
+    </a>
+    <a class="sidebar-lesson" id="slink-1-13" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-13"></span>
+      Lambda Functions
+    </a>
+    <a class="sidebar-lesson" id="slink-1-14" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-14"></span>
+      Modules & Import
+    </a>
+    <a class="sidebar-lesson" id="slink-1-15" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-15"></span>
+      Exception Handling
+    </a>
+    <a class="sidebar-lesson" id="slink-1-16" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-16"></span>
+      File I/O
+    </a>
+    <a class="sidebar-lesson" id="slink-1-17" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-17"></span>
+      Regular Expressions
+    </a>
+    <a class="sidebar-lesson" id="slink-1-18" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-18"></span>
+      Classes & OOP Basics
+    </a>
+    <a class="sidebar-lesson" id="slink-1-19" href="phase-1.html" >
+      <span class="lesson-check" id="chk-1-19"></span>
+      Inheritance & Methods
+    </a>
+  </div>
+</div><div class="sidebar-unit">
+  <div class="sidebar-unit-header" onclick="toggleUnit(this)">
+    <span>🔢</span>
+    <span>Phase 2: NumPy — The Math Engine</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons">
+    <a class="sidebar-lesson" id="slink-2-0" href="phase-2.html" >
+      <span class="lesson-check" id="chk-2-0"></span>
+      Introduction to NumPy
+    </a>
+    <a class="sidebar-lesson" id="slink-2-1" href="phase-2.html" >
+      <span class="lesson-check" id="chk-2-1"></span>
+      Arrays & Dimensions
+    </a>
+    <a class="sidebar-lesson" id="slink-2-2" href="phase-2.html" >
+      <span class="lesson-check" id="chk-2-2"></span>
+      Operations & Filtering
+    </a>
+    <a class="sidebar-lesson" id="slink-2-3" href="phase-2.html" >
+      <span class="lesson-check" id="chk-2-3"></span>
+      Statistics with NumPy
+    </a>
+    <a class="sidebar-lesson" id="slink-2-4" href="phase-2.html" >
+      <span class="lesson-check" id="chk-2-4"></span>
+      Reshape, Sort & Search
+    </a>
+    <a class="sidebar-lesson" id="slink-2-5" href="phase-2.html" >
+      <span class="lesson-check" id="chk-2-5"></span>
+      Linear Algebra Basics
+    </a>
+    <a class="sidebar-lesson" id="slink-2-6" href="phase-2.html" >
+      <span class="lesson-check" id="chk-2-6"></span>
+      Random Numbers
+    </a>
+  </div>
+</div><div class="sidebar-unit">
+  <div class="sidebar-unit-header" onclick="toggleUnit(this)">
+    <span>🐼</span>
+    <span>Phase 3: Pandas — Heart of Data Analysis</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons">
+    <a class="sidebar-lesson" id="slink-3-0" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-0"></span>
+      Pandas Series
+    </a>
+    <a class="sidebar-lesson" id="slink-3-1" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-1"></span>
+      DataFrames
+    </a>
+    <a class="sidebar-lesson" id="slink-3-2" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-2"></span>
+      Reading CSV & Excel
+    </a>
+    <a class="sidebar-lesson" id="slink-3-3" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-3"></span>
+      Exploring Your Data
+    </a>
+    <a class="sidebar-lesson" id="slink-3-4" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-4"></span>
+      Selecting & Filtering
+    </a>
+    <a class="sidebar-lesson" id="slink-3-5" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-5"></span>
+      Adding & Modifying Columns
+    </a>
+    <a class="sidebar-lesson" id="slink-3-6" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-6"></span>
+      Sorting & Ranking
+    </a>
+    <a class="sidebar-lesson" id="slink-3-7" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-7"></span>
+      Descriptive Statistics
+    </a>
+    <a class="sidebar-lesson" id="slink-3-8" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-8"></span>
+      apply() & map()
+    </a>
+    <a class="sidebar-lesson" id="slink-3-9" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-9"></span>
+      GroupBy — Grouped Analysis
+    </a>
+    <a class="sidebar-lesson" id="slink-3-10" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-10"></span>
+      Pivot Tables
+    </a>
+    <a class="sidebar-lesson" id="slink-3-11" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-11"></span>
+      Merging DataFrames
+    </a>
+    <a class="sidebar-lesson" id="slink-3-12" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-12"></span>
+      Working with Dates
+    </a>
+    <a class="sidebar-lesson" id="slink-3-13" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-13"></span>
+      String Methods in Pandas
+    </a>
+    <a class="sidebar-lesson" id="slink-3-14" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-14"></span>
+      Concat & Join
+    </a>
+    <a class="sidebar-lesson" id="slink-3-15" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-15"></span>
+      Time Series Basics
+    </a>
+  </div>
+</div><div class="sidebar-unit">
+  <div class="sidebar-unit-header" onclick="toggleUnit(this)">
+    <span>🧹</span>
+    <span>Phase 4: Data Cleaning</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons">
+    <a class="sidebar-lesson" id="slink-4-0" href="phase-4.html" >
+      <span class="lesson-check" id="chk-4-0"></span>
+      Finding Missing Values
+    </a>
+    <a class="sidebar-lesson" id="slink-4-1" href="phase-4.html" >
+      <span class="lesson-check" id="chk-4-1"></span>
+      Filling & Dropping Missing Data
+    </a>
+    <a class="sidebar-lesson" id="slink-4-2" href="phase-4.html" >
+      <span class="lesson-check" id="chk-4-2"></span>
+      Duplicates & Data Types
+    </a>
+    <a class="sidebar-lesson" id="slink-4-3" href="phase-4.html" >
+      <span class="lesson-check" id="chk-4-3"></span>
+      String Cleaning
+    </a>
+    <a class="sidebar-lesson" id="slink-4-4" href="phase-4.html" >
+      <span class="lesson-check" id="chk-4-4"></span>
+      Detecting Outliers
+    </a>
+    <a class="sidebar-lesson" id="slink-4-5" href="phase-4.html" >
+      <span class="lesson-check" id="chk-4-5"></span>
+      Removing Outliers
+    </a>
+    <a class="sidebar-lesson" id="slink-4-6" href="phase-4.html" >
+      <span class="lesson-check" id="chk-4-6"></span>
+      Full Cleaning Pipeline
+    </a>
+  </div>
+</div><div class="sidebar-unit">
+  <div class="sidebar-unit-header" onclick="toggleUnit(this)">
+    <span>📈</span>
+    <span>Phase 5: Data Visualization</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons">
+    <a class="sidebar-lesson" id="slink-5-0" href="phase-5.html" >
+      <span class="lesson-check" id="chk-5-0"></span>
+      Matplotlib Basics
+    </a>
+    <a class="sidebar-lesson" id="slink-5-1" href="phase-5.html" >
+      <span class="lesson-check" id="chk-5-1"></span>
+      Bar & Line Charts
+    </a>
+    <a class="sidebar-lesson" id="slink-5-2" href="phase-5.html" >
+      <span class="lesson-check" id="chk-5-2"></span>
+      Histograms & Scatter Plots
+    </a>
+    <a class="sidebar-lesson" id="slink-5-3" href="phase-5.html" >
+      <span class="lesson-check" id="chk-5-3"></span>
+      Pie & Area Charts
+    </a>
+    <a class="sidebar-lesson" id="slink-5-4" href="phase-5.html" >
+      <span class="lesson-check" id="chk-5-4"></span>
+      Subplots & Dashboards
+    </a>
+    <a class="sidebar-lesson" id="slink-5-5" href="phase-5.html" >
+      <span class="lesson-check" id="chk-5-5"></span>
+      Seaborn Charts
+    </a>
+    <a class="sidebar-lesson" id="slink-5-6" href="phase-5.html" >
+      <span class="lesson-check" id="chk-5-6"></span>
+      Heatmaps & Pair Plots
+    </a>
+    <a class="sidebar-lesson" id="slink-5-7" href="phase-5.html" >
+      <span class="lesson-check" id="chk-5-7"></span>
+      Plotly — Interactive Charts
+    </a>
+    <a class="sidebar-lesson" id="slink-5-8" href="phase-5.html" >
+      <span class="lesson-check" id="chk-5-8"></span>
+      Chart Styling & Themes
+    </a>
+    <a class="sidebar-lesson" id="slink-5-9" href="phase-5.html" >
+      <span class="lesson-check" id="chk-5-9"></span>
+      Exporting & Sharing Charts
+    </a>
+  </div>
+</div><div class="sidebar-unit">
+  <div class="sidebar-unit-header active-unit open" onclick="toggleUnit(this)">
+    <span>🔍</span>
+    <span>Phase 6: Exploratory Data Analysis</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons open">
+    <a class="sidebar-lesson active" id="slink-6-0" href="javascript:showLesson(0)" onclick="showLesson(0);return false;">
+      <span class="lesson-check" id="chk-6-0"></span>
+      Descriptive Statistics
+    </a>
+    <a class="sidebar-lesson" id="slink-6-1" href="javascript:showLesson(1)" onclick="showLesson(1);return false;">
+      <span class="lesson-check" id="chk-6-1"></span>
+      Correlation & Regression
+    </a>
+    <a class="sidebar-lesson" id="slink-6-2" href="javascript:showLesson(2)" onclick="showLesson(2);return false;">
+      <span class="lesson-check" id="chk-6-2"></span>
+      Window Functions
+    </a>
+    <a class="sidebar-lesson" id="slink-6-3" href="javascript:showLesson(3)" onclick="showLesson(3);return false;">
+      <span class="lesson-check" id="chk-6-3"></span>
+      Sampling & Hypothesis Testing
+    </a>
+    <a class="sidebar-lesson" id="slink-6-4" href="javascript:showLesson(4)" onclick="showLesson(4);return false;">
+      <span class="lesson-check" id="chk-6-4"></span>
+      Building Analysis Reports
+    </a>
+  </div>
+</div><div class="sidebar-unit">
+  <div class="sidebar-unit-header" onclick="toggleUnit(this)">
+    <span>🏆</span>
+    <span>Phase 7: Real-World Projects</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons"><a class="sidebar-lesson" href="../capstone.html">🏆 View Projects</a>
+  </div>
+</div><div class="sidebar-unit">
+  <div class="sidebar-unit-header" onclick="toggleUnit(this)">
+    <span>💼</span>
+    <span>Phase 8: Job Ready</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons">
+    <a class="sidebar-lesson" id="slink-8-0" href="phase-8.html" >
+      <span class="lesson-check" id="chk-8-0"></span>
+      Comments & Code Style
+    </a>
+    <a class="sidebar-lesson" id="slink-8-1" href="phase-8.html" >
+      <span class="lesson-check" id="chk-8-1"></span>
+      Virtual Environments & pip
+    </a>
+    <a class="sidebar-lesson" id="slink-8-2" href="phase-8.html" >
+      <span class="lesson-check" id="chk-8-2"></span>
+      Building Analysis Reports
+    </a>
+    <a class="sidebar-lesson" id="slink-8-3" href="phase-8.html" >
+      <span class="lesson-check" id="chk-8-3"></span>
+      SQL with Python
+    </a>
+  </div>
+</div></div>
+  </aside>
+
+  <main class="lesson-main">
+    <div class="breadcrumb">
+      <a href="../index.html">PyTrack</a> ›
+      <span>Phase 6: Exploratory Data Analysis</span>
+    </div>
+    <div class="phase-badge">Phase 6 of 8</div>
+    
+    <div id="lesson-panels"><div class="lesson-panel active" id="panel-0">
+  <div class="lesson-title-bar">
+    <h2>📊 Descriptive Statistics</h2>
+    <p>Unit 7 — Extract real insights from data — grouping, pivoting, merging, time series, and statistical analysis.</p>
+  </div>
+  <div class="lesson-body">
+<h3>The Full Statistical Picture</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42)
+
+df = pd.read_csv("sales.csv")  # or use sample data
+sales = pd.Series(np.random.normal(52000,15000,200).round(0))
+
+# Complete summary
+print(sales.describe())
+print(f"\nSkewness:  {sales.skew():.3f}")
+print(f"Kurtosis:  {sales.kurtosis():.3f}")
+print(f"CV:        {sales.std()/sales.mean()*100:.1f}%")</div></div>
+<div class="output-block"><div class="output-label">Output</div>count      200.000
+mean     52,156.000
+std      15,284.000
+min       9,781.000
+25%      41,855.000
+50%      52,244.000
+75%      62,726.000
+max      93,912.000
+
+Skewness:  0.048
+Kurtosis: -0.098
+CV:        29.3%</div>
+<h3>Correlation Matrix</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42)
+n = 100
+
+df = pd.DataFrame({
+    "Sales":     np.random.normal(50000,10000,n),
+    "Marketing": np.random.normal(5000,1000,n),
+    "Staff":     np.random.randint(5,50,n),
+    "Season":    np.random.choice([1,2,3,4],n),
+})
+# Add correlation
+df["Sales"] += df["Marketing"] * 4
+
+corr = df.corr()
+print(corr.round(2))
+
+# Find top correlated pairs
+import numpy as np
+mask = np.triu(np.ones(corr.shape), k=1).astype(bool)
+pairs = corr.where(mask).stack().sort_values(ascending=False)
+print("\nTop correlations:")
+print(pairs.head(3))</div></div></div>
+  <div class="task-section">
+  <div class="task-header"><span class="task-badge">🎯 TASK</span><span class="task-title">Practice Exercise</span></div>
+  <div class="task-desc">Perform a complete descriptive analysis on a sales dataset: central tendency, spread, shape, and identify key insights.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42)
+
+df = pd.DataFrame({
+    "Region":  np.random.choice(["Cairo","Alex","Giza","Aswan"],200),
+    "Product": np.random.choice(["Laptop","Phone","Tablet"],200),
+    "Sales":   np.random.lognormal(10.8, 0.4, 200).round(0),
+    "Units":   np.random.randint(1,15,200),
+})
+
+print("=== Overall Sales Statistics ===")
+print(f"Mean:    {df['Sales'].mean():&gt;12,.0f}")
+print(f"Median:  {df['Sales'].median():&gt;12,.0f}")
+print(f"Std Dev: {df['Sales'].std():&gt;12,.0f}")
+print(f"Skew:    {df['Sales'].skew():&gt;12.3f}")
+
+print("\n=== By Region ===")
+by_region = df.groupby("Region")["Sales"].agg(
+    Mean="mean", Median="median", Std="std", Count="count"
+).round(0)
+print(by_region.sort_values("Mean", ascending=False))
+
+print("\n=== Correlation ===")
+print(df[["Sales","Units"]].corr().round(3))</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42)
+df=pd.DataFrame({"Region":np.random.choice(["Cairo","Alex","Giza","Aswan"],200),"Product":np.random.choice(["Laptop","Phone","Tablet"],200),"Sales":np.random.lognormal(10.8,0.4,200).round(0),"Units":np.random.randint(1,15,200)})
+print(f"Mean: {df['Sales'].mean():,.0f} | Median: {df['Sales'].median():,.0f}")
+print(f"Skew: {df['Sales'].skew():.3f}")
+print(df.groupby("Region")["Sales"].mean().sort_values(ascending=False).round(0))</div></div><div class="output-block"><div class="output-label">Output</div>Mean: 55,243 | Median: 50,891
+Skew: 1.124
+Region
+Cairo    57,841
+Alex     55,102
+Giza     54,398
+Aswan    53,412</div></div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-1">
+  <div class="lesson-title-bar">
+    <h2>📊 Correlation & Regression</h2>
+    <p>Unit 7 — Extract real insights from data — grouping, pivoting, merging, time series, and statistical analysis.</p>
+  </div>
+  <div class="lesson-body">
+<h3>Correlation Analysis</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42)
+
+n = 100
+marketing = np.random.normal(5000, 1000, n)
+sales = marketing * 8 + np.random.normal(0, 5000, n)  # Correlated
+
+df = pd.DataFrame({
+    "Marketing": marketing.round(0),
+    "Sales":     sales.round(0),
+    "Staff":     np.random.randint(5, 30, n),
+    "Season":    np.random.choice([1,2,3,4], n),
+})
+
+# Pearson correlation
+print("Correlation matrix:")
+print(df.corr().round(3))
+
+# Spearman (rank-based, robust to outliers)
+print("\nSpearman correlation:")
+print(df.corr(method="spearman").round(3))</div></div>
+<div class="output-block"><div class="output-label">Output</div>Correlation matrix:
+           Marketing  Sales  Staff  Season
+Marketing      1.000  0.845  0.012  -0.023
+Sales          0.845  1.000  0.089  -0.041
+Staff          0.012  0.089  1.000   0.054
+Season        -0.023 -0.041  0.054   1.000</div>
+<h3>Simple Linear Regression</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import numpy as np
+
+# Manual linear regression
+X = df["Marketing"].values
+y = df["Sales"].values
+
+# OLS: y = a + bX
+b = np.cov(X, y)[0,1] / np.var(X)
+a = y.mean() - b * X.mean()
+
+# Predictions
+y_pred = a + b * X
+residuals = y - y_pred
+r_squared = 1 - (residuals**2).sum() / ((y - y.mean())**2).sum()
+
+print(f"Intercept (a): {a:,.0f}")
+print(f"Slope (b):     {b:.2f}")
+print(f"R²:            {r_squared:.3f}")
+print(f"\nFor 6000 marketing: {a + b*6000:,.0f} predicted sales")</div></div></div>
+  <div class="task-section">
+  <div class="task-header"><span class="task-badge">🎯 TASK</span><span class="task-title">Practice Exercise</span></div>
+  <div class="task-desc">Perform correlation analysis on a multi-variable dataset. Find the variables most correlated with sales, build a simple regression, and interpret results.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42)
+n = 150
+
+# Generate correlated data
+marketing  = np.random.normal(5000,1000,n)
+staff      = np.random.randint(5,30,n)
+season_eff = np.random.choice([0.8,1.0,1.2,1.1],n)
+
+sales = (marketing*7 + staff*500 + np.random.normal(0,3000,n)) * season_eff
+
+df = pd.DataFrame({
+    "Sales":     sales.round(0),
+    "Marketing": marketing.round(0),
+    "Staff":     staff,
+    "SeasonEff": season_eff,
+    "Temperature": np.random.normal(25,5,n).round(1),
+})
+
+# Correlation with Sales
+corr_with_sales = df.corr()["Sales"].drop("Sales").sort_values(ascending=False)
+print("Correlation with Sales:")
+print(corr_with_sales.round(3))
+
+# Simple regression: Sales ~ Marketing
+X = df["Marketing"].values
+y = df["Sales"].values
+b = np.cov(X,y)[0,1]/np.var(X)
+a = y.mean()-b*X.mean()
+y_pred = a+b*X
+r2 = 1-((y-y_pred)**2).sum()/((y-y.mean())**2).sum()
+
+print(f"\nRegression: Sales = {a:,.0f} + {b:.2f} × Marketing")
+print(f"R² = {r2:.3f} ({r2*100:.1f}% variance explained)")</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42); n=150
+marketing=np.random.normal(5000,1000,n); staff=np.random.randint(5,30,n)
+season=np.random.choice([0.8,1.0,1.2,1.1],n)
+sales=(marketing*7+staff*500+np.random.normal(0,3000,n))*season
+df=pd.DataFrame({"Sales":sales.round(0),"Marketing":marketing.round(0),"Staff":staff,"SeasonEff":season,"Temperature":np.random.normal(25,5,n).round(1)})
+corr=df.corr()["Sales"].drop("Sales").sort_values(ascending=False)
+print(corr.round(3))
+X,y=df["Marketing"].values,df["Sales"].values
+b=np.cov(X,y)[0,1]/np.var(X); a=y.mean()-b*X.mean()
+r2=1-((y-(a+b*X))**2).sum()/((y-y.mean())**2).sum()
+print(f"R² = {r2:.3f}")</div></div><div class="output-block"><div class="output-label">Output</div>Correlation with Sales:
+SeasonEff     0.623
+Marketing     0.612
+Staff         0.378
+Temperature  -0.023
+dtype: float64
+R² = 0.374</div></div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-2">
+  <div class="lesson-title-bar">
+    <h2>📊 Window Functions</h2>
+    <p>Unit 7 — Extract real insights from data — grouping, pivoting, merging, time series, and statistical analysis.</p>
+  </div>
+  <div class="lesson-body">
+<h3>Rolling Windows</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+
+monthly = pd.Series([45,52,48,61,58,72,65,59,71,78,82,95],
+    index=pd.date_range("2024-01",periods=12,freq="ME"),
+    name="Sales"
+) * 1000
+
+# Rolling mean (smoothing)
+ma3  = monthly.rolling(window=3).mean()   # 3-month moving avg
+ma6  = monthly.rolling(window=6).mean()   # 6-month moving avg
+
+# Rolling statistics
+roll_std = monthly.rolling(window=3).std()
+roll_min = monthly.rolling(window=3).min()
+roll_max = monthly.rolling(window=3).max()
+
+result = pd.DataFrame({
+    "Sales": monthly,
+    "MA3":   ma3,
+    "MA6":   ma6,
+    "Std3":  roll_std,
+}).round(0)
+print(result.head(8))</div></div>
+<div class="output-block"><div class="output-label">Output</div>             Sales     MA3     MA6    Std3
+2024-01-31   45000     NaN     NaN     NaN
+2024-02-29   52000     NaN     NaN     NaN
+2024-03-31   48000  48333     NaN    3512
+2024-04-30   61000  53667     NaN    6807
+2024-05-31   58000  55667     NaN    6807
+2024-06-30   72000  63667  56000    7211</div>
+<h3>Expanding & Cumulative</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body"># Expanding — includes all previous rows
+cum_mean  = monthly.expanding().mean()
+cum_total = monthly.cumsum()
+cum_max   = monthly.cummax()
+
+# Percentage change
+pct = monthly.pct_change() * 100
+
+result2 = pd.DataFrame({
+    "Sales":     monthly,
+    "CumTotal":  cum_total,
+    "RunningAvg":cum_mean,
+    "Growth%":   pct,
+}).round(0)
+print(result2.tail(5))</div></div>
+<div class="tip-box"><strong>💡 Tip:</strong> Rolling averages smooth out noise in time series. Use 3-period MA for short-term trend, 12-period for long-term.</div></div>
+  <div class="task-section">
+  <div class="task-header"><span class="task-badge">🎯 TASK</span><span class="task-title">Practice Exercise</span></div>
+  <div class="task-desc">Apply window functions to daily sales: calculate 7-day and 30-day moving averages, detect days where sales spike > 2 std above rolling mean, and calculate cumulative revenue milestones.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42)
+
+dates = pd.date_range("2024-01-01","2024-06-30",freq="D")
+sales = pd.Series(
+    np.random.normal(50000,8000,len(dates)).round(0),
+    index=dates, name="Sales"
+)
+
+# Moving averages
+ma7  = sales.rolling(7).mean()
+ma30 = sales.rolling(30).mean()
+
+# Rolling std for spike detection
+roll_std  = sales.rolling(30).std()
+roll_mean = sales.rolling(30).mean()
+spikes    = sales[sales &gt; roll_mean + 2*roll_std]
+
+# Cumulative revenue
+cum_rev = sales.cumsum()
+milestones = [1e6, 2e6, 3e6]
+for m in milestones:
+    date = cum_rev[cum_rev &gt;= m].index[0] if (cum_rev &gt;= m).any() else None
+    if date: print(f"Reached {m/1e6:.0f}M on: {date.date()}")
+
+print(f"\nSpike days: {len(spikes)}")
+print(f"Avg spike amount: {spikes.mean():,.0f}")
+print(f"\nFinal 7-day MA: {ma7.iloc[-1]:,.0f}")</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42)
+dates=pd.date_range("2024-01-01","2024-06-30",freq="D")
+sales=pd.Series(np.random.normal(50000,8000,len(dates)).round(0),index=dates)
+ma7=sales.rolling(7).mean(); ma30=sales.rolling(30).mean()
+roll_std=sales.rolling(30).std(); roll_mean=sales.rolling(30).mean()
+spikes=sales[sales&gt;roll_mean+2*roll_std]
+cum_rev=sales.cumsum()
+for m in [1e6,2e6,3e6]:
+    d=cum_rev[cum_rev&gt;=m].index[0] if (cum_rev&gt;=m).any() else None
+    if d: print(f"Reached {m/1e6:.0f}M: {d.date()}")
+print(f"Spikes: {len(spikes)}, Avg: {spikes.mean():,.0f}")</div></div><div class="output-block"><div class="output-label">Output</div>Reached 1M: 2024-01-20
+Reached 2M: 2024-02-09
+Reached 3M: 2024-02-28
+Spikes: 4, Avg: 69,423</div></div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-3">
+  <div class="lesson-title-bar">
+    <h2>📊 Sampling & Hypothesis Testing</h2>
+    <p>Unit 7 — Extract real insights from data — grouping, pivoting, merging, time series, and statistical analysis.</p>
+  </div>
+  <div class="lesson-body">
+<h3>Random Sampling</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42)
+
+# Large population
+population = pd.DataFrame({
+    "Sales":  np.random.normal(50000,15000,10000).round(0),
+    "Region": np.random.choice(["Cairo","Alex","Giza"],10000),
+})
+
+# Simple random sample
+sample = population.sample(n=100, random_state=42)
+print(f"Population mean: {population['Sales'].mean():,.0f}")
+print(f"Sample mean:     {sample['Sales'].mean():,.0f}")
+
+# Stratified sample (proportional by region)
+stratified = population.groupby("Region", group_keys=False).apply(
+    lambda x: x.sample(frac=0.01, random_state=42)
+)
+print(f"\nStratified sample: {len(stratified)} rows")
+print(stratified["Region"].value_counts())</div></div>
+<div class="output-block"><div class="output-label">Output</div>Population mean: 50,012
+Sample mean:     49,847
+
+Stratified sample: 100 rows
+Region
+Cairo    34
+Alex     33
+Giza     33</div>
+<h3>Hypothesis Testing (t-test)</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import numpy as np
+from scipy import stats
+
+# Are Cairo sales significantly higher than Alex?
+cairo = population[population["Region"]=="Cairo"]["Sales"]
+alex  = population[population["Region"]=="Alex"]["Sales"]
+
+t_stat, p_value = stats.ttest_ind(cairo, alex)
+print(f"Cairo mean: {cairo.mean():,.0f}")
+print(f"Alex mean:  {alex.mean():,.0f}")
+print(f"t-statistic: {t_stat:.3f}")
+print(f"p-value:     {p_value:.4f}")
+print(f"Significant (p&lt;0.05): {p_value &lt; 0.05}")</div></div>
+<div class="tip-box"><strong>💡 Tip:</strong> p-value < 0.05 means we reject the null hypothesis — the difference is statistically significant (not due to random chance).</div></div>
+  <div class="task-section">
+  <div class="task-header"><span class="task-badge">🎯 TASK</span><span class="task-title">Practice Exercise</span></div>
+  <div class="task-desc">Compare sales between two marketing campaigns using hypothesis testing. Determine if the difference is statistically significant.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import numpy as np, pandas as pd
+from scipy import stats
+np.random.seed(42)
+
+# Two campaigns
+campaign_A = np.random.normal(52000, 8000, 50)  # New campaign
+campaign_B = np.random.normal(48000, 9000, 50)  # Old campaign
+
+# Descriptive stats
+print("Campaign A:")
+print(f"  Mean: {campaign_A.mean():,.0f}  Std: {campaign_A.std():,.0f}")
+print("Campaign B:")
+print(f"  Mean: {campaign_B.mean():,.0f}  Std: {campaign_B.std():,.0f}")
+print(f"  Difference: {campaign_A.mean()-campaign_B.mean():,.0f}")
+
+# Independent t-test
+t_stat, p_val = stats.ttest_ind(campaign_A, campaign_B)
+print(f"\nt-statistic: {t_stat:.3f}")
+print(f"p-value:     {p_val:.4f}")
+
+if p_val &lt; 0.05:
+    print("✅ SIGNIFICANT: Campaign A performs better (p &lt; 0.05)")
+else:
+    print("❌ NOT significant: Could be random variation (p &gt;= 0.05)")
+
+# Effect size (Cohen's d)
+pooled_std = np.sqrt((campaign_A.std()**2 + campaign_B.std()**2) / 2)
+cohens_d   = (campaign_A.mean() - campaign_B.mean()) / pooled_std
+print(f"Cohen's d: {cohens_d:.3f} ({'large' if abs(cohens_d)&gt;0.8 else 'medium' if abs(cohens_d)&gt;0.5 else 'small'} effect)")</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import numpy as np; from scipy import stats
+np.random.seed(42)
+A=np.random.normal(52000,8000,50); B=np.random.normal(48000,9000,50)
+t,p=stats.ttest_ind(A,B)
+print(f"A mean: {A.mean():,.0f} | B mean: {B.mean():,.0f}")
+print(f"p-value: {p:.4f} | Significant: {p&lt;0.05}")
+d=(A.mean()-B.mean())/np.sqrt((A.std()**2+B.std()**2)/2)
+print(f"Cohen's d: {d:.3f}")</div></div><div class="output-block"><div class="output-label">Output</div>A mean: 52,847 | B mean: 48,614
+p-value: 0.0031 | Significant: True
+Cohen's d: 0.498</div></div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-4">
+  <div class="lesson-title-bar">
+    <h2>📊 Building Analysis Reports</h2>
+    <p>Unit 7 — Extract real insights from data — grouping, pivoting, merging, time series, and statistical analysis.</p>
+  </div>
+  <div class="lesson-body">
+<h3>Structuring an Analysis Report</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42)
+
+def sales_report(df, title="Sales Report"):
+    """Generate a complete sales analysis report."""
+    sep = "="*50
+    print(f"\n{sep}")
+    print(f" {title}")
+    print(sep)
+
+    # 1. Overview
+    print(f"\n📊 OVERVIEW")
+    print(f"  Period:    {df.index.min().date()} to {df.index.max().date()}")
+    print(f"  Total:     {df['Sales'].sum():&gt;15,.0f}")
+    print(f"  Daily Avg: {df['Sales'].mean():&gt;15,.0f}")
+    print(f"  Best Day:  {df['Sales'].max():&gt;15,.0f} ({df['Sales'].idxmax().date()})")
+
+    # 2. Trend
+    monthly = df["Sales"].resample("ME").sum()
+    growth  = monthly.pct_change().mean() * 100
+    print(f"\n📈 TREND")
+    print(f"  Monthly growth (avg): {growth:+.1f}%")
+
+    # 3. Regional breakdown
+    if "Region" in df.columns:
+        print(f"\n🗺️  BY REGION")
+        by_region = df.groupby("Region")["Sales"].agg(["sum","mean"]).round(0)
+        by_region["Share%"] = (by_region["sum"]/by_region["sum"].sum()*100).round(1)
+        print(by_region.sort_values("sum",ascending=False).to_string())
+
+    print(f"\n{sep}\n")
+    return monthly</div></div>
+<div class="tip-box"><strong>💡 Tip:</strong> A good report has: Overview → Trend → Breakdown → Insights → Recommendations. Always answer the 'so what' question.</div></div>
+  <div class="task-section">
+  <div class="task-header"><span class="task-badge">🎯 TASK</span><span class="task-title">Practice Exercise</span></div>
+  <div class="task-desc">Build a full quarterly business report with: executive summary, KPI dashboard, regional analysis, product performance, and growth analysis.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42)
+
+# Generate dataset
+dates   = pd.date_range("2024-01-01","2024-12-31",freq="D")
+regions = np.random.choice(["Cairo","Alex","Giza","Aswan"],len(dates))
+products = np.random.choice(["Laptop","Phone","Tablet"],len(dates))
+sales    = np.random.normal(50000,15000,len(dates)).round(0)
+
+df = pd.DataFrame({"Sales":sales,"Region":regions,"Product":products},index=dates)
+
+print("=" * 55)
+print("       ANNUAL BUSINESS REPORT — 2024")
+print("=" * 55)
+
+# KPIs
+print(f"\n{'KPI':&lt;25} {'Value':&gt;15}")
+print("-"*40)
+print(f"{'Total Revenue':&lt;25} {df['Sales'].sum():&gt;15,.0f}")
+print(f"{'Daily Average':&lt;25} {df['Sales'].mean():&gt;15,.0f}")
+print(f"{'Best Month Revenue':&lt;25}", end="")
+monthly=df["Sales"].resample("ME").sum()
+print(f"{monthly.max():&gt;15,.0f}")
+print(f"{'YoY Growth Est.':&lt;25} {'N/A - 1 year':&gt;15}")
+
+# Regional breakdown
+print(f"\n{'REGIONAL PERFORMANCE':=^40}")
+reg=df.groupby("Region")["Sales"].agg(Total="sum",Daily="mean").round(0)
+reg["Share%"]=(reg["Total"]/reg["Total"].sum()*100).round(1)
+print(reg.sort_values("Total",ascending=False).to_string())
+
+# Product mix
+print(f"\n{'PRODUCT MIX':=^40}")
+prod=df.groupby("Product")["Sales"].sum()
+for p,v in prod.sort_values(ascending=False).items():
+    share=v/prod.sum()*100
+    bar="█"*int(share/5)
+    print(f"  {p:&lt;10} {v:&gt;10,.0f} ({share:.1f}%) {bar}")</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
+np.random.seed(42)
+dates=pd.date_range("2024-01-01","2024-12-31",freq="D")
+df=pd.DataFrame({"Sales":np.random.normal(50000,15000,len(dates)).round(0),"Region":np.random.choice(["Cairo","Alex","Giza","Aswan"],len(dates)),"Product":np.random.choice(["Laptop","Phone","Tablet"],len(dates))},index=dates)
+print(f"Total: {df['Sales'].sum():,.0f}")
+reg=df.groupby("Region")["Sales"].sum().sort_values(ascending=False)
+print(reg)
+prod=df.groupby("Product")["Sales"].sum().sort_values(ascending=False)
+print(prod)</div></div><div class="output-block"><div class="output-label">Output</div>Total: 18,298,234
+Region
+Cairo    4,789,234
+Alex     4,512,891
+Giza     4,498,123
+Aswan    4,497,986
+Product
+Laptop    6,234,891
+Phone     6,089,456
+Tablet    5,973,887</div></div>
+</div>
+</div></div>
+    <div style="display:flex;justify-content:space-between;margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border)">
+      <a class="btn-nav" href="unit-6.html">← Unit 6: Data Cleaning</a>
+      <a class="btn-nav" href="unit-8.html">Unit 8: Data Visualization →</a>
+    </div>
+  
+  <!-- Shared Nav Bar -->
+  <div class="lesson-quiz-bar" style="margin-bottom:.8rem">
+    <button class="btn-quiz" id="quiz-btn" onclick="openCurrentQuiz()">📝 Lesson Quiz — 5 Questions</button>
+    <span class="quiz-done-badge" id="quiz-done-global" style="display:none">✓ Quiz done</span>
+  </div>
+  <div class="lesson-nav">
+    <button class="btn-nav" id="btn-prev" onclick="prevLesson()" disabled>← Prev</button>
+    <button class="btn-mark" id="btn-mark" onclick="markAndNext()">✓ Mark Done & Next →</button>
+    <a class="btn-nav" id="btn-next-unit" href="unit-8.html" style="display:none">Unit 8: Data Visualization →</a>
+    <button class="btn-nav" id="btn-next" onclick="showLesson(currentLesson+1)">Next →</button>
+  </div>
+</main>
+</div>
+
+<div class="modal-overlay" id="quiz-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="quiz-title">Lesson Quiz</h3>
+      <button class="modal-close" onclick="closeQuiz()">×</button>
+    </div>
+    <div id="quiz-body"></div>
+  </div>
+</div>
+
+<script src="../js/app.js"></script>
+<script>
+initUnit({
+  id: 7,
+  lessons: [{"title": "Descriptive Statistics", "quizzes": [{"q": "Skewness > 0 means:", "opts": ["Symmetric data", "Left-skewed (few very low values)", "Right-skewed (few very high values)", "Normal distribution"], "ans": 2, "exp": "Positive skewness = right-skewed = long tail on the right. A few very high values pull the mean above the median."}, {"q": "Coefficient of Variation (CV) = :", "opts": ["Std / Mean × 100%", "Mean / Std × 100%", "Std / Median", "Variance / Mean"], "ans": 0, "exp": "CV = (std/mean) × 100% — measures relative variability. Useful for comparing spread across datasets with different scales."}, {"q": "When mean > median significantly:", "opts": ["Data is left-skewed", "Data is symmetric", "Data is right-skewed", "Data has no outliers"], "ans": 2, "exp": "When mean > median, high values pull the mean up — indicates right-skewed data with some very large values."}, {"q": "Correlation matrix diagonal values are always:", "opts": ["0", "0.5", "1.0", "Varies"], "ans": 2, "exp": "A variable's correlation with itself is always 1.0 — perfect correlation."}, {"q": "df.corr() computes:", "opts": ["Covariance matrix", "Pearson correlation coefficients between all numeric columns", "Spearman correlation", "Distance matrix"], "ans": 1, "exp": "df.corr() defaults to Pearson correlation. Use method='spearman' for rank-based correlation."}]}, {"title": "GroupBy — Grouped Analysis", "quizzes": [{"q": "groupby().agg(['sum','mean']) returns:", "opts": ["Two separate DataFrames", "DataFrame with multiple aggregation columns", "Error", "A Series"], "ans": 1, "exp": "agg() with a list runs multiple functions and creates one column per function."}, {"q": "transform('mean') vs mean() in groupby:", "opts": ["Same result", "transform preserves original shape; mean returns one row per group", "mean preserves shape", "No difference"], "ans": 1, "exp": "transform returns a Series with the same index as the original DataFrame. mean() reduces to one row per group."}, {"q": "groupby().filter(lambda x: condition) keeps:", "opts": ["Individual rows meeting condition", "Entire groups where the condition is True for the group", "Only one row per group", "Nothing"], "ans": 1, "exp": "filter() keeps/removes entire groups based on a group-level condition (like group mean > threshold)."}, {"q": "df.groupby('Region')['Sales'].idxmax() returns:", "opts": ["The max sales value per region", "The index of the max sales row per region", "All rows sorted by sales", "Error"], "ans": 1, "exp": "idxmax() returns the INDEX (row label) of the maximum value in each group."}, {"q": "Named aggregation syntax df.groupby('col').agg(Total='sum') creates:", "opts": ["Error", "Column named 'Total' with sum values", "Column named 'sum'", "Multiple columns"], "ans": 1, "exp": "Named aggregation: agg(NewName='function') creates a column named NewName. Much cleaner than renaming afterward."}]}, {"title": "Merging DataFrames", "quizzes": [{"q": "how='left' in merge keeps:", "opts": ["Only matches", "All rows from right", "All rows from left + matches from right", "All rows from both"], "ans": 2, "exp": "Left join: ALL rows from the left DataFrame, matching rows from right. Non-matching right rows become NaN."}, {"q": "If merge creates MORE rows than expected:", "opts": ["That's normal", "Duplicate keys exist in one of the DataFrames", "An error occurred", "The merge used inner join"], "ans": 1, "exp": "More rows than expected usually means duplicate key values in one DataFrame — one row matches multiple rows in the other."}, {"q": "left_on='CustID', right_on='ID' is used when:", "opts": ["Column names match", "Column names are different in each DataFrame", "Multiple join keys needed", "Error handling"], "ans": 1, "exp": "Use left_on/right_on when the join key column has different names in the two DataFrames."}, {"q": "suffixes=('_x','_y') in merge handles:", "opts": ["Missing values", "Columns with the same name in both DataFrames", "Index conflicts", "Data type mismatches"], "ans": 1, "exp": "When both DataFrames have a column with the same name (other than the join key), suffixes distinguish them."}, {"q": "pd.merge vs df.join:", "opts": ["Same thing", "merge is more flexible (any columns); join defaults to index-based joining", "join is more flexible", "merge requires same column names"], "ans": 1, "exp": "merge() offers full control over join keys and types. join() is a shortcut that joins on index by default."}]}, {"title": "Concat & Join", "quizzes": [{"q": "pd.concat([df1,df2]) by default stacks:", "opts": ["Horizontally (columns)", "Vertically (rows)", "Diagonally", "Error"], "ans": 1, "exp": "Default axis=0 stacks vertically (adds rows). Use axis=1 to stack horizontally (add columns)."}, {"q": "ignore_index=True in concat:", "opts": ["Removes the index", "Resets index to 0,1,2...", "Keeps original index", "Removes duplicates"], "ans": 1, "exp": "ignore_index=True resets the row index to 0,1,2... instead of keeping the original index values (which may repeat)."}, {"q": "Concatenating DataFrames with different columns results in:", "opts": ["Error", "NaN for missing columns", "Only common columns kept", "Columns renamed"], "ans": 1, "exp": "pd.concat fills NaN for columns that don't exist in some DataFrames (union of all columns by default)."}, {"q": "df.assign(quarter='Q1') does:", "opts": ["Modifies df in place", "Returns a new DataFrame with a 'quarter' column added", "Raises error if column exists", "Filters to Q1 only"], "ans": 1, "exp": "assign() returns a NEW DataFrame with the new column. The original df is unchanged."}, {"q": "glob.glob('sales_*.csv') returns:", "opts": ["The content of matching files", "A list of file paths matching the pattern", "An error", "One file only"], "ans": 1, "exp": "glob.glob() returns a list of file paths that match the pattern — useful for loading multiple files at once."}]}, {"title": "Pivot Tables", "quizzes": [{"q": "margins=True in pivot_table adds:", "opts": ["Borders to the table", "Row and column totals", "A new column", "Extra rows"], "ans": 1, "exp": "margins=True adds an 'All' row at the bottom and 'All' column on the right with subtotals."}, {"q": "fill_value=0 in pivot_table:", "opts": ["Sets all values to 0", "Replaces NaN with 0", "Filters zeros", "Rounds to 0"], "ans": 1, "exp": "fill_value replaces NaN (missing combinations) with the specified value. 0 is common for sales tables."}, {"q": "pd.crosstab(A, B) creates:", "opts": ["A merged table", "A frequency table showing count of each A-B combination", "A pivot with means", "Error"], "ans": 1, "exp": "crosstab creates a frequency table — how many rows have each combination of A and B values."}, {"q": "normalize='index' in crosstab shows:", "opts": ["Absolute counts", "Row percentages (each row sums to 1)", "Column percentages", "Overall percentages"], "ans": 1, "exp": "normalize='index' divides each row by its total, giving row-wise percentages."}, {"q": "pivot_table with aggfunc=['sum','mean'] creates:", "opts": ["Error", "A multi-level column header with both functions", "Two separate tables", "Only the last function"], "ans": 1, "exp": "Multiple aggfunc creates a MultiIndex column header with one level per function."}]}, {"title": "Time Series Basics", "quizzes": [{"q": "resample('ME').sum() groups data by:", "opts": ["Days", "Month-end, summing values", "Minutes", "Error"], "ans": 1, "exp": "resample('ME') groups by month-end frequency. sum() calculates the total for each month."}, {"q": "pct_change() calculates:", "opts": ["Cumulative change", "Percentage change from the previous row", "Absolute change", "Row-wise change"], "ans": 1, "exp": "pct_change() = (current - previous) / previous. Returns percentage change from the prior period."}, {"q": "df.index.day_name() returns:", "opts": ["Day number (1-31)", "Day of week name (Monday, Tuesday...)", "Week number", "Day of year"], "ans": 1, "exp": "day_name() returns the name of the day of the week for each date in the DatetimeIndex."}, {"q": "resample frequency 'W' means:", "opts": ["Working days", "Weekly (Sunday by default)", "Weekdays only", "Wednesdays"], "ans": 1, "exp": "'W' = weekly frequency, anchored to Sundays by default. Use 'W-MON' for Monday-anchored weeks."}, {"q": "To set a date column as the DataFrame index:", "opts": ["df.date = df['Date']", "df.set_index('Date', inplace=True)", "df.index('Date')", "df['Date'].set_as_index()"], "ans": 1, "exp": "set_index('Date') makes the Date column the row index, enabling time-based operations like resample."}]}, {"title": "Window Functions", "quizzes": [{"q": "rolling(7).mean() calculates:", "opts": ["Cumulative mean", "7-period moving average", "Mean of 7 random rows", "Error"], "ans": 1, "exp": "rolling(7).mean() computes the mean of the current and previous 6 values — a 7-period moving average."}, {"q": "Why do rolling() results start with NaN?", "opts": ["Error in calculation", "Not enough previous values to fill the window", "Zeros are displayed as NaN", "Rolling is broken"], "ans": 1, "exp": "The first (window-1) values are NaN because there aren't enough prior values to complete the window."}, {"q": "expanding().mean() computes:", "opts": ["Rolling 3-period mean", "Cumulative mean using all values up to each point", "Fixed window mean", "Error"], "ans": 1, "exp": "expanding() includes all values from the start up to the current point — the window grows with each row."}, {"q": "cumsum() calculates:", "opts": ["Rolling sum", "Cumulative (running) sum — adds all previous values", "Mean running total", "Sum of entire Series"], "ans": 1, "exp": "cumsum() returns a Series where each value is the sum of all values from the start up to that point."}, {"q": "min_periods=1 in rolling() does:", "opts": ["Uses 1-period window", "Computes result even with fewer values than window size", "Error", "Sets window to minimum"], "ans": 1, "exp": "min_periods=1 allows calculation even when fewer values than window size are available — avoids NaN at the start."}]}, {"title": "Correlation & Regression", "quizzes": [{"q": "Correlation of 0.845 between Marketing and Sales means:", "opts": ["Marketing causes sales", "Strong positive linear relationship", "Weak positive relationship", "No relationship"], "ans": 1, "exp": "Correlation measures linear relationship strength. 0.845 = strong positive. Note: correlation does NOT imply causation."}, {"q": "Spearman correlation is preferred when:", "opts": ["Data is always normal", "Data has outliers or non-linear relationships", "For large datasets", "For categorical data"], "ans": 1, "exp": "Spearman is rank-based — more robust to outliers and non-linear (but monotonic) relationships."}, {"q": "R² = 0.75 means:", "opts": ["75% correlation", "75% of variance in Y is explained by X", "Model is 75% accurate", "75 data points fit the line"], "ans": 1, "exp": "R² (coefficient of determination) = proportion of variance explained. R²=0.75 means 75% of Y's variance is explained by X."}, {"q": "Slope b in y = a + bX means:", "opts": ["The y-intercept", "When X increases by 1, Y changes by b units", "The correlation coefficient", "The mean of Y"], "ans": 1, "exp": "The slope b represents: for every 1-unit increase in X, Y changes by b units on average."}, {"q": "Residuals in regression are:", "opts": ["The slope values", "Actual - Predicted values", "Correlation coefficients", "Outliers only"], "ans": 1, "exp": "Residuals = actual_y - predicted_y. Small residuals = good fit. Analyzing residuals reveals model problems."}]}, {"title": "Sampling & Hypothesis Testing", "quizzes": [{"q": "A p-value of 0.03 means:", "opts": ["3% chance the result is wrong", "3% chance the difference is due to random chance", "97% accuracy", "The effect is large"], "ans": 1, "exp": "p-value = probability of observing this result if null hypothesis is true. p=0.03 means 3% chance the difference is random."}, {"q": "Null hypothesis in an A/B test is usually:", "opts": ["A is better than B", "There is no difference between A and B", "B is better than A", "The test is invalid"], "ans": 1, "exp": "The null hypothesis assumes no difference exists. We reject it if p < significance level (usually 0.05)."}, {"q": "Stratified sampling ensures:", "opts": ["Larger sample size", "Representative proportions of subgroups", "Random selection only", "No duplicates"], "ans": 1, "exp": "Stratified sampling ensures each subgroup (like region) is represented proportionally to its share in the population."}, {"q": "Cohen's d measures:", "opts": ["Statistical significance", "Effect size (practical significance)", "Sample size needed", "Correlation"], "ans": 1, "exp": "Cohen's d measures effect size — how practically meaningful the difference is. d>0.8=large, 0.5=medium, 0.2=small."}, {"q": "Central Limit Theorem states that with large enough samples:", "opts": ["All data becomes normal", "Sample means follow a normal distribution regardless of population distribution", "Samples are always accurate", "No variation exists"], "ans": 1, "exp": "CLT: sample means approach a normal distribution as sample size grows, even if the population isn't normal. This justifies many statistical tests."}]}, {"title": "Building Analysis Reports", "quizzes": [{"q": "An executive summary should:", "opts": ["Include all raw data", "Provide key findings and recommendations in 1 page", "List every methodology", "Contain only charts"], "ans": 1, "exp": "Executive summary = high-level findings, KPIs, and recommendations for decision-makers who don't need technical details."}, {"q": "A KPI (Key Performance Indicator) is:", "opts": ["Any metric", "A metric that measures progress toward a specific business goal", "A chart type", "A data cleaning step"], "ans": 1, "exp": "KPIs are specific, measurable metrics tied to business objectives — like monthly revenue, churn rate, or conversion rate."}, {"q": "When presenting percentage changes, always include:", "opts": ["Only the percentage", "The percentage AND the absolute values", "Only absolute values", "Both + the calculation"], "ans": 1, "exp": "20% growth on 100 is very different from 20% on 1,000,000. Always show both percentage and absolute context."}, {"q": "A good analysis report structure is:", "opts": ["Data first, then question", "Question → Data → Analysis → Insights → Recommendations", "Random order", "Only charts"], "ans": 1, "exp": "Start with the question (what are we solving?), then show data, analysis, insights (what we found), and recommendations (what to do)."}, {"q": "When sharing data with non-technical stakeholders:", "opts": ["Include all code and raw data", "Focus on insights and business impact, minimize technical jargon", "Use the most complex charts", "Show all intermediate steps"], "ans": 1, "exp": "Non-technical audiences need insights and actions, not methodology. Focus on 'what does this mean for the business?'"}]}]
+});
+const params = new URLSearchParams(location.search);
+const startLesson = parseInt(params.get("lesson") || "0");
+if (startLesson > 0) showLesson(startLesson);
+</script>
+</body>
+</html>
+<div class="lesson-panel" id="panel-5">
+  <div class="lesson-title-bar">
+    <h2>🔍 Mini Project</h2>
+    <p>Phase 6 — Exploratory Data Analysis</p>
+  </div>
+  <div class="lesson-body">
+    <h3>🏋️ Your Phase 6 Mini Project</h3>
+    <p style="font-size:1rem;line-height:1.8">🏋️ Full EDA Project: World Happiness Report — Questions → Cleaning → Analysis → Visualization → Insights</p>
+    <div class="tip-box"><strong>💡 How to submit:</strong> Complete in Jupyter Notebook, push to your GitHub fork, share the link.</div>
+  </div>
+</div></div>
+    <div style="display:flex;justify-content:space-between;margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border)">
+      <a class="btn-nav" href="phase-5.html">← Phase 5: Data Visualization</a>
+      <a class="btn-nav" href="phase-7.html">Phase 7: Real-World Projects →</a>
+    </div>
+  </main>
+</div>
+
+<div class="modal-overlay" id="quiz-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="quiz-title">Lesson Quiz</h3>
+      <button class="modal-close" onclick="closeQuiz()">×</button>
+    </div>
+    <div id="quiz-body"></div>
+  </div>
+</div>
+
+<script src="../js/app.js"></script>
+<script>
+initUnit({
+  id: 6,
+  lessons: [{"title": "Descriptive Statistics", "quizzes": [{"q": "Skewness > 0 means:", "opts": ["Symmetric data", "Left-skewed (few very low values)", "Right-skewed (few very high values)", "Normal distribution"], "ans": 2, "exp": "Positive skewness = right-skewed = long tail on the right. A few very high values pull the mean above the median."}, {"q": "Coefficient of Variation (CV) = :", "opts": ["Std / Mean × 100%", "Mean / Std × 100%", "Std / Median", "Variance / Mean"], "ans": 0, "exp": "CV = (std/mean) × 100% — measures relative variability. Useful for comparing spread across datasets with different scales."}, {"q": "When mean > median significantly:", "opts": ["Data is left-skewed", "Data is symmetric", "Data is right-skewed", "Data has no outliers"], "ans": 2, "exp": "When mean > median, high values pull the mean up — indicates right-skewed data with some very large values."}, {"q": "Correlation matrix diagonal values are always:", "opts": ["0", "0.5", "1.0", "Varies"], "ans": 2, "exp": "A variable's correlation with itself is always 1.0 — perfect correlation."}, {"q": "df.corr() computes:", "opts": ["Covariance matrix", "Pearson correlation coefficients between all numeric columns", "Spearman correlation", "Distance matrix"], "ans": 1, "exp": "df.corr() defaults to Pearson correlation. Use method='spearman' for rank-based correlation."}]}, {"title": "Correlation & Regression", "quizzes": [{"q": "Correlation of 0.845 between Marketing and Sales means:", "opts": ["Marketing causes sales", "Strong positive linear relationship", "Weak positive relationship", "No relationship"], "ans": 1, "exp": "Correlation measures linear relationship strength. 0.845 = strong positive. Note: correlation does NOT imply causation."}, {"q": "Spearman correlation is preferred when:", "opts": ["Data is always normal", "Data has outliers or non-linear relationships", "For large datasets", "For categorical data"], "ans": 1, "exp": "Spearman is rank-based — more robust to outliers and non-linear (but monotonic) relationships."}, {"q": "R² = 0.75 means:", "opts": ["75% correlation", "75% of variance in Y is explained by X", "Model is 75% accurate", "75 data points fit the line"], "ans": 1, "exp": "R² (coefficient of determination) = proportion of variance explained. R²=0.75 means 75% of Y's variance is explained by X."}, {"q": "Slope b in y = a + bX means:", "opts": ["The y-intercept", "When X increases by 1, Y changes by b units", "The correlation coefficient", "The mean of Y"], "ans": 1, "exp": "The slope b represents: for every 1-unit increase in X, Y changes by b units on average."}, {"q": "Residuals in regression are:", "opts": ["The slope values", "Actual - Predicted values", "Correlation coefficients", "Outliers only"], "ans": 1, "exp": "Residuals = actual_y - predicted_y. Small residuals = good fit. Analyzing residuals reveals model problems."}]}, {"title": "Window Functions", "quizzes": [{"q": "rolling(7).mean() calculates:", "opts": ["Cumulative mean", "7-period moving average", "Mean of 7 random rows", "Error"], "ans": 1, "exp": "rolling(7).mean() computes the mean of the current and previous 6 values — a 7-period moving average."}, {"q": "Why do rolling() results start with NaN?", "opts": ["Error in calculation", "Not enough previous values to fill the window", "Zeros are displayed as NaN", "Rolling is broken"], "ans": 1, "exp": "The first (window-1) values are NaN because there aren't enough prior values to complete the window."}, {"q": "expanding().mean() computes:", "opts": ["Rolling 3-period mean", "Cumulative mean using all values up to each point", "Fixed window mean", "Error"], "ans": 1, "exp": "expanding() includes all values from the start up to the current point — the window grows with each row."}, {"q": "cumsum() calculates:", "opts": ["Rolling sum", "Cumulative (running) sum — adds all previous values", "Mean running total", "Sum of entire Series"], "ans": 1, "exp": "cumsum() returns a Series where each value is the sum of all values from the start up to that point."}, {"q": "min_periods=1 in rolling() does:", "opts": ["Uses 1-period window", "Computes result even with fewer values than window size", "Error", "Sets window to minimum"], "ans": 1, "exp": "min_periods=1 allows calculation even when fewer values than window size are available — avoids NaN at the start."}]}, {"title": "Sampling & Hypothesis Testing", "quizzes": [{"q": "A p-value of 0.03 means:", "opts": ["3% chance the result is wrong", "3% chance the difference is due to random chance", "97% accuracy", "The effect is large"], "ans": 1, "exp": "p-value = probability of observing this result if null hypothesis is true. p=0.03 means 3% chance the difference is random."}, {"q": "Null hypothesis in an A/B test is usually:", "opts": ["A is better than B", "There is no difference between A and B", "B is better than A", "The test is invalid"], "ans": 1, "exp": "The null hypothesis assumes no difference exists. We reject it if p < significance level (usually 0.05)."}, {"q": "Stratified sampling ensures:", "opts": ["Larger sample size", "Representative proportions of subgroups", "Random selection only", "No duplicates"], "ans": 1, "exp": "Stratified sampling ensures each subgroup (like region) is represented proportionally to its share in the population."}, {"q": "Cohen's d measures:", "opts": ["Statistical significance", "Effect size (practical significance)", "Sample size needed", "Correlation"], "ans": 1, "exp": "Cohen's d measures effect size — how practically meaningful the difference is. d>0.8=large, 0.5=medium, 0.2=small."}, {"q": "Central Limit Theorem states that with large enough samples:", "opts": ["All data becomes normal", "Sample means follow a normal distribution regardless of population distribution", "Samples are always accurate", "No variation exists"], "ans": 1, "exp": "CLT: sample means approach a normal distribution as sample size grows, even if the population isn't normal. This justifies many statistical tests."}]}, {"title": "Building Analysis Reports", "quizzes": [{"q": "An executive summary should:", "opts": ["Include all raw data", "Provide key findings and recommendations in 1 page", "List every methodology", "Contain only charts"], "ans": 1, "exp": "Executive summary = high-level findings, KPIs, and recommendations for decision-makers who don't need technical details."}, {"q": "A KPI (Key Performance Indicator) is:", "opts": ["Any metric", "A metric that measures progress toward a specific business goal", "A chart type", "A data cleaning step"], "ans": 1, "exp": "KPIs are specific, measurable metrics tied to business objectives — like monthly revenue, churn rate, or conversion rate."}, {"q": "When presenting percentage changes, always include:", "opts": ["Only the percentage", "The percentage AND the absolute values", "Only absolute values", "Both + the calculation"], "ans": 1, "exp": "20% growth on 100 is very different from 20% on 1,000,000. Always show both percentage and absolute context."}, {"q": "A good analysis report structure is:", "opts": ["Data first, then question", "Question → Data → Analysis → Insights → Recommendations", "Random order", "Only charts"], "ans": 1, "exp": "Start with the question (what are we solving?), then show data, analysis, insights (what we found), and recommendations (what to do)."}, {"q": "When sharing data with non-technical stakeholders:", "opts": ["Include all code and raw data", "Focus on insights and business impact, minimize technical jargon", "Use the most complex charts", "Show all intermediate steps"], "ans": 1, "exp": "Non-technical audiences need insights and actions, not methodology. Focus on 'what does this mean for the business?'"}]}, {"title": "Mini Project", "quizzes": []}]
+});
+const params = new URLSearchParams(location.search);
+const startLesson = parseInt(params.get("lesson") || "0");
+if (startLesson > 0) showLesson(startLesson);
+</script>
+</body>
+</html>

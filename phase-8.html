@@ -1,0 +1,2706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Phase 1 — Python Basics | PyTrack</title>
+<link rel="stylesheet" href="../css/style.css"/>
+<style>
+.phase-badge {
+  display:inline-flex; align-items:center; gap:.5rem;
+  background:var(--bg3); border:1px solid var(--border);
+  border-radius:20px; padding:.3rem .9rem;
+  font-family:var(--mono); font-size:.7rem; color:var(--muted);
+  margin-bottom:1rem; letter-spacing:1px; text-transform:uppercase;
+}
+.phase-parts-nav {
+  display:flex; gap:.5rem; flex-wrap:wrap; margin-bottom:1rem;
+}
+.part-tag {
+  font-family:var(--mono); font-size:.65rem; letter-spacing:.5px;
+  background:rgba(59,130,246,.1); border:1px solid rgba(59,130,246,.2);
+  color:var(--accent2); padding:.2rem .55rem; border-radius:4px;
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">Py<span>Track</span></a>
+  <div class="nav-right">
+    <div class="progress-badge" id="nav-progress">0 / 73 lessons</div>
+    <a class="btn-outline" href="../index.html">⌂ All Phases</a>
+  </div>
+</nav>
+
+<div class="lesson-page">
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <a href="../index.html" class="sidebar-home">⌂ PyTrack Course</a>
+    </div>
+    <div class="sidebar-inner"><div class="sidebar-unit">
+  <div class="sidebar-unit-header" onclick="toggleUnit(this)">
+    <span>🛠️</span>
+    <span>Phase 0: Setup & Mindset</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons">
+    <a class="sidebar-lesson" id="slink-0-0" href="phase-0.html" >
+      <span class="lesson-check" id="chk-0-0"></span>
+      What is Python & Data Analysis?
+    </a>
+    <a class="sidebar-lesson" id="slink-0-1" href="phase-0.html" >
+      <span class="lesson-check" id="chk-0-1"></span>
+      Installing Anaconda
+    </a>
+    <a class="sidebar-lesson" id="slink-0-2" href="phase-0.html" >
+      <span class="lesson-check" id="chk-0-2"></span>
+      Jupyter Notebook Basics
+    </a>
+    <a class="sidebar-lesson" id="slink-0-3" href="phase-0.html" >
+      <span class="lesson-check" id="chk-0-3"></span>
+      Python in VS Code
+    </a>
+  </div>
+</div><div class="sidebar-unit">
+  <div class="sidebar-unit-header active-unit open" onclick="toggleUnit(this)">
+    <span>🐍</span>
+    <span>Phase 1: Python Basics</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons open">
+    <a class="sidebar-lesson active" id="slink-1-0" href="javascript:showLesson(0)" onclick="showLesson(0);return false;">
+      <span class="lesson-check" id="chk-1-0"></span>
+      Variables & Data Types
+    </a>
+    <a class="sidebar-lesson" id="slink-1-1" href="javascript:showLesson(1)" onclick="showLesson(1);return false;">
+      <span class="lesson-check" id="chk-1-1"></span>
+      Strings
+    </a>
+    <a class="sidebar-lesson" id="slink-1-2" href="javascript:showLesson(2)" onclick="showLesson(2);return false;">
+      <span class="lesson-check" id="chk-1-2"></span>
+      Numbers & Math
+    </a>
+    <a class="sidebar-lesson" id="slink-1-3" href="javascript:showLesson(3)" onclick="showLesson(3);return false;">
+      <span class="lesson-check" id="chk-1-3"></span>
+      Type Conversion
+    </a>
+    <a class="sidebar-lesson" id="slink-1-4" href="javascript:showLesson(4)" onclick="showLesson(4);return false;">
+      <span class="lesson-check" id="chk-1-4"></span>
+      Lists
+    </a>
+    <a class="sidebar-lesson" id="slink-1-5" href="javascript:showLesson(5)" onclick="showLesson(5);return false;">
+      <span class="lesson-check" id="chk-1-5"></span>
+      Tuples & Sets
+    </a>
+    <a class="sidebar-lesson" id="slink-1-6" href="javascript:showLesson(6)" onclick="showLesson(6);return false;">
+      <span class="lesson-check" id="chk-1-6"></span>
+      Dictionaries
+    </a>
+    <a class="sidebar-lesson" id="slink-1-7" href="javascript:showLesson(7)" onclick="showLesson(7);return false;">
+      <span class="lesson-check" id="chk-1-7"></span>
+      Variables & Operators
+    </a>
+    <a class="sidebar-lesson" id="slink-1-8" href="javascript:showLesson(8)" onclick="showLesson(8);return false;">
+      <span class="lesson-check" id="chk-1-8"></span>
+      If / Elif / Else
+    </a>
+    <a class="sidebar-lesson" id="slink-1-9" href="javascript:showLesson(9)" onclick="showLesson(9);return false;">
+      <span class="lesson-check" id="chk-1-9"></span>
+      For Loops
+    </a>
+    <a class="sidebar-lesson" id="slink-1-10" href="javascript:showLesson(10)" onclick="showLesson(10);return false;">
+      <span class="lesson-check" id="chk-1-10"></span>
+      While Loops
+    </a>
+    <a class="sidebar-lesson" id="slink-1-11" href="javascript:showLesson(11)" onclick="showLesson(11);return false;">
+      <span class="lesson-check" id="chk-1-11"></span>
+      List Comprehensions
+    </a>
+    <a class="sidebar-lesson" id="slink-1-12" href="javascript:showLesson(12)" onclick="showLesson(12);return false;">
+      <span class="lesson-check" id="chk-1-12"></span>
+      Functions
+    </a>
+    <a class="sidebar-lesson" id="slink-1-13" href="javascript:showLesson(13)" onclick="showLesson(13);return false;">
+      <span class="lesson-check" id="chk-1-13"></span>
+      Lambda Functions
+    </a>
+    <a class="sidebar-lesson" id="slink-1-14" href="javascript:showLesson(14)" onclick="showLesson(14);return false;">
+      <span class="lesson-check" id="chk-1-14"></span>
+      Modules & Import
+    </a>
+    <a class="sidebar-lesson" id="slink-1-15" href="javascript:showLesson(15)" onclick="showLesson(15);return false;">
+      <span class="lesson-check" id="chk-1-15"></span>
+      Exception Handling
+    </a>
+    <a class="sidebar-lesson" id="slink-1-16" href="javascript:showLesson(16)" onclick="showLesson(16);return false;">
+      <span class="lesson-check" id="chk-1-16"></span>
+      File I/O
+    </a>
+    <a class="sidebar-lesson" id="slink-1-17" href="javascript:showLesson(17)" onclick="showLesson(17);return false;">
+      <span class="lesson-check" id="chk-1-17"></span>
+      Regular Expressions
+    </a>
+    <a class="sidebar-lesson" id="slink-1-18" href="javascript:showLesson(18)" onclick="showLesson(18);return false;">
+      <span class="lesson-check" id="chk-1-18"></span>
+      Classes & OOP Basics
+    </a>
+    <a class="sidebar-lesson" id="slink-1-19" href="javascript:showLesson(19)" onclick="showLesson(19);return false;">
+      <span class="lesson-check" id="chk-1-19"></span>
+      Inheritance & Methods
+    </a>
+  </div>
+</div><div class="sidebar-unit">
+  <div class="sidebar-unit-header" onclick="toggleUnit(this)">
+    <span>🔢</span>
+    <span>Phase 2: NumPy — The Math Engine</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons">
+    <a class="sidebar-lesson" id="slink-2-0" href="phase-2.html" >
+      <span class="lesson-check" id="chk-2-0"></span>
+      Introduction to NumPy
+    </a>
+    <a class="sidebar-lesson" id="slink-2-1" href="phase-2.html" >
+      <span class="lesson-check" id="chk-2-1"></span>
+      Arrays & Dimensions
+    </a>
+    <a class="sidebar-lesson" id="slink-2-2" href="phase-2.html" >
+      <span class="lesson-check" id="chk-2-2"></span>
+      Operations & Filtering
+    </a>
+    <a class="sidebar-lesson" id="slink-2-3" href="phase-2.html" >
+      <span class="lesson-check" id="chk-2-3"></span>
+      Statistics with NumPy
+    </a>
+    <a class="sidebar-lesson" id="slink-2-4" href="phase-2.html" >
+      <span class="lesson-check" id="chk-2-4"></span>
+      Reshape, Sort & Search
+    </a>
+    <a class="sidebar-lesson" id="slink-2-5" href="phase-2.html" >
+      <span class="lesson-check" id="chk-2-5"></span>
+      Linear Algebra Basics
+    </a>
+    <a class="sidebar-lesson" id="slink-2-6" href="phase-2.html" >
+      <span class="lesson-check" id="chk-2-6"></span>
+      Random Numbers
+    </a>
+  </div>
+</div><div class="sidebar-unit">
+  <div class="sidebar-unit-header" onclick="toggleUnit(this)">
+    <span>🐼</span>
+    <span>Phase 3: Pandas — Heart of Data Analysis</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons">
+    <a class="sidebar-lesson" id="slink-3-0" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-0"></span>
+      Pandas Series
+    </a>
+    <a class="sidebar-lesson" id="slink-3-1" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-1"></span>
+      DataFrames
+    </a>
+    <a class="sidebar-lesson" id="slink-3-2" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-2"></span>
+      Reading CSV & Excel
+    </a>
+    <a class="sidebar-lesson" id="slink-3-3" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-3"></span>
+      Exploring Your Data
+    </a>
+    <a class="sidebar-lesson" id="slink-3-4" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-4"></span>
+      Selecting & Filtering
+    </a>
+    <a class="sidebar-lesson" id="slink-3-5" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-5"></span>
+      Adding & Modifying Columns
+    </a>
+    <a class="sidebar-lesson" id="slink-3-6" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-6"></span>
+      Sorting & Ranking
+    </a>
+    <a class="sidebar-lesson" id="slink-3-7" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-7"></span>
+      Descriptive Statistics
+    </a>
+    <a class="sidebar-lesson" id="slink-3-8" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-8"></span>
+      apply() & map()
+    </a>
+    <a class="sidebar-lesson" id="slink-3-9" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-9"></span>
+      GroupBy — Grouped Analysis
+    </a>
+    <a class="sidebar-lesson" id="slink-3-10" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-10"></span>
+      Pivot Tables
+    </a>
+    <a class="sidebar-lesson" id="slink-3-11" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-11"></span>
+      Merging DataFrames
+    </a>
+    <a class="sidebar-lesson" id="slink-3-12" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-12"></span>
+      Working with Dates
+    </a>
+    <a class="sidebar-lesson" id="slink-3-13" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-13"></span>
+      String Methods in Pandas
+    </a>
+    <a class="sidebar-lesson" id="slink-3-14" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-14"></span>
+      Concat & Join
+    </a>
+    <a class="sidebar-lesson" id="slink-3-15" href="phase-3.html" >
+      <span class="lesson-check" id="chk-3-15"></span>
+      Time Series Basics
+    </a>
+  </div>
+</div><div class="sidebar-unit">
+  <div class="sidebar-unit-header" onclick="toggleUnit(this)">
+    <span>🧹</span>
+    <span>Phase 4: Data Cleaning</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons">
+    <a class="sidebar-lesson" id="slink-4-0" href="phase-4.html" >
+      <span class="lesson-check" id="chk-4-0"></span>
+      Finding Missing Values
+    </a>
+    <a class="sidebar-lesson" id="slink-4-1" href="phase-4.html" >
+      <span class="lesson-check" id="chk-4-1"></span>
+      Filling & Dropping Missing Data
+    </a>
+    <a class="sidebar-lesson" id="slink-4-2" href="phase-4.html" >
+      <span class="lesson-check" id="chk-4-2"></span>
+      Duplicates & Data Types
+    </a>
+    <a class="sidebar-lesson" id="slink-4-3" href="phase-4.html" >
+      <span class="lesson-check" id="chk-4-3"></span>
+      String Cleaning
+    </a>
+    <a class="sidebar-lesson" id="slink-4-4" href="phase-4.html" >
+      <span class="lesson-check" id="chk-4-4"></span>
+      Detecting Outliers
+    </a>
+    <a class="sidebar-lesson" id="slink-4-5" href="phase-4.html" >
+      <span class="lesson-check" id="chk-4-5"></span>
+      Removing Outliers
+    </a>
+    <a class="sidebar-lesson" id="slink-4-6" href="phase-4.html" >
+      <span class="lesson-check" id="chk-4-6"></span>
+      Full Cleaning Pipeline
+    </a>
+  </div>
+</div><div class="sidebar-unit">
+  <div class="sidebar-unit-header" onclick="toggleUnit(this)">
+    <span>📈</span>
+    <span>Phase 5: Data Visualization</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons">
+    <a class="sidebar-lesson" id="slink-5-0" href="phase-5.html" >
+      <span class="lesson-check" id="chk-5-0"></span>
+      Matplotlib Basics
+    </a>
+    <a class="sidebar-lesson" id="slink-5-1" href="phase-5.html" >
+      <span class="lesson-check" id="chk-5-1"></span>
+      Bar & Line Charts
+    </a>
+    <a class="sidebar-lesson" id="slink-5-2" href="phase-5.html" >
+      <span class="lesson-check" id="chk-5-2"></span>
+      Histograms & Scatter Plots
+    </a>
+    <a class="sidebar-lesson" id="slink-5-3" href="phase-5.html" >
+      <span class="lesson-check" id="chk-5-3"></span>
+      Pie & Area Charts
+    </a>
+    <a class="sidebar-lesson" id="slink-5-4" href="phase-5.html" >
+      <span class="lesson-check" id="chk-5-4"></span>
+      Subplots & Dashboards
+    </a>
+    <a class="sidebar-lesson" id="slink-5-5" href="phase-5.html" >
+      <span class="lesson-check" id="chk-5-5"></span>
+      Seaborn Charts
+    </a>
+    <a class="sidebar-lesson" id="slink-5-6" href="phase-5.html" >
+      <span class="lesson-check" id="chk-5-6"></span>
+      Heatmaps & Pair Plots
+    </a>
+    <a class="sidebar-lesson" id="slink-5-7" href="phase-5.html" >
+      <span class="lesson-check" id="chk-5-7"></span>
+      Plotly — Interactive Charts
+    </a>
+    <a class="sidebar-lesson" id="slink-5-8" href="phase-5.html" >
+      <span class="lesson-check" id="chk-5-8"></span>
+      Chart Styling & Themes
+    </a>
+    <a class="sidebar-lesson" id="slink-5-9" href="phase-5.html" >
+      <span class="lesson-check" id="chk-5-9"></span>
+      Exporting & Sharing Charts
+    </a>
+  </div>
+</div><div class="sidebar-unit">
+  <div class="sidebar-unit-header" onclick="toggleUnit(this)">
+    <span>🔍</span>
+    <span>Phase 6: Exploratory Data Analysis</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons">
+    <a class="sidebar-lesson" id="slink-6-0" href="phase-6.html" >
+      <span class="lesson-check" id="chk-6-0"></span>
+      Descriptive Statistics
+    </a>
+    <a class="sidebar-lesson" id="slink-6-1" href="phase-6.html" >
+      <span class="lesson-check" id="chk-6-1"></span>
+      Correlation & Regression
+    </a>
+    <a class="sidebar-lesson" id="slink-6-2" href="phase-6.html" >
+      <span class="lesson-check" id="chk-6-2"></span>
+      Window Functions
+    </a>
+    <a class="sidebar-lesson" id="slink-6-3" href="phase-6.html" >
+      <span class="lesson-check" id="chk-6-3"></span>
+      Sampling & Hypothesis Testing
+    </a>
+    <a class="sidebar-lesson" id="slink-6-4" href="phase-6.html" >
+      <span class="lesson-check" id="chk-6-4"></span>
+      Building Analysis Reports
+    </a>
+  </div>
+</div><div class="sidebar-unit">
+  <div class="sidebar-unit-header" onclick="toggleUnit(this)">
+    <span>🏆</span>
+    <span>Phase 7: Real-World Projects</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons"><a class="sidebar-lesson" href="../capstone.html">🏆 View Projects</a>
+  </div>
+</div><div class="sidebar-unit">
+  <div class="sidebar-unit-header" onclick="toggleUnit(this)">
+    <span>💼</span>
+    <span>Phase 8: Job Ready</span>
+    <span class="sidebar-unit-arrow">▶</span>
+  </div>
+  <div class="sidebar-lessons">
+    <a class="sidebar-lesson" id="slink-8-0" href="phase-8.html" >
+      <span class="lesson-check" id="chk-8-0"></span>
+      Comments & Code Style
+    </a>
+    <a class="sidebar-lesson" id="slink-8-1" href="phase-8.html" >
+      <span class="lesson-check" id="chk-8-1"></span>
+      Virtual Environments & pip
+    </a>
+    <a class="sidebar-lesson" id="slink-8-2" href="phase-8.html" >
+      <span class="lesson-check" id="chk-8-2"></span>
+      Building Analysis Reports
+    </a>
+    <a class="sidebar-lesson" id="slink-8-3" href="phase-8.html" >
+      <span class="lesson-check" id="chk-8-3"></span>
+      SQL with Python
+    </a>
+  </div>
+</div></div>
+  </aside>
+
+  <main class="lesson-main">
+    <div class="breadcrumb">
+      <a href="../index.html">PyTrack</a> ›
+      <span>Phase 1: Python Basics</span>
+    </div>
+    <div class="phase-badge">Phase 1 of 8</div>
+    <div class="phase-parts-nav"><span class="part-tag">Part A</span><span class="part-tag">Part B</span><span class="part-tag">Part C</span><span class="part-tag">Part D</span><span class="part-tag">Part E</span></div>
+    <div id="lesson-panels"><div class="lesson-panel active" id="panel-0">
+  <div class="lesson-title-bar">
+    <h2>🐍 Variables & Data Types</h2>
+    <p>Unit 2 — Variables, data types, strings, lists, dictionaries, and more — the building blocks of every Python program.</p>
+  </div>
+  <div class="lesson-body">
+<h3>Creating Variables</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">company   = "TechCorp Egypt"    # str
+employees = 250                  # int
+revenue   = 4_500_000.75         # float
+is_listed = True                 # bool
+
+print(company)
+print(type(employees))   # &lt;class 'int'&gt;
+print(type(revenue))     # &lt;class 'float'&gt;</div></div>
+<div class="output-block"><div class="output-label">Output</div>TechCorp Egypt
+&lt;class 'int'&gt;
+&lt;class 'float'&gt;</div>
+<h3>The 4 Basic Types</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">name   = "Ahmed"    # str   — text in quotes
+age    = 28         # int   — whole number
+height = 1.75       # float — decimal number
+active = True       # bool  — True or False (capital!)
+
+# type() checks the type
+print(type(name))    # &lt;class 'str'&gt;
+print(type(active))  # &lt;class 'bool'&gt;</div></div>
+<h3>Type Conversion</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">text  = "42"
+num   = int(text)       # "42"  → 42
+flt   = float(text)     # "42"  → 42.0
+back  = str(num)        # 42    → "42"
+b     = bool(0)         # 0     → False
+b2    = bool(1)         # 1     → True
+
+print(num + 8)          # 50
+print(flt + 0.5)        # 42.5
+print(bool(""))         # False — empty string is falsy
+print(bool("hello"))    # True  — non-empty is truthy</div></div>
+<div class="output-block"><div class="output-label">Output</div>50
+42.5
+False
+True</div>
+<div class="tip-box"><strong>💡 Tip:</strong> Use <span class="ci">type(x)</span> to check what type a variable is. Use <span class="ci">isinstance(x, int)</span> to check if x is an integer.</div></div>
+  <div class="task-section">
+  <div class="task-header">
+    <span class="task-badge">🎯 TASK</span>
+    <span class="task-title">Practice Exercise</span>
+  </div>
+  <div class="task-desc">Create variables for a product record: name, price, quantity, in_stock, rating. Print each with its type. Then calculate total value (price × quantity).</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">product_name = ???   # string
+price        = ???   # float
+quantity     = ???   # int
+in_stock     = ???   # bool
+rating       = ???   # float
+
+# Print each with type
+for var, val in [("name",product_name),("price",price),("qty",quantity)]:
+    print(f"{var}: {val} — type: {type(val).__name__}")
+
+total_value = ???
+print(f"Total value: {total_value:,}")</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none">
+    <div class="solution-label">✅ Solution</div>
+    <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">product_name = "Laptop Pro"
+price        = 12999.99
+quantity     = 15
+in_stock     = True
+rating       = 4.8
+
+for var, val in [("name",product_name),("price",price),("qty",quantity),("in_stock",in_stock),("rating",rating)]:
+    print(f"{var}: {val} — type: {type(val).__name__}")
+
+total_value = price * quantity
+print(f"\nTotal value: {total_value:,.2f}")</div></div>
+    <div class="output-block"><div class="output-label">Output</div>name: Laptop Pro — type: str
+price: 12999.99 — type: float
+qty: 15 — type: int
+in_stock: True — type: bool
+rating: 4.8 — type: float
+
+Total value: 194,999.85</div>
+  </div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-1">
+  <div class="lesson-title-bar">
+    <h2>🐍 Strings</h2>
+    <p>Unit 2 — Variables, data types, strings, lists, dictionaries, and more — the building blocks of every Python program.</p>
+  </div>
+  <div class="lesson-body">
+<h3>String Creation</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">s1 = 'Single quotes'
+s2 = "Double quotes"
+s3 = """Triple quotes
+for multiple lines
+like this"""
+
+# Raw string (ignores backslashes)
+path = r"C:\Users\Ahmed\Documents"
+print(path)  # C:\Users\Ahmed\Documents</div></div>
+<h3>Essential String Methods</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">name    = "  ahmed hassan  "
+product = "Laptop Pro X 2024"
+
+# Cleaning
+print(name.strip())           # "ahmed hassan"
+print(name.strip().title())   # "Ahmed Hassan"
+print(product.upper())        # "LAPTOP PRO X 2024"
+print(product.lower())        # "laptop pro x 2024"
+
+# Searching
+print(product.find("Pro"))    # 7 (index)
+print("Pro" in product)       # True
+print(product.count("a"))     # 2
+print(product.startswith("Laptop"))  # True
+
+# Modifying
+print(product.replace("2024","2025"))  # "Laptop Pro X 2025"
+print(product.split(" "))     # ['Laptop','Pro','X','2024']
+print("-".join(["a","b","c"])) # "a-b-c"</div></div>
+<div class="output-block"><div class="output-label">Output</div>ahmed hassan
+Ahmed Hassan
+LAPTOP PRO X 2024
+laptop pro x 2024
+7
+True
+2
+True
+Laptop Pro X 2025
+['Laptop', 'Pro', 'X', '2024']
+a-b-c</div>
+<h3>f-String Formatting</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">name  = "Layla"
+sales = 125_000
+rate  = 0.085
+
+print(f"Agent: {name}")
+print(f"Sales: {sales:,}")           # 125,000
+print(f"Rate:  {rate:.1%}")          # 8.5%
+print(f"Name:  {name:&gt;10}")          # right-align
+print(f"Code:  {42:05d}")            # 00042</div></div>
+<div class="output-block"><div class="output-label">Output</div>Agent: Layla
+Sales: 125,000
+Rate:  8.5%
+Name:       Layla
+Code:  00042</div></div>
+  <div class="task-section">
+  <div class="task-header">
+    <span class="task-badge">🎯 TASK</span>
+    <span class="task-title">Practice Exercise</span>
+  </div>
+  <div class="task-desc">Clean and format a messy customer record: fix spacing, capitalize name, extract domain from email, and build a formatted profile card.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">record = {
+    "name":  "  ahmed ibrahim  ",
+    "email": "ahmed@techcorp.com",
+    "phone": "010-1234-5678",
+    "city":  "CAIRO"
+}
+
+name  = record["name"].???.???()
+email = record["email"]
+domain = email.split("@")[???]
+phone = record["phone"].replace("-","")
+city  = record["city"].???()
+
+print(f"Name:   {name}")
+print(f"Email:  {email}")
+print(f"Domain: {domain}")
+print(f"Phone:  {phone}")
+print(f"City:   {city}")</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none">
+    <div class="solution-label">✅ Solution</div>
+    <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">record = {
+    "name":  "  ahmed ibrahim  ",
+    "email": "ahmed@techcorp.com",
+    "phone": "010-1234-5678",
+    "city":  "CAIRO"
+}
+
+name   = record["name"].strip().title()
+email  = record["email"]
+domain = email.split("@")[1]
+phone  = record["phone"].replace("-","")
+city   = record["city"].title()
+
+print(f"Name:   {name}")
+print(f"Email:  {email}")
+print(f"Domain: {domain}")
+print(f"Phone:  {phone}")
+print(f"City:   {city}")</div></div>
+    <div class="output-block"><div class="output-label">Output</div>Name:   Ahmed Ibrahim
+Email:  ahmed@techcorp.com
+Domain: techcorp.com
+Phone:  01012345678
+City:   Cairo</div>
+  </div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-2">
+  <div class="lesson-title-bar">
+    <h2>🐍 Numbers & Math</h2>
+    <p>Unit 2 — Variables, data types, strings, lists, dictionaries, and more — the building blocks of every Python program.</p>
+  </div>
+  <div class="lesson-body">
+<h3>Integer vs Float</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">x = 10      # int — whole number
+y = 10.0    # float — decimal
+z = 10 / 3  # always float: 3.333...
+w = 10 // 3 # floor div: int: 3
+
+print(type(x))   # int
+print(type(z))   # float
+print(round(z, 2))  # 3.33</div></div>
+<div class="output-block"><div class="output-label">Output</div>&lt;class 'int'&gt;
+&lt;class 'float'&gt;
+3.33</div>
+<h3>Math Operations</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import math
+
+print(math.sqrt(144))     # 12.0
+print(math.ceil(4.1))     # 5  — round up
+print(math.floor(4.9))    # 4  — round down
+print(math.pi)            # 3.14159...
+print(math.log(100, 10))  # 2.0 (log base 10)
+print(abs(-50))           # 50 — absolute value
+print(pow(2, 10))         # 1024 — power</div></div>
+<div class="output-block"><div class="output-label">Output</div>12.0
+5
+4
+3.141592653589793
+2.0
+50
+1024</div>
+<h3>Business Math Example</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">revenue  = 2_500_000
+cost     = 1_750_000
+vat_rate = 0.14
+
+profit        = revenue - cost
+margin        = profit / revenue * 100
+vat           = revenue * vat_rate
+quarterly_avg = revenue / 4
+
+print(f"Profit:        {profit:&gt;12,.0f} EGP")
+print(f"Margin:        {margin:&gt;11.1f}%")
+print(f"VAT:           {vat:&gt;12,.0f} EGP")
+print(f"Quarterly avg: {quarterly_avg:&gt;12,.0f} EGP")</div></div>
+<div class="output-block"><div class="output-label">Output</div>Profit:            750,000 EGP
+Margin:               30.0%
+VAT:               350,000 EGP
+Quarterly avg:     625,000 EGP</div></div>
+  <div class="task-section">
+  <div class="task-header">
+    <span class="task-badge">🎯 TASK</span>
+    <span class="task-title">Practice Exercise</span>
+  </div>
+  <div class="task-desc">Calculate loan payments: principal = 500,000 EGP, annual rate = 12%, years = 5. Calculate monthly payment using the formula: M = P × r(1+r)^n / ((1+r)^n - 1)</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import math
+principal = 500_000
+annual_rate = 0.12
+years = 5
+
+monthly_rate = annual_rate / ???
+n_payments   = years * ???
+
+# Formula: M = P * r*(1+r)^n / ((1+r)^n - 1)
+monthly_payment = principal * (monthly_rate * (1 + monthly_rate)**n_payments) / ((1 + monthly_rate)**n_payments - 1)
+
+total_paid = ???
+total_interest = ???
+
+print(f"Monthly payment:  {monthly_payment:,.2f}")
+print(f"Total paid:       {total_paid:,.2f}")
+print(f"Total interest:   {total_interest:,.2f}")</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none">
+    <div class="solution-label">✅ Solution</div>
+    <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import math
+principal   = 500_000
+annual_rate = 0.12
+years       = 5
+
+monthly_rate = annual_rate / 12
+n_payments   = years * 12
+
+monthly_payment = principal * (monthly_rate * (1 + monthly_rate)**n_payments) / ((1 + monthly_rate)**n_payments - 1)
+total_paid     = monthly_payment * n_payments
+total_interest = total_paid - principal
+
+print(f"Monthly payment:  {monthly_payment:,.2f}")
+print(f"Total paid:       {total_paid:,.2f}")
+print(f"Total interest:   {total_interest:,.2f}")</div></div>
+    <div class="output-block"><div class="output-label">Output</div>Monthly payment:  11,122.22
+Total paid:       667,333.20
+Total interest:   167,333.20</div>
+  </div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-3">
+  <div class="lesson-title-bar">
+    <h2>🐍 Type Conversion</h2>
+    <p>Unit 2 — Variables, data types, strings, lists, dictionaries, and more — the building blocks of every Python program.</p>
+  </div>
+  <div class="lesson-body">
+<h3>Explicit Type Conversion</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body"># str → number
+age_str  = "28"
+age_int  = int(age_str)        # 28
+age_flt  = float(age_str)      # 28.0
+
+# number → str
+price    = 12000
+price_str = str(price)         # "12000"
+formatted = f"{price:,}"       # "12,000"
+
+# number → bool
+print(bool(0))      # False
+print(bool(100))    # True
+print(bool(""))     # False
+print(bool("hi"))   # True
+print(bool([]))     # False
+print(bool([1]))    # True</div></div>
+<div class="output-block"><div class="output-label">Output</div>False
+True
+False
+True
+False
+True</div>
+<h3>Safe Conversion with try/except</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">def safe_int(value, default=0):
+    """Convert to int safely, return default if fails."""
+    try:
+        return int(value)
+    except (ValueError, TypeError):
+        return default
+
+print(safe_int("42"))      # 42
+print(safe_int("hello"))   # 0  (default)
+print(safe_int(None))      # 0  (default)
+print(safe_int("3.14"))    # 0  (can't int() a float string!)
+
+# For float strings, use float() first
+print(int(float("3.14")))  # 3</div></div>
+<div class="output-block"><div class="output-label">Output</div>42
+0
+0
+0
+3</div>
+<h3>Converting Collections</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body"># list ↔ tuple ↔ set
+my_list  = [1, 2, 2, 3, 3, 4]
+my_tuple = tuple(my_list)     # (1,2,2,3,3,4)
+my_set   = set(my_list)       # {1,2,3,4} — unique
+back     = list(my_set)       # [1,2,3,4]
+
+# string ↔ list
+text  = "Hello"
+chars = list(text)            # ['H','e','l','l','o']
+back  = "".join(chars)        # "Hello"
+
+# range → list
+nums = list(range(1, 6))      # [1,2,3,4,5]
+print(nums)</div></div></div>
+  <div class="task-section">
+  <div class="task-header">
+    <span class="task-badge">🎯 TASK</span>
+    <span class="task-title">Practice Exercise</span>
+  </div>
+  <div class="task-desc">Build a data type validator: given a list of raw input values (strings from a form), convert each to the correct type and handle errors gracefully.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">raw_data = {
+    "age":     "28",
+    "salary":  "9500.50",
+    "name":    "Ahmed",
+    "active":  "true",
+    "score":   "bad_value"
+}
+
+def convert_field(key, value):
+    if key == "age":
+        return int(value)
+    elif key == "salary":
+        return float(value)
+    elif key == "active":
+        return value.lower() == ???
+    else:
+        try:
+            return float(value)
+        except:
+            return ???
+
+result = {k: convert_field(k, v) for k, v in raw_data.items()}
+for k, v in result.items():
+    print(f"{k}: {v} ({type(v).__name__})")</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none">
+    <div class="solution-label">✅ Solution</div>
+    <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">raw_data = {
+    "age":     "28",
+    "salary":  "9500.50",
+    "name":    "Ahmed",
+    "active":  "true",
+    "score":   "bad_value"
+}
+
+def convert_field(key, value):
+    if key == "age":
+        return int(value)
+    elif key == "salary":
+        return float(value)
+    elif key == "active":
+        return value.lower() == "true"
+    else:
+        try:
+            return float(value)
+        except (ValueError, TypeError):
+            return value  # keep as string
+
+result = {k: convert_field(k, v) for k, v in raw_data.items()}
+for k, v in result.items():
+    print(f"{k}: {v} ({type(v).__name__})")</div></div>
+    <div class="output-block"><div class="output-label">Output</div>age: 28 (int)
+salary: 9500.5 (float)
+name: Ahmed (str)
+active: True (bool)
+score: bad_value (str)</div>
+  </div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-4">
+  <div class="lesson-title-bar">
+    <h2>🐍 Lists</h2>
+    <p>Unit 2 — Variables, data types, strings, lists, dictionaries, and more — the building blocks of every Python program.</p>
+  </div>
+  <div class="lesson-body">
+<h3>Creating & Accessing</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">products = ["Laptop", "Phone", "Tablet", "Monitor"]
+prices   = [12000, 6500, 4200, 8000]
+mixed    = ["Ahmed", 28, True, 99.5]
+
+print(products[0])     # "Laptop"   (first)
+print(products[-1])    # "Monitor"  (last)
+print(products[1:3])   # ['Phone','Tablet']
+print(products[:2])    # ['Laptop','Phone']
+print(products[::2])   # ['Laptop','Tablet'] (every 2nd)
+print(len(products))   # 4</div></div>
+<div class="output-block"><div class="output-label">Output</div>Laptop
+Monitor
+['Phone', 'Tablet']
+['Laptop', 'Phone']
+['Laptop', 'Tablet']
+4</div>
+<h3>Modifying Lists</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">cart = ["Milk", "Bread", "Eggs"]
+
+cart.append("Butter")         # Add to end
+cart.insert(1, "Water")       # Add at index 1
+cart.remove("Bread")          # Remove by value
+last  = cart.pop()            # Remove &amp; return last
+first = cart.pop(0)           # Remove &amp; return first
+cart.extend(["Tea","Coffee"]) # Add multiple items
+cart.sort()                   # Sort in place
+print(cart)</div></div>
+<div class="output-block"><div class="output-label">Output</div>['Butter', 'Coffee', 'Tea', 'Water']</div>
+<h3>Useful List Functions</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">sales = [45000, 72000, 31000, 58000, 66000, 72000]
+
+print(sum(sales))           # 344000
+print(max(sales))           #  72000
+print(min(sales))           #  31000
+print(sorted(sales))        # ascending
+print(sorted(sales, reverse=True))  # descending
+print(sales.count(72000))   # 2 — appears twice
+print(sales.index(31000))   # 2 — position of value
+print(list(reversed(sales)))# reversed list</div></div></div>
+  <div class="task-section">
+  <div class="task-header">
+    <span class="task-badge">🎯 TASK</span>
+    <span class="task-title">Practice Exercise</span>
+  </div>
+  <div class="task-desc">Given a list of employee salaries, do the following: find min/max/avg, remove the highest and lowest, add 10% raise to all remaining, sort descending.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">salaries = [8500, 12000, 9800, 7500, 15000, 11000, 8000]
+
+# 1. Stats
+print(f"Min: {min(salaries):,}")
+print(f"Max: {max(salaries):,}")
+print(f"Avg: {sum(salaries)/len(salaries):,.0f}")
+
+# 2. Remove highest and lowest
+salaries.remove(???)
+salaries.remove(???)
+
+# 3. 10% raise to all
+salaries = [??? for s in salaries]
+
+# 4. Sort descending
+salaries.???(reverse=True)
+print("After raise, sorted:", salaries)</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none">
+    <div class="solution-label">✅ Solution</div>
+    <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">salaries = [8500, 12000, 9800, 7500, 15000, 11000, 8000]
+
+print(f"Min: {min(salaries):,}")
+print(f"Max: {max(salaries):,}")
+print(f"Avg: {sum(salaries)/len(salaries):,.0f}")
+
+salaries.remove(max(salaries))
+salaries.remove(min(salaries))
+
+salaries = [int(s * 1.10) for s in salaries]
+salaries.sort(reverse=True)
+print("After raise, sorted:", [f"{s:,}" for s in salaries])</div></div>
+    <div class="output-block"><div class="output-label">Output</div>Min: 7,500
+Max: 15,000
+Avg: 10,257
+After raise, sorted: ['13,200', '12,100', '10,780', '9,350', '8,800']</div>
+  </div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-5">
+  <div class="lesson-title-bar">
+    <h2>🐍 Tuples & Sets</h2>
+    <p>Unit 2 — Variables, data types, strings, lists, dictionaries, and more — the building blocks of every Python program.</p>
+  </div>
+  <div class="lesson-body">
+<h3>Tuples — Immutable Lists</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body"># Tuple — ordered, CANNOT be changed
+coords     = (25.2048, 55.2708)   # Dubai coordinates
+rgb_red    = (255, 0, 0)
+single     = (42,)                # Single item needs trailing comma!
+empty      = ()
+
+print(coords[0])        # 25.2048
+print(len(rgb_red))     # 3
+
+# Tuple unpacking
+lat, lng = coords
+print(f"Lat: {lat}, Lng: {lng}")
+
+# Useful: function returning multiple values
+def get_stats(data):
+    return min(data), max(data), sum(data)/len(data)
+
+lo, hi, avg = get_stats([10, 20, 30, 40])
+print(lo, hi, avg)   # 10 40 25.0</div></div>
+<div class="output-block"><div class="output-label">Output</div>25.2048
+3
+Lat: 25.2048, Lng: 55.2708
+10 40 25.0</div>
+<h3>Sets — Unique Values Only</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body"># Set — unordered, NO duplicates
+cities   = {"Cairo", "Alex", "Giza", "Cairo", "Alex"}
+print(cities)         # {'Cairo', 'Alex', 'Giza'} — duplicates removed!
+print(len(cities))    # 3
+
+# Set operations
+a = {1, 2, 3, 4, 5}
+b = {3, 4, 5, 6, 7}
+
+print(a | b)          # Union:        {1,2,3,4,5,6,7}
+print(a &amp; b)          # Intersection: {3,4,5}
+print(a - b)          # Difference:   {1,2}
+print(a ^ b)          # Symmetric:    {1,2,6,7}
+
+# Practical use: remove duplicates from list
+sales_ids = [101, 102, 101, 103, 102, 104]
+unique_ids = list(set(sales_ids))
+print(sorted(unique_ids))  # [101, 102, 103, 104]</div></div></div>
+  <div class="task-section">
+  <div class="task-header">
+    <span class="task-badge">🎯 TASK</span>
+    <span class="task-title">Practice Exercise</span>
+  </div>
+  <div class="task-desc">You have two lists of customer IDs: last month and this month. Use sets to find: new customers, lost customers, and loyal customers (in both).</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">last_month  = [101,102,103,104,105,106]
+this_month  = [103,104,105,106,107,108]
+
+last_set  = set(???)
+this_set  = set(???)
+
+new_customers  = this_set - ???   # in this month only
+lost_customers = last_set - ???   # in last month only
+loyal          = last_set &amp; ???   # in both
+
+print(f"New customers:  {sorted(new_customers)}")
+print(f"Lost customers: {sorted(lost_customers)}")
+print(f"Loyal:          {sorted(loyal)}")</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none">
+    <div class="solution-label">✅ Solution</div>
+    <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">last_month = [101,102,103,104,105,106]
+this_month = [103,104,105,106,107,108]
+
+last_set = set(last_month)
+this_set = set(this_month)
+
+new_customers  = this_set - last_set
+lost_customers = last_set - this_set
+loyal          = last_set &amp; this_set
+
+print(f"New customers:  {sorted(new_customers)}")
+print(f"Lost customers: {sorted(lost_customers)}")
+print(f"Loyal:          {sorted(loyal)}")</div></div>
+    <div class="output-block"><div class="output-label">Output</div>New customers:  [107, 108]
+Lost customers: [101, 102]
+Loyal:          [103, 104, 105, 106]</div>
+  </div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-6">
+  <div class="lesson-title-bar">
+    <h2>🐍 Dictionaries</h2>
+    <p>Unit 2 — Variables, data types, strings, lists, dictionaries, and more — the building blocks of every Python program.</p>
+  </div>
+  <div class="lesson-body">
+<h3>Creating & Accessing</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">employee = {
+    "name":    "Omar Tarek",
+    "dept":    "Sales",
+    "salary":  9500,
+    "active":  True,
+    "skills":  ["Python", "Excel", "SQL"]
+}
+
+print(employee["name"])              # direct access
+print(employee.get("bonus", 0))     # safe access with default
+print(employee["skills"][0])        # nested access
+print("dept" in employee)           # True — key exists?</div></div>
+<div class="output-block"><div class="output-label">Output</div>Omar Tarek
+0
+Python
+True</div>
+<h3>Modifying Dictionaries</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">product = {"name": "Laptop", "price": 12000, "stock": 50}
+
+# Add / Update
+product["color"]  = "Silver"      # New key
+product["price"]  = 11500         # Update existing
+product.update({"stock": 45, "warranty": 2})  # Multiple
+
+# Remove
+del product["color"]              # Delete key
+removed = product.pop("warranty") # Remove and return
+
+print(product)
+print("Removed:", removed)</div></div>
+<div class="output-block"><div class="output-label">Output</div>{'name': 'Laptop', 'price': 11500, 'stock': 45}
+Removed: 2</div>
+<h3>Looping & Methods</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">sales = {"Cairo": 450000, "Alex": 280000, "Giza": 195000}
+
+# Loop keys
+for city in sales:
+    print(city)
+
+# Loop values
+for amount in sales.values():
+    print(f"{amount:,}")
+
+# Loop both
+for city, amount in sales.items():
+    print(f"{city:&lt;10} → {amount:&gt;10,}")
+
+# Dict comprehension
+doubled = {k: v*2 for k,v in sales.items()}
+print(doubled)</div></div></div>
+  <div class="task-section">
+  <div class="task-header">
+    <span class="task-badge">🎯 TASK</span>
+    <span class="task-title">Practice Exercise</span>
+  </div>
+  <div class="task-desc">Build an inventory system: create a dict of 5 products with price and stock. Calculate total inventory value, find the most expensive product, and update stock after selling 3 units of 'Laptop'.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">inventory = {
+    "Laptop":  {"price": 12000, "stock": 10},
+    "Phone":   {"price": 6500,  "stock": 25},
+    "Tablet":  {"price": 4200,  "stock": 15},
+    "Monitor": {"price": 8000,  "stock": 8},
+    "Keyboard":{"price": 450,   "stock": 50},
+}
+
+# Total inventory value
+total_value = sum(??? * ??? for item in inventory.values())
+print(f"Total inventory value: {total_value:,}")
+
+# Most expensive product
+most_expensive = max(inventory, key=lambda x: inventory[x][???])
+print(f"Most expensive: {most_expensive}")
+
+# Update stock after selling 3 Laptops
+inventory["Laptop"]["stock"] -= ???
+print(f"Laptop stock: {inventory['Laptop']['stock']}")</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none">
+    <div class="solution-label">✅ Solution</div>
+    <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">inventory = {
+    "Laptop":  {"price": 12000, "stock": 10},
+    "Phone":   {"price": 6500,  "stock": 25},
+    "Tablet":  {"price": 4200,  "stock": 15},
+    "Monitor": {"price": 8000,  "stock": 8},
+    "Keyboard":{"price": 450,   "stock": 50},
+}
+
+total_value = sum(item["price"] * item["stock"] for item in inventory.values())
+print(f"Total inventory value: {total_value:,}")
+
+most_expensive = max(inventory, key=lambda x: inventory[x]["price"])
+print(f"Most expensive: {most_expensive}")
+
+inventory["Laptop"]["stock"] -= 3
+print(f"Laptop stock after sale: {inventory['Laptop']['stock']}")</div></div>
+    <div class="output-block"><div class="output-label">Output</div>Total inventory value: 548,500
+Most expensive: Laptop
+Laptop stock after sale: 7</div>
+  </div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-7">
+  <div class="lesson-title-bar">
+    <h2>🚀 Variables & Operators</h2>
+    <p>Unit 1 — Set up your environment and write your first Python code. No experience needed!</p>
+  </div>
+  <div class="lesson-body">
+<h3>Variable Naming Rules</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body"># ✅ Valid names
+first_name  = "Ahmed"
+total_sales = 450000
+_private    = "hidden"
+salesQ1     = 120000
+
+# ❌ Invalid names
+# 2fast = True       ← can't start with number
+# my-var = 5         ← hyphens not allowed
+# class = "A"        ← reserved keyword</div></div>
+<h3>All Arithmetic Operators</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">a, b = 17, 5
+
+print(a + b)   # 22  — addition
+print(a - b)   # 12  — subtraction
+print(a * b)   # 85  — multiplication
+print(a / b)   # 3.4 — division (always float)
+print(a // b)  # 3   — floor division
+print(a % b)   # 2   — modulus (remainder)
+print(a ** b)  # 1419857 — power</div></div>
+<div class="output-block"><div class="output-label">Output</div>22
+12
+85
+3.4
+3
+2
+1419857</div>
+<h3>Comparison & Logical Operators</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">x = 85
+print(x &gt; 80)           # True
+print(x == 100)         # False
+print(x &gt;= 80 and x &lt; 90)  # True — both must be True
+print(x &lt; 60 or x &gt; 80)   # True — at least one True
+print(not x == 100)     # True — reverses bool</div></div>
+<div class="output-block"><div class="output-label">Output</div>True
+False
+True
+True
+True</div>
+<h3>Assignment Operators</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">sales = 1000
+sales += 500    # sales = sales + 500  → 1500
+sales -= 200    # sales = sales - 200  → 1300
+sales *= 2      # sales = sales * 2    → 2600
+sales //= 3     # sales = sales // 3   → 866
+print(sales)</div></div>
+<div class="output-block"><div class="output-label">Output</div>866</div></div>
+  <div class="task-section">
+  <div class="task-header">
+    <span class="task-badge">🎯 TASK</span>
+    <span class="task-title">Practice Exercise</span>
+  </div>
+  <div class="task-desc">Write a program that takes monthly salary and calculates: annual salary, income tax (20% if > 100000 else 15%), and net annual salary after tax.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">monthly = 9500
+annual  = ???
+tax_rate = ??? if annual &gt; 100000 else ???
+tax      = ???
+net      = ???
+print(f"Annual:   {annual:,}")
+print(f"Tax rate: {tax_rate:.0%}")
+print(f"Tax:      {tax:,}")
+print(f"Net:      {net:,}")</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none">
+    <div class="solution-label">✅ Solution</div>
+    <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">monthly  = 9500
+annual   = monthly * 12
+tax_rate = 0.20 if annual &gt; 100000 else 0.15
+tax      = annual * tax_rate
+net      = annual - tax
+
+print(f"Annual:   {annual:,}")
+print(f"Tax rate: {tax_rate:.0%}")
+print(f"Tax:      {tax:,.0f}")
+print(f"Net:      {net:,.0f}")</div></div>
+    <div class="output-block"><div class="output-label">Output</div>Annual:   114,000
+Tax rate: 20%
+Tax:      22,800
+Net:      91,200</div>
+  </div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-8">
+  <div class="lesson-title-bar">
+    <h2>🔄 If / Elif / Else</h2>
+    <p>Unit 3 — Make decisions, repeat actions, write functions — the logic that makes programs smart.</p>
+  </div>
+  <div class="lesson-body">
+<h3>Making Decisions</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">score = 85
+
+if score &gt;= 90:
+    grade = "A"
+elif score &gt;= 80:
+    grade = "B"
+elif score &gt;= 70:
+    grade = "C"
+elif score &gt;= 60:
+    grade = "D"
+else:
+    grade = "F"
+
+print(f"Score: {score} → Grade: {grade}")</div></div>
+<div class="output-block"><div class="output-label">Output</div>Score: 85 → Grade: B</div>
+<h3>Comparison & Logical Operators</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body"># Comparison: ==  !=  &gt;  &lt;  &gt;=  &lt;=
+# Logical:    and  or  not
+
+age    = 25
+income = 8000
+is_vip = False
+
+# and — both must be True
+if age &gt;= 21 and income &gt;= 5000:
+    print("Eligible for loan")
+
+# or — at least one True
+if age &lt; 18 or income &gt; 20000:
+    print("Special rate")
+
+# not — reverses
+if not is_vip:
+    print("Standard customer")
+
+# Chained comparisons
+if 18 &lt;= age &lt;= 65:
+    print("Working age")</div></div>
+<div class="output-block"><div class="output-label">Output</div>Eligible for loan
+Standard customer
+Working age</div>
+<h3>Ternary (One-line if)</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">salary = 12000
+level  = "Senior" if salary &gt; 10000 else "Junior"
+print(level)   # Senior
+
+# Nested ternary (use sparingly)
+score = 75
+grade = "A" if score&gt;=90 else "B" if score&gt;=80 else "C" if score&gt;=70 else "F"
+print(grade)   # C</div></div>
+<div class="tip-box"><strong>💡 Tip:</strong> Python uses <strong>indentation (4 spaces)</strong> to define code blocks — this is required, not optional.</div></div>
+  <div class="task-section">
+  <div class="task-header">
+    <span class="task-badge">🎯 TASK</span>
+    <span class="task-title">Practice Exercise</span>
+  </div>
+  <div class="task-desc">Build a loan eligibility checker: age 21-60, income >= 5000, credit score >= 650, no existing loans. Print eligibility and reason if rejected.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">def check_loan(age, income, credit_score, has_loan):
+    if ???:
+        return False, "Age must be between 21 and 60"
+    elif ???:
+        return False, "Income below minimum (5000)"
+    elif ???:
+        return False, "Credit score too low (min 650)"
+    elif ???:
+        return False, "Existing loan must be cleared first"
+    else:
+        max_loan = income * 36
+        return True, f"Eligible! Max loan: {max_loan:,} EGP"
+
+approved, msg = check_loan(28, 8000, 700, False)
+print(f"Approved: {approved}")
+print(f"Message:  {msg}")</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none">
+    <div class="solution-label">✅ Solution</div>
+    <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">def check_loan(age, income, credit_score, has_loan):
+    if not (21 &lt;= age &lt;= 60):
+        return False, "Age must be between 21 and 60"
+    elif income &lt; 5000:
+        return False, "Income below minimum (5000)"
+    elif credit_score &lt; 650:
+        return False, "Credit score too low (min 650)"
+    elif has_loan:
+        return False, "Existing loan must be cleared first"
+    else:
+        max_loan = income * 36
+        return True, f"Eligible! Max loan: {max_loan:,} EGP"
+
+approved, msg = check_loan(28, 8000, 700, False)
+print(f"Approved: {approved}")
+print(f"Message:  {msg}")</div></div>
+    <div class="output-block"><div class="output-label">Output</div>Approved: True
+Message:  Eligible! Max loan: 288,000 EGP</div>
+  </div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-9">
+  <div class="lesson-title-bar">
+    <h2>🔄 For Loops</h2>
+    <p>Unit 3 — Make decisions, repeat actions, write functions — the logic that makes programs smart.</p>
+  </div>
+  <div class="lesson-body">
+<h3>Basic For Loop</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">products = ["Laptop", "Phone", "Tablet", "Monitor"]
+
+for product in products:
+    print(f"Processing: {product}")
+
+print(f"Done! {len(products)} products processed.")</div></div>
+<div class="output-block"><div class="output-label">Output</div>Processing: Laptop
+Processing: Phone
+Processing: Tablet
+Processing: Monitor
+Done! 4 products processed.</div>
+<h3>range() — Loop N Times</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body"># range(stop)          → 0 to stop-1
+# range(start, stop)    → start to stop-1
+# range(start,stop,step)→ with step
+
+for i in range(1, 6):
+    print(f"Month {i}: target = {i * 50000:,}")
+
+print("---")
+for i in range(10, 0, -2):   # countdown
+    print(i, end=" ")</div></div>
+<div class="output-block"><div class="output-label">Output</div>Month 1: target = 50,000
+Month 2: target = 100,000
+Month 3: target = 150,000
+Month 4: target = 200,000
+Month 5: target = 250,000
+---
+10 8 6 4 2 </div>
+<h3>enumerate() & zip()</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">months  = ["Jan","Feb","Mar","Apr"]
+sales   = [45000, 52000, 48000, 61000]
+targets = [50000, 50000, 55000, 60000]
+
+# enumerate — index + value
+for i, month in enumerate(months, 1):
+    print(f"{i}. {month}")
+
+# zip — loop multiple lists together
+for month, sale, target in zip(months, sales, targets):
+    status = "✅" if sale &gt;= target else "❌"
+    print(f"{month}: {sale:,} / {target:,} {status}")</div></div>
+<div class="output-block"><div class="output-label">Output</div>1. Jan
+2. Feb
+3. Mar
+4. Apr
+Jan: 45,000 / 50,000 ❌
+Feb: 52,000 / 50,000 ✅
+Mar: 48,000 / 55,000 ❌
+Apr: 61,000 / 60,000 ✅</div></div>
+  <div class="task-section">
+  <div class="task-header">
+    <span class="task-badge">🎯 TASK</span>
+    <span class="task-title">Practice Exercise</span>
+  </div>
+  <div class="task-desc">Loop through a list of transactions. Calculate running total, flag transactions > 10000 as 'Large', count each category, and print a summary.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">transactions = [
+    {"id":1,"amount":5000, "category":"Sales"},
+    {"id":2,"amount":15000,"category":"Sales"},
+    {"id":3,"amount":3000, "category":"Refund"},
+    {"id":4,"amount":12000,"category":"Sales"},
+    {"id":5,"amount":800,  "category":"Refund"},
+]
+
+running_total = 0
+category_counts = {}
+
+for t in transactions:
+    running_total += t["amount"]
+    flag = "Large" if t["amount"] &gt; ??? else "Normal"
+    cat  = t["category"]
+    category_counts[cat] = category_counts.get(cat, 0) + 1
+    print(f"ID {t['id']}: {t['amount']:&gt;8,} | {flag:&lt;7} | Running: {running_total:,}")
+
+print(f"\nCategories: {category_counts}")</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none">
+    <div class="solution-label">✅ Solution</div>
+    <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">transactions = [
+    {"id":1,"amount":5000, "category":"Sales"},
+    {"id":2,"amount":15000,"category":"Sales"},
+    {"id":3,"amount":3000, "category":"Refund"},
+    {"id":4,"amount":12000,"category":"Sales"},
+    {"id":5,"amount":800,  "category":"Refund"},
+]
+running_total = 0
+category_counts = {}
+for t in transactions:
+    running_total += t["amount"]
+    flag = "Large" if t["amount"] &gt; 10000 else "Normal"
+    cat  = t["category"]
+    category_counts[cat] = category_counts.get(cat, 0) + 1
+    print(f"ID {t['id']}: {t['amount']:&gt;8,} | {flag:&lt;7} | Running: {running_total:,}")
+print(f"\nCategories: {category_counts}")</div></div>
+    <div class="output-block"><div class="output-label">Output</div>ID 1:    5,000 | Normal  | Running: 5,000
+ID 2:   15,000 | Large   | Running: 20,000
+ID 3:    3,000 | Normal  | Running: 23,000
+ID 4:   12,000 | Large   | Running: 35,000
+ID 5:      800 | Normal  | Running: 35,800
+
+Categories: {'Sales': 3, 'Refund': 2}</div>
+  </div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-10">
+  <div class="lesson-title-bar">
+    <h2>🔄 While Loops</h2>
+    <p>Unit 3 — Make decisions, repeat actions, write functions — the logic that makes programs smart.</p>
+  </div>
+  <div class="lesson-body">
+<h3>Basic While Loop</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body"># while loop runs as long as condition is True
+count = 1
+while count &lt;= 5:
+    print(f"Attempt {count}")
+    count += 1   # IMPORTANT: update the condition!
+print("Done!")</div></div>
+<div class="output-block"><div class="output-label">Output</div>Attempt 1
+Attempt 2
+Attempt 3
+Attempt 4
+Attempt 5
+Done!</div>
+<h3>break and continue</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body"># Search for first sale over target
+sales  = [3000, 7000, 2000, 15000, 9000, 4000]
+target = 10000
+found  = None
+
+i = 0
+while i &lt; len(sales):
+    if sales[i] &gt;= target:
+        found = sales[i]
+        break    # Stop searching
+    i += 1
+
+print(f"First sale over {target:,}: {found:,}" if found else "None found")
+
+# Skip negatives
+values = [5, -3, 8, -1, 4, 7]
+total  = 0
+i = 0
+while i &lt; len(values):
+    i += 1
+    if values[i-1] &lt; 0:
+        continue   # Skip negatives
+    total += values[i-1]
+print(f"Sum of positives: {total}")</div></div>
+<div class="output-block"><div class="output-label">Output</div>First sale over 10,000: 15,000
+Sum of positives: 24</div>
+<h3>while True (Infinite Loop)</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body"># Use for menus and retrying
+attempts = 0
+max_attempts = 3
+
+while True:
+    attempts += 1
+    password = input(f"Password (attempt {attempts}/{max_attempts}): ")
+
+    if password == "secret123":
+        print("Access granted!")
+        break
+    elif attempts &gt;= max_attempts:
+        print("Account locked!")
+        break
+    else:
+        print("Wrong password, try again.")</div></div>
+<div class="tip-box"><strong>💡 Tip:</strong> Always make sure a while loop has a way to exit — otherwise you'll have an infinite loop that freezes your program!</div></div>
+  <div class="task-section">
+  <div class="task-header">
+    <span class="task-badge">🎯 TASK</span>
+    <span class="task-title">Practice Exercise</span>
+  </div>
+  <div class="task-desc">Simulate a simple ATM: start with balance 10000 EGP. Loop to allow withdrawals. Reject if amount > balance or > 5000 per transaction. Exit when user enters 0.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">balance = 10_000
+transactions = 0
+
+while True:
+    print(f"\nBalance: {balance:,} EGP")
+    amount = int(input("Withdraw (0 to exit): "))
+
+    if amount == ???:
+        print(f"Thank you! {transactions} transactions made.")
+        break
+    elif amount &gt; ???:
+        print("Exceeds single transaction limit (5000)")
+        continue
+    elif amount &gt; ???:
+        print("Insufficient funds!")
+        continue
+    else:
+        balance -= amount
+        transactions += 1
+        print(f"Dispensing {amount:,} EGP")</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none">
+    <div class="solution-label">✅ Solution</div>
+    <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">balance = 10_000
+transactions = 0
+
+while True:
+    amount = 2000  # Simulated input
+    if amount == 0:
+        print(f"Thank you! {transactions} transactions made.")
+        break
+    elif amount &gt; 5000:
+        print("Exceeds single transaction limit (5000)")
+    elif amount &gt; balance:
+        print("Insufficient funds!")
+    else:
+        balance -= amount
+        transactions += 1
+        print(f"Dispensing {amount:,} EGP. New balance: {balance:,}")
+    break  # Remove in real version</div></div>
+    <div class="output-block"><div class="output-label">Output</div>Dispensing 2,000 EGP. New balance: 8,000</div>
+  </div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-11">
+  <div class="lesson-title-bar">
+    <h2>🔄 List Comprehensions</h2>
+    <p>Unit 3 — Make decisions, repeat actions, write functions — the logic that makes programs smart.</p>
+  </div>
+  <div class="lesson-body">
+<h3>From Loop to Comprehension</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body"># Traditional loop
+prices     = [100, 250, 75, 400, 180]
+discounted = []
+for p in prices:
+    discounted.append(p * 0.9)
+
+# List comprehension — same result, 1 line
+discounted = [p * 0.9 for p in prices]
+print(discounted)</div></div>
+<div class="output-block"><div class="output-label">Output</div>[90.0, 225.0, 67.5, 360.0, 162.0]</div>
+<h3>With Conditions</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">sales = [45000, 28000, 72000, 15000, 58000, 31000]
+
+# Filter: only sales above 30000
+high  = [s for s in sales if s &gt; 30000]
+
+# Transform: apply bonus to high performers only
+bonus = [s * 1.15 if s &gt; 50000 else s for s in sales]
+
+# Both filter and transform
+big_bonus = [s * 1.20 for s in sales if s &gt; 50000]
+
+print("High:", high)
+print("Bonus:", bonus)
+print("Big bonus:", big_bonus)</div></div>
+<div class="output-block"><div class="output-label">Output</div>High: [45000, 72000, 58000]
+Bonus: [45000, 28000, 82800.0, 15000, 66700.0, 31000]
+Big bonus: [86400.0, 69600.0]</div>
+<h3>Dict & Set Comprehensions</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">employees = [("Ahmed",9500),("Sara",12000),("Omar",8800)]
+
+# Dict comprehension
+salary_dict = {name: salary for name, salary in employees}
+print(salary_dict)
+
+# Filter in dict comprehension
+high_earners = {name: sal for name, sal in employees if sal &gt; 9000}
+print(high_earners)
+
+# Set comprehension — unique departments
+records = [("Ahmed","Sales"),("Sara","IT"),("Omar","Sales"),("Layla","IT")]
+depts   = {dept for _, dept in records}
+print(depts)   # {'Sales', 'IT'}</div></div>
+<div class="output-block"><div class="output-label">Output</div>{'Ahmed': 9500, 'Sara': 12000, 'Omar': 8800}
+{'Ahmed': 9500, 'Sara': 12000}
+{'Sales', 'IT'}</div></div>
+  <div class="task-section">
+  <div class="task-header">
+    <span class="task-badge">🎯 TASK</span>
+    <span class="task-title">Practice Exercise</span>
+  </div>
+  <div class="task-desc">Use comprehensions to process sales data: create a list of formatted strings, a dict of name→annual salary, and filter employees earning above average.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">employees = [
+    {"name":"Ahmed", "salary":9500,  "dept":"Sales"},
+    {"name":"Sara",  "salary":12000, "dept":"IT"},
+    {"name":"Omar",  "salary":8800,  "dept":"Sales"},
+    {"name":"Layla", "salary":15000, "dept":"IT"},
+    {"name":"Karim", "salary":7500,  "dept":"HR"},
+]
+
+# List of formatted strings
+labels = [f"{e['name']} ({e['dept']}): {e['salary']:,}" for e in employees]
+
+# Dict: name → annual salary
+annual = {e["name"]: e["salary"] * ??? for e in employees}
+
+# Filter above average
+avg = sum(e["salary"] for e in employees) / len(employees)
+above_avg = [e["name"] for e in employees if e["salary"] &gt; ???]
+
+for label in labels: print(label)
+print(f"\nAverage: {avg:,.0f}")
+print(f"Above average: {above_avg}")</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none">
+    <div class="solution-label">✅ Solution</div>
+    <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">employees = [
+    {"name":"Ahmed", "salary":9500,  "dept":"Sales"},
+    {"name":"Sara",  "salary":12000, "dept":"IT"},
+    {"name":"Omar",  "salary":8800,  "dept":"Sales"},
+    {"name":"Layla", "salary":15000, "dept":"IT"},
+    {"name":"Karim", "salary":7500,  "dept":"HR"},
+]
+labels = [f"{e['name']} ({e['dept']}): {e['salary']:,}" for e in employees]
+annual = {e["name"]: e["salary"] * 12 for e in employees}
+avg = sum(e["salary"] for e in employees) / len(employees)
+above_avg = [e["name"] for e in employees if e["salary"] &gt; avg]
+for label in labels: print(label)
+print(f"\nAverage: {avg:,.0f}")
+print(f"Above average: {above_avg}")</div></div>
+    <div class="output-block"><div class="output-label">Output</div>Ahmed (Sales): 9,500
+Sara (IT): 12,000
+Omar (Sales): 8,800
+Layla (IT): 15,000
+Karim (HR): 7,500
+
+Average: 10,560
+Above average: ['Sara', 'Layla']</div>
+  </div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-12">
+  <div class="lesson-title-bar">
+    <h2>🔄 Functions</h2>
+    <p>Unit 3 — Make decisions, repeat actions, write functions — the logic that makes programs smart.</p>
+  </div>
+  <div class="lesson-body">
+<h3>Defining & Calling Functions</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">def calculate_tax(amount, rate=0.14):
+    """Calculate VAT on an amount."""
+    tax   = amount * rate
+    total = amount + tax
+    return total
+
+# Call with positional args
+print(calculate_tax(1000))          # 1140.0 (uses default 14%)
+print(calculate_tax(5000, 0.10))    # 5500.0 (uses 10%)
+
+# Call with keyword args
+print(calculate_tax(rate=0.05, amount=2000))  # 2100.0</div></div>
+<div class="output-block"><div class="output-label">Output</div>1140.0
+5500.0
+2100.0</div>
+<h3>*args and **kwargs</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body"># *args — accept any number of positional arguments
+def total_sales(*amounts):
+    return sum(amounts)
+
+print(total_sales(1000, 2000, 3000))       # 6000
+print(total_sales(500, 750, 800, 1200))    # 3250
+
+# **kwargs — accept any number of keyword arguments
+def create_report(**info):
+    for key, value in info.items():
+        print(f"  {key}: {value}")
+
+create_report(month="January", total=450000, growth="12%")</div></div>
+<div class="output-block"><div class="output-label">Output</div>6000
+3250
+  month: January
+  total: 450000
+  growth: 12%</div>
+<h3>Return Multiple Values</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">def analyze_sales(data):
+    """Return multiple stats as a tuple."""
+    total = sum(data)
+    avg   = total / len(data)
+    best  = max(data)
+    worst = min(data)
+    return total, avg, best, worst
+
+sales = [45000, 72000, 31000, 58000, 66000]
+total, avg, best, worst = analyze_sales(sales)
+print(f"Total: {total:,} | Avg: {avg:,.0f} | Best: {best:,} | Worst: {worst:,}")</div></div>
+<div class="output-block"><div class="output-label">Output</div>Total: 272,000 | Avg: 54,400 | Best: 72,000 | Worst: 31,000</div></div>
+  <div class="task-section">
+  <div class="task-header">
+    <span class="task-badge">🎯 TASK</span>
+    <span class="task-title">Practice Exercise</span>
+  </div>
+  <div class="task-desc">Write 3 utility functions for a sales system: calculate_commission(sales, rate), apply_discount(price, pct), and format_report(name, data_dict). Use default parameters.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">def calculate_commission(sales, rate=0.05):
+    """Return commission amount."""
+    return ???
+
+def apply_discount(price, pct=10):
+    """Return price after discount."""
+    return ???
+
+def format_report(name, data):
+    """Print a formatted report."""
+    print(f"\n{'='*30}")
+    print(f"  Report: {name}")
+    print(f"{'='*30}")
+    for key, value in data.items():
+        if isinstance(value, (int, float)):
+            print(f"  {key:&lt;15}: {value:&gt;10,}")
+        else:
+            print(f"  {key:&lt;15}: {value:&gt;10}")
+
+# Test all functions
+sales = 150_000
+comm  = calculate_commission(sales)
+disc  = apply_discount(12000, 15)
+format_report("Q1 Summary", {
+    "Total Sales": sales,
+    "Commission": comm,
+    "Discounted Price": disc,
+    "Agent": "Ahmed"
+})</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none">
+    <div class="solution-label">✅ Solution</div>
+    <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">def calculate_commission(sales, rate=0.05):
+    return sales * rate
+
+def apply_discount(price, pct=10):
+    return price * (1 - pct/100)
+
+def format_report(name, data):
+    print(f"\n{'='*30}")
+    print(f"  Report: {name}")
+    print(f"{'='*30}")
+    for key, value in data.items():
+        if isinstance(value, (int, float)):
+            print(f"  {key:&lt;15}: {value:&gt;10,}")
+        else:
+            print(f"  {key:&lt;15}: {value:&gt;10}")
+
+sales = 150_000
+comm  = calculate_commission(sales)
+disc  = apply_discount(12000, 15)
+format_report("Q1 Summary", {"Total Sales":sales,"Commission":comm,"Discounted Price":disc,"Agent":"Ahmed"})</div></div>
+    <div class="output-block"><div class="output-label">Output</div>
+==============================
+  Report: Q1 Summary
+==============================
+  Total Sales    :    150,000
+  Commission     :      7,500
+  Discounted Price:     10,200
+  Agent          :      Ahmed</div>
+  </div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-13">
+  <div class="lesson-title-bar">
+    <h2>🔄 Lambda Functions</h2>
+    <p>Unit 3 — Make decisions, repeat actions, write functions — the logic that makes programs smart.</p>
+  </div>
+  <div class="lesson-body">
+<h3>What is Lambda?</h3>
+<p>A lambda is a <strong>small anonymous function</strong> — perfect for short, one-time operations especially with sort() and filter().</p>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body"># Regular function
+def double(x):
+    return x * 2
+
+# Equivalent lambda
+double = lambda x: x * 2
+
+print(double(5))    # 10
+
+# Lambda with multiple args
+add = lambda x, y: x + y
+print(add(3, 4))    # 7
+
+# Lambda with condition
+classify = lambda x: "High" if x &gt; 50000 else "Low"
+print(classify(72000))  # High</div></div>
+<div class="output-block"><div class="output-label">Output</div>10
+7
+High</div>
+<h3>Lambda with sorted() and map()</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">employees = [
+    {"name": "Ahmed", "salary": 9500,  "dept": "Sales"},
+    {"name": "Sara",  "salary": 12000, "dept": "IT"},
+    {"name": "Omar",  "salary": 8800,  "dept": "Sales"},
+    {"name": "Layla", "salary": 15000, "dept": "IT"},
+]
+
+# Sort by salary
+by_salary = sorted(employees, key=lambda e: e["salary"])
+for e in by_salary:
+    print(f"{e['name']:&lt;8} {e['salary']:,}")
+
+# Sort by dept then salary
+by_dept_sal = sorted(employees, key=lambda e: (e["dept"], e["salary"]))
+
+# map — apply function to all items
+salaries   = [e["salary"] for e in employees]
+after_raise = list(map(lambda s: s * 1.10, salaries))
+print(after_raise)</div></div>
+<div class="output-block"><div class="output-label">Output</div>Omar     8,800
+Ahmed    9,500
+Sara     12,000
+Layla    15,000
+[10450.0, 13200.0, 9680.0, 16500.0]</div></div>
+  <div class="task-section">
+  <div class="task-header">
+    <span class="task-badge">🎯 TASK</span>
+    <span class="task-title">Practice Exercise</span>
+  </div>
+  <div class="task-desc">Use lambda with sorted(), filter(), and map() to: sort products by price descending, filter only in-stock items, and apply 20% discount to expensive items (>10000).</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">products = [
+    {"name":"Laptop",  "price":12000,"stock":5},
+    {"name":"Phone",   "price":6500, "stock":0},
+    {"name":"Monitor", "price":8000, "stock":3},
+    {"name":"Tablet",  "price":4200, "stock":8},
+    {"name":"Camera",  "price":15000,"stock":2},
+]
+
+# Sort by price descending
+by_price = sorted(products, key=lambda p: ???, reverse=True)
+print("By price:", [p["name"] for p in by_price])
+
+# Filter in-stock only
+in_stock = list(filter(lambda p: ???, products))
+print("In stock:", [p["name"] for p in in_stock])
+
+# Apply 20% discount to items over 10000
+discounted = list(map(lambda p: {**p, "price": p["price"]*0.8} if p["price"] &gt; ??? else p, products))
+for p in discounted:
+    print(f"{p['name']}: {p['price']:,}")</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none">
+    <div class="solution-label">✅ Solution</div>
+    <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">products = [
+    {"name":"Laptop",  "price":12000,"stock":5},
+    {"name":"Phone",   "price":6500, "stock":0},
+    {"name":"Monitor", "price":8000, "stock":3},
+    {"name":"Tablet",  "price":4200, "stock":8},
+    {"name":"Camera",  "price":15000,"stock":2},
+]
+by_price  = sorted(products, key=lambda p: p["price"], reverse=True)
+print("By price:", [p["name"] for p in by_price])
+in_stock  = list(filter(lambda p: p["stock"] &gt; 0, products))
+print("In stock:", [p["name"] for p in in_stock])
+discounted = list(map(lambda p: {**p,"price":p["price"]*0.8} if p["price"]&gt;10000 else p, products))
+for p in discounted:
+    print(f"{p['name']}: {p['price']:,}")</div></div>
+    <div class="output-block"><div class="output-label">Output</div>By price: ['Camera', 'Laptop', 'Monitor', 'Phone', 'Tablet']
+In stock: ['Laptop', 'Monitor', 'Tablet', 'Camera']
+Laptop: 9,600.0
+Phone: 6,500
+Monitor: 8,000
+Tablet: 4,200
+Camera: 12,000.0</div>
+  </div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-14">
+  <div class="lesson-title-bar">
+    <h2>🐍 Modules & Import</h2>
+    <p>Unit 2 — Variables, data types, strings, lists, dictionaries, and more — the building blocks of every Python program.</p>
+  </div>
+  <div class="lesson-body">
+<h3>What is a Module?</h3>
+<p>A module is a <strong>Python file with reusable code</strong>. Python has thousands of built-in and third-party modules you can import.</p>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body"># Different ways to import
+import math                      # Import entire module
+from math import sqrt, pi        # Import specific items
+from math import sqrt as sq      # Import with alias
+import numpy as np               # Third-party with alias
+from datetime import date, datetime  # Multiple items
+
+# Using imports
+print(math.sqrt(144))    # 12.0
+print(sqrt(144))         # 12.0 (imported directly)
+print(sq(144))           # 12.0 (alias)
+print(pi)                # 3.14159...</div></div>
+<div class="output-block"><div class="output-label">Output</div>12.0
+12.0
+12.0
+3.141592653589793</div>
+<h3>Useful Built-in Modules</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import os
+import sys
+import json
+import random
+from datetime import date, timedelta
+from collections import Counter, defaultdict
+
+# os — file system
+print(os.getcwd())              # Current directory
+print(os.listdir("."))          # Files in folder
+
+# datetime
+today     = date.today()
+yesterday = today - timedelta(days=1)
+print(today, yesterday)
+
+# json — read/write JSON
+data = {"name": "Ahmed", "score": 95}
+json_str = json.dumps(data)     # dict → JSON string
+back     = json.loads(json_str) # JSON string → dict
+print(json_str)
+
+# Counter — count occurrences
+sales_regions = ["Cairo","Alex","Cairo","Giza","Cairo","Alex"]
+counts = Counter(sales_regions)
+print(counts)  # Counter({'Cairo': 3, 'Alex': 2, 'Giza': 1})</div></div></div>
+  <div class="task-section">
+  <div class="task-header">
+    <span class="task-badge">🎯 TASK</span>
+    <span class="task-title">Practice Exercise</span>
+  </div>
+  <div class="task-desc">Create your own module 'analytics.py' with 3 functions: calculate_growth(), format_currency(), and get_summary(). Then import and use it.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body"># analytics.py — create this file first
+
+def calculate_growth(old_value, new_value):
+    """Calculate percentage growth."""
+    return (new_value - old_value) / old_value * ???
+
+def format_currency(amount, currency="EGP"):
+    """Format number as currency string."""
+    return f"{amount:,.2f} {currency}"
+
+def get_summary(data):
+    """Return dict of summary stats."""
+    return {
+        "count": len(data),
+        "total": ???,
+        "mean":  sum(data)/len(data),
+        "min":   ???,
+        "max":   ???
+    }
+
+# main.py — import and use
+from analytics import calculate_growth, format_currency, get_summary
+
+sales = [45000, 52000, 48000, 61000, 72000]
+print(get_summary(sales))
+print(format_currency(sum(sales)))
+print(f"Growth: {calculate_growth(sales[0], sales[-1]):.1f}%")</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none">
+    <div class="solution-label">✅ Solution</div>
+    <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body"># analytics.py
+def calculate_growth(old_value, new_value):
+    return (new_value - old_value) / old_value * 100
+
+def format_currency(amount, currency="EGP"):
+    return f"{amount:,.2f} {currency}"
+
+def get_summary(data):
+    return {"count":len(data),"total":sum(data),
+            "mean":sum(data)/len(data),"min":min(data),"max":max(data)}
+
+# main.py
+# from analytics import calculate_growth, format_currency, get_summary
+# sales = [45000, 52000, 48000, 61000, 72000]
+# print(get_summary(sales))
+# print(format_currency(sum(sales)))
+# print(f"Growth: {calculate_growth(45000, 72000):.1f}%")</div></div>
+    <div class="output-block"><div class="output-label">Output</div>{'count': 5, 'total': 278000, 'mean': 55600.0, 'min': 45000, 'max': 72000}
+278,000.00 EGP
+Growth: 60.0%</div>
+  </div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-15">
+  <div class="lesson-title-bar">
+    <h2>🐍 Exception Handling</h2>
+    <p>Unit 2 — Variables, data types, strings, lists, dictionaries, and more — the building blocks of every Python program.</p>
+  </div>
+  <div class="lesson-body">
+<h3>try / except</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body"># Basic structure
+try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("Cannot divide by zero!")
+
+# Multiple exceptions
+try:
+    value = int(input("Enter number: "))
+    result = 100 / value
+    print(f"Result: {result}")
+except ValueError:
+    print("Please enter a valid integer!")
+except ZeroDivisionError:
+    print("Cannot divide by zero!")
+except Exception as e:
+    print(f"Unexpected error: {e}")</div></div>
+<h3>else and finally</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">try:
+    data = [1, 2, 3]
+    print(data[0])
+except IndexError as e:
+    print(f"Error: {e}")
+else:
+    print("No error — this runs if try succeeded!")
+finally:
+    print("This ALWAYS runs — good for cleanup")</div></div>
+<div class="output-block"><div class="output-label">Output</div>1
+No error — this runs if try succeeded!
+This ALWAYS runs — good for cleanup</div>
+<h3>Raising Exceptions</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">def set_salary(amount):
+    if amount &lt; 0:
+        raise ValueError(f"Salary cannot be negative: {amount}")
+    if amount &gt; 1_000_000:
+        raise ValueError(f"Salary seems too high: {amount:,}")
+    return amount
+
+try:
+    set_salary(-500)
+except ValueError as e:
+    print(f"Invalid: {e}")
+
+# Custom exception
+class InsufficientStockError(Exception):
+    pass
+
+def sell(stock, qty):
+    if qty &gt; stock:
+        raise InsufficientStockError(f"Only {stock} units available")
+    return stock - qty</div></div></div>
+  <div class="task-section">
+  <div class="task-header">
+    <span class="task-badge">🎯 TASK</span>
+    <span class="task-title">Practice Exercise</span>
+  </div>
+  <div class="task-desc">Build a safe CSV reader function that handles: file not found, empty file, and invalid data types. Return a list of dicts or an error message.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import csv
+import os
+
+def safe_read_csv(filepath):
+    """Safely read a CSV file and return list of dicts."""
+    try:
+        if not os.path.exists(filepath):
+            raise FileNotFoundError(f"File not found: {filepath}")
+
+        with open(filepath, "r") as f:
+            reader = csv.DictReader(f)
+            data = list(reader)
+
+        if not data:
+            raise ValueError("File is empty")
+
+        return {"status": "ok", "data": data, "rows": len(data)}
+
+    except FileNotFoundError as e:
+        return {"status": "error", "message": ???}
+    except ValueError as e:
+        return {"status": "error", "message": ???}
+    except Exception as e:
+        return {"status": "error", "message": f"Unexpected: {e}"}
+    finally:
+        print(f"Attempted to read: {filepath}")
+
+result = safe_read_csv("sales.csv")
+print(result["status"])</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none">
+    <div class="solution-label">✅ Solution</div>
+    <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import csv, os
+
+def safe_read_csv(filepath):
+    try:
+        if not os.path.exists(filepath):
+            raise FileNotFoundError(f"File not found: {filepath}")
+        with open(filepath, "r") as f:
+            reader = csv.DictReader(f)
+            data = list(reader)
+        if not data:
+            raise ValueError("File is empty")
+        return {"status": "ok", "data": data, "rows": len(data)}
+    except FileNotFoundError as e:
+        return {"status": "error", "message": str(e)}
+    except ValueError as e:
+        return {"status": "error", "message": str(e)}
+    except Exception as e:
+        return {"status": "error", "message": f"Unexpected: {e}"}
+    finally:
+        print(f"Attempted to read: {filepath}")
+
+result = safe_read_csv("missing.csv")
+print(result["status"], "—", result["message"])</div></div>
+    <div class="output-block"><div class="output-label">Output</div>Attempted to read: missing.csv
+error — File not found: missing.csv</div>
+  </div>
+</div>
+</div></div>
+    <div style="display:flex;justify-content:space-between;margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border)">
+      <a class="btn-nav" href="unit-1.html">← Unit 1: Getting Started</a>
+      <a class="btn-nav" href="unit-3.html">Unit 3: Control Flow →</a>
+    </div>
+  
+  <!-- Shared Nav Bar -->
+  <div class="lesson-quiz-bar" style="margin-bottom:.8rem">
+    <button class="btn-quiz" id="quiz-btn" onclick="openCurrentQuiz()">📝 Lesson Quiz — 5 Questions</button>
+    <span class="quiz-done-badge" id="quiz-done-global" style="display:none">✓ Quiz done</span>
+  </div>
+  <div class="lesson-nav">
+    <button class="btn-nav" id="btn-prev" onclick="prevLesson()" disabled>← Prev</button>
+    <button class="btn-mark" id="btn-mark" onclick="markAndNext()">✓ Mark Done & Next →</button>
+    <a class="btn-nav" id="btn-next-unit" href="unit-3.html" style="display:none">Unit 3: Control Flow →</a>
+    <button class="btn-nav" id="btn-next" onclick="showLesson(currentLesson+1)">Next →</button>
+  </div>
+</main>
+</div>
+
+<div class="modal-overlay" id="quiz-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="quiz-title">Lesson Quiz</h3>
+      <button class="modal-close" onclick="closeQuiz()">×</button>
+    </div>
+    <div id="quiz-body"></div>
+  </div>
+</div>
+
+<script src="../js/app.js"></script>
+<script>
+initUnit({
+  id: 2,
+  lessons: [{"title": "Variables & Data Types", "quizzes": [{"q": "Which is a valid variable name?", "opts": ["2sales", "my-var", "total_sales", "class"], "ans": 2, "exp": "Can't start with numbers, use hyphens, or use reserved keywords. Underscores are fine."}, {"q": "What type is True?", "opts": ["str", "int", "float", "bool"], "ans": 3, "exp": "True and False are boolean (bool) values. Note: bool is a subclass of int in Python."}, {"q": "int('100') returns:", "opts": ["'100'", "100.0", "100", "Error"], "ans": 2, "exp": "int() converts a string to an integer. int('100') returns the integer 100."}, {"q": "bool(0) returns:", "opts": ["True", "False", "0", "Error"], "ans": 1, "exp": "0, empty strings, empty lists, and None are all 'falsy' in Python. bool(0) = False."}, {"q": "type(3.14) returns:", "opts": ["<class 'int'>", "<class 'float'>", "<class 'decimal'>", "<class 'number'>"], "ans": 1, "exp": "3.14 is a decimal number, so its type is float: <class 'float'>."}]}, {"title": "Numbers & Math", "quizzes": [{"q": "10 / 3 in Python returns:", "opts": ["3", "3.33", "3.3333...", "Error"], "ans": 2, "exp": "/ always returns a float in Python 3. 10/3 = 3.3333... Use // for integer division."}, {"q": "math.ceil(4.1) returns:", "opts": ["4", "4.1", "5", "Error"], "ans": 2, "exp": "math.ceil() rounds UP to the nearest integer. ceil(4.1) = 5."}, {"q": "round(3.14159, 2) returns:", "opts": ["3", "3.1", "3.14", "3.15"], "ans": 2, "exp": "round(number, decimals) rounds to the specified number of decimal places. round(3.14159, 2) = 3.14."}, {"q": "abs(-42) returns:", "opts": ["-42", "42", "0", "Error"], "ans": 1, "exp": "abs() returns the absolute value (removes the minus sign). abs(-42) = 42."}, {"q": "2 ** 10 equals:", "opts": ["20", "100", "1024", "210"], "ans": 2, "exp": "** is the power operator. 2**10 = 2×2×2×2×2×2×2×2×2×2 = 1024."}]}, {"title": "Strings", "quizzes": [{"q": "'Hello'.upper() returns:", "opts": ["hello", "Hello", "HELLO", "Error"], "ans": 2, "exp": ".upper() converts all characters to uppercase."}, {"q": "'  hi  '.strip() returns:", "opts": ["'  hi  '", "'hi'", "'hi  '", "'  hi'"], "ans": 1, "exp": ".strip() removes leading and trailing whitespace."}, {"q": "'a,b,c'.split(',') returns:", "opts": ["'a b c'", "['a','b','c']", "('a','b','c')", "Error"], "ans": 1, "exp": ".split(sep) splits a string at each separator and returns a list."}, {"q": "f'{1234567:,}' produces:", "opts": ["'1234567'", "'1,234,567'", "'1.234.567'", "Error"], "ans": 1, "exp": "The :, format specifier adds thousands separators to numbers."}, {"q": "'hello'.find('ll') returns:", "opts": ["True", "2", "['l','l']", "Error"], "ans": 1, "exp": ".find() returns the index of the first occurrence. 'hello'.find('ll') = 2."}]}, {"title": "Lists", "quizzes": [{"q": "list[-1] returns:", "opts": ["Error", "The first item", "The last item", "Index -1"], "ans": 2, "exp": "Negative indexing: -1 is the last item, -2 is second to last, etc."}, {"q": "list[1:4] returns items at indices:", "opts": ["1,2,3,4", "1,2,3", "2,3,4", "0,1,2,3"], "ans": 1, "exp": "Slicing [start:stop] returns items from start up to (not including) stop. [1:4] = indices 1,2,3."}, {"q": "list.append(x) vs list.extend([x,y]):", "opts": ["Same thing", "append adds one item, extend adds multiple", "extend adds one item", "append is faster"], "ans": 1, "exp": "append() adds a single item to the end. extend() adds all items from an iterable."}, {"q": "sorted(list) vs list.sort():", "opts": ["Same result", "sorted returns new list, sort modifies in place", "sort returns new list", "No difference"], "ans": 1, "exp": "sorted() returns a NEW sorted list (original unchanged). list.sort() modifies the original list in place."}, {"q": "list.count(x) returns:", "opts": ["First index of x", "Last index of x", "How many times x appears", "True/False"], "ans": 2, "exp": ".count(x) returns the number of times x appears in the list."}]}, {"title": "Dictionaries", "quizzes": [{"q": "d.get('key', 'default') does what if key missing?", "opts": ["Raises KeyError", "Returns None", "Returns 'default'", "Creates the key"], "ans": 2, "exp": ".get(key, default) returns the default value instead of raising KeyError when key doesn't exist."}, {"q": "d.update({'a':1,'b':2}) does:", "opts": ["Replaces entire dict", "Adds/updates multiple key-value pairs", "Creates new dict", "Raises error"], "ans": 1, "exp": ".update() adds new keys and updates existing ones — merges the given dict into d."}, {"q": "d.pop('key') does:", "opts": ["Deletes key silently", "Removes key and returns its value", "Raises error", "Checks if key exists"], "ans": 1, "exp": ".pop(key) removes the key AND returns its value. Raises KeyError if key doesn't exist."}, {"q": "Dict comprehension {k:v*2 for k,v in d.items()} creates:", "opts": ["A new dict with doubled values", "Modifies original dict", "A list", "An error"], "ans": 0, "exp": "Dict comprehension creates a NEW dictionary. The original dict is unchanged."}, {"q": "'key' in dict checks:", "opts": ["If key has a value", "If key exists in the dict", "If value exists", "Dict length"], "ans": 1, "exp": "'in' checks for KEY existence in a dict, not values. Use 'value in d.values()' for values."}]}, {"title": "Tuples & Sets", "quizzes": [{"q": "What makes tuples different from lists?", "opts": ["Tuples use {}", "Tuples are immutable (can't be changed)", "Tuples are faster only", "Tuples allow duplicates"], "ans": 1, "exp": "Tuples are immutable — once created, they cannot be modified. Lists are mutable."}, {"q": "(42) is a tuple — True or False?", "opts": ["True", "False — it's just the number 42", "Depends on context", "Error"], "ans": 1, "exp": "(42) is just the integer 42 in parentheses. A single-item tuple needs a trailing comma: (42,)"}, {"q": "Sets automatically:", "opts": ["Sort items alphabetically", "Remove duplicate values", "Convert to strings", "Keep insertion order"], "ans": 1, "exp": "Sets only store unique values. Adding a duplicate has no effect."}, {"q": "a & b for sets returns:", "opts": ["All items from both", "Items in a but not b", "Items in BOTH a and b", "Items in a or b but not both"], "ans": 2, "exp": "& is intersection — returns only items that appear in BOTH sets."}, {"q": "list(set([1,1,2,2,3])) produces:", "opts": ["[1,1,2,2,3]", "[1,2,3] (order may vary)", "Error", "{1,2,3}"], "ans": 1, "exp": "Converting to set removes duplicates, converting back to list gives [1,2,3] — but order is not guaranteed."}]}, {"title": "Type Conversion", "quizzes": [{"q": "int('3.14') does:", "opts": ["Returns 3", "Returns 3.14", "Raises ValueError", "Returns '3'"], "ans": 2, "exp": "int() can't convert a float string directly. Use int(float('3.14')) = 3, or it raises ValueError."}, {"q": "bool('False') returns:", "opts": ["False", "True", "Error", "None"], "ans": 1, "exp": "Any non-empty string is truthy! bool('False') = True because 'False' is a non-empty string."}, {"q": "list(range(5)) produces:", "opts": ["[1,2,3,4,5]", "[0,1,2,3,4]", "range(5)", "(0,1,2,3,4)"], "ans": 1, "exp": "range(5) generates 0,1,2,3,4. list() converts it to a list."}, {"q": "''.join(['a','b','c']) returns:", "opts": ["['a','b','c']", "'abc'", "'a b c'", "Error"], "ans": 1, "exp": "''.join(list) joins list items into a string using '' as separator. Result: 'abc'."}, {"q": "tuple([1,2,3]) returns:", "opts": ["[1,2,3]", "(1,2,3)", "{1,2,3}", "Error"], "ans": 1, "exp": "tuple() converts any iterable to a tuple. tuple([1,2,3]) = (1,2,3)."}]}, {"title": "Modules & Import", "quizzes": [{"q": "from math import sqrt imports:", "opts": ["The entire math module", "Only the sqrt function", "sqrt and all math functions", "Creates a copy of math"], "ans": 1, "exp": "from module import name imports only that specific name, without loading the entire module namespace."}, {"q": "import numpy as np means:", "opts": ["Install NumPy", "Load NumPy and alias it as 'np'", "Create new module", "Run NumPy"], "ans": 1, "exp": "'as np' creates an alias so you type np.array() instead of numpy.array()."}, {"q": "Counter(['a','b','a','c','a']) returns:", "opts": ["3", "['a','a','a','b','c']", "Counter({'a':3,'b':1,'c':1})", "Error"], "ans": 2, "exp": "Counter counts occurrences of each item and returns a Counter dict."}, {"q": "json.dumps(data) converts:", "opts": ["JSON string to dict", "Dict to JSON string", "File to JSON", "JSON to file"], "ans": 1, "exp": "dumps = 'dump string'. Converts a Python dict/list to a JSON string. loads = load from string."}, {"q": "os.getcwd() returns:", "opts": ["Current user", "Current Python version", "Current working directory path", "Current file name"], "ans": 2, "exp": "os.getcwd() = get current working directory. Returns the full path of your current folder."}]}, {"title": "Regular Expressions", "quizzes": [{"q": "re.findall() returns:", "opts": ["First match", "True/False", "List of all matches", "Match object"], "ans": 2, "exp": "findall() returns a list of all non-overlapping matches found in the string."}, {"q": "\\d in regex matches:", "opts": ["Any letter", "Any digit 0-9", "Any whitespace", "Any character"], "ans": 1, "exp": "\\d matches any single digit character (0-9)."}, {"q": "re.sub(pattern, repl, text) does:", "opts": ["Finds matches", "Replaces all matches", "Splits text", "Tests match"], "ans": 1, "exp": "re.sub() replaces all occurrences of the pattern with the replacement string."}, {"q": "^ in a pattern means:", "opts": ["End of string", "Not equal", "Start of string", "Any character"], "ans": 2, "exp": "^ anchors the pattern to the START of the string. $ anchors to the END."}, {"q": "Why use r'pattern' (raw string) in regex?", "opts": ["Faster", "Avoids double-escaping backslashes", "Required syntax", "Shorter code"], "ans": 1, "exp": "Raw strings treat backslashes literally — r'\\d' is just \\d, making regex patterns cleaner."}]}, {"title": "Exception Handling", "quizzes": [{"q": "finally block runs:", "opts": ["Only if no error", "Only if error occurs", "Always, regardless of error", "Only in loops"], "ans": 2, "exp": "finally always runs — whether an exception occurred or not. Great for cleanup (closing files, connections)."}, {"q": "else in try/except runs when:", "opts": ["An exception occurs", "No exception occurs", "Always", "The finally block runs"], "ans": 1, "exp": "else runs only if the try block completed WITHOUT any exception being raised."}, {"q": "raise ValueError('message') does:", "opts": ["Prints error", "Catches an error", "Manually triggers an exception", "Ignores errors"], "ans": 2, "exp": "raise manually triggers an exception. You can raise built-in or custom exceptions."}, {"q": "except Exception as e: catches:", "opts": ["Only ValueError", "Only TypeError", "All exceptions (broad catch)", "Nothing"], "ans": 2, "exp": "Exception is the base class for most errors. Using it catches almost any exception — use sparingly."}, {"q": "Custom exception class should inherit from:", "opts": ["object", "BaseException", "Exception", "Error"], "ans": 2, "exp": "Custom exceptions should inherit from Exception (or a more specific exception class) for proper behavior."}]}]
+});
+const params = new URLSearchParams(location.search);
+const startLesson = parseInt(params.get("lesson") || "0");
+if (startLesson > 0) showLesson(startLesson);
+</script>
+</body>
+</html>
+<div class="lesson-panel" id="panel-16">
+  <div class="lesson-title-bar">
+    <h2>🔄 File I/O</h2>
+    <p>Unit 3 — Make decisions, repeat actions, write functions — the logic that makes programs smart.</p>
+  </div>
+  <div class="lesson-body">
+<h3>Writing & Reading Files</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body"># Write
+with open("report.txt", "w", encoding="utf-8") as f:
+    f.write("=== Q4 Sales Report ===\n")
+    for city, amount in [("Cairo",450000),("Alex",280000)]:
+        f.write(f"{city}: {amount:,}\n")
+
+# Read all at once
+with open("report.txt", "r", encoding="utf-8") as f:
+    content = f.read()
+print(content)
+
+# Read line by line (memory efficient for large files)
+with open("report.txt", "r") as f:
+    for line in f:
+        print(line.strip())</div></div>
+<div class="output-block"><div class="output-label">Output</div>=== Q4 Sales Report ===
+Cairo: 450,000
+Alex: 280,000</div>
+<h3>CSV Files</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import csv
+
+# Write CSV
+data = [
+    ["Name","Dept","Salary"],
+    ["Ahmed","Sales",9500],
+    ["Sara","IT",12000],
+]
+with open("employees.csv","w",newline="",encoding="utf-8") as f:
+    writer = csv.writer(f)
+    writer.writerows(data)
+
+# Read CSV as dict
+with open("employees.csv","r",encoding="utf-8") as f:
+    for row in csv.DictReader(f):
+        print(f"{row['Name']:&lt;10} {row['Dept']:&lt;8} {int(row['Salary']):,}")</div></div>
+<div class="output-block"><div class="output-label">Output</div>Ahmed      Sales    9,500
+Sara       IT       12,000</div>
+<h3>JSON Files</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import json
+
+# Write JSON
+config = {"db":"postgresql","host":"localhost","port":5432}
+with open("config.json","w") as f:
+    json.dump(config, f, indent=2)
+
+# Read JSON
+with open("config.json","r") as f:
+    cfg = json.load(f)
+print(cfg["host"])    # localhost</div></div>
+<div class="tip-box"><strong>💡 Tip:</strong> Always use <span class="ci">encoding="utf-8"</span> when working with text files to handle Arabic and other non-ASCII characters.</div></div>
+  <div class="task-section">
+  <div class="task-header">
+    <span class="task-badge">🎯 TASK</span>
+    <span class="task-title">Practice Exercise</span>
+  </div>
+  <div class="task-desc">Write a complete file pipeline: save employee data as both CSV and JSON, then read the CSV back, filter high earners, and append a summary to a text report.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import csv, json
+
+employees = [
+    {"name":"Ahmed","dept":"Sales","salary":9500},
+    {"name":"Sara","dept":"IT","salary":12000},
+    {"name":"Omar","dept":"Sales","salary":8800},
+    {"name":"Layla","dept":"IT","salary":15000},
+]
+
+# Save as CSV
+with open("employees.csv","w",newline="") as f:
+    writer = csv.DictWriter(f, fieldnames=["name","dept","salary"])
+    writer.writeheader()
+    writer.writerows(employees)
+
+# Save as JSON
+with open("employees.json","w") as f:
+    json.dump(employees, f, indent=2)
+
+# Read CSV and filter
+with open("employees.csv","r") as f:
+    high = [r for r in csv.DictReader(f) if int(r["salary"]) &gt; 10000]
+
+# Write summary report
+with open("summary.txt","w") as f:
+    f.write(f"High earners (&gt;{10000:,} EGP):\n")
+    for r in high:
+        f.write(f"  {r['name']}: {int(r['salary']):,}\n")
+
+print(f"Saved {len(employees)} employees")
+print(f"High earners: {len(high)}")</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none">
+    <div class="solution-label">✅ Solution</div>
+    <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import csv, json
+employees = [
+    {"name":"Ahmed","dept":"Sales","salary":9500},
+    {"name":"Sara","dept":"IT","salary":12000},
+    {"name":"Omar","dept":"Sales","salary":8800},
+    {"name":"Layla","dept":"IT","salary":15000},
+]
+with open("employees.csv","w",newline="") as f:
+    w = csv.DictWriter(f, fieldnames=["name","dept","salary"])
+    w.writeheader(); w.writerows(employees)
+with open("employees.json","w") as f:
+    json.dump(employees, f, indent=2)
+with open("employees.csv","r") as f:
+    high = [r for r in csv.DictReader(f) if int(r["salary"]) &gt; 10000]
+with open("summary.txt","w") as f:
+    f.write(f"High earners:\n")
+    for r in high: f.write(f"  {r['name']}: {int(r['salary']):,}\n")
+print(f"Saved {len(employees)} employees")
+print(f"High earners: {len(high)}")</div></div>
+    <div class="output-block"><div class="output-label">Output</div>Saved 4 employees
+High earners: 2</div>
+  </div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-17">
+  <div class="lesson-title-bar">
+    <h2>🐍 Regular Expressions</h2>
+    <p>Unit 2 — Variables, data types, strings, lists, dictionaries, and more — the building blocks of every Python program.</p>
+  </div>
+  <div class="lesson-body">
+<h3>What is RegEx?</h3>
+<p>Regular Expressions are <strong>patterns to search, validate, and clean text</strong>. Essential in data work for validating emails, extracting numbers, and fixing messy strings.</p>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import re
+text = "Call: 010-1234-5678 or 011-9876-5432"
+phones = re.findall(r"\d{3}-\d{4}-\d{4}", text)
+print(phones)
+email = "ahmed@company.com"
+valid = bool(re.match(r"^[\w.]+@[\w.]+\.[a-z]{2,}$", email))
+print(valid)</div></div><div class="output-block"><div class="output-label">Output</div>['010-1234-5678', '011-9876-5432']
+True</div>
+<h3>Common Patterns</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import re
+messy = "Cairo   Alex    Giza"
+clean = re.sub(r"\s+", " ", messy)   # replace multiple spaces
+print(clean)
+
+row   = "Ahmed,28;Cairo|Sales"
+parts = re.split(r"[,;|]", row)         # split by multiple delimiters
+print(parts)</div></div><div class="output-block"><div class="output-label">Output</div>Cairo Alex Giza
+['Ahmed', '28', 'Cairo', 'Sales']</div></div>
+  <div class="task-section">
+  <div class="task-header">
+    <span class="task-badge">🎯 TASK</span>
+    <span class="task-title">Practice Exercise</span>
+  </div>
+  <div class="task-desc">Validate phone numbers (01x-xxxx-xxxx) and extract all prices (EGP amounts) from a text string.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import re
+phone = "010-1234-5678"
+text  = "Laptop: 12000 EGP, Phone: 6500 EGP"
+phone_ok = bool(re.match(r"^01[0125]-\d{4}-\d{4}$", phone))
+prices   = re.findall(r"(\d+) EGP", text)
+print(f"Phone valid: {phone_ok}")
+print(f"Prices: {prices}")</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none">
+    <div class="solution-label">✅ Solution</div>
+    <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import re
+phone = "010-1234-5678"
+text  = "Laptop: 12000 EGP, Phone: 6500 EGP"
+phone_ok = bool(re.match(r"^01[0125]-\d{4}-\d{4}$", phone))
+prices   = re.findall(r"(\d+) EGP", text)
+print(f"Phone valid: {phone_ok}")
+print(f"Prices: {prices}")
+print(f"Total: {sum(int(p) for p in prices):,} EGP")</div></div>
+    <div class="output-block"><div class="output-label">Output</div>Phone valid: True
+Prices: ['12000', '6500']
+Total: 18,500 EGP</div>
+  </div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-18">
+  <div class="lesson-title-bar">
+    <h2>🔄 Classes & OOP Basics</h2>
+    <p>Unit 3 — Make decisions, repeat actions, write functions — the logic that makes programs smart.</p>
+  </div>
+  <div class="lesson-body">
+<h3>What is OOP?</h3>
+<p>Object-Oriented Programming organizes code into <strong>classes</strong> — blueprints for creating objects with data (attributes) and behavior (methods).</p>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">class Employee:
+    """Represents a company employee."""
+
+    company = "TechCorp"  # Class attribute (shared by all)
+
+    def __init__(self, name, dept, salary):
+        """Constructor — runs when creating object."""
+        self.name   = name    # Instance attributes
+        self.dept   = dept
+        self.salary = salary
+
+    def greet(self):
+        return f"Hi, I'm {self.name} from {self.dept}."
+
+    def give_raise(self, pct):
+        self.salary *= (1 + pct/100)
+        return self.salary
+
+# Create objects
+e1 = Employee("Ahmed", "Sales", 9500)
+e2 = Employee("Sara",  "IT",    12000)
+
+print(e1.greet())
+print(e2.greet())
+print(e1.give_raise(10))
+print(Employee.company)   # class attribute</div></div>
+<div class="output-block"><div class="output-label">Output</div>Hi, I'm Ahmed from Sales.
+Hi, I'm Sara from IT.
+10450.0
+TechCorp</div></div>
+  <div class="task-section">
+  <div class="task-header">
+    <span class="task-badge">🎯 TASK</span>
+    <span class="task-title">Practice Exercise</span>
+  </div>
+  <div class="task-desc">Create a BankAccount class with: balance, owner, deposit(), withdraw() (check funds), and statement() methods.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">class BankAccount:
+    def __init__(self, owner, initial_balance=0):
+        self.owner   = owner
+        self.balance = initial_balance
+        self.history = []
+
+    def deposit(self, amount):
+        self.balance += amount
+        self.history.append(f"+{amount:,}")
+        return self.balance
+
+    def withdraw(self, amount):
+        if amount &gt; self.balance:
+            return "Insufficient funds"
+        self.balance -= amount
+        self.history.append(f"-{amount:,}")
+        return self.balance
+
+    def statement(self):
+        print(f"\nAccount: {self.owner}")
+        print(f"Balance: {self.balance:,} EGP")
+        print(f"Transactions: {', '.join(self.history)}")
+
+acc = BankAccount("Ahmed", 10000)
+acc.deposit(5000)
+acc.withdraw(3000)
+acc.withdraw(20000)  # Should fail
+acc.statement()</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none">
+    <div class="solution-label">✅ Solution</div>
+    <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">class BankAccount:
+    def __init__(self, owner, initial_balance=0):
+        self.owner   = owner
+        self.balance = initial_balance
+        self.history = []
+    def deposit(self, amount):
+        self.balance += amount
+        self.history.append(f"+{amount:,}")
+        return self.balance
+    def withdraw(self, amount):
+        if amount &gt; self.balance:
+            print("Insufficient funds!")
+            return self.balance
+        self.balance -= amount
+        self.history.append(f"-{amount:,}")
+        return self.balance
+    def statement(self):
+        print(f"\nAccount: {self.owner}")
+        print(f"Balance: {self.balance:,} EGP")
+        print(f"History: {', '.join(self.history)}")
+
+acc = BankAccount("Ahmed", 10000)
+acc.deposit(5000)
+acc.withdraw(3000)
+acc.withdraw(20000)
+acc.statement()</div></div>
+    <div class="output-block"><div class="output-label">Output</div>Insufficient funds!
+
+Account: Ahmed
+Balance: 12,000 EGP
+History: +5,000, -3,000</div>
+  </div>
+</div>
+</div>
+
+<div class="lesson-panel" id="panel-19">
+  <div class="lesson-title-bar">
+    <h2>🔄 Inheritance & Methods</h2>
+    <p>Unit 3 — Make decisions, repeat actions, write functions — the logic that makes programs smart.</p>
+  </div>
+  <div class="lesson-body">
+<h3>Inheritance</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">class Animal:
+    def __init__(self, name, sound):
+        self.name  = name
+        self.sound = sound
+
+    def speak(self):
+        return f"{self.name} says {self.sound}!"
+
+class Dog(Animal):    # Inherits from Animal
+    def fetch(self):
+        return f"{self.name} fetches the ball!"
+
+class Cat(Animal):
+    def speak(self):  # Override parent method
+        return f"{self.name} says Meow (quietly)..."
+
+dog = Dog("Rex", "Woof")
+cat = Cat("Luna", "Meow")
+
+print(dog.speak())   # Inherited
+print(dog.fetch())   # Dog-specific
+print(cat.speak())   # Overridden</div></div>
+<div class="output-block"><div class="output-label">Output</div>Rex says Woof!
+Rex fetches the ball!
+Luna says Meow (quietly)...</div>
+<h3>super() and Special Methods</h3>
+<div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">class Manager(Employee):
+    def __init__(self, name, dept, salary, team_size):
+        super().__init__(name, dept, salary)  # Call parent __init__
+        self.team_size = team_size
+
+    def __str__(self):    # String representation
+        return f"Manager {self.name} ({self.team_size} reports)"
+
+    def __repr__(self):   # Developer representation
+        return f"Manager('{self.name}','{self.dept}',{self.salary})"
+
+    def __len__(self):    # len() support
+        return self.team_size
+
+mgr = Manager("Layla","Sales",18000,8)
+print(mgr)          # calls __str__
+print(len(mgr))     # calls __len__ → 8</div></div>
+<div class="tip-box"><strong>💡 Tip:</strong> Special methods (dunder methods) like __str__, __len__, __eq__ let your objects work with Python's built-in operations.</div></div>
+  <div class="task-section">
+  <div class="task-header">
+    <span class="task-badge">🎯 TASK</span>
+    <span class="task-title">Practice Exercise</span>
+  </div>
+  <div class="task-desc">Create a Product class and a DiscountedProduct subclass. Product has name, price, category. DiscountedProduct adds discount_pct and overrides price to return discounted price.</div>
+  <div class="task-starter-label">Starter code:</div>
+  <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">class Product:
+    def __init__(self, name, price, category):
+        self.name     = name
+        self.price    = price
+        self.category = category
+
+    def __str__(self):
+        return f"{self.name} ({self.category}): {self.price:,} EGP"
+
+    def apply_vat(self, rate=0.14):
+        return self.price * (1 + rate)
+
+class DiscountedProduct(Product):
+    def __init__(self, name, price, category, discount_pct):
+        super().__init__(name, price, category)
+        self.discount_pct = discount_pct
+
+    @property
+    def discounted_price(self):
+        return self.price * (1 - self.discount_pct/100)
+
+    def __str__(self):
+        return (f"{self.name}: {self.price:,} → "
+                f"{self.discounted_price:,.0f} EGP ({self.discount_pct}% off)")
+
+p1 = Product("Laptop","Cairo",12000)
+p1 = Product("Laptop",12000,"Electronics")
+p2 = DiscountedProduct("Phone",6500,"Electronics",20)
+print(p1)
+print(p2)
+print(f"With VAT: {p1.apply_vat():,.0f}")</div></div>
+  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
+  <div class="task-solution" style="display:none">
+    <div class="solution-label">✅ Solution</div>
+    <div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">class Product:
+    def __init__(self, name, price, category):
+        self.name = name; self.price = price; self.category = category
+    def __str__(self):
+        return f"{self.name} ({self.category}): {self.price:,} EGP"
+    def apply_vat(self, rate=0.14):
+        return self.price * (1 + rate)
+
+class DiscountedProduct(Product):
+    def __init__(self, name, price, category, discount_pct):
+        super().__init__(name, price, category)
+        self.discount_pct = discount_pct
+    @property
+    def discounted_price(self):
+        return self.price * (1 - self.discount_pct/100)
+    def __str__(self):
+        return f"{self.name}: {self.price:,} → {self.discounted_price:,.0f} EGP ({self.discount_pct}% off)"
+
+p1 = Product("Laptop",12000,"Electronics")
+p2 = DiscountedProduct("Phone",6500,"Electronics",20)
+print(p1); print(p2)
+print(f"Laptop with VAT: {p1.apply_vat():,.0f}")</div></div>
+    <div class="output-block"><div class="output-label">Output</div>Laptop (Electronics): 12,000 EGP
+Phone: 6,500 → 5,200 EGP (20% off)
+Laptop with VAT: 13,680</div>
+  </div>
+</div>
+</div></div>
+    <div style="display:flex;justify-content:space-between;margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border)">
+      <a class="btn-nav" href="unit-2.html">← Unit 2: Python Fundamentals</a>
+      <a class="btn-nav" href="unit-4.html">Unit 4: NumPy Arrays →</a>
+    </div>
+  
+  <!-- Shared Nav Bar -->
+  <div class="lesson-quiz-bar" style="margin-bottom:.8rem">
+    <button class="btn-quiz" id="quiz-btn" onclick="openCurrentQuiz()">📝 Lesson Quiz — 5 Questions</button>
+    <span class="quiz-done-badge" id="quiz-done-global" style="display:none">✓ Quiz done</span>
+  </div>
+  <div class="lesson-nav">
+    <button class="btn-nav" id="btn-prev" onclick="prevLesson()" disabled>← Prev</button>
+    <button class="btn-mark" id="btn-mark" onclick="markAndNext()">✓ Mark Done & Next →</button>
+    <a class="btn-nav" id="btn-next-unit" href="unit-4.html" style="display:none">Unit 4: NumPy Arrays →</a>
+    <button class="btn-nav" id="btn-next" onclick="showLesson(currentLesson+1)">Next →</button>
+  </div>
+</main>
+</div>
+
+<div class="modal-overlay" id="quiz-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="quiz-title">Lesson Quiz</h3>
+      <button class="modal-close" onclick="closeQuiz()">×</button>
+    </div>
+    <div id="quiz-body"></div>
+  </div>
+</div>
+
+<script src="../js/app.js"></script>
+<script>
+initUnit({
+  id: 3,
+  lessons: [{"title": "If / Elif / Else", "quizzes": [{"q": "What is the correct if syntax?", "opts": ["if (x > 0):", "if x > 0:", "if x > 0 then:", "if x > 0 {"], "ans": 1, "exp": "Python if uses a colon at the end: if condition: — parentheses are optional but colon is required."}, {"q": "'and' requires:", "opts": ["At least one True", "Both conditions True", "Neither True", "One False"], "ans": 1, "exp": "'and' requires BOTH conditions to be True to execute the block."}, {"q": "x = 5 if True else 10 assigns x =", "opts": ["True", "10", "5", "Error"], "ans": 2, "exp": "Ternary: value_if_true if condition else value_if_false. condition is True, so x = 5."}, {"q": "18 <= age <= 65 is equivalent to:", "opts": ["age >= 18 or age <= 65", "age >= 18 and age <= 65", "age > 18 and age < 65", "age == 18 or age == 65"], "ans": 1, "exp": "Python allows chained comparisons: 18 <= age <= 65 means age >= 18 AND age <= 65."}, {"q": "not (True and False) evaluates to:", "opts": ["True", "False", "None", "Error"], "ans": 0, "exp": "True and False = False. not False = True."}]}, {"title": "For Loops", "quizzes": [{"q": "range(3) generates:", "opts": ["[1,2,3]", "[0,1,2]", "[0,1,2,3]", "[1,2]"], "ans": 1, "exp": "range(n) generates: 0, 1, ..., n-1. It starts at 0 and stops BEFORE n."}, {"q": "enumerate(['a','b','c'], 1) yields:", "opts": ["(0,'a'),(1,'b'),(2,'c')", "(1,'a'),(2,'b'),(3,'c')", "['a','b','c']", "[1,2,3]"], "ans": 1, "exp": "enumerate(iterable, start) yields (index, value) pairs. start=1 makes it begin at 1."}, {"q": "zip([1,2],[3,4]) yields:", "opts": ["[1,2,3,4]", "(1,3),(2,4)", "(1,2),(3,4)", "Error"], "ans": 1, "exp": "zip() pairs items from multiple iterables: (1,3) then (2,4)."}, {"q": "'break' inside a loop:", "opts": ["Skips current iteration", "Exits the loop completely", "Restarts the loop", "Pauses execution"], "ans": 1, "exp": "break immediately terminates the loop — no more iterations happen."}, {"q": "'continue' inside a loop:", "opts": ["Exits the loop", "Restarts the whole loop", "Skips current iteration, continues with next", "Pauses execution"], "ans": 2, "exp": "continue skips the rest of the current iteration and moves to the next one."}]}, {"title": "While Loops", "quizzes": [{"q": "A while loop runs while:", "opts": ["Condition is False", "Condition is True", "Always exactly once", "Forever"], "ans": 1, "exp": "while loop keeps running AS LONG AS the condition remains True."}, {"q": "What happens if you forget to update the loop variable?", "opts": ["Loop runs once", "Loop skips", "Infinite loop (program freezes)", "SyntaxError"], "ans": 2, "exp": "Without updating the condition variable, the condition never becomes False → infinite loop."}, {"q": "while True: with break is used for:", "opts": ["Infinite useless loops", "Menu-style loops that exit on a condition", "Replacing for loops", "Error handling only"], "ans": 1, "exp": "while True: with break creates a loop that runs until a specific condition triggers the break."}, {"q": "What does 'else' on a while loop do?", "opts": ["Always runs", "Runs if loop completed without break", "Runs if loop never executed", "Causes an error"], "ans": 1, "exp": "while...else: the else block runs only if the loop finished normally (without a break statement)."}, {"q": "for vs while — when to use while:", "opts": ["Always use for", "When you don't know how many iterations in advance", "When iterating a list", "Never use while"], "ans": 1, "exp": "Use while when the number of iterations is unknown (user input, data until condition). Use for when iterating a known sequence."}]}, {"title": "Functions", "quizzes": [{"q": "def greet(name, msg='Hello') — what is msg='Hello'?", "opts": ["Required parameter", "Default parameter value", "Return value", "A comment"], "ans": 1, "exp": "msg='Hello' is a default parameter. If caller doesn't provide msg, it uses 'Hello' automatically."}, {"q": "*args in a function accepts:", "opts": ["Only one argument", "Any number of keyword arguments", "Any number of positional arguments", "Only lists"], "ans": 2, "exp": "*args collects any number of positional arguments into a tuple inside the function."}, {"q": "**kwargs accepts:", "opts": ["Any positional args", "Any keyword arguments as a dict", "Only two arguments", "Only strings"], "ans": 1, "exp": "**kwargs collects any number of keyword arguments into a dictionary inside the function."}, {"q": "A function without return statement returns:", "opts": ["0", "False", "None", "Error"], "ans": 2, "exp": "Functions without return (or with bare return) automatically return None."}, {"q": "Can a function return multiple values?", "opts": ["No", "Yes, as a tuple", "Only with special syntax", "Only 2 values max"], "ans": 1, "exp": "return a, b, c returns a tuple (a, b, c). You can unpack it: x, y, z = function()."}]}, {"title": "Lambda Functions", "quizzes": [{"q": "lambda x: x * 2 is equivalent to:", "opts": ["def f(x): x*2", "def f(x): return x*2", "return lambda x*2", "func x: x*2"], "ans": 1, "exp": "Lambda is a shorthand for a simple function. lambda x: x*2 = def f(x): return x*2"}, {"q": "sorted(list, key=lambda x: x['age']) sorts by:", "opts": ["List index", "The 'age' field of each item", "Alphabetically", "Randomly"], "ans": 1, "exp": "key= specifies what to sort by. lambda x: x['age'] extracts the age value for comparison."}, {"q": "map(lambda x: x*2, [1,2,3]) returns:", "opts": ["[2,4,6]", "A map object (convert with list())", "[1,2,3]", "Error"], "ans": 1, "exp": "map() returns a map object (lazy). Use list(map(...)) to get a list: [2, 4, 6]."}, {"q": "filter(lambda x: x>0, [-1,2,-3,4]) returns items:", "opts": ["All items", "Items where function returns True", "Items where function returns False", "Nothing"], "ans": 1, "exp": "filter() keeps items where the function returns True. Result: [2, 4]."}, {"q": "Lambda functions can have:", "opts": ["Multiple statements", "Only one expression", "Class definitions", "Loops"], "ans": 1, "exp": "Lambda functions are limited to a single expression. For complex logic, use a regular def function."}]}, {"title": "List Comprehensions", "quizzes": [{"q": "[x*2 for x in [1,2,3]] produces:", "opts": ["[1,2,3]", "[2,4,6]", "[1,4,9]", "Error"], "ans": 1, "exp": "List comprehension applies x*2 to each element: [1*2, 2*2, 3*2] = [2, 4, 6]."}, {"q": "[x for x in range(10) if x%2==0] produces:", "opts": ["[1,3,5,7,9]", "[0,2,4,6,8]", "[0,2,4,6,8,10]", "Error"], "ans": 1, "exp": "Filters even numbers from range(10)=[0..9]: [0,2,4,6,8]."}, {"q": "{k:v*2 for k,v in {'a':1,'b':2}.items()} produces:", "opts": ["{'a':1,'b':2}", "{'a':2,'b':4}", "['a','b']", "Error"], "ans": 1, "exp": "Dict comprehension doubles each value: {'a': 1*2, 'b': 2*2} = {'a': 2, 'b': 4}."}, {"q": "sum(x for x in [1,2,3,4,5]) uses:", "opts": ["List comprehension", "Generator expression (no brackets)", "Set comprehension", "Error"], "ans": 1, "exp": "Without [] it's a generator expression — more memory-efficient than creating a list first."}, {"q": "Nested comprehension [[j for j in range(3)] for i in range(2)] produces:", "opts": ["[0,1,2,0,1,2]", "[[0,1,2],[0,1,2]]", "[0,0,1,1,2,2]", "Error"], "ans": 1, "exp": "Outer loop runs twice, inner creates [0,1,2] each time: [[0,1,2], [0,1,2]]."}]}, {"title": "Dict & Set Comprehensions", "quizzes": [{"q": "{v:k for k,v in d.items()} does:", "opts": ["Copies the dict", "Swaps keys and values", "Filters the dict", "Sorts by value"], "ans": 1, "exp": "Iterating .items() and swapping k,v creates an inverted dictionary."}, {"q": "d.setdefault('key', []) does:", "opts": ["Overwrites existing key", "Returns value if exists, sets [] if not", "Always sets to []", "Raises error if key exists"], "ans": 1, "exp": "setdefault() returns the value if key exists, otherwise sets it to the default and returns that."}, {"q": "Dict comprehension vs regular dict loop:", "opts": ["Same speed always", "Comprehension is faster and more readable for simple cases", "Loop is always faster", "No difference"], "ans": 1, "exp": "Dict comprehensions are generally faster and more Pythonic for simple transformations."}, {"q": "{x:x**2 for x in range(5) if x%2==0} produces:", "opts": ["{0:0,2:4,4:16}", "{0:0,1:1,2:4,3:9,4:16}", "[0,4,16]", "Error"], "ans": 0, "exp": "Filters even x (0,2,4) then squares them: {0:0, 2:4, 4:16}."}, {"q": "zip(['a','b'],['c','d']) in a dict comp produces:", "opts": ["{'a':'c','b':'d'}", "['a','b','c','d']", "Error", "[('a','c'),('b','d')]"], "ans": 0, "exp": "{k:v for k,v in zip(['a','b'],['c','d'])} = {'a':'c', 'b':'d'}."}]}, {"title": "File I/O", "quizzes": [{"q": "'a' mode in open() does:", "opts": ["Reads file", "Overwrites file", "Appends to end without deleting", "Creates new file only"], "ans": 2, "exp": "'a' = append mode. Adds content to the end of the file without deleting existing content."}, {"q": "Why use 'with open()' instead of open()?", "opts": ["It's faster", "Auto-closes file even if error occurs", "Required for CSV", "Opens multiple files"], "ans": 1, "exp": "'with' ensures the file is properly closed after the block, even if an exception occurs."}, {"q": "csv.DictReader gives each row as:", "opts": ["A list", "A tuple", "A dictionary with column names as keys", "A string"], "ans": 2, "exp": "DictReader gives each row as a dict: {'Name':'Ahmed', 'Salary':'9500'}."}, {"q": "json.dumps() vs json.dump():", "opts": ["Same thing", "dumps → string, dump → file", "dump → string, dumps → file", "Both write to file"], "ans": 1, "exp": "json.dumps() converts to a JSON STRING. json.dump() writes to a FILE. Remember: s = string."}, {"q": "newline='' in open() for CSV writing prevents:", "opts": ["Reading errors", "Extra blank lines on Windows", "Encoding issues", "File not found errors"], "ans": 1, "exp": "On Windows, csv.writer adds \\r\\n. Without newline='', Python adds another \\n, creating blank lines."}]}, {"title": "Classes & OOP Basics", "quizzes": [{"q": "__init__ in a class is:", "opts": ["A destructor", "The constructor — runs when object is created", "A class method", "An optional method"], "ans": 1, "exp": "__init__ is the constructor. It runs automatically when you create a new object with ClassName()."}, {"q": "'self' in a method refers to:", "opts": ["The class itself", "The current instance (object)", "The parent class", "Python itself"], "ans": 1, "exp": "'self' is a reference to the specific instance the method is being called on."}, {"q": "Class attribute vs instance attribute:", "opts": ["Same thing", "Class = shared by all instances, Instance = per object", "Instance = shared, Class = per object", "No difference"], "ans": 1, "exp": "Class attributes are shared by ALL instances. Instance attributes (set with self.x) are unique per object."}, {"q": "e1 = Employee('Ahmed', 'IT', 9500) creates:", "opts": ["A class", "An instance (object) of Employee", "A function", "A module"], "ans": 1, "exp": "Calling a class with () creates a new instance (object) of that class."}, {"q": "To call a method: e1.greet() — what is e1?", "opts": ["The class", "An argument", "The instance the method is called on", "The return value"], "ans": 2, "exp": "e1 is the instance. Python passes it automatically as 'self' to the method."}]}, {"title": "Inheritance & Methods", "quizzes": [{"q": "class Dog(Animal): means:", "opts": ["Dog is inside Animal", "Dog inherits from Animal", "Animal inherits from Dog", "They're the same class"], "ans": 1, "exp": "class Child(Parent): creates inheritance. Dog gets all of Animal's methods and attributes."}, {"q": "super().__init__() calls:", "opts": ["The current class constructor", "The child class constructor", "The parent class constructor", "Python's built-in init"], "ans": 2, "exp": "super() refers to the parent class. super().__init__() runs the parent's constructor."}, {"q": "Overriding a method means:", "opts": ["Deleting the parent method", "The child redefines the method with different behavior", "Calling the parent twice", "Inheritance error"], "ans": 1, "exp": "Overriding = child class redefines a method from the parent, replacing the parent's behavior."}, {"q": "__str__ is called when:", "opts": ["Object is created", "Object is deleted", "str(obj) or print(obj) is used", "Object is compared"], "ans": 2, "exp": "__str__ defines the human-readable string representation, called by str() and print()."}, {"q": "@property decorator makes:", "opts": ["A class method", "A method callable as an attribute (without ())", "A static method", "A private method"], "ans": 1, "exp": "@property lets you call a method like an attribute: obj.discounted_price instead of obj.discounted_price()."}]}]
+});
+const params = new URLSearchParams(location.search);
+const startLesson = parseInt(params.get("lesson") || "0");
+if (startLesson > 0) showLesson(startLesson);
+</script>
+</body>
+</html>
+<div class="lesson-panel" id="panel-20">
+  <div class="lesson-title-bar">
+    <h2>🐍 Mini Project</h2>
+    <p>Phase 1 — Python Basics</p>
+  </div>
+  <div class="lesson-body">
+    <h3>🏋️ Your Phase 1 Mini Project</h3>
+    <p style="font-size:1rem;line-height:1.8">🏋️ Mini Project: Student Grade Analyzer — Read CSV, calculate stats, find pass/fail, export report</p>
+    <div class="tip-box"><strong>💡 How to submit:</strong> Complete in Jupyter Notebook, push to your GitHub fork, share the link.</div>
+  </div>
+</div></div>
+    <div style="display:flex;justify-content:space-between;margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border)">
+      <a class="btn-nav" href="phase-0.html">← Phase 0: Setup & Mindset</a>
+      <a class="btn-nav" href="phase-2.html">Phase 2: NumPy — The Math Engine →</a>
+    </div>
+  </main>
+</div>
+
+<div class="modal-overlay" id="quiz-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="quiz-title">Lesson Quiz</h3>
+      <button class="modal-close" onclick="closeQuiz()">×</button>
+    </div>
+    <div id="quiz-body"></div>
+  </div>
+</div>
+
+<script src="../js/app.js"></script>
+<script>
+initUnit({
+  id: 1,
+  lessons: [{"title": "Variables & Data Types", "quizzes": [{"q": "Which is a valid variable name?", "opts": ["2sales", "my-var", "total_sales", "class"], "ans": 2, "exp": "Can't start with numbers, use hyphens, or use reserved keywords. Underscores are fine."}, {"q": "What type is True?", "opts": ["str", "int", "float", "bool"], "ans": 3, "exp": "True and False are boolean (bool) values. Note: bool is a subclass of int in Python."}, {"q": "int('100') returns:", "opts": ["'100'", "100.0", "100", "Error"], "ans": 2, "exp": "int() converts a string to an integer. int('100') returns the integer 100."}, {"q": "bool(0) returns:", "opts": ["True", "False", "0", "Error"], "ans": 1, "exp": "0, empty strings, empty lists, and None are all 'falsy' in Python. bool(0) = False."}, {"q": "type(3.14) returns:", "opts": ["<class 'int'>", "<class 'float'>", "<class 'decimal'>", "<class 'number'>"], "ans": 1, "exp": "3.14 is a decimal number, so its type is float: <class 'float'>."}]}, {"title": "Strings", "quizzes": [{"q": "'Hello'.upper() returns:", "opts": ["hello", "Hello", "HELLO", "Error"], "ans": 2, "exp": ".upper() converts all characters to uppercase."}, {"q": "'  hi  '.strip() returns:", "opts": ["'  hi  '", "'hi'", "'hi  '", "'  hi'"], "ans": 1, "exp": ".strip() removes leading and trailing whitespace."}, {"q": "'a,b,c'.split(',') returns:", "opts": ["'a b c'", "['a','b','c']", "('a','b','c')", "Error"], "ans": 1, "exp": ".split(sep) splits a string at each separator and returns a list."}, {"q": "f'{1234567:,}' produces:", "opts": ["'1234567'", "'1,234,567'", "'1.234.567'", "Error"], "ans": 1, "exp": "The :, format specifier adds thousands separators to numbers."}, {"q": "'hello'.find('ll') returns:", "opts": ["True", "2", "['l','l']", "Error"], "ans": 1, "exp": ".find() returns the index of the first occurrence. 'hello'.find('ll') = 2."}]}, {"title": "Numbers & Math", "quizzes": [{"q": "10 / 3 in Python returns:", "opts": ["3", "3.33", "3.3333...", "Error"], "ans": 2, "exp": "/ always returns a float in Python 3. 10/3 = 3.3333... Use // for integer division."}, {"q": "math.ceil(4.1) returns:", "opts": ["4", "4.1", "5", "Error"], "ans": 2, "exp": "math.ceil() rounds UP to the nearest integer. ceil(4.1) = 5."}, {"q": "round(3.14159, 2) returns:", "opts": ["3", "3.1", "3.14", "3.15"], "ans": 2, "exp": "round(number, decimals) rounds to the specified number of decimal places. round(3.14159, 2) = 3.14."}, {"q": "abs(-42) returns:", "opts": ["-42", "42", "0", "Error"], "ans": 1, "exp": "abs() returns the absolute value (removes the minus sign). abs(-42) = 42."}, {"q": "2 ** 10 equals:", "opts": ["20", "100", "1024", "210"], "ans": 2, "exp": "** is the power operator. 2**10 = 2×2×2×2×2×2×2×2×2×2 = 1024."}]}, {"title": "Type Conversion", "quizzes": [{"q": "int('3.14') does:", "opts": ["Returns 3", "Returns 3.14", "Raises ValueError", "Returns '3'"], "ans": 2, "exp": "int() can't convert a float string directly. Use int(float('3.14')) = 3, or it raises ValueError."}, {"q": "bool('False') returns:", "opts": ["False", "True", "Error", "None"], "ans": 1, "exp": "Any non-empty string is truthy! bool('False') = True because 'False' is a non-empty string."}, {"q": "list(range(5)) produces:", "opts": ["[1,2,3,4,5]", "[0,1,2,3,4]", "range(5)", "(0,1,2,3,4)"], "ans": 1, "exp": "range(5) generates 0,1,2,3,4. list() converts it to a list."}, {"q": "''.join(['a','b','c']) returns:", "opts": ["['a','b','c']", "'abc'", "'a b c'", "Error"], "ans": 1, "exp": "''.join(list) joins list items into a string using '' as separator. Result: 'abc'."}, {"q": "tuple([1,2,3]) returns:", "opts": ["[1,2,3]", "(1,2,3)", "{1,2,3}", "Error"], "ans": 1, "exp": "tuple() converts any iterable to a tuple. tuple([1,2,3]) = (1,2,3)."}]}, {"title": "Lists", "quizzes": [{"q": "list[-1] returns:", "opts": ["Error", "The first item", "The last item", "Index -1"], "ans": 2, "exp": "Negative indexing: -1 is the last item, -2 is second to last, etc."}, {"q": "list[1:4] returns items at indices:", "opts": ["1,2,3,4", "1,2,3", "2,3,4", "0,1,2,3"], "ans": 1, "exp": "Slicing [start:stop] returns items from start up to (not including) stop. [1:4] = indices 1,2,3."}, {"q": "list.append(x) vs list.extend([x,y]):", "opts": ["Same thing", "append adds one item, extend adds multiple", "extend adds one item", "append is faster"], "ans": 1, "exp": "append() adds a single item to the end. extend() adds all items from an iterable."}, {"q": "sorted(list) vs list.sort():", "opts": ["Same result", "sorted returns new list, sort modifies in place", "sort returns new list", "No difference"], "ans": 1, "exp": "sorted() returns a NEW sorted list (original unchanged). list.sort() modifies the original list in place."}, {"q": "list.count(x) returns:", "opts": ["First index of x", "Last index of x", "How many times x appears", "True/False"], "ans": 2, "exp": ".count(x) returns the number of times x appears in the list."}]}, {"title": "Tuples & Sets", "quizzes": [{"q": "What makes tuples different from lists?", "opts": ["Tuples use {}", "Tuples are immutable (can't be changed)", "Tuples are faster only", "Tuples allow duplicates"], "ans": 1, "exp": "Tuples are immutable — once created, they cannot be modified. Lists are mutable."}, {"q": "(42) is a tuple — True or False?", "opts": ["True", "False — it's just the number 42", "Depends on context", "Error"], "ans": 1, "exp": "(42) is just the integer 42 in parentheses. A single-item tuple needs a trailing comma: (42,)"}, {"q": "Sets automatically:", "opts": ["Sort items alphabetically", "Remove duplicate values", "Convert to strings", "Keep insertion order"], "ans": 1, "exp": "Sets only store unique values. Adding a duplicate has no effect."}, {"q": "a & b for sets returns:", "opts": ["All items from both", "Items in a but not b", "Items in BOTH a and b", "Items in a or b but not both"], "ans": 2, "exp": "& is intersection — returns only items that appear in BOTH sets."}, {"q": "list(set([1,1,2,2,3])) produces:", "opts": ["[1,1,2,2,3]", "[1,2,3] (order may vary)", "Error", "{1,2,3}"], "ans": 1, "exp": "Converting to set removes duplicates, converting back to list gives [1,2,3] — but order is not guaranteed."}]}, {"title": "Dictionaries", "quizzes": [{"q": "d.get('key', 'default') does what if key missing?", "opts": ["Raises KeyError", "Returns None", "Returns 'default'", "Creates the key"], "ans": 2, "exp": ".get(key, default) returns the default value instead of raising KeyError when key doesn't exist."}, {"q": "d.update({'a':1,'b':2}) does:", "opts": ["Replaces entire dict", "Adds/updates multiple key-value pairs", "Creates new dict", "Raises error"], "ans": 1, "exp": ".update() adds new keys and updates existing ones — merges the given dict into d."}, {"q": "d.pop('key') does:", "opts": ["Deletes key silently", "Removes key and returns its value", "Raises error", "Checks if key exists"], "ans": 1, "exp": ".pop(key) removes the key AND returns its value. Raises KeyError if key doesn't exist."}, {"q": "Dict comprehension {k:v*2 for k,v in d.items()} creates:", "opts": ["A new dict with doubled values", "Modifies original dict", "A list", "An error"], "ans": 0, "exp": "Dict comprehension creates a NEW dictionary. The original dict is unchanged."}, {"q": "'key' in dict checks:", "opts": ["If key has a value", "If key exists in the dict", "If value exists", "Dict length"], "ans": 1, "exp": "'in' checks for KEY existence in a dict, not values. Use 'value in d.values()' for values."}]}, {"title": "Variables & Operators", "quizzes": [{"q": "Which variable name is valid?", "opts": ["2sales", "my-var", "total_sales", "class"], "ans": 2, "exp": "Variable names can't start with numbers, use hyphens, or use reserved keywords. Underscores are fine."}, {"q": "17 % 5 equals:", "opts": ["3.4", "3", "2", "5"], "ans": 2, "exp": "% is modulus (remainder after division). 17 / 5 = 3 remainder 2. So 17 % 5 = 2."}, {"q": "x += 10 is the same as:", "opts": ["x = 10", "x = x + 10", "x + 10", "x == 10"], "ans": 1, "exp": "+= is a shorthand assignment operator. x += 10 means x = x + 10."}, {"q": "True and False evaluates to:", "opts": ["True", "False", "Error", "None"], "ans": 1, "exp": "'and' requires BOTH to be True. True and False = False."}, {"q": "not True evaluates to:", "opts": ["True", "False", "None", "Error"], "ans": 1, "exp": "'not' reverses the boolean. not True = False."}]}, {"title": "If / Elif / Else", "quizzes": [{"q": "What is the correct if syntax?", "opts": ["if (x > 0):", "if x > 0:", "if x > 0 then:", "if x > 0 {"], "ans": 1, "exp": "Python if uses a colon at the end: if condition: — parentheses are optional but colon is required."}, {"q": "'and' requires:", "opts": ["At least one True", "Both conditions True", "Neither True", "One False"], "ans": 1, "exp": "'and' requires BOTH conditions to be True to execute the block."}, {"q": "x = 5 if True else 10 assigns x =", "opts": ["True", "10", "5", "Error"], "ans": 2, "exp": "Ternary: value_if_true if condition else value_if_false. condition is True, so x = 5."}, {"q": "18 <= age <= 65 is equivalent to:", "opts": ["age >= 18 or age <= 65", "age >= 18 and age <= 65", "age > 18 and age < 65", "age == 18 or age == 65"], "ans": 1, "exp": "Python allows chained comparisons: 18 <= age <= 65 means age >= 18 AND age <= 65."}, {"q": "not (True and False) evaluates to:", "opts": ["True", "False", "None", "Error"], "ans": 0, "exp": "True and False = False. not False = True."}]}, {"title": "For Loops", "quizzes": [{"q": "range(3) generates:", "opts": ["[1,2,3]", "[0,1,2]", "[0,1,2,3]", "[1,2]"], "ans": 1, "exp": "range(n) generates: 0, 1, ..., n-1. It starts at 0 and stops BEFORE n."}, {"q": "enumerate(['a','b','c'], 1) yields:", "opts": ["(0,'a'),(1,'b'),(2,'c')", "(1,'a'),(2,'b'),(3,'c')", "['a','b','c']", "[1,2,3]"], "ans": 1, "exp": "enumerate(iterable, start) yields (index, value) pairs. start=1 makes it begin at 1."}, {"q": "zip([1,2],[3,4]) yields:", "opts": ["[1,2,3,4]", "(1,3),(2,4)", "(1,2),(3,4)", "Error"], "ans": 1, "exp": "zip() pairs items from multiple iterables: (1,3) then (2,4)."}, {"q": "'break' inside a loop:", "opts": ["Skips current iteration", "Exits the loop completely", "Restarts the loop", "Pauses execution"], "ans": 1, "exp": "break immediately terminates the loop — no more iterations happen."}, {"q": "'continue' inside a loop:", "opts": ["Exits the loop", "Restarts the whole loop", "Skips current iteration, continues with next", "Pauses execution"], "ans": 2, "exp": "continue skips the rest of the current iteration and moves to the next one."}]}, {"title": "While Loops", "quizzes": [{"q": "A while loop runs while:", "opts": ["Condition is False", "Condition is True", "Always exactly once", "Forever"], "ans": 1, "exp": "while loop keeps running AS LONG AS the condition remains True."}, {"q": "What happens if you forget to update the loop variable?", "opts": ["Loop runs once", "Loop skips", "Infinite loop (program freezes)", "SyntaxError"], "ans": 2, "exp": "Without updating the condition variable, the condition never becomes False → infinite loop."}, {"q": "while True: with break is used for:", "opts": ["Infinite useless loops", "Menu-style loops that exit on a condition", "Replacing for loops", "Error handling only"], "ans": 1, "exp": "while True: with break creates a loop that runs until a specific condition triggers the break."}, {"q": "What does 'else' on a while loop do?", "opts": ["Always runs", "Runs if loop completed without break", "Runs if loop never executed", "Causes an error"], "ans": 1, "exp": "while...else: the else block runs only if the loop finished normally (without a break statement)."}, {"q": "for vs while — when to use while:", "opts": ["Always use for", "When you don't know how many iterations in advance", "When iterating a list", "Never use while"], "ans": 1, "exp": "Use while when the number of iterations is unknown (user input, data until condition). Use for when iterating a known sequence."}]}, {"title": "List Comprehensions", "quizzes": [{"q": "[x*2 for x in [1,2,3]] produces:", "opts": ["[1,2,3]", "[2,4,6]", "[1,4,9]", "Error"], "ans": 1, "exp": "List comprehension applies x*2 to each element: [1*2, 2*2, 3*2] = [2, 4, 6]."}, {"q": "[x for x in range(10) if x%2==0] produces:", "opts": ["[1,3,5,7,9]", "[0,2,4,6,8]", "[0,2,4,6,8,10]", "Error"], "ans": 1, "exp": "Filters even numbers from range(10)=[0..9]: [0,2,4,6,8]."}, {"q": "{k:v*2 for k,v in {'a':1,'b':2}.items()} produces:", "opts": ["{'a':1,'b':2}", "{'a':2,'b':4}", "['a','b']", "Error"], "ans": 1, "exp": "Dict comprehension doubles each value: {'a': 1*2, 'b': 2*2} = {'a': 2, 'b': 4}."}, {"q": "sum(x for x in [1,2,3,4,5]) uses:", "opts": ["List comprehension", "Generator expression (no brackets)", "Set comprehension", "Error"], "ans": 1, "exp": "Without [] it's a generator expression — more memory-efficient than creating a list first."}, {"q": "Nested comprehension [[j for j in range(3)] for i in range(2)] produces:", "opts": ["[0,1,2,0,1,2]", "[[0,1,2],[0,1,2]]", "[0,0,1,1,2,2]", "Error"], "ans": 1, "exp": "Outer loop runs twice, inner creates [0,1,2] each time: [[0,1,2], [0,1,2]]."}]}, {"title": "Functions", "quizzes": [{"q": "def greet(name, msg='Hello') — what is msg='Hello'?", "opts": ["Required parameter", "Default parameter value", "Return value", "A comment"], "ans": 1, "exp": "msg='Hello' is a default parameter. If caller doesn't provide msg, it uses 'Hello' automatically."}, {"q": "*args in a function accepts:", "opts": ["Only one argument", "Any number of keyword arguments", "Any number of positional arguments", "Only lists"], "ans": 2, "exp": "*args collects any number of positional arguments into a tuple inside the function."}, {"q": "**kwargs accepts:", "opts": ["Any positional args", "Any keyword arguments as a dict", "Only two arguments", "Only strings"], "ans": 1, "exp": "**kwargs collects any number of keyword arguments into a dictionary inside the function."}, {"q": "A function without return statement returns:", "opts": ["0", "False", "None", "Error"], "ans": 2, "exp": "Functions without return (or with bare return) automatically return None."}, {"q": "Can a function return multiple values?", "opts": ["No", "Yes, as a tuple", "Only with special syntax", "Only 2 values max"], "ans": 1, "exp": "return a, b, c returns a tuple (a, b, c). You can unpack it: x, y, z = function()."}]}, {"title": "Lambda Functions", "quizzes": [{"q": "lambda x: x * 2 is equivalent to:", "opts": ["def f(x): x*2", "def f(x): return x*2", "return lambda x*2", "func x: x*2"], "ans": 1, "exp": "Lambda is a shorthand for a simple function. lambda x: x*2 = def f(x): return x*2"}, {"q": "sorted(list, key=lambda x: x['age']) sorts by:", "opts": ["List index", "The 'age' field of each item", "Alphabetically", "Randomly"], "ans": 1, "exp": "key= specifies what to sort by. lambda x: x['age'] extracts the age value for comparison."}, {"q": "map(lambda x: x*2, [1,2,3]) returns:", "opts": ["[2,4,6]", "A map object (convert with list())", "[1,2,3]", "Error"], "ans": 1, "exp": "map() returns a map object (lazy). Use list(map(...)) to get a list: [2, 4, 6]."}, {"q": "filter(lambda x: x>0, [-1,2,-3,4]) returns items:", "opts": ["All items", "Items where function returns True", "Items where function returns False", "Nothing"], "ans": 1, "exp": "filter() keeps items where the function returns True. Result: [2, 4]."}, {"q": "Lambda functions can have:", "opts": ["Multiple statements", "Only one expression", "Class definitions", "Loops"], "ans": 1, "exp": "Lambda functions are limited to a single expression. For complex logic, use a regular def function."}]}, {"title": "Modules & Import", "quizzes": [{"q": "from math import sqrt imports:", "opts": ["The entire math module", "Only the sqrt function", "sqrt and all math functions", "Creates a copy of math"], "ans": 1, "exp": "from module import name imports only that specific name, without loading the entire module namespace."}, {"q": "import numpy as np means:", "opts": ["Install NumPy", "Load NumPy and alias it as 'np'", "Create new module", "Run NumPy"], "ans": 1, "exp": "'as np' creates an alias so you type np.array() instead of numpy.array()."}, {"q": "Counter(['a','b','a','c','a']) returns:", "opts": ["3", "['a','a','a','b','c']", "Counter({'a':3,'b':1,'c':1})", "Error"], "ans": 2, "exp": "Counter counts occurrences of each item and returns a Counter dict."}, {"q": "json.dumps(data) converts:", "opts": ["JSON string to dict", "Dict to JSON string", "File to JSON", "JSON to file"], "ans": 1, "exp": "dumps = 'dump string'. Converts a Python dict/list to a JSON string. loads = load from string."}, {"q": "os.getcwd() returns:", "opts": ["Current user", "Current Python version", "Current working directory path", "Current file name"], "ans": 2, "exp": "os.getcwd() = get current working directory. Returns the full path of your current folder."}]}, {"title": "Exception Handling", "quizzes": [{"q": "finally block runs:", "opts": ["Only if no error", "Only if error occurs", "Always, regardless of error", "Only in loops"], "ans": 2, "exp": "finally always runs — whether an exception occurred or not. Great for cleanup (closing files, connections)."}, {"q": "else in try/except runs when:", "opts": ["An exception occurs", "No exception occurs", "Always", "The finally block runs"], "ans": 1, "exp": "else runs only if the try block completed WITHOUT any exception being raised."}, {"q": "raise ValueError('message') does:", "opts": ["Prints error", "Catches an error", "Manually triggers an exception", "Ignores errors"], "ans": 2, "exp": "raise manually triggers an exception. You can raise built-in or custom exceptions."}, {"q": "except Exception as e: catches:", "opts": ["Only ValueError", "Only TypeError", "All exceptions (broad catch)", "Nothing"], "ans": 2, "exp": "Exception is the base class for most errors. Using it catches almost any exception — use sparingly."}, {"q": "Custom exception class should inherit from:", "opts": ["object", "BaseException", "Exception", "Error"], "ans": 2, "exp": "Custom exceptions should inherit from Exception (or a more specific exception class) for proper behavior."}]}, {"title": "File I/O", "quizzes": [{"q": "'a' mode in open() does:", "opts": ["Reads file", "Overwrites file", "Appends to end without deleting", "Creates new file only"], "ans": 2, "exp": "'a' = append mode. Adds content to the end of the file without deleting existing content."}, {"q": "Why use 'with open()' instead of open()?", "opts": ["It's faster", "Auto-closes file even if error occurs", "Required for CSV", "Opens multiple files"], "ans": 1, "exp": "'with' ensures the file is properly closed after the block, even if an exception occurs."}, {"q": "csv.DictReader gives each row as:", "opts": ["A list", "A tuple", "A dictionary with column names as keys", "A string"], "ans": 2, "exp": "DictReader gives each row as a dict: {'Name':'Ahmed', 'Salary':'9500'}."}, {"q": "json.dumps() vs json.dump():", "opts": ["Same thing", "dumps → string, dump → file", "dump → string, dumps → file", "Both write to file"], "ans": 1, "exp": "json.dumps() converts to a JSON STRING. json.dump() writes to a FILE. Remember: s = string."}, {"q": "newline='' in open() for CSV writing prevents:", "opts": ["Reading errors", "Extra blank lines on Windows", "Encoding issues", "File not found errors"], "ans": 1, "exp": "On Windows, csv.writer adds \\r\\n. Without newline='', Python adds another \\n, creating blank lines."}]}, {"title": "Regular Expressions", "quizzes": [{"q": "re.findall() returns:", "opts": ["First match", "True/False", "List of all matches", "Match object"], "ans": 2, "exp": "findall() returns a list of all non-overlapping matches found in the string."}, {"q": "\\d in regex matches:", "opts": ["Any letter", "Any digit 0-9", "Any whitespace", "Any character"], "ans": 1, "exp": "\\d matches any single digit character (0-9)."}, {"q": "re.sub(pattern, repl, text) does:", "opts": ["Finds matches", "Replaces all matches", "Splits text", "Tests match"], "ans": 1, "exp": "re.sub() replaces all occurrences of the pattern with the replacement string."}, {"q": "^ in a pattern means:", "opts": ["End of string", "Not equal", "Start of string", "Any character"], "ans": 2, "exp": "^ anchors the pattern to the START of the string. $ anchors to the END."}, {"q": "Why use r'pattern' (raw string) in regex?", "opts": ["Faster", "Avoids double-escaping backslashes", "Required syntax", "Shorter code"], "ans": 1, "exp": "Raw strings treat backslashes literally — r'\\d' is just \\d, making regex patterns cleaner."}]}, {"title": "Classes & OOP Basics", "quizzes": [{"q": "__init__ in a class is:", "opts": ["A destructor", "The constructor — runs when object is created", "A class method", "An optional method"], "ans": 1, "exp": "__init__ is the constructor. It runs automatically when you create a new object with ClassName()."}, {"q": "'self' in a method refers to:", "opts": ["The class itself", "The current instance (object)", "The parent class", "Python itself"], "ans": 1, "exp": "'self' is a reference to the specific instance the method is being called on."}, {"q": "Class attribute vs instance attribute:", "opts": ["Same thing", "Class = shared by all instances, Instance = per object", "Instance = shared, Class = per object", "No difference"], "ans": 1, "exp": "Class attributes are shared by ALL instances. Instance attributes (set with self.x) are unique per object."}, {"q": "e1 = Employee('Ahmed', 'IT', 9500) creates:", "opts": ["A class", "An instance (object) of Employee", "A function", "A module"], "ans": 1, "exp": "Calling a class with () creates a new instance (object) of that class."}, {"q": "To call a method: e1.greet() — what is e1?", "opts": ["The class", "An argument", "The instance the method is called on", "The return value"], "ans": 2, "exp": "e1 is the instance. Python passes it automatically as 'self' to the method."}]}, {"title": "Inheritance & Methods", "quizzes": [{"q": "class Dog(Animal): means:", "opts": ["Dog is inside Animal", "Dog inherits from Animal", "Animal inherits from Dog", "They're the same class"], "ans": 1, "exp": "class Child(Parent): creates inheritance. Dog gets all of Animal's methods and attributes."}, {"q": "super().__init__() calls:", "opts": ["The current class constructor", "The child class constructor", "The parent class constructor", "Python's built-in init"], "ans": 2, "exp": "super() refers to the parent class. super().__init__() runs the parent's constructor."}, {"q": "Overriding a method means:", "opts": ["Deleting the parent method", "The child redefines the method with different behavior", "Calling the parent twice", "Inheritance error"], "ans": 1, "exp": "Overriding = child class redefines a method from the parent, replacing the parent's behavior."}, {"q": "__str__ is called when:", "opts": ["Object is created", "Object is deleted", "str(obj) or print(obj) is used", "Object is compared"], "ans": 2, "exp": "__str__ defines the human-readable string representation, called by str() and print()."}, {"q": "@property decorator makes:", "opts": ["A class method", "A method callable as an attribute (without ())", "A static method", "A private method"], "ans": 1, "exp": "@property lets you call a method like an attribute: obj.discounted_price instead of obj.discounted_price()."}]}, {"title": "Mini Project", "quizzes": []}]
+});
+const params = new URLSearchParams(location.search);
+const startLesson = parseInt(params.get("lesson") || "0");
+if (startLesson > 0) showLesson(startLesson);
+</script>
+</body>
+</html>
