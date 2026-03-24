@@ -490,7 +490,7 @@ R=1000
 Q=5
 subtotal,vat,total=c(R,Q)
 print(f"s:{subtotal} v:{vat:.2f} t:{total:.2f}")</div></div>
-  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-try-it" onclick="tryCode()">⚡ Try in Playground</button>
   <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
   <div class="task-solution" style="display:none">
     <div class="solution-label">✅ Solution</div>
@@ -643,7 +643,7 @@ import pandas as pd
 import openpyxl
 print("pandas:", pd.__version__)
 print("openpyxl: installed!")</div></div>
-  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-try-it" onclick="tryCode()">⚡ Try in Playground</button>
   <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
   <div class="task-solution" style="display:none">
     <div class="solution-label">✅ Solution</div>
@@ -745,7 +745,7 @@ for p,v in prod.sort_values(ascending=False).items():
     share=v/prod.sum()*100
     bar="█"*int(share/5)
     print(f"  {p:&lt;10} {v:&gt;10,.0f} ({share:.1f}%) {bar}")</div></div>
-  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-try-it" onclick="tryCode()">⚡ Try in Playground</button>
   <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
   <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
 np.random.seed(42)

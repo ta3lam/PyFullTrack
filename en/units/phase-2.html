@@ -477,7 +477,7 @@ print("Profit:", profit)
 print("Margin:", margin.round(1))
 print("Months &gt; 30%:", np.where(above30)[0] + 1)
 print("Avg margin:", margin.mean().round(1), "%")</div></div>
-  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-try-it" onclick="tryCode()">⚡ Try in Playground</button>
   <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
   <div class="task-solution" style="display:none">
     <div class="solution-label">✅ Solution</div>
@@ -574,7 +574,7 @@ for name, total in zip(region_names, region_totals):
     print(f"{name}: {total:,}")
 print(f"Best region: {best_region}")
 print(f"Best quarter: {best_quarter}")</div></div>
-  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-try-it" onclick="tryCode()">⚡ Try in Playground</button>
   <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
   <div class="task-solution" style="display:none">
     <div class="solution-label">✅ Solution</div>
@@ -672,7 +672,7 @@ for i in range(len(prices)):
     print(f"{flag} {prices[i]:&gt;6,} → {final_prices[i]:&gt;8,.0f} (save {savings[i]:,.0f})")
 
 print(f"\nTotal saved: {savings.sum():,.0f}")</div></div>
-  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-try-it" onclick="tryCode()">⚡ Try in Playground</button>
   <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
   <div class="task-solution" style="display:none">
     <div class="solution-label">✅ Solution</div>
@@ -778,7 +778,7 @@ print(f"Below -1std: {len(below_1std)} students")
 for grade, count in grades.items():
     bar = "█" * count
     print(f"{grade}: {bar} ({count})")</div></div>
-  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-try-it" onclick="tryCode()">⚡ Try in Playground</button>
   <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
   <div class="task-solution" style="display:none">
     <div class="solution-label">✅ Solution</div>
@@ -879,7 +879,7 @@ ranking = np.argsort(monthly)[::-1]
 print("\nMonthly ranking:")
 for rank, idx in enumerate(ranking, 1):
     print(f"  {rank:2}. {months[idx]}: {monthly[idx]:,}")</div></div>
-  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-try-it" onclick="tryCode()">⚡ Try in Playground</button>
   <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
   <div class="task-solution" style="display:none">
     <div class="solution-label">✅ Solution</div>
@@ -995,7 +995,7 @@ print(f"\nPortfolio monthly returns (first 6):")
 print(portfolio_return[:6].round(4))
 print(f"Average return: {portfolio_return.mean():.4f}")
 print(f"Risk (std):     {portfolio_return.std():.4f}")</div></div>
-  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-try-it" onclick="tryCode()">⚡ Try in Playground</button>
   <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
   <div class="task-solution" style="display:none">
     <div class="solution-label">✅ Solution</div>
@@ -1104,7 +1104,7 @@ monthly = transactions[:360].reshape(12, 30)
 monthly_totals = monthly.sum(axis=1)
 best_month = np.argmax(monthly_totals) + 1
 print(f"Best month:    Month {best_month} ({monthly_totals[best_month-1]:,.0f})")</div></div>
-  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-try-it" onclick="tryCode()">⚡ Try in Playground</button>
   <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
   <div class="task-solution" style="display:none">
     <div class="solution-label">✅ Solution</div>

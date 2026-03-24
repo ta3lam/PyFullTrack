@@ -491,7 +491,7 @@ print(report[report["Missing"] &gt; 0])
 print(f"\nTotal missing cells: {df.isnull().sum().sum()}")
 multi_missing = df[df.isnull().sum(axis=1) &gt; 1]
 print(f"Rows with 2+ missing: {len(multi_missing)}")</div></div>
-  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-try-it" onclick="tryCode()">⚡ Try in Playground</button>
   <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
   <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
 np.random.seed(42)
@@ -600,7 +600,7 @@ s3 = df["Sales"].fillna(method="ffill")
 for name, s in [("Mean", s1), ("Interpolate", s2), ("FFill", s3)]:
     mae = abs(s.iloc[missing_idx] - actual[missing_idx]).mean()
     print(f"{name:&lt;12}: MAE = {mae:,.0f}")</div></div>
-  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-try-it" onclick="tryCode()">⚡ Try in Playground</button>
   <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
   <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
 np.random.seed(42)
@@ -700,7 +700,7 @@ print(f"Rows: {original_rows} → {len(df)}")
 print(f"Missing Amount: {df['Amount'].isnull().sum()}")
 print(df.dtypes)
 print(df)</div></div>
-  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-try-it" onclick="tryCode()">⚡ Try in Playground</button>
   <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
   <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd
 data={"TxID":[1001,1002,1003,1001,1004,1002,1005],"Date":["2024-01-15","2024-01-16","2024-01-16","2024-01-15","2024-01-17","2024-01-18","2024-01-17"],"Amount":["5000","bad","3200","5000","12000","6500","4800"],"Type":["sale","sale","refund","sale","sale","refund","sale"],"Active":["yes","yes","no","yes","yes","no","yes"]}
@@ -796,7 +796,7 @@ products["category"] = products["raw_cat"].str.strip().str.replace(r"[^a-zA-Z]",
 products["in_stock"] = products["in_stock"].str.lower() == "yes"
 
 print(products[["name","brand","price","category","in_stock"]].to_string(index=False))</div></div>
-  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-try-it" onclick="tryCode()">⚡ Try in Playground</button>
   <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
   <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd
 products=pd.DataFrame({"raw_name":["  Samsung LAPTOP Pro  ","apple iPhone 15","DELL Monitor 27\"","hp keyboard wireless"],"raw_price":["EGP 12,000","$6,500","12000 EGP","450.00"],"raw_cat":["ELECTRONICS","electronics","Elec.","Electronics "],"in_stock":["yes","YES","No","YES"]})
@@ -898,7 +898,7 @@ print(sorted(outliers_iqr.tolist()))
 # Mark likely errors (negative or impossibly high)
 errors = salaries[(salaries &lt; 0) | (salaries &gt; 100000)]
 print(f"\nLikely data errors: {errors.tolist()}")</div></div>
-  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-try-it" onclick="tryCode()">⚡ Try in Playground</button>
   <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
   <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
 np.random.seed(42)
@@ -980,7 +980,7 @@ print(f"{'Strategy':&lt;12} {'Count':&gt;6} {'Mean':&gt;10} {'Std':&gt;10}")
 print("-"*40)
 for name, s in [("Original",data),("Removed",removed),("Capped",capped)]:
     print(f"{name:&lt;12} {len(s):&gt;6} {s.mean():&gt;10,.0f} {s.std():&gt;10,.0f}")</div></div>
-  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-try-it" onclick="tryCode()">⚡ Try in Playground</button>
   <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
   <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
 np.random.seed(42)
@@ -1093,7 +1093,7 @@ print("\n=== AFTER CLEANING ===")
 print(f"Rows: {len(df)}")
 print(f"Missing: {df.isnull().sum().sum()}")
 print(f"Sales mean: {df['sales_amount'].mean():,.0f}")</div></div>
-  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-try-it" onclick="tryCode()">⚡ Try in Playground</button>
   <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
   <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
 np.random.seed(42)

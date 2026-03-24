@@ -493,7 +493,7 @@ print(by_region.sort_values("Mean", ascending=False))
 
 print("\n=== Correlation ===")
 print(df[["Sales","Units"]].corr().round(3))</div></div>
-  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-try-it" onclick="tryCode()">⚡ Try in Playground</button>
   <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
   <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
 np.random.seed(42)
@@ -602,7 +602,7 @@ r2 = 1-((y-y_pred)**2).sum()/((y-y.mean())**2).sum()
 
 print(f"\nRegression: Sales = {a:,.0f} + {b:.2f} × Marketing")
 print(f"R² = {r2:.3f} ({r2*100:.1f}% variance explained)")</div></div>
-  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-try-it" onclick="tryCode()">⚡ Try in Playground</button>
   <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
   <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
 np.random.seed(42); n=150
@@ -711,7 +711,7 @@ for m in milestones:
 print(f"\nSpike days: {len(spikes)}")
 print(f"Avg spike amount: {spikes.mean():,.0f}")
 print(f"\nFinal 7-day MA: {ma7.iloc[-1]:,.0f}")</div></div>
-  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-try-it" onclick="tryCode()">⚡ Try in Playground</button>
   <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
   <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
 np.random.seed(42)
@@ -814,7 +814,7 @@ else:
 pooled_std = np.sqrt((campaign_A.std()**2 + campaign_B.std()**2) / 2)
 cohens_d   = (campaign_A.mean() - campaign_B.mean()) / pooled_std
 print(f"Cohen's d: {cohens_d:.3f} ({'large' if abs(cohens_d)&gt;0.8 else 'medium' if abs(cohens_d)&gt;0.5 else 'small'} effect)")</div></div>
-  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-try-it" onclick="tryCode()">⚡ Try in Playground</button>
   <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
   <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import numpy as np; from scipy import stats
 np.random.seed(42)
@@ -911,7 +911,7 @@ for p,v in prod.sort_values(ascending=False).items():
     share=v/prod.sum()*100
     bar="█"*int(share/5)
     print(f"  {p:&lt;10} {v:&gt;10,.0f} ({share:.1f}%) {bar}")</div></div>
-  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-try-it" onclick="tryCode()">⚡ Try in Playground</button>
   <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
   <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
 np.random.seed(42)
