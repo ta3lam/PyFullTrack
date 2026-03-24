@@ -495,7 +495,7 @@ print(f"\nGrowth (first 4):")
 print(growth.head(4).round(1))
 print(f"\nNormalized (first 4):")
 print(normalized.head(4).round(1))</div></div>
-  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-try-it" onclick="tryCode()">⚡ Try in Playground</button>
   <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
   <div class="task-solution" style="display:none">
     <div class="solution-label">✅ Solution</div>
@@ -592,7 +592,7 @@ df["Grade"]   = df["Revenue"].apply(
 print(df[["Product","Revenue","Profit","Grade"]].sort_values("Revenue", ascending=False).to_string(index=False))
 print(f"\nTotal Revenue: {df['Revenue'].sum():,}")
 print(f"Total Profit:  {df['Profit'].sum():,}")</div></div>
-  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-try-it" onclick="tryCode()">⚡ Try in Playground</button>
   <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
   <div class="task-solution" style="display:none">
     <div class="solution-label">✅ Solution</div>
@@ -696,7 +696,7 @@ df["Sales"] = df.groupby("Product")["Sales"].transform(
 )
 print("\nAfter filling missing:")
 print(df)</div></div>
-  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-try-it" onclick="tryCode()">⚡ Try in Playground</button>
   <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
   <div class="task-solution" style="display:none">
     <div class="solution-label">✅ Solution</div>
@@ -795,7 +795,7 @@ print(f"\nSales statistics:")
 print(df["Sales"].describe().round(0))
 print(f"\nTop 5 sales days:")
 print(df.nlargest(5, "Sales")[["Date","Product","Region","Sales"]])</div></div>
-  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-try-it" onclick="tryCode()">⚡ Try in Playground</button>
   <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
   <div class="task-solution" style="display:none">
     <div class="solution-label">✅ Solution</div>
@@ -901,7 +901,7 @@ print(f"Mid-range: {len(mid)} rows")
 result = df.query("Sales &gt; 50000 and Region in ['Cairo','Alex']")
 print(f"\nHigh Cairo/Alex: {len(result)} rows")
 print(result.groupby("Region")["Sales"].mean().round(0))</div></div>
-  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-try-it" onclick="tryCode()">⚡ Try in Playground</button>
   <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
   <div class="task-solution" style="display:none">
     <div class="solution-label">✅ Solution</div>
@@ -1006,7 +1006,7 @@ employees["Level"] = pd.cut(employees["Years"],
 )
 
 print(employees[["Name","Annual","Tax","Net","Bonus","Level"]].to_string(index=False))</div></div>
-  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-try-it" onclick="tryCode()">⚡ Try in Playground</button>
   <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
   <div class="task-solution" style="display:none">
     <div class="solution-label">✅ Solution</div>
@@ -1110,7 +1110,7 @@ products["Score"] = (
 products["Final_Rank"] = products["Score"].rank().astype(int)
 result = products.sort_values("Final_Rank")[["Product","Revenue","Units","Margin","Final_Rank"]]
 print(result.to_string(index=False))</div></div>
-  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-try-it" onclick="tryCode()">⚡ Try in Playground</button>
   <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
   <div class="task-solution" style="display:none">
     <div class="solution-label">✅ Solution</div>
@@ -1213,7 +1213,7 @@ print(by_region.sort_values("Mean", ascending=False))
 
 print("\n=== Correlation ===")
 print(df[["Sales","Units"]].corr().round(3))</div></div>
-  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-try-it" onclick="tryCode()">⚡ Try in Playground</button>
   <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
   <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
 np.random.seed(42)
@@ -1322,7 +1322,7 @@ df["Score"] = df.apply(calc_score, axis=1)
 df["Grade"] = df["Score"].map(lambda s: "A" if s&gt;=55 else "B" if s&gt;=48 else "C")
 
 print(df[["Name","Department","Score","Grade"]].to_string(index=False))</div></div>
-  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-try-it" onclick="tryCode()">⚡ Try in Playground</button>
   <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
   <div class="task-solution" style="display:none">
     <div class="solution-label">✅ Solution</div>
@@ -1424,7 +1424,7 @@ df["Region_Q25"] = df.groupby("Region")["Sales"].transform(lambda x: x.quantile(
 weak = df[df["Sales"] &lt; df["Region_Q25"]][["Region","Product","Sales"]].head(5)
 print("\nUnderperforming sales (sample):")
 print(weak.to_string(index=False))</div></div>
-  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-try-it" onclick="tryCode()">⚡ Try in Playground</button>
   <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
   <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
 np.random.seed(42)
@@ -1534,7 +1534,7 @@ print(product_share.sort_values(ascending=False))
 # Best combo
 combo = df.groupby(["Region","Product"])["Sales"].sum()
 print(f"\nBest combo: {combo.idxmax()} ({combo.max():,})")</div></div>
-  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-try-it" onclick="tryCode()">⚡ Try in Playground</button>
   <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
   <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
 np.random.seed(42)
@@ -1643,7 +1643,7 @@ print(top_cust)
 
 print("\nRevenue by city:")
 print(merged.groupby("City")["Revenue"].sum().sort_values(ascending=False))</div></div>
-  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-try-it" onclick="tryCode()">⚡ Try in Playground</button>
   <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
   <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd
 orders=pd.DataFrame({"Order_ID":range(1,11),"Cust_ID":[1,2,1,3,2,4,3,1,5,2],"Prod_ID":[101,102,103,101,102,103,101,102,103,101],"Quantity":[2,1,3,1,2,1,2,1,1,3]})
@@ -1736,7 +1736,7 @@ print("\nTop 3 weekdays:")
 print(by_day.head(3).round(0))
 print("\nQuarterly totals:")
 print(df.groupby("Quarter")["Sales"].sum().round(0))</div></div>
-  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-try-it" onclick="tryCode()">⚡ Try in Playground</button>
   <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
   <div class="task-solution" style="display:none">
     <div class="solution-label">✅ Solution</div>
@@ -1892,7 +1892,7 @@ customers["phone_valid"] = customers["phone_clean"].str.len() == 11
 customers["city"] = customers["city"].str.strip().str.title()
 
 print(customers[["name","email_valid","domain","phone_valid","city"]].to_string(index=False))</div></div>
-  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-try-it" onclick="tryCode()">⚡ Try in Playground</button>
   <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
   <div class="task-solution" style="display:none">
     <div class="solution-label">✅ Solution</div>
@@ -1998,7 +1998,7 @@ print(q_summary)
 # Verify: sum of quarters = annual total
 print(f"\nAnnual total: {annual['Sales'].sum():,}")
 print(f"Q-totals sum: {q_summary['sum'].sum():,}")</div></div>
-  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-try-it" onclick="tryCode()">⚡ Try in Playground</button>
   <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
   <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
 np.random.seed(42)
@@ -2089,7 +2089,7 @@ print(f"Worst month: {monthly.idxmin().strftime('%Y-%m')} ({monthly.min():,.0f})
 print(f"\nAvg growth: {growth.mean():.2f}% per month")
 print(f"\nBest day of week: {by_day.index[0]} ({by_day.iloc[0]:,.0f})")
 print(f"Worst day: {by_day.index[-1]} ({by_day.iloc[-1]:,.0f})")</div></div>
-  <button class="btn-try-it" onclick="tryCode(this.previousElementSibling.querySelector('.code-body').textContent)">⚡ Try in Playground</button>
+  <button class="btn-try-it" onclick="tryCode()">⚡ Try in Playground</button>
   <button class="btn-show-solution" onclick="toggleSolution(this)">👁 Show Solution</button>
   <div class="task-solution" style="display:none"><div class="solution-label">✅ Solution</div><div class="code-block"><div class="code-header"><span>python</span><button class="copy-btn">copy</button></div><div class="code-body">import pandas as pd, numpy as np
 np.random.seed(42)

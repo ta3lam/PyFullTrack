@@ -232,16 +232,12 @@ function addPlaygroundBtn() {
 }
 
 function openPlayground() {
-  // Get starter code from current lesson's task if available
-  const panel = document.querySelector('.lesson-panel.active');
-  const codeEl = panel ? panel.querySelector('.task-section .code-body') : null;
-  const code = codeEl ? encodeURIComponent(codeEl.textContent.trim()) : '';
   // Open Programiz Python editor - lightweight, no install needed
   const url = 'https://www.programiz.com/python-programming/online-compiler/';
   window.open(url, 'pytrack-playground', 'width=900,height=650,resizable=yes,scrollbars=yes');
 }
 
-function tryCode(codeText) {
+function tryCode() {
   window.open('https://www.programiz.com/python-programming/online-compiler/', 
     'pytrack-playground', 'width=900,height=650,resizable=yes,scrollbars=yes');
 }
