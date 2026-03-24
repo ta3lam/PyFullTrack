@@ -238,12 +238,12 @@ function openPlayground() {
   const code = codeEl ? encodeURIComponent(codeEl.textContent.trim()) : '';
   // Open Programiz Python editor - lightweight, no install needed
   const url = 'https://www.programiz.com/python-programming/online-compiler/';
-  window.open(url, 'pytrack-playground', 'width=900,height=650,resizable=yes,scrollbars=yes');
+  window.open(url, 'pytrack-playground', 'width=900,height=650,resizable=yes,scrollbars=yes,noopener,noreferrer');
 }
 
 function tryCode(codeText) {
   window.open('https://www.programiz.com/python-programming/online-compiler/', 
-    'pytrack-playground', 'width=900,height=650,resizable=yes,scrollbars=yes');
+    'pytrack-playground', 'width=900,height=650,resizable=yes,scrollbars=yes,noopener,noreferrer');
 }
 
 if (typeof module !== 'undefined') {
