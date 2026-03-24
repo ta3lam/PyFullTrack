@@ -245,3 +245,7 @@ function tryCode(codeText) {
   window.open('https://www.programiz.com/python-programming/online-compiler/', 
     'pytrack-playground', 'width=900,height=650,resizable=yes,scrollbars=yes');
 }
+
+if (typeof module !== 'undefined') {
+  module.exports = { unitDoneCount, getProgress };
+}
